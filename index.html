@@ -29117,7 +29117,7 @@ $("b-start").addEventListener("click", function(){
     SESSION = alt || {epreuve:ep, kand:kand, nom:nom, recu:recu, code:code,
                       geprueft:ergebnis.status, geraet:navigator.userAgent.slice(0,80),
                       eroeffnet:jetzt(), module:{}};
-    SESSION.nom=nom; SESSION.recu=recu; SESSION.code=code; SESSION.geprueft=ergebnis.status; SESSION.bis=ergebnis.bis||"";
+    SESSION.nom=nom; SESSION.recu=recu; SESSION.code=code; SESSION.geprueft=ergebnis.status; SESSION.bis=ergebnis.bis||""; SESSION.erlaubt=ergebnis.erlaubt||null;
     speichern();
     if(warn) $("s-msg").innerHTML=warn;
     ladeEpreuve(ep);
@@ -29178,7 +29178,8 @@ function pruefeQuittung(code, nom, fertig){
   fetch(u,{method:"GET",redirect:"follow"}).then(function(r){ return r.text(); }).then(function(t){
     clearTimeout(abbruch);
     var teile=String(t).trim().split("|");
-    if(teile[0]==="OK")        fertig({status:"OK", name:teile[1]||"", recu:teile[2]||"", bis:teile[3]||""});
+    if(teile[0]==="OK")        fertig({status:"OK", name:teile[1]||"", recu:teile[2]||"", bis:teile[3]||"",
+                                     erlaubt:(teile[4]||"").split(",").filter(Boolean)});
     else if(teile[0]==="NEIN") fertig({status:"NEIN", grund:teile[1]||""});
     else                       pruefeOffline(code, fertig);
   }).catch(function(){ clearTimeout(abbruch); pruefeOffline(code, fertig); });
@@ -29241,6 +29242,12 @@ function zeigeModule(){
   var box=$("m-liste"); box.innerHTML="";
   EP.module.forEach(function(m){
     var z=zustand(m), rest=restzeit(m);
+    if(!bezahlt(m) && z==="offen"){
+      var dn=document.createElement("div"); dn.className="mod"; dn.style.opacity=".55";
+      dn.innerHTML='<div><div class="nm">'+esc(m.name)+'</div><div class="du">Nicht in Ihrer Quittung enthalten</div></div>'+
+        '<div class="sp"><span class="pill att">nicht bezahlt</span></div>';
+      box.appendChild(dn); return;
+    }
     if(z==="laeuft" && rest<=0){ abgeben(m,true,true); z="fertig"; }
     var pill = z==="fertig" ? '<span class="pill fin">abgegeben</span>'
              : z==="laeuft" ? '<span class="pill run">läuft — '+mmss(rest)+'</span>'
@@ -29296,9 +29303,17 @@ function ansicht(id){
 }
 
 /* ───────────────────────────────────────────────────────────── écran 3 */
+/* Le candidat ne compose que ce qu'il a payé (liste renvoyée par le registre).
+   Sans liste (mode entraînement, contrôle hors ligne) tout reste ouvert :
+   le serveur vérifie de toute façon à la réception de la copie.            */
+function bezahlt(m){
+  var e=SESSION && SESSION.erlaubt;
+  return !e || !e.length || e.indexOf(m.id)>=0;
+}
 function oeffne(mid){
   MODUL = EP.module.filter(function(m){return m.id===mid;})[0];
   if(!MODUL) return;
+  if(!bezahlt(MODUL) && !SESSION.module[mid]){ MODUL=null; zeigeModule(); return; }
   var s = SESSION.module[mid];
   if(!s){ s = SESSION.module[mid] = {start:jetzt(), antworten:{}, texte:{}, weg:0}; speichern(); }
   if(s.abgegeben){ zeigeModule(); return; }
