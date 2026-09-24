@@ -29482,6 +29482,13 @@ function starteAudio(){
   AUDIO=document.createElement("audio");
   AUDIO.src=MODUL.audio; AUDIO.preload="auto"; AUDIO.setAttribute("playsinline","");
   AUDIO.style.display="none";
+  /* l'audio peut être dans le dossier audio/ ou directement à côté de la page */
+  var zweiterVersuch=false;
+  AUDIO.addEventListener("error",function(){
+    if(zweiterVersuch || !AUDIO) return; zweiterVersuch=true;
+    var alt=String(MODUL.audio).indexOf("audio/")===0 ? MODUL.audio.slice(6) : "audio/"+MODUL.audio;
+    AUDIO.src=alt; AUDIO.load();
+  });
   box.appendChild(AUDIO);
   var startAb = s.audioAb || 0;
   var gesetzt=false;
