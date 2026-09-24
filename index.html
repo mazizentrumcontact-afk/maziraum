@@ -29755,6 +29755,7 @@ holeZulassung();
   // s'il existe une session en cours pour une épreuve de la liste, on propose de reprendre
   for(var i=0;i<CONFIG.EPREUVES.length;i++){
     var id=CONFIG.EPREUVES[i].id;
+    if(EP_FIX && id!==EP_FIX) continue;   // le lien impose l'épreuve : on ne reprend que celle-là
     var kand=((k.code||"").replace(/[^0-9A-Za-z]+/g,"") || k.nom.toLowerCase().replace(/[^a-z0-9]+/g,"-"));
     var s=LS.get("mz_sess_"+id+"_"+kand,null);
     if(s && Object.keys(s.module||{}).length){
