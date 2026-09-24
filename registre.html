@@ -1,0 +1,2158 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#0d6e66" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0f161c" media="(prefers-color-scheme: dark)">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Registre MZ">
+<meta name="mobile-web-app-capable" content="yes">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230d6e66'/%3E%3Ctext x='32' y='43' font-family='system-ui,sans-serif' font-size='28' font-weight='700' fill='%23fff' text-anchor='middle'%3EMZ%3C/text%3E%3C/svg%3E">
+<link rel="apple-touch-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAIAAACyr5FlAAAIgUlEQVR42u2de1BU1x2AWZZHdy0oKI8oplWCQDCaWJVFHoHU1Jq20SZRlIciEUJCav9oRttJp53YdNLptEkmqUFEHoGgkKpJrKm1caKAoKiAqFgTX4AKwbe8l4Xd/mGnk2njffDYPbv7fX/i71zPPefj3PO793cvGq91mS4A34QrQwDIAcgByAHIAcgByAHIAcgByAHIAYAcgByAHIAcgByAHIAcgByAHIAcAMgByAHIAcgByAHIAcgByAHIAcgBgByAHIAcgByAHIAcgByAHIAcgByAHADIAcgByAHIAcgByAHIAcgByAHIAYAcgByAHIAcgByAHIAcYK+4jd2h617dGOIfoLZVn8kU/tsNt3p6RqUPmbHxf3pu5TAavrKjbEvVAemYzclpSfOjxJlLwx9eO9Pe5sgrh87dfZUhZlQOpdFoMmMTWAAc6rKSEfO41nUUOpYQGj4jIJA5dig5pvpOXBwxa+THyYpj2XDEDWnmiOd12iS/Hzz8CBPsgHLEzwgLC3xghFtRV42GCXbMVHYke0m9h2dK5AJm12HlWDnP4K3TDa9t0nzDeJ2e2XVYOcZ5eibPH+Zvv3NmsBaL08hxb9+gUb9vSAgNH+F+xR759FTj2Y52J5Ij2M9/YXiE+gz2CWczo6nt6tqSfMtoLx1ugp/2C7EJn505rTz+OxMnLYqwUgabVVqUVVo06odNi4p9Z0WK8vibPd0rtr7XYzQ60Z7jHk+GR0yf5K9KJrvOYKODQ/68TMXDINPQUGpBbsvNG861Ib2HRqPJjI1XGKzz8Eg12HEG+6DvxJL0F9y1WuVN1u8sO3T+S6fLVv5LSuQCvYenogx2nh1nsHoPz7KMlyZ920t5k7xDB/OrKx08lW2/e0fiX711upXzIhVlN3I33dsk/yPbLpB5qWtmTg5S3qTy3BcbdpY7/n2OAjn9lTxqiZ8RFh44WSKg32Qqra0RU45XFz/9k1mPKY+/dON6akHuoNns+HKU1tZ0G/slAsIDJ8eFhMpsReUy2B31x272dAtoxjOPzV2/6Cnl8d3G/sS8Tbd7e8a6Y0LI0WU0ltYelpv7BOmt3OKZMk/5cys/F9CM2UEP5iStVh5vtlieL84/+1W7FfomyoY0t+qA9D2cp2bODvLxve91R+4Z7JGLFxqvXBbNDH8v7+0ZL+k8PJQ32bjn472nT1qne6LIcf5ax+dfnJEI0Lq6ZsTE3y+Dla0s3CzesuHp5rZt7YtBE3yUN/lr3dE39//Daj0UKJXdXClT0Ls6KuZb7u7///MVcyMn6PXS2dDuxnrR5Hh7efL8705XHl/f2py9vdiaPRRIjn+eOX3pxnWJAN9x456bM++brikyuUx+dcVYb+zV8rOEJ5PVVJy0372zcmtOv8nkpHJYLJYtVQfVpiRxIaERk6dINDEODhbWVAllxsLwiI1PP6M8vt9kSsrPabf6TRqx7pCW1Fb3Dhgl9/ZTI6cFf/0nWY/LZLC7Go5f7+oS5xxD/AOKVmeoKq9/uaykrqXZ+l0VS47Ovr5tR48oz2mV1KkLtRUdr9N/mPmyqgq3t/bv+/B4rU16K9yzFdn3zJbMnhPoPf4/u42YeOlfwWPNFxtaWwQ5Na2ra/GazGA/FQ+Z9zWdem3PR7bqsHBynP2q/eCXZyUC3LXaNdFxLvfejYuKlj5ajkjLxhtLlyWEhqsaivTireZRr/6zXzlcFNzKTF8Q567VJs41+OjHSYR1dHZ+ckKUDHaVIVp2e/R1bvf2JOZt6urvt2GfRZRj7+mT0tUrAd7eSx/9XmZcvPRxCqorTENDIpxR1PSH3lyepDx+0GxeVbhFOrF3UjnMFkveoQqZJfqny6QfcA8MDRbUVIpwOkE+vh+kZ3loVVRk/nJXeYXktdV55XBxcSk+cqhvYEAiwN/LW/oIHzfUdXR22vxE9B6e5RnZfl4qSngKa6pk7/c4tRx3envL60aUv8nejLcCGo0mNyXtkSkqSniqL5x7Zcd2QWZB3DLB3BHMbn1r8/GWSzY/hV/98MdLZs9RHt9662ZK/mZB9klCy9HUdnXYpbM5FbbPYJc+OmfDoh8pj+8xGhPzNglVjiR0gfHwbm5e6+r8qKHOtj2fNWVqbvIa5a/rWSyWjJKCprarQo2/0HJ8eqrxyu1balsV1lQNDA3asNt+Xl5lmdmqSnh+v3f3nlMnRBt/oeUYMpu3yuW0/4NpaKig2pYZrIfWrTRdXQnProbjf9z3dwHHX/T3VooOV6kqYviksb7dpu8fvLU8yTA9WHl845XWF8fgnUqnkONWT8+O+mPWyXFGTnb8wlRDtPL4js7OFXnv9Vm3hMdx5HBRUzV+4nJL7aULturnE2EPv77kWeXxxsHB5Pycq3duCzvydiBH45XLhy+eV5bd2GzZeMg/4P00dSU8Py//4GjzRZFH3j4+b63kYnGju2unmgvQKDJepy/PyFb1mu67Bz7bdvSw4MNuH3LsbqyXfc21sKbKOGiDDFbr6lqUtlbVh7z3/6vpN7t3iT/s9iHHoNlcUF0hF2CbDPb1Jc9+P0zF54fOXetIez9vSLBqeDuWQ3Zh+NvJBpvs7FIiF2THL1Qef7evd/mWv3T29dnFmLvZixzXu7r8fpEtVJcipwW/nZisdnfS8OvfjV2XHli/bhS//8TfWxkmQRN8Sp9XV8JjdyDHMEk1RMsWHCGHs+IEH1ZHDkAOQA5ADkAOQA5ADrC3bN1rXSajAKwcgByAHIAcgByAHIAcgByAHIAcAMgByAHIAcgByAHIAcgByAHIAcgBgByAHIAcgByAHIAcgByAHIAcgByAHADIAcgByAHIAcgByAHIAcgByAHIAYAcgByAHIAcgByAHIAcgByAHIAcAMgByAHIAcgByAHIAcgByAHIAcgByAFwH/4N/fx9S0UDKzgAAAAASUVORK5CYII=">
+<title>Registre Mazi Zentrum</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+</head>
+<body>
+<style>
+:root{
+  --ground:#eef1f4; --surface:#ffffff; --surface-2:#f7f9fa;
+  --ink:#16202a; --muted:#5d6b7a; --faint:#8b98a5;
+  --line:#dbe2e8; --line-strong:#c2cdd6;
+  --accent:#0d6e66; --accent-soft:#e3f2f0; --accent-ink:#0a544e;
+  --good:#1a7f43; --good-soft:#e4f4ea;
+  --warn:#9a5b06; --warn-soft:#fdf0dc;
+  --bad:#a92222; --bad-soft:#fbe6e6;
+  --shadow:0 1px 2px rgba(22,32,42,.06), 0 4px 14px rgba(22,32,42,.05);
+  --r:10px;
+}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
+  color-scheme:dark;
+  --ground:#0f161c; --surface:#18222c; --surface-2:#1e2a35;
+  --ink:#e6edf3; --muted:#9bacbb; --faint:#71828f;
+  --line:#2a3945; --line-strong:#3b4d5c;
+  --accent:#3fc0b3; --accent-soft:#12312e; --accent-ink:#8fe0d7;
+  --good:#4ec27c; --good-soft:#13301f;
+  --warn:#e6a44a; --warn-soft:#332512;
+  --bad:#f08b8b; --bad-soft:#331919;
+  --shadow:0 1px 2px rgba(0,0,0,.3), 0 4px 14px rgba(0,0,0,.25);
+}}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --ground:#0f161c; --surface:#18222c; --surface-2:#1e2a35;
+  --ink:#e6edf3; --muted:#9bacbb; --faint:#71828f;
+  --line:#2a3945; --line-strong:#3b4d5c;
+  --accent:#3fc0b3; --accent-soft:#12312e; --accent-ink:#8fe0d7;
+  --good:#4ec27c; --good-soft:#13301f;
+  --warn:#e6a44a; --warn-soft:#332512;
+  --bad:#f08b8b; --bad-soft:#331919;
+  --shadow:0 1px 2px rgba(0,0,0,.3), 0 4px 14px rgba(0,0,0,.25);
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+body{margin:0;background:var(--ground);color:var(--ink);
+  font-family:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;font-size:15px;line-height:1.5}
+.mono{font-family:"IBM Plex Mono",ui-monospace,Menlo,monospace;font-variant-numeric:tabular-nums}
+h1,h2,h3{margin:0;text-wrap:balance}
+button,input,select{font:inherit;color:inherit}
+
+/* ---------- en-tête ---------- */
+.top{background:var(--surface);border-bottom:1px solid var(--line);
+  position:sticky;top:env(safe-area-inset-top,0px);z-index:20}
+.top-in{max-width:1080px;margin:0 auto;padding:14px 16px;display:flex;
+  align-items:center;gap:14px;flex-wrap:wrap}
+.mark{width:40px;height:40px;border-radius:9px;background:var(--accent);color:#fff;
+  display:grid;place-items:center;font-weight:700;letter-spacing:.04em;font-size:15px;flex:none}
+.brand h1{font-size:17px;font-weight:600;letter-spacing:-.01em}
+.brand p{margin:1px 0 0;font-size:11.5px;color:var(--muted);
+  text-transform:uppercase;letter-spacing:.09em}
+.kpis{margin-left:auto;display:flex;gap:8px;flex-wrap:wrap}
+.kpi{background:var(--surface-2);border:1px solid var(--line);border-radius:var(--r);
+  padding:6px 11px;min-width:82px}
+.kpi .n{font-size:18px;font-weight:600;line-height:1.15;display:block}
+.kpi .l{font-size:10.5px;color:var(--muted);text-transform:uppercase;letter-spacing:.07em}
+.store-tag{font-size:10.5px;padding:3px 8px;border-radius:99px;border:1px solid var(--line);
+  color:var(--muted);background:var(--surface-2);white-space:nowrap}
+.store-tag.ok{color:var(--good);border-color:var(--good);background:var(--good-soft)}
+
+/* ---------- onglets ---------- */
+.tabs{background:var(--surface);border-bottom:1px solid var(--line);
+  position:sticky;top:calc(env(safe-area-inset-top,0px) + 69px);z-index:19;overflow-x:auto}
+.tabs-in{max-width:1080px;margin:0 auto;padding:0 16px;display:flex;gap:2px}
+.tab{background:none;border:0;border-bottom:2px solid transparent;padding:11px 13px;
+  font-size:14px;font-weight:500;color:var(--muted);cursor:pointer;white-space:nowrap}
+.tab:hover{color:var(--ink)}
+.tab[aria-selected="true"]{color:var(--accent-ink);border-bottom-color:var(--accent)}
+.tab:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
+
+main{max-width:1080px;margin:0 auto;padding-inline:16px;padding-block:22px 60px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);
+  box-shadow:var(--shadow);padding:20px;margin-bottom:16px}
+.card > h2{font-size:15px;font-weight:600;margin-bottom:4px}
+.card > .hint{font-size:13px;color:var(--muted);margin:0 0 16px}
+
+/* ---------- formulaires ---------- */
+.grid{display:grid;gap:13px;grid-template-columns:repeat(auto-fit,minmax(210px,1fr))}
+.f{display:flex;flex-direction:column;gap:5px}
+.f label{font-size:11.5px;font-weight:600;color:var(--muted);
+  text-transform:uppercase;letter-spacing:.06em}
+.f input,.f select{background:var(--surface-2);border:1px solid var(--line-strong);
+  border-radius:8px;padding:9px 11px;width:100%}
+.f input:focus,.f select:focus{outline:2px solid var(--accent);outline-offset:-1px;
+  border-color:var(--accent);background:var(--surface)}
+.f .note{font-size:11.5px;color:var(--faint)}
+.f.wide{grid-column:1/-1}
+.row-btn{display:flex;gap:9px;flex-wrap:wrap;margin-top:17px}
+.btn{background:var(--accent);color:#fff;border:1px solid var(--accent);border-radius:8px;
+  padding:10px 17px;font-weight:600;cursor:pointer}
+.btn:hover{filter:brightness(1.08)}
+.btn:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
+.btn.ghost{background:var(--surface-2);color:var(--ink);border-color:var(--line-strong)}
+.btn.small{padding:7px 12px;font-size:13.5px;font-weight:500}
+
+/* ---------- tableaux ---------- */
+.tw{overflow-x:auto;border:1px solid var(--line);border-radius:var(--r);background:var(--surface)}
+table{border-collapse:collapse;width:100%;font-size:13.5px}
+th{background:var(--surface-2);text-align:left;padding:9px 11px;font-size:11px;
+  font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;
+  border-bottom:1px solid var(--line);white-space:nowrap;position:sticky;top:0}
+th.sortable{cursor:pointer;user-select:none}
+th.sortable:hover{color:var(--ink)}
+td{padding:9px 11px;border-bottom:1px solid var(--line);vertical-align:middle}
+tr:last-child td{border-bottom:0}
+tbody tr:hover{background:var(--surface-2)}
+td.num{text-align:right;font-variant-numeric:tabular-nums;font-family:"IBM Plex Mono",monospace}
+.pill{display:inline-block;padding:2px 8px;border-radius:99px;font-size:11.5px;
+  font-weight:600;white-space:nowrap}
+.pill.ok{background:var(--good-soft);color:var(--good)}
+.pill.end{background:var(--warn-soft);color:var(--warn)}
+.pill.off{background:var(--surface-2);color:var(--faint);border:1px solid var(--line)}
+.sig{display:inline-block;width:110px;border-bottom:1px solid var(--line-strong);height:15px}
+
+.empty{text-align:center;padding:42px 18px;color:var(--muted)}
+.empty h3{font-size:15px;font-weight:600;color:var(--ink);margin-bottom:6px}
+.empty p{margin:0 auto 16px;max-width:42ch;font-size:13.5px}
+
+.msg{border-radius:8px;padding:11px 13px;font-size:13.5px;margin-bottom:13px;
+  border:1px solid transparent}
+.msg.ok{background:var(--good-soft);color:var(--good);border-color:var(--good)}
+.msg.bad{background:var(--bad-soft);color:var(--bad);border-color:var(--bad)}
+.msg.warn{background:var(--warn-soft);color:var(--warn);border-color:var(--warn)}
+.msg strong{display:block;margin-bottom:2px}
+.msg ul{margin:6px 0 0;padding-left:18px}
+.msg li{margin-bottom:3px}
+
+.toolbar{display:flex;gap:9px;flex-wrap:wrap;align-items:flex-end;margin-bottom:14px}
+.toolbar .f{flex:1;min-width:150px}
+.tot{font-size:13px;color:var(--muted);margin-top:11px}
+.tot b{color:var(--ink);font-family:"IBM Plex Mono",monospace}
+
+/* ---------- reçu ---------- */
+#recu-box{display:none}
+#recu-box.on{display:block}
+.recu{background:#fff;color:#111;border:2px solid #111;border-radius:2px;
+  padding:16px 18px;max-width:560px;margin:0 auto;font-size:13px}
+.recu .rh{display:flex;justify-content:space-between;gap:14px;
+  border-bottom:1px solid #111;padding-bottom:7px;margin-bottom:9px}
+.recu .rh .n{font-size:19px;font-weight:700;line-height:1.1}
+.recu .rh .s{font-size:9.5px;color:#333;margin-top:2px}
+.recu .rh .c{font-size:9.5px;text-align:right;color:#333;line-height:1.5}
+.recu .rt{text-align:center;font-weight:700;font-size:14px;letter-spacing:.12em;margin-bottom:2px}
+.recu .rn{text-align:center;font-size:12px;margin-bottom:11px}
+.recu .rn b{font-size:15px;color:#a92222;font-family:"IBM Plex Mono",monospace}
+.recu dl{display:grid;grid-template-columns:118px 1fr;gap:0;margin:0 0 11px}
+.recu dt{color:#444;padding:4px 0;border-bottom:1px dotted #bbb;font-size:12px}
+.recu dd{margin:0;padding:4px 0;border-bottom:1px dotted #bbb;font-size:12.5px}
+.recu .amt{border:1.5px solid #111;padding:8px 11px;display:flex;
+  justify-content:space-between;align-items:center;gap:12px;margin-bottom:9px}
+.recu .amt .v{font-size:20px;font-weight:700;font-family:"IBM Plex Mono",monospace}
+.recu .amt .w{font-size:10.5px;font-style:italic;color:#333;text-align:right}
+.recu .per{background:#f0f0f0;padding:7px;text-align:center;font-size:12.5px;margin-bottom:13px}
+.recu .rf{display:flex;justify-content:space-between;align-items:flex-end;gap:16px}
+.recu .cod{border:2px solid #111;padding:6px 13px;text-align:center}
+.recu .cod .l{font-size:8px;text-transform:uppercase;letter-spacing:.09em;color:#333}
+.recu .cod .v{font-size:21px;font-weight:700;letter-spacing:.2em;
+  font-family:"IBM Plex Mono",monospace}
+.recu .sg{font-size:10.5px;text-align:center;width:150px;color:#333}
+.recu .sg span{display:block;border-top:1px solid #111;margin-top:30px;padding-top:2px}
+.recu .warn{font-size:8.5px;color:#444;text-align:center;line-height:1.45;
+  margin-top:11px;border-top:1px solid #ddd;padding-top:7px}
+
+/* ---------- signature et cachet ---------- */
+.recu .rf{position:relative}
+.recu .sgn{flex:1;display:flex;align-items:flex-end;justify-content:flex-end;
+  gap:4px;position:relative;min-height:104px}
+.recu .sgn .bloc{width:168px;text-align:center;padding-bottom:2px}
+.recu .sgn .img{height:46px;display:block;margin:0 auto 1px;max-width:160px;object-fit:contain}
+.recu .sgn .mono-sig{display:block;margin:0 auto 1px}
+.recu .sgn .img.sigm{height:128px;max-width:none;margin-bottom:-10px}
+.sig-prev img.sigm{height:110px}
+.sig-prev .mono-sig{display:block}
+.recu .sgn .nomsig{font-family:"Segoe Script","Brush Script MT",cursive;font-size:18px;
+  color:#14367a;line-height:1;padding:14px 0 3px}
+.recu .sgn .l{border-top:1px solid #111;padding-top:2px;font-size:8.5px;color:#333;line-height:1.3}
+.recu .cachet{width:126px;height:126px;flex:none;margin:0 -6px -8px -22px;
+  opacity:.86;transform:rotate(-9deg);pointer-events:none}
+.sig-pad{border:1px dashed var(--line-strong);border-radius:8px;background:var(--surface-2);
+  width:100%;max-width:420px;height:150px;touch-action:none;cursor:crosshair;display:block}
+.sig-prev{background:#fff;border:1px solid var(--line);border-radius:8px;padding:8px;
+  display:inline-block;margin-top:10px}
+.sig-prev img{height:52px;display:block}
+.lockbtn{font-size:10.5px;padding:4px 9px;border-radius:99px;border:1px solid var(--line-strong);
+  background:var(--surface-2);color:var(--muted);cursor:pointer;white-space:nowrap}
+.lockbtn.on{color:var(--good);border-color:var(--good);background:var(--good-soft)}
+.lockbtn.off{color:var(--bad);border-color:var(--bad);background:var(--bad-soft)}
+.jeton{width:100%;min-height:96px;font-family:"IBM Plex Mono",monospace;font-size:11.5px;
+  background:var(--surface-2);border:1px solid var(--line-strong);border-radius:8px;
+  padding:9px 11px;resize:vertical;word-break:break-all}
+tr.annule td{opacity:.55}
+tr.annule td:nth-child(2){text-decoration:line-through}
+
+/* ---------- téléphone ---------- */
+@media (max-width:520px){
+  .recu{padding:12px 13px;font-size:12px;max-width:100%}
+  .recu .rh{flex-direction:column;gap:5px}
+  .recu .rh .c{text-align:left}
+  .recu .rh .n{font-size:17px}
+  .recu dl{grid-template-columns:92px 1fr}
+  .recu dt{padding-right:8px}
+  .recu dt{font-size:11px}
+  .recu dd{font-size:11.5px}
+  .recu .amt{flex-direction:column;align-items:flex-start;gap:3px}
+  .recu .amt .w{text-align:left}
+  .recu .rf{flex-direction:column;align-items:center;gap:12px}
+  .recu .cod{align-self:stretch}
+  .recu .sgn{justify-content:center;width:100%;min-height:96px}
+  .recu .cachet{width:112px;height:112px;margin-left:-14px}
+  .kpis{gap:6px}
+  .kpi{min-width:70px;padding:5px 9px}
+  .card{padding:15px 14px}
+  .jeton{font-size:11px}
+}
+
+/* ---------- impression ---------- */
+@media print{
+  .top,.tabs,.noprint{display:none!important}
+  body{background:#fff}
+  main{padding:0;max-width:none}
+  .card{border:0;box-shadow:none;padding:0;margin:0}
+  .tw{border:0}
+  th{background:#eee;position:static}
+  .recu{border:1.5px solid #111;max-width:none}
+  @page{margin:12mm}
+}
+.printonly{display:none}
+#dlg{position:fixed;inset:0;z-index:90;background:rgba(10,20,28,.45);display:flex;align-items:center;justify-content:center;padding:16px}
+#dlg .box{background:var(--surface);color:var(--ink);border-radius:var(--r);box-shadow:var(--shadow);max-width:460px;width:100%;padding:20px;display:flex;flex-direction:column;gap:12px}
+#dlg .box h3{margin:0;font-size:16px}
+#dlg .box p{margin:0;white-space:pre-line;color:var(--muted);font-size:14px;line-height:1.5}
+#dlg .box input{width:100%;box-sizing:border-box}
+#dlg .row{display:flex;gap:8px;justify-content:flex-end;flex-wrap:wrap}
+@media print{.printonly{display:block;margin-bottom:10px}}
+</style>
+
+<div id="dlg" hidden role="dialog" aria-modal="true" aria-labelledby="dlg-t"><div class="box">
+  <h3 id="dlg-t"></h3><p id="dlg-p"></p>
+  <input id="dlg-i" autocomplete="off" hidden>
+  <div class="row"><button class="btn ghost small" id="dlg-no">Annuler</button><button class="btn small" id="dlg-ok">OK</button></div>
+</div></div>
+<header class="top">
+  <div class="top-in">
+    <div class="mark">MZ</div>
+    <div class="brand">
+      <h1 id="hdr-nom">Mazi Zentrum</h1>
+      <p>Registre des abonnements</p>
+    </div>
+    <div class="kpis">
+      <div class="kpi"><span class="n mono" id="k-actifs">0</span><span class="l">Actifs</span></div>
+      <div class="kpi"><span class="n mono" id="k-mois">0</span><span class="l">Ce mois</span></div>
+      <div class="kpi"><span class="n mono" id="k-fin">0</span><span class="l">Fin ≤ 7 j</span></div>
+      <span class="store-tag" id="store-tag">registre local</span>
+      <button class="lockbtn" id="lock-btn" type="button">accès</button>
+    </div>
+  </div>
+</header>
+
+<nav class="tabs"><div class="tabs-in" role="tablist">
+  <button class="tab" role="tab" aria-selected="true" data-p="nouveau">Nouveau paiement</button>
+  <button class="tab" role="tab" aria-selected="false" data-p="registre">Registre</button>
+  <button class="tab" role="tab" aria-selected="false" data-p="compo">Liste de composition</button>
+  <button class="tab" role="tab" aria-selected="false" data-p="verif">Vérifier un reçu</button>
+  <button class="tab" role="tab" aria-selected="false" data-p="controle">Contrôle</button>
+  <button class="tab" role="tab" aria-selected="false" data-p="reglages">Réglages</button>
+</div></nav>
+
+<main>
+  <!-- ============ NOUVEAU ============ -->
+  <section id="p-nouveau">
+    <div class="card noprint" id="n-lock" hidden>
+      <h2>Enregistrement verrouillé</h2>
+      <div id="n-lock-msg"></div>
+    </div>
+    <div class="card noprint" id="n-form-card">
+      <h2>Enregistrer un paiement</h2>
+      <p class="hint">L'abonnement court du jour du paiement à la veille du même jour le mois suivant. Le reçu s'édite automatiquement.</p>
+      <div id="n-msg"></div>
+      <div class="grid">
+        <div class="f"><label for="n-nom">Nom et prénom</label>
+          <input id="n-nom" autocomplete="off" placeholder="Ngono Marie Claire"></div>
+        <div class="f"><label for="n-tel">Téléphone</label>
+          <input id="n-tel" autocomplete="off" placeholder="6XX XX XX XX"></div>
+        <div class="f"><label for="n-formule">Formule</label>
+          <select id="n-formule"></select></div>
+        <div class="f"><label for="n-montant">Montant (FCFA)</label>
+          <input id="n-montant" type="number" min="0" step="500" class="mono"></div>
+        <div class="f" id="n-mode-f"><label for="n-mode">Mode de paiement</label>
+          <select id="n-mode">
+            <option value="momo">MTN Mobile Money</option>
+            <option value="om">Orange Money</option>
+            <option value="especes">Espèces</option>
+          </select>
+          <span class="note" id="n-esp-note" hidden>Le reçu portera une référence interne du type
+            <b>ESP-2026-00001</b>. Déposez la somme sur le compte marchand le jour même, puis
+            saisissez la référence du dépôt depuis le Registre.</span></div>
+        <div class="f wide" id="n-sms-f"><label for="n-sms">Message de paiement reçu (coller ici)</label>
+          <textarea id="n-sms" class="jeton" style="min-height:70px" placeholder="Collez le SMS MTN MoMo ou Orange Money : la référence, le montant et le numéro se remplissent tout seuls."></textarea>
+          <div class="row-btn" style="margin-top:9px">
+            <button class="btn ghost small" id="n-sms-ok" type="button">Lire le message</button>
+            <button class="btn ghost small" id="n-sms-raz" type="button">Vider</button>
+          </div>
+          <span class="note" id="n-sms-note">La référence vient de l'opérateur — elle se recopie, elle ne s'invente pas. Ce champ évite de la retaper à la main.</span></div>
+        <div class="f" id="n-ref-f"><label for="n-ref">Référence de transaction</label>
+          <input id="n-ref" autocomplete="off" placeholder="MP260916.1432.A47281" class="mono">
+          <span class="note" id="n-ref-note">Obligatoire pour Mobile Money. Une référence déjà présente au registre est refusée.</span></div>
+        <div class="f"><label for="n-date">Date de paiement</label>
+          <input id="n-date" type="date"></div>
+        <div class="f"><label for="n-par">Encaissé par</label>
+          <input id="n-par" autocomplete="off" placeholder="Prénom du responsable"></div>
+        <div class="f wide"><label>Période couverte</label>
+          <div class="mono" id="n-periode" style="padding:9px 0;color:var(--muted)">—</div></div>
+      </div>
+      <div class="row-btn">
+        <button class="btn" id="n-ok">Enregistrer et éditer le reçu</button>
+        <button class="btn ghost" id="n-raz">Effacer</button>
+      </div>
+    </div>
+
+    <div class="card" id="recu-box">
+      <div class="row-btn noprint" style="margin:0 0 15px">
+        <button class="btn" id="r-print">Imprimer le reçu</button>
+        <button class="btn ghost" id="r-close">Fermer</button>
+      </div>
+      <div class="recu" id="recu"></div>
+    </div>
+  </section>
+
+  <!-- ============ REGISTRE ============ -->
+  <section id="p-registre" hidden>
+    <div class="card">
+      <h2>Registre des paiements</h2>
+      <p class="hint">Nom, montant, début et fin de chaque abonnement. Cliquez sur un en-tête pour trier.</p>
+      <div class="toolbar noprint">
+        <div class="f"><label for="g-q">Rechercher</label>
+          <input id="g-q" placeholder="Nom, numéro de reçu, référence…"></div>
+        <div class="f" style="flex:0 0 160px"><label for="g-filtre">Afficher</label>
+          <select id="g-filtre">
+            <option value="tous">Tous</option>
+            <option value="actifs">Actifs seulement</option>
+            <option value="expires">Expirés seulement</option>
+          </select></div>
+        <button class="btn ghost small" id="g-print">Imprimer</button>
+      </div>
+      <div id="g-body"></div>
+      <div class="tot" id="g-tot"></div>
+    </div>
+  </section>
+
+  <!-- ============ COMPOSITION ============ -->
+  <section id="p-compo" hidden>
+    <div class="card">
+      <h2>Liste de composition</h2>
+      <p class="hint">Les candidats autorisés à composer ce jour-là. C'est cette liste qui fait foi à l'entrée, pas le reçu présenté.</p>
+      <div class="toolbar noprint">
+        <div class="f" style="flex:0 0 190px"><label for="c-date">Date de la composition</label>
+          <input id="c-date" type="date"></div>
+        <button class="btn ghost small" id="c-sam">Samedi prochain</button>
+        <button class="btn small" id="c-print">Imprimer la liste</button>
+      </div>
+      <div class="printonly" id="c-entete"></div>
+      <div id="c-body"></div>
+    </div>
+  </section>
+
+  <!-- ============ VERIFIER ============ -->
+  <section id="p-verif">
+    <div class="card">
+      <h2>Vérifier un reçu</h2>
+      <p class="hint">Saisissez le numéro et le code de contrôle figurant sur le document présenté.</p>
+      <div class="grid" style="max-width:520px">
+        <div class="f"><label for="v-no">Numéro du reçu</label>
+          <input id="v-no" class="mono" placeholder="2026-00001" autocomplete="off"></div>
+        <div class="f"><label for="v-code">Code de contrôle</label>
+          <input id="v-code" class="mono" placeholder="VEDG 5C4P" maxlength="11"
+            style="text-transform:uppercase;letter-spacing:.14em" autocomplete="off"></div>
+      </div>
+      <div class="row-btn"><button class="btn" id="v-ok">Vérifier</button></div>
+      <div id="v-res" style="margin-top:17px"></div>
+    </div>
+  </section>
+
+  <!-- ============ CONTROLE ============ -->
+  <section id="p-controle" hidden>
+    <div class="card">
+      <h2>Contrôle du registre</h2>
+      <p class="hint">À passer chaque lundi avant le rapprochement avec le relevé Mobile Money.</p>
+      <div class="row-btn noprint" style="margin:0 0 16px">
+        <button class="btn" id="x-run">Lancer le contrôle</button>
+        <button class="btn ghost" id="x-csv">Exporter en CSV</button>
+      </div>
+      <div id="x-res"></div>
+    </div>
+    <div class="card">
+      <h2>Recettes par mois</h2>
+      <p class="hint">Le total doit correspondre au relevé du compte marchand.</p>
+      <div id="x-bilan"></div>
+    </div>
+  </section>
+
+  <!-- ============ REGLAGES ============ -->
+  <section id="p-reglages" hidden>
+
+    <div class="card" id="r-acces">
+      <h2>Accès au registre</h2>
+      <p class="hint">Sans clé d'administration, n'importe qui ouvrant ce fichier peut enregistrer et supprimer. Définissez-la avant le premier vrai paiement.</p>
+      <div id="a-etat"></div>
+      <div class="grid" style="max-width:560px">
+        <div class="f wide" id="a-def-f"><label for="a-def">Définir la clé d'administration</label>
+          <input id="a-def" type="password" placeholder="une phrase que vous seul connaissez">
+          <span class="note">Elle n'est pas stockée : seule son empreinte l'est. Perdue, elle ne se récupère pas — notez-la ailleurs.</span></div>
+        <div class="f wide" id="a-unl-f"><label for="a-unl">Clé d'administration</label>
+          <input id="a-unl" type="password" placeholder="pour déverrouiller cet appareil">
+        </div>
+      </div>
+      <div class="row-btn">
+        <button class="btn" id="a-def-ok">Définir la clé</button>
+        <button class="btn" id="a-unl-ok">Déverrouiller</button>
+        <button class="btn ghost" id="a-lock">Verrouiller maintenant</button>
+      </div>
+      <div id="a-msg" style="margin-top:13px"></div>
+    </div>
+
+    <div class="card" id="r-jeton">
+      <h2>Autoriser un poste de saisie</h2>
+      <p class="hint">Vous seul produisez ces autorisations. Le jeton contient la clé de contrôle, chiffrée : sans le mot de passe de transfert, il est inutilisable. Il cesse de fonctionner à la date que vous fixez — pour prolonger, vous en émettez un nouveau.</p>
+      <div class="grid">
+        <div class="f"><label for="j-nom">Nom de l'opérateur</label>
+          <input id="j-nom" placeholder="Prénom de votre associé"></div>
+        <div class="f"><label for="j-serie">Série attribuée</label>
+          <input id="j-serie" maxlength="2" placeholder="B"></div>
+        <div class="f"><label for="j-exp">Valable jusqu'au</label>
+          <input id="j-exp" type="date"></div>
+        <div class="f"><label for="j-mdp">Mot de passe de transfert</label>
+          <input id="j-mdp" placeholder="à dire de vive voix, pas par écrit"></div>
+      </div>
+      <div class="row-btn"><button class="btn" id="j-gen">Produire le jeton</button></div>
+      <div id="j-out" style="margin-top:14px"></div>
+    </div>
+
+    <div class="card" id="r-activer">
+      <h2>Activer cet appareil comme poste de saisie</h2>
+      <p class="hint">Collez ici le jeton reçu du responsable, puis saisissez le mot de passe qu'il vous a communiqué oralement.</p>
+      <div class="f"><label for="k-jeton">Jeton</label>
+        <textarea id="k-jeton" class="jeton" placeholder="MZ1...."></textarea></div>
+      <div class="f" style="max-width:280px;margin-top:12px"><label for="k-mdp">Mot de passe de transfert</label>
+        <input id="k-mdp" type="password"></div>
+      <div class="row-btn"><button class="btn" id="k-ok">Activer cet appareil</button></div>
+      <div id="k-msg" style="margin-top:13px"></div>
+    </div>
+
+    <div class="card" id="r-signature">
+      <h2>Signature et cachet</h2>
+      <p class="hint">Signez une seule fois ici : la signature et le cachet sont ensuite apposés automatiquement sur chaque reçu édité. Le cachet porte le numéro du reçu et sa date, donc celui d'un reçu ne vaut pour aucun autre.</p>
+      <div class="grid" style="margin-bottom:14px">
+        <div class="f"><label for="g-sig-nom">Nom du signataire</label>
+          <input id="g-sig-nom" placeholder="Alain Zidane Momo Fofou"></div>
+        <div class="f"><label for="g-sig-qual">Qualité</label>
+          <input id="g-sig-qual" placeholder="Le responsable du centre"></div>
+        <div class="f"><label for="g-sig-ville">Ville</label>
+          <input id="g-sig-ville" placeholder="Douala">
+          <span class="note">Elle figure sous le nom du centre sur le reçu et sur le cachet.</span></div>
+      </div>
+      <canvas id="sig-pad" class="sig-pad" width="840" height="300"></canvas>
+      <div class="row-btn">
+        <button class="btn" id="sig-save">Enregistrer la signature</button>
+        <button class="btn ghost" id="sig-clear">Recommencer</button>
+        <button class="btn ghost" id="sig-del">Supprimer la signature</button>
+      </div>
+      <div id="sig-msg" style="margin-top:13px"></div>
+      <div id="sig-prev"></div>
+    </div>
+
+    <div class="card" id="r-centre">
+      <h2>Réglages du centre</h2>
+      <p class="hint">Ces informations figurent sur chaque reçu. Elles restent sur cet appareil.</p>
+      <div class="grid">
+        <div class="f"><label for="s-nom">Nom du centre</label><input id="s-nom"></div>
+        <div class="f"><label for="s-sous">Sous-titre</label><input id="s-sous"></div>
+        <div class="f"><label for="s-tel">Téléphone</label><input id="s-tel"></div>
+        <div class="f"><label for="s-mail">E-mail</label><input id="s-mail"></div>
+        <div class="f"><label for="s-momo">Numéro marchand</label><input id="s-momo"></div>
+        <div class="f"><label for="s-serie">Série de cet appareil</label>
+          <input id="s-serie" maxlength="2" placeholder="vide, ou B, C…">
+          <span class="note">Laissez vide sur votre appareil principal. Sur le téléphone de votre associé, mettez <strong>B</strong> : ses reçus deviennent 2026-B00001 et ne peuvent jamais entrer en collision avec les vôtres lors de la consolidation.</span></div>
+      </div>
+      <div class="row-btn"><button class="btn" id="s-ok">Enregistrer</button></div>
+      <div id="s-msg" style="margin-top:13px"></div>
+    </div>
+    <div class="card" id="r-cle">
+      <h2>Clé de contrôle</h2>
+      <p class="hint">Elle sert à calculer le code de contrôle imprimé sur chaque reçu. Elle a été créée automatiquement au premier démarrage et suit votre registre sur tous vos appareils : vous n'avez rien à faire. Ne la remplacez pas : tous les codes déjà émis deviendraient invalides.</p>
+      <div class="grid" style="max-width:520px">
+        <div class="f wide"><label for="s-cle">Clé secrète</label>
+          <input id="s-cle" type="password" placeholder="une phrase longue connue de vous seul">
+          <span class="note" id="s-cle-etat"></span></div>
+      </div>
+      <div class="row-btn"><button class="btn ghost" id="s-cle-ok">Remplacer la clé (déconseillé)</button></div>
+    </div>
+    <div class="card" id="r-donnees">
+      <h2>Données</h2>
+      <p class="hint">Sauvegardez le registre chaque semaine. Le fichier CSV se lit dans Excel et se réimporte ici : c'est ainsi que vous consolidez les saisies faites sur un autre appareil.</p>
+      <div class="row-btn" style="margin:0 0 14px">
+        <button class="btn" id="s-export">Exporter le registre (CSV)</button>
+        <button class="btn ghost" id="s-import-btn">Importer un CSV</button>
+        <input type="file" id="s-import" accept=".csv,text/csv" hidden>
+      </div>
+      <h2 style="margin-top:6px">Salle de composition</h2>
+      <p class="hint">Renseignez ces deux lignes une seule fois : chaque reçu établi part alors tout seul
+        vers la salle, et le code de contrôle y est vérifié sans que vous ayez rien à faire. L'adresse est
+        celle qui finit par <code>/exec</code> ; le mot de passe est celui que vous avez inscrit dans le
+        script, ligne <code>MDP_REGISTRE</code>.</p>
+      <div class="f"><label for="s-salle-url">Adresse du script (…/exec)</label>
+        <input id="s-salle-url" class="mono" autocomplete="off" placeholder="https://script.google.com/macros/s/…/exec"></div>
+      <div class="f"><label for="s-salle-mdp">Mot de passe du dépôt</label>
+        <input id="s-salle-mdp" autocomplete="off" placeholder="le même que MDP_REGISTRE"></div>
+      <div class="row-btn" style="margin:0 0 6px">
+        <button class="btn" id="s-salle-save">Enregistrer et tester</button>
+        <button class="btn ghost" id="s-salle-tout">Envoyer tous les reçus</button>
+        <button class="btn ghost" id="s-admission">Copier la liste (secours)</button>
+      </div>
+      <p class="hint" id="s-admission-etat" style="margin:0 0 14px"></p>
+      <p class="hint" style="margin:0 0 14px">L'import ajoute uniquement les reçus dont le numéro est absent d'ici. Les lignes déjà présentes sont ignorées : rien n'est écrasé, aucun doublon n'est créé.</p>
+      <div class="row-btn" style="margin:0">
+        <button class="btn ghost" id="s-exemples">Charger des exemples</button>
+        <button class="btn ghost" id="s-vider">Vider le registre</button>
+      </div>
+      <div id="s-data-msg" style="margin-top:13px"></div>
+    </div>
+  </section>
+</main>
+
+<script>
+(function(){
+"use strict";
+
+/* ---------------------------------------------------------- constantes */
+var FORMULES = {
+  "B1-COMPLET":   ["B1 — 4 modules", 20000, "B1"],
+  "B1-LH":        ["B1 — Lesen / Hören", 10000, "B1"],
+  "B1-LS":        ["B1 — Lesen / Schreiben", 12000, "B1"],
+  "B1-LSP":       ["B1 — Lesen / Sprechen", 12000, "B1"],
+  "B1-HS":        ["B1 — Hören / Schreiben", 12000, "B1"],
+  "B1-HSP":       ["B1 — Hören / Sprechen", 12000, "B1"],
+  "B1-SS":        ["B1 — Schreiben / Sprechen", 12000, "B1"],
+  "B1-L":         ["B1 — Lesen seul", 8000, "B1"],
+  "B1-H":         ["B1 — Hören seul", 8000, "B1"],
+  "B1-S":         ["B1 — Schreiben seul", 10000, "B1"],
+  "B1-SP":        ["B1 — Sprechen seul", 10000, "B1"],
+  "B2-COMPLET":   ["B2 — 4 modules", 25000, "B2"],
+  "B2-LH":        ["B2 — Lesen / Hören", 12500, "B2"],
+  "B2-LS":        ["B2 — Lesen / Schreiben", 15000, "B2"],
+  "B2-LSP":       ["B2 — Lesen / Sprechen", 15000, "B2"],
+  "B2-HS":        ["B2 — Hören / Schreiben", 15000, "B2"],
+  "B2-HSP":       ["B2 — Hören / Sprechen", 15000, "B2"],
+  "B2-SS":        ["B2 — Schreiben / Sprechen", 15000, "B2"],
+  "B2-L":         ["B2 — Lesen seul", 10000, "B2"],
+  "B2-H":         ["B2 — Hören seul", 10000, "B2"],
+  "B2-S":         ["B2 — Schreiben seul", 12500, "B2"],
+  "B2-SP":        ["B2 — Sprechen seul", 12500, "B2"],
+  "LANCEMENT-B1": ["B1 — tarif de lancement (1er mois)", 10000, "Autres"],
+  "LANCEMENT-B2": ["B2 — tarif de lancement (1er mois)", 12500, "Autres"],
+  "CORR-SUPP":    ["Correction écrite individuelle", 3000, "Autres"]
+};
+var MODES = {momo:"MTN Mobile Money", om:"Orange Money", especes:"Espèces"};
+var JOURS = ["dimanche","lundi","mardi","mercredi","jeudi","vendredi","samedi"];
+var MOIS = ["janvier","février","mars","avril","mai","juin","juillet","août",
+            "septembre","octobre","novembre","décembre"];
+var DEF_REGL = {nom:"Mazi Zentrum",
+  sous:"Préparation aux examens d'allemand · Goethe · ÖSD · telc",
+  tel:"", mail:"mazizentrumcontact@gmail.com", momo:"", serie:"",
+  /* liaison avec la salle de composition, installée le 17.09.2026 */
+  salleUrl:"https://script.google.com/macros/s/AKfycbwzuQ-iDD_1-WMO8Mn5bOanKyolomjid1pA3BwvFO0DHefCAehAm1PycNgccpaCtz_a/exec",
+  salleMdp:"",
+  adminHash:"", role:"admin", posteNom:"", posteExp:"",
+  signature:"", sigNom:"", sigQual:"Le responsable du centre", sigVille:""};
+
+/* ---------------------------------------------------------- utilitaires */
+function $(id){return document.getElementById(id);}
+function esc(s){var d=document.createElement("div");d.textContent=s==null?"":String(s);return d.innerHTML;}
+function fcfa(n){return String(Math.round(Number(n)||0)).replace(/\B(?=(\d{3})+(?!\d))/g," ");}
+function iso(d){return d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0");}
+function pd(s){var p=String(s||"").split("-");return new Date(+p[0],+p[1]-1,+p[2]);}
+function jjmmaa(s){var p=String(s||"").split("-");return p.length===3?p[2]+"/"+p[1]+"/"+p[0]:s;}
+function longDate(s){var d=pd(s);return JOURS[d.getDay()]+" "+d.getDate()+" "+MOIS[d.getMonth()]+" "+d.getFullYear();}
+function jours(a,b){return Math.round((pd(b)-pd(a))/86400000);}
+
+function finAbo(debutIso){
+  var d=pd(debutIso), m=d.getMonth()+1, a=d.getFullYear();
+  if(m>11){m=0;a++;}
+  var dernier=new Date(a,m+1,0).getDate();
+  var f=new Date(a,m,Math.min(d.getDate(),dernier));
+  f.setDate(f.getDate()-1);
+  return iso(f);
+}
+function prochainSamedi(){
+  var d=new Date(), delta=(6-d.getDay()+7)%7;
+  d.setDate(d.getDate()+(delta===0?0:delta));
+  return iso(d);
+}
+function enLettres(n){
+  var u=["zéro","un","deux","trois","quatre","cinq","six","sept","huit","neuf","dix","onze",
+         "douze","treize","quatorze","quinze","seize","dix-sept","dix-huit","dix-neuf"];
+  var dz={20:"vingt",30:"trente",40:"quarante",50:"cinquante",60:"soixante",
+          70:"soixante",80:"quatre-vingt",90:"quatre-vingt"};
+  function c100(x){
+    if(x<20)return u[x];
+    var d=Math.floor(x/10)*10, r=x-d;
+    if(d===70||d===90){r=x-d+10;}
+    var b=dz[d]+((d===80&&r===0)?"s":"");
+    if(r===0)return b;
+    if(r===1&&[20,30,40,50,60].indexOf(d)>=0)return b+" et un";
+    return b+"-"+(r<20?u[r]:c100(r));
+  }
+  function c1000(x){
+    var c=Math.floor(x/100), r=x%100;
+    if(c===0)return c100(r);
+    var t=(c===1?"cent":u[c]+" cent");
+    if(r===0)return t+(c>1?"s":"");
+    return t+" "+c100(r);
+  }
+  n=Math.round(Number(n)||0);
+  if(n===0)return "zéro";
+  var mil=Math.floor(n/1000), r=n%1000, out=[];
+  if(mil)out.push(mil===1?"mille":c1000(mil)+" mille");
+  if(r)out.push(c1000(r));
+  return out.join(" ");
+}
+
+/* ------------------------------------------------- code de contrôle HMAC */
+var B32="ABCDEFGHIJKLMNOPQRSTUVWXYZ234567";
+function b32(bytes){
+  var bits=0,val=0,out="";
+  for(var i=0;i<bytes.length;i++){
+    val=(val<<8)|bytes[i]; bits+=8;
+    while(bits>=5){out+=B32[(val>>>(bits-5))&31];bits-=5;}
+  }
+  if(bits>0)out+=B32[(val<<(5-bits))&31];
+  return out;
+}
+/* La clé secrète est créée automatiquement, une seule fois, au premier
+   démarrage : 32 octets tirés au hasard par le navigateur. Elle est ensuite
+   la même sur tous vos appareils (réglages synchronisés). Chaque reçu reçoit
+   ainsi un code calculé à partir de son numéro, du nom, du montant et des
+   dates, et codeDistinct garantit qu'aucun autre reçu ne porte le même.   */
+function assureCle(){
+  if(reglages.cle) return false;
+  var a=new Uint8Array(32); crypto.getRandomValues(a);
+  reglages.cle="MZK-"+Array.prototype.map.call(a,function(x){return ("0"+x.toString(16)).slice(-2);}).join("");
+  sauveReglages(); if(typeof remplitReglages==="function") remplitReglages();
+  return true;
+}
+async function codeControle(no,nom,montant,debut,fin,v){
+  var cle=reglages.cle||"";
+  if(!cle)return "--------";
+  var enc=new TextEncoder();
+  var k=await crypto.subtle.importKey("raw",enc.encode(cle),{name:"HMAC",hash:"SHA-256"},false,["sign"]);
+  var msg=no+"|"+String(nom).trim().toUpperCase()+"|"+montant+"|"+debut+"|"+fin;
+  if(v)msg+="|"+v;
+  var sig=await crypto.subtle.sign("HMAC",k,enc.encode(msg));
+  var s=b32(new Uint8Array(sig));
+  s=s.replace(/O/g,"9").replace(/I/g,"4").replace(/S/g,"2").replace(/B/g,"7");
+  return s.slice(0,8);
+}
+/* Deux reçus ne portent jamais le même code : en cas de collision — improbable
+   mais pas impossible — on incrémente une variante, qui est stockée avec le reçu
+   et rejouée telle quelle à la vérification. */
+async function codeDistinct(no,nom,montant,debut,fin){
+  var pris={};
+  CACHE.forEach(function(p){if(p.code)pris[String(p.code)]=String(p.recu_no);});
+  for(var v=0;v<64;v++){
+    var c=await codeControle(no,nom,montant,debut,fin,v);
+    if(c==="--------")return {code:c,codev:0};
+    if(!pris[c]||pris[c]===String(no))return {code:c,codev:v};
+  }
+  return {code:await codeControle(no,nom,montant,debut,fin,0),codev:0};
+}
+function codeLisible(c){
+  c=String(c||"");
+  return c.length>=8?c.slice(0,4)+" "+c.slice(4):c;
+}
+
+/* ---------------------------------------------------------- réglages */
+var reglages=Object.assign({},DEF_REGL,{cle:""});
+function chargeReglages(){
+  try{
+    var r=JSON.parse(localStorage.getItem("mz_reglages")||"{}");
+    reglages=Object.assign({},DEF_REGL,{cle:""},r);
+  }catch(e){}
+}
+function partageables(){
+  var r=Object.assign({},reglages); delete r.role; delete r.posteNom; delete r.posteExp; return r;
+}
+function sauveReglages(){
+  if(Store.db){ Store.db.doc("config/reglages").set(partageables()).catch(function(){}); }
+  try{localStorage.setItem("mz_reglages",JSON.stringify(reglages));return true;}
+  catch(e){return false;}
+}
+
+/* ------------------------------------------------ dialogues de la page
+   Dans la version en ligne, le navigateur n'affiche ni alert, ni confirm,
+   ni prompt : on utilise une petite fenêtre dans la page, partout.        */
+function dialogue(titre, texte, opts){
+  opts=opts||{};
+  return new Promise(function(fini){
+    var d=$("dlg"), inp=$("dlg-i"), no=$("dlg-no"), ok=$("dlg-ok");
+    $("dlg-t").textContent=titre; $("dlg-p").textContent=texte||"";
+    inp.hidden=!opts.champ; inp.value=opts.valeur||""; inp.type=opts.secret?"password":"text";
+    no.hidden=!!opts.seulOk; ok.textContent=opts.ok||"OK";
+    d.hidden=false; (opts.champ?inp:ok).focus();
+    function clos(v){ d.hidden=true; ok.onclick=no.onclick=inp.onkeydown=null; fini(v); }
+    ok.onclick=function(){ clos(opts.champ?inp.value:true); };
+    no.onclick=function(){ clos(opts.champ?null:false); };
+    inp.onkeydown=function(e){ if(e.key==="Enter")ok.onclick(); if(e.key==="Escape")no.onclick(); };
+  });
+}
+function avis(texte){ return dialogue("Information", texte, {seulOk:true}); }
+function confirme(texte, ok){ return dialogue("Confirmation", texte, {ok:ok||"Confirmer"}); }
+function demande(titre, texte){ return dialogue(titre, texte, {champ:true, ok:"Valider"}); }
+
+/* --------------------------------------------- fichiers et impression
+   En ligne, la page ne peut ni imprimer ni lancer un téléchargement : elle
+   passe par la capacité « downloads » (le visiteur confirme). Pour imprimer
+   un reçu ou une liste, on enregistre une page HTML autonome qui s'ouvre
+   dans le navigateur et lance l'impression.                               */
+var EN_LIGNE=!!(window.claude&&window.claude.use);
+/* Registre publié sur votre propre site (GitHub Pages) : les données vivent
+   sur votre serveur Google, derrière le mot de passe du registre.          */
+var SITE_PROPRE=/github\.io$/.test(location.hostname) || /[?&]api=1/.test(location.search);
+function apiDb(url, mdp){
+  async function appel(o){
+    o.action="rg"; o.mdp=mdp;
+    var r=await fetch(url,{method:"POST",redirect:"follow",headers:{"Content-Type":"text/plain;charset=utf-8"},body:JSON.stringify(o)});
+    var j=JSON.parse(await r.text());
+    if(!j.ok){ var e=new Error(j.err||"erreur"); e.code=j.err; throw e; }
+    return j;
+  }
+  return {
+    appel:appel,
+    doc:function(path){ return {
+      get:async function(){ var j=await appel({op:"get",path:path}); return {exists:!!j.exists,id:path.split("/").pop(),data:function(){return j.data;}}; },
+      set:async function(d){ await appel({op:"set",path:path,data:d}); },
+      delete:async function(){ await appel({op:"delete",path:path}); } }; },
+    collection:function(c){ return {
+      get:async function(){ var j=await appel({op:"list",path:c});
+        return {docs:j.docs.map(function(d){return {id:d.id,data:function(){return d.data;}};})}; } }; }
+  };
+}
+async function enregistre(nom, contenu, type){
+  if(EN_LIGNE){
+    try{ var dl=await claude.use("downloads"); if(dl){ await dl.save({filename:nom,data:contenu}); return true; } }
+    catch(e){ if(e&&e.code==="declined") return false; }
+  }
+  try{
+    var bl=new Blob([contenu],{type:type||"application/octet-stream"});
+    var u=URL.createObjectURL(bl), a=document.createElement("a");
+    a.href=u; a.download=nom; a.style.display="none"; document.body.appendChild(a); a.click();
+    setTimeout(function(){document.body.removeChild(a);URL.revokeObjectURL(u);},1500);
+    return true;
+  }catch(e){ return false; }
+}
+function imprime(zoneId, nom){
+  if(!EN_LIGNE){ window.print(); return; }
+  var css=Array.prototype.map.call(document.querySelectorAll("style"),function(x){return x.textContent;}).join("\n");
+  var html='<!doctype html><html lang="fr"><head><meta charset="utf-8"><title>'+esc(nom)+'</title>'+
+    '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">'+
+    '<style>'+css+'\nbody{background:#fff;padding:16px} .noprint{display:none!important} [hidden]{display:none!important}</style></head>'+
+    '<body>'+$(zoneId).outerHTML+'<script>window.onload=function(){setTimeout(function(){window.print();},400);};<\/script></body></html>';
+  enregistre(nom.replace(/[^A-Za-z0-9._-]+/g,"_")+".html", html, "text/html");
+}
+
+/* ---------------------------------------------------------- stockage */
+var Store={
+  db:null, prete:false,
+  async init(){
+    if(SITE_PROPRE){
+      var url=reglages.salleUrl||DEF_REGL.salleUrl, mdp="";
+      try{ mdp=localStorage.getItem("mz_api_mdp")||""; }catch(e){}
+      for(var essai=0; essai<5; essai++){
+        if(!mdp){
+          mdp=await dialogue("Registre Mazi Zentrum","Mot de passe du registre :",{champ:true,secret:true,ok:"Ouvrir"});
+          if(mdp===null){ mdp=""; break; }
+        }
+        try{ var cand=apiDb(url,mdp); await cand.appel({op:"ping"}); this.db=cand; this.api=true;
+             try{ localStorage.setItem("mz_api_mdp",mdp); }catch(e){} break; }
+        catch(e){ if(e.code==="mot_de_passe"){ mdp=""; try{localStorage.removeItem("mz_api_mdp");}catch(x){}
+                   await avis("Mot de passe incorrect."); }
+                  else { await avis("Le serveur ne répond pas. Vérifiez la connexion internet puis rechargez la page."); break; } }
+      }
+    }
+    try{
+      if(!this.db && window.claude&&claude.use){
+        var db=await claude.use("db");
+        if(db){this.db=db;}
+      }
+    }catch(e){}
+    /* En ligne, les réglages (clé, signature, coordonnées, liaison avec la
+       salle) suivent le registre sur tous vos appareils. Seuls le rôle et le
+       nom du poste restent propres à chaque appareil.                     */
+    if(this.db){
+      try{
+        var snap=await this.db.doc("config/reglages").get();
+        var nuage=snap.exists?snap.data():null;
+        if(nuage){
+          var local={role:reglages.role,posteNom:reglages.posteNom,posteExp:reglages.posteExp};
+          reglages=Object.assign({},DEF_REGL,{cle:""},nuage,local);
+          try{localStorage.setItem("mz_reglages",JSON.stringify(reglages));}catch(e){}
+          remplitReglages(); if(typeof remplitSignature==="function")remplitSignature(); majAcces();
+        } else if(reglages.cle||reglages.signature||reglages.adminHash){
+          await this.db.doc("config/reglages").set(partageables());
+        }
+        var ef=await this.db.doc("config/effaces").get();
+        if(ef.exists&&ef.data().liste){
+          try{localStorage.setItem(EFFACES_KEY,JSON.stringify(ef.data().liste));}catch(e){}
+        }
+      }catch(e){}
+    }
+    this.prete=true;
+    var t=$("store-tag");
+    if(this.api){t.textContent="registre en ligne · serveur Mazi";t.className="store-tag ok";
+      t.title="Toucher pour se déconnecter de cet appareil"; t.style.cursor="pointer";
+      t.addEventListener("click",async function(){
+        if(await confirme("Se déconnecter du registre sur cet appareil ? Le mot de passe sera redemandé.","Se déconnecter")){
+          try{localStorage.removeItem("mz_api_mdp");localStorage.removeItem("mz_paiements");}catch(e){}
+          location.reload();
+        }
+      });}
+    else if(this.db){t.textContent="registre en ligne";t.className="store-tag ok";}
+    else{t.textContent="registre local";t.className="store-tag";}
+  },
+  local(){try{return JSON.parse(localStorage.getItem("mz_paiements")||"[]");}catch(e){return [];}},
+  sauveLocal(a){try{localStorage.setItem("mz_paiements",JSON.stringify(a));return true;}catch(e){return false;}},
+  async tout(){
+    if(this.db){
+      try{
+        var s=await this.db.collection("paiements").get();
+        return s.docs.map(function(d){return d.data();});
+      }catch(e){return this.local();}
+    }
+    return this.local();
+  },
+  async ajoute(rec){
+    if(this.db){
+      try{await this.db.doc("paiements/"+rec.recu_no).set(rec);return true;}
+      catch(e){ if(this.api) return false; }
+    }
+    var a=this.local(); a.push(rec); return this.sauveLocal(a);
+  },
+  async maj(rec){
+    if(this.db){
+      try{await this.db.doc("paiements/"+rec.recu_no).set(rec);return true;}
+      catch(e){ if(this.api){ avis("La modification n'a pas pu être enregistrée : vérifiez la connexion et recommencez."); return false; } }
+    }
+    var a=this.local().map(function(r){
+      return String(r.recu_no)===String(rec.recu_no)?rec:r;
+    });
+    return this.sauveLocal(a);
+  },
+  async supprime(no){
+    if(this.db){
+      try{await this.db.doc("paiements/"+no).delete();}catch(e){}
+    }
+    return this.sauveLocal(this.local().filter(function(r){
+      return String(r.recu_no)!==String(no);
+    }));
+  },
+  async vide(){
+    if(this.db){
+      try{
+        var s=await this.db.collection("paiements").get();
+        for(var i=0;i<s.docs.length;i++){await this.db.doc("paiements/"+s.docs[i].id).delete();}
+      }catch(e){}
+    }
+    this.sauveLocal([]);
+  }
+};
+
+
+/* ==========================================================  ACCES  ====== */
+var SESSION_ADMIN=false;
+var EFFACES_KEY="mz_effaces";
+
+function litEffaces(){
+  try{return JSON.parse(localStorage.getItem(EFFACES_KEY)||"[]");}catch(e){return [];}
+}
+function noteEfface(o){
+  var a=litEffaces();a.push(o);
+  try{localStorage.setItem(EFFACES_KEY,JSON.stringify(a));}catch(e){}
+  if(Store.db){ Store.db.doc("config/effaces").set({liste:a}).catch(function(){}); }
+}
+
+async function sha256hex(txt){
+  var b=await crypto.subtle.digest("SHA-256",new TextEncoder().encode(txt));
+  return Array.prototype.map.call(new Uint8Array(b),function(x){
+    return ("0"+x.toString(16)).slice(-2);}).join("");
+}
+function b64u(buf){
+  var s=btoa(String.fromCharCode.apply(null,new Uint8Array(buf)));
+  return s.replace(/\+/g,"-").replace(/\//g,"_").replace(/=+$/,"");
+}
+function deb64u(str){
+  str=str.replace(/-/g,"+").replace(/_/g,"/");
+  while(str.length%4)str+="=";
+  var bin=atob(str), out=new Uint8Array(bin.length);
+  for(var i=0;i<bin.length;i++)out[i]=bin.charCodeAt(i);
+  return out;
+}
+async function cleDeMdp(mdp,sel){
+  var base=await crypto.subtle.importKey("raw",new TextEncoder().encode(mdp),"PBKDF2",false,["deriveKey"]);
+  return crypto.subtle.deriveKey(
+    {name:"PBKDF2",salt:sel,iterations:150000,hash:"SHA-256"},
+    base,{name:"AES-GCM",length:256},false,["encrypt","decrypt"]);
+}
+async function chiffre(obj,mdp){
+  var sel=crypto.getRandomValues(new Uint8Array(16));
+  var iv=crypto.getRandomValues(new Uint8Array(12));
+  var k=await cleDeMdp(mdp,sel);
+  var ct=await crypto.subtle.encrypt({name:"AES-GCM",iv:iv},k,
+    new TextEncoder().encode(JSON.stringify(obj)));
+  var tout=new Uint8Array(16+12+ct.byteLength);
+  tout.set(sel,0); tout.set(iv,16); tout.set(new Uint8Array(ct),28);
+  return "MZ1."+b64u(tout);
+}
+async function dechiffre(jeton,mdp){
+  if(jeton.indexOf("MZ1.")!==0)throw new Error("format");
+  var t=deb64u(jeton.slice(4).replace(/\s+/g,""));
+  var k=await cleDeMdp(mdp,t.slice(0,16));
+  var clair=await crypto.subtle.decrypt({name:"AES-GCM",iv:t.slice(16,28)},k,t.slice(28));
+  return JSON.parse(new TextDecoder().decode(clair));
+}
+
+function posteExpire(){
+  return reglages.role==="poste" && (!reglages.posteExp || reglages.posteExp<iso(new Date()));
+}
+function estAdmin(){
+  if(reglages.role==="poste")return false;
+  return !reglages.adminHash || SESSION_ADMIN;
+}
+function peutEnregistrer(){
+  if(reglages.role==="poste"){
+    if(posteExpire())return {ok:false,titre:"Autorisation expirée",
+      txt:"L'autorisation de ce poste s'est terminée le "+jjmmaa(reglages.posteExp)+
+          ". Demandez un nouveau jeton au responsable du centre ; les reçus déjà enregistrés restent consultables."};
+    return {ok:true};
+  }
+  if(!reglages.adminHash)return {ok:true};
+  if(SESSION_ADMIN)return {ok:true};
+  return {ok:false,titre:"Appareil verrouillé",
+    txt:"Saisissez la clé d'administration dans l'onglet Réglages pour enregistrer un paiement."};
+}
+
+function majAcces(){
+  var b=$("lock-btn"), pe=peutEnregistrer();
+  if(reglages.role==="poste"){
+    b.textContent=posteExpire()?"poste expiré":"poste "+(reglages.posteNom||reglages.serie||"");
+    b.className="lockbtn "+(posteExpire()?"off":"on");
+  }else if(!reglages.adminHash){
+    b.textContent="sans clé d'administration"; b.className="lockbtn off";
+  }else{
+    b.textContent=SESSION_ADMIN?"administrateur":"verrouillé";
+    b.className="lockbtn "+(SESSION_ADMIN?"on":"off");
+  }
+  $("n-lock").hidden=pe.ok;
+  $("n-form-card").hidden=!pe.ok;
+  if(!pe.ok){
+    $("n-lock-msg").innerHTML='<div class="msg bad"><strong>'+esc(pe.titre)+'</strong>'+esc(pe.txt)+'</div>';
+  }
+  var admin=estAdmin();
+  ["r-jeton","r-signature","r-centre","r-cle"].forEach(function(id){$(id).hidden=!admin;});
+  $("r-activer").hidden = admin && !!reglages.adminHash && reglages.role!=="poste" ? true : (reglages.role==="poste");
+  $("a-def-f").hidden=!!reglages.adminHash;
+  $("a-def-ok").hidden=!!reglages.adminHash;
+  $("a-unl-f").hidden=(reglages.role==="poste")||(!reglages.adminHash)||SESSION_ADMIN;
+  $("a-unl-ok").hidden=$("a-unl-f").hidden;
+  $("a-lock").hidden=!SESSION_ADMIN;
+  var et;
+  if(reglages.role==="poste"){
+    et='<div class="msg '+(posteExpire()?"bad":"ok")+'"><strong>Poste de saisie'+
+      (reglages.posteNom?" — "+esc(reglages.posteNom):"")+'</strong>'+
+      'Cet appareil peut enregistrer des paiements jusqu\'au '+jjmmaa(reglages.posteExp)+
+      ' et rien d\'autre : il ne peut ni annuler un reçu, ni modifier les réglages, ni autoriser un autre appareil.</div>';
+  }else if(!reglages.adminHash){
+    et='<div class="msg warn"><strong>Aucune clé d\'administration</strong>'+
+      'Cet appareil est ouvert : toute personne qui ouvre ce fichier peut enregistrer et effacer.</div>';
+  }else{
+    et='<div class="msg '+(SESSION_ADMIN?"ok":"bad")+'"><strong>'+
+      (SESSION_ADMIN?"Administrateur — accès complet":"Appareil verrouillé")+'</strong>'+
+      (SESSION_ADMIN?"L'enregistrement, l'annulation et les réglages sont ouverts pour cette session. Verrouillez en fermant l'onglet."
+        :"Saisissez la clé d'administration pour enregistrer, annuler ou modifier les réglages.")+'</div>';
+  }
+  $("a-etat").innerHTML=et;
+  if(typeof rendRegistre==="function" && !$("p-registre").hidden)rendRegistre();
+}
+
+$("lock-btn").addEventListener("click",function(){
+  ouvre("reglages");
+  var c=$("a-unl").hidden?null:$("a-unl");
+  if(!$("a-unl-f").hidden)$("a-unl").focus();
+  else if(!$("a-def-f").hidden)$("a-def").focus();
+});
+$("a-def-ok").addEventListener("click",async function(){
+  var v=$("a-def").value;
+  if(v.length<6){$("a-msg").innerHTML='<div class="msg bad">Choisissez une clé d\'au moins six caractères.</div>';return;}
+  reglages.adminHash=await sha256hex("MZADM|"+v);
+  reglages.role="admin"; sauveReglages();
+  SESSION_ADMIN=true; $("a-def").value="";
+  $("a-msg").innerHTML='<div class="msg ok"><strong>Clé d\'administration définie</strong>'+
+    'Notez-la ailleurs qu\'ici : elle n\'est pas récupérable. À chaque ouverture du registre, il faudra la saisir pour enregistrer ou annuler.</div>';
+  majAcces();
+});
+$("a-unl-ok").addEventListener("click",async function(){
+  var h=await sha256hex("MZADM|"+$("a-unl").value);
+  if(h!==reglages.adminHash){
+    $("a-msg").innerHTML='<div class="msg bad">Clé incorrecte.</div>';return;
+  }
+  SESSION_ADMIN=true; $("a-unl").value="";
+  $("a-msg").innerHTML='<div class="msg ok">Appareil déverrouillé.</div>';
+  majAcces(); remplitReglages();
+});
+$("a-lock").addEventListener("click",function(){
+  SESSION_ADMIN=false; majAcces();
+  $("a-msg").innerHTML='<div class="msg ok">Appareil verrouillé.</div>';
+});
+
+/* ---- production d'un jeton d'autorisation (administrateur seulement) --- */
+$("j-gen").addEventListener("click",async function(){
+  if(!estAdmin()){$("j-out").innerHTML='<div class="msg bad">Déverrouillez l\'appareil.</div>';return;}
+  var nom=$("j-nom").value.trim(), serie=$("j-serie").value.trim().toUpperCase().replace(/[^A-Z]/g,"");
+  var exp=$("j-exp").value, mdp=$("j-mdp").value;
+  if(!nom||!serie||!exp||mdp.length<4){
+    $("j-out").innerHTML='<div class="msg bad">Nom, série, date de fin et mot de passe (4 caractères minimum) sont tous nécessaires.</div>';return;
+  }
+  if(!reglages.cle){
+    $("j-out").innerHTML='<div class="msg bad">Définissez d\'abord la clé de contrôle : sans elle, le poste éditerait des reçus sans code.</div>';return;
+  }
+  var charge={c:reglages.cle,s:serie,n:nom,e:exp,
+    i:{nom:reglages.nom,sous:reglages.sous,tel:reglages.tel,
+       mail:reglages.mail,momo:reglages.momo,
+       signature:reglages.signature,sigNom:reglages.sigNom,
+       sigQual:reglages.sigQual,sigVille:reglages.sigVille}};
+  var jeton=await chiffre(charge,mdp);
+  $("j-out").innerHTML='<div class="msg ok"><strong>Jeton pour '+esc(nom)+' — série '+esc(serie)+
+    ', valable jusqu\'au '+jjmmaa(exp)+'</strong>'+
+    'Envoyez ce texte par message. Communiquez le mot de passe de vive voix, jamais dans le même message.</div>'+
+    '<textarea class="jeton" readonly id="j-txt">'+esc(jeton)+'</textarea>'+
+    '<div class="row-btn"><button class="btn ghost small" id="j-copy">Copier le jeton</button>'+
+    '<button class="btn ghost small" id="j-dl">Télécharger en fichier</button></div>'+
+    '<p class="tot">Le jeton est long parce qu\'il transporte la clé de contrôle et votre signature, chiffrées. '+
+    'Envoyez-le en pièce jointe plutôt que collé dans un message.</p>';
+  $("j-dl").addEventListener("click",async function(){
+    var b=this, ok=await enregistre("jeton_"+nom.replace(/[^A-Za-z0-9]/g,"_")+"_"+exp+".txt", jeton, "text/plain");
+    b.textContent=ok?"Enregistré":"Enregistrement refusé";
+  });
+  $("j-copy").addEventListener("click",function(){
+    var t=$("j-txt"); t.select();
+    try{document.execCommand("copy");}catch(e){}
+    if(navigator.clipboard)navigator.clipboard.writeText(t.value).catch(function(){});
+    this.textContent="Copié";
+  });
+});
+
+/* ---- activation d'un poste de saisie ---------------------------------- */
+$("k-ok").addEventListener("click",async function(){
+  var jeton=$("k-jeton").value.trim(), mdp=$("k-mdp").value;
+  if(!jeton||!mdp){$("k-msg").innerHTML='<div class="msg bad">Collez le jeton et saisissez le mot de passe.</div>';return;}
+  var d;
+  try{ d=await dechiffre(jeton,mdp); }
+  catch(e){
+    $("k-msg").innerHTML='<div class="msg bad"><strong>Jeton refusé</strong>'+
+      'Le mot de passe ne correspond pas, ou le texte collé est incomplet.</div>';return;
+  }
+  if(d.e<iso(new Date())){
+    $("k-msg").innerHTML='<div class="msg bad">Ce jeton est déjà expiré ('+jjmmaa(d.e)+').</div>';return;
+  }
+  var i=d.i||{};
+  reglages.cle=d.c; reglages.serie=d.s;
+  reglages.role="poste"; reglages.posteNom=d.n; reglages.posteExp=d.e;
+  reglages.nom=i.nom||reglages.nom; reglages.sous=i.sous||reglages.sous;
+  reglages.tel=i.tel||""; reglages.mail=i.mail||"";
+  reglages.momo=i.momo||"";
+  reglages.signature=i.signature||""; reglages.sigNom=i.sigNom||"";
+  reglages.sigQual=i.sigQual||reglages.sigQual; reglages.sigVille=i.sigVille||"";
+  reglages.adminHash=""; sauveReglages();
+  SESSION_ADMIN=false;
+  $("k-jeton").value=""; $("k-mdp").value="";
+  $("k-msg").innerHTML='<div class="msg ok"><strong>Appareil activé — poste '+esc(d.n)+', série '+esc(d.s)+'</strong>'+
+    'Les reçus édités ici porteront des numéros '+esc(new Date().getFullYear()+"-"+d.s+"00001")+
+    ' et suivants. L\'autorisation prend fin le '+jjmmaa(d.e)+'.</div>';
+  majAcces(); remplitReglages(); majKpis();
+});
+
+/* ==========================================  REFERENCE DE TRANSACTION === */
+function normRef(r){return String(r||"").trim().toUpperCase().replace(/\s+/g,"");}
+function refDeja(ref,sauf){
+  ref=normRef(ref); if(!ref)return null;
+  for(var i=0;i<CACHE.length;i++){
+    if(normRef(CACHE[i].reference)===ref && String(CACHE[i].recu_no)!==String(sauf))return CACHE[i];
+  }
+  return null;
+}
+function majChampsMode(){
+  var esp=$("n-mode").value==="especes";
+  $("n-sms-f").hidden=esp;
+  $("n-ref-f").hidden=esp;
+  $("n-esp-note").hidden=!esp;
+  if(esp){$("n-ref").value=""; $("n-sms").value="";}
+}
+function majNoteRef(){
+  var n=$("n-ref-note"), v=normRef($("n-ref").value);
+  if(!v){
+    n.textContent=($("n-mode").value==="especes")
+      ? "Espèces : une référence interne sera attribuée, à remplacer par la référence du dépôt."
+      : "Obligatoire pour Mobile Money. Une référence déjà présente au registre est refusée.";
+    n.style.color=""; return;
+  }
+  var d=refDeja(v);
+  if(d){ n.textContent="Déjà utilisée par le reçu "+d.recu_no+" ("+d.nom+"). Cette référence sera refusée.";
+         n.style.color="var(--bad)"; }
+  else { n.textContent="Référence libre."; n.style.color="var(--good)"; }
+}
+/* Lecture du SMS de l'opérateur : on n'invente jamais une référence, on la
+   retrouve dans le message pour éviter la faute de frappe du samedi matin. */
+function litSMS(txt){
+  var T=String(txt||"").replace(/\u00a0/g," ");
+  var U=T.toUpperCase();
+  var out={};
+  var motifs=[
+    /\b[A-Z]{2}\d{6}\.\d{4}\.[A-Z0-9]{4,8}\b/,
+    /\b(?:OM|MP|PP|CP|CI|TX)[A-Z0-9]{8,20}\b/,
+    /(?:TRANSACTION\s*(?:ID|REF|REFERENCE)?|TXN\s*ID|REF(?:ERENCE)?|ID\s*DE\s*TRANSACTION)\s*[:#=]?\s*([A-Z0-9.\-]{6,24})/
+  ];
+  for(var i=0;i<motifs.length&&!out.ref;i++){
+    var m=U.match(motifs[i]);
+    if(m)out.ref=(m[1]||m[0]).replace(/[^A-Z0-9.\-]/g,"");
+  }
+  if(!out.ref){
+    var jetons=U.match(/\b[A-Z0-9.\-]{8,24}\b/g)||[];
+    jetons=jetons.filter(function(j){return /\d/.test(j)&&/[A-Z]/.test(j);});
+    if(jetons.length)out.ref=jetons.sort(function(a,b){return b.length-a.length;})[0];
+  }
+  if(out.ref)out.ref=out.ref.replace(/^[.\-]+|[.\-]+$/g,"");
+  var mm=U.match(/([0-9][0-9\s.,]{2,14})\s*(?:FCFA|XAF|FRANCS?|F\b)/)
+        ||U.match(/(?:FCFA|XAF|FRANCS?)\s*([0-9][0-9\s.,]{2,14})/);
+  if(mm){
+    var n=parseInt(mm[1].replace(/[^0-9]/g,""),10);
+    if(n>0&&n<10000000)out.montant=n;
+  }
+  var tel=T.match(/\b6\d{2}[\s.-]?\d{2}[\s.-]?\d{2}[\s.-]?\d{2}\b/);
+  if(tel)out.tel=tel[0].replace(/[^0-9]/g,"");
+  return out;
+}
+var DERNIERE_REF_AUTO="";
+$("n-sms-ok").addEventListener("click",function(){
+  var r=litSMS($("n-sms").value), n=$("n-sms-note"), faits=[];
+  if(!$("n-sms").value.trim()){
+    n.textContent="Collez d'abord le message reçu de l'opérateur."; n.style.color="var(--bad)"; return;
+  }
+  if(r.ref){$("n-ref").value=r.ref; DERNIERE_REF_AUTO=r.ref; faits.push("référence "+r.ref);}
+  else if($("n-ref").value.trim()&&$("n-ref").value.trim()===DERNIERE_REF_AUTO){
+    $("n-ref").value=""; DERNIERE_REF_AUTO="";
+  }
+  if(r.montant){$("n-montant").value=r.montant; faits.push(fcfa(r.montant)+" FCFA");}
+  if(r.tel&&!$("n-tel").value.trim()){$("n-tel").value=r.tel; faits.push("téléphone "+r.tel);}
+  majNoteRef();
+  if(faits.length){
+    n.textContent="Relu du message : "+faits.join(", ")+". Vérifiez avant d'enregistrer.";
+    n.style.color="var(--good)";
+  }else{
+    n.textContent="Aucune référence reconnue dans ce message — recopiez-la à la main dans le champ ci-dessous.";
+    n.style.color="var(--bad)";
+  }
+});
+$("n-sms-raz").addEventListener("click",function(){
+  $("n-sms").value="";
+  $("n-sms-note").textContent="La référence vient de l'opérateur — elle se recopie, elle ne s'invente pas. Ce champ évite de la retaper à la main.";
+  $("n-sms-note").style.color="";
+});
+$("n-ref").addEventListener("input",majNoteRef);
+$("n-mode").addEventListener("change",function(){majChampsMode();majNoteRef();});
+
+/* ==============================================  SIGNATURE ET CACHET ==== */
+(function(){
+  var cv=$("sig-pad"), ctx=cv.getContext("2d"), trace=false, vide=true;
+  function pos(e){
+    var r=cv.getBoundingClientRect();
+    return {x:(e.clientX-r.left)*(cv.width/r.width),y:(e.clientY-r.top)*(cv.height/r.height)};
+  }
+  function razPad(){
+    ctx.clearRect(0,0,cv.width,cv.height);
+    ctx.strokeStyle="#14367a"; ctx.lineWidth=5;
+    ctx.lineCap="round"; ctx.lineJoin="round"; vide=true;
+  }
+  razPad();
+  cv.addEventListener("pointerdown",function(e){
+    trace=true; cv.setPointerCapture(e.pointerId);
+    var p=pos(e); ctx.beginPath(); ctx.moveTo(p.x,p.y); e.preventDefault();
+  });
+  cv.addEventListener("pointermove",function(e){
+    if(!trace)return; var p=pos(e); ctx.lineTo(p.x,p.y); ctx.stroke(); vide=false;
+  });
+  cv.addEventListener("pointerup",function(){trace=false;});
+  cv.addEventListener("pointerleave",function(){trace=false;});
+  $("sig-clear").addEventListener("click",function(){razPad();$("sig-msg").innerHTML="";});
+  $("sig-save").addEventListener("click",function(){
+    reglages.sigNom=$("g-sig-nom").value.trim();
+    reglages.sigQual=$("g-sig-qual").value.trim()||"Le responsable du centre";
+    reglages.sigVille=$("g-sig-ville").value.trim();
+    if(!vide){
+      var rogne=rogneCanvas(cv);
+      if(rogne)reglages.signature=rogne;
+    }
+    sauveReglages(); remplitSignature();
+    $("sig-msg").innerHTML='<div class="msg ok">'+
+      (vide&&!reglages.signature
+        ? "Nom du signataire enregistré. Tracez votre signature ci-dessus pour qu'elle figure sur les reçus."
+        : "Signature et cachet enregistrés : ils seront apposés sur chaque reçu édité.")+'</div>';
+  });
+  $("sig-del").addEventListener("click",function(){
+    reglages.signature=""; sauveReglages(); razPad(); remplitSignature();
+    $("sig-msg").innerHTML='<div class="msg ok">Signature supprimée.</div>';
+  });
+  window.__razPad=razPad;
+})();
+
+function rogneCanvas(cv){
+  try{
+    var ctx=cv.getContext("2d"), d=ctx.getImageData(0,0,cv.width,cv.height).data;
+    var x0=cv.width,y0=cv.height,x1=0,y1=0,trouve=false;
+    for(var y=0;y<cv.height;y++)for(var x=0;x<cv.width;x++){
+      if(d[(y*cv.width+x)*4+3]>12){
+        trouve=true;
+        if(x<x0)x0=x; if(x>x1)x1=x; if(y<y0)y0=y; if(y>y1)y1=y;
+      }
+    }
+    if(!trouve)return "";
+    var m=12;
+    x0=Math.max(0,x0-m); y0=Math.max(0,y0-m);
+    x1=Math.min(cv.width-1,x1+m); y1=Math.min(cv.height-1,y1+m);
+    var lw=x1-x0+1, lh=y1-y0+1;
+    var ech=Math.min(1,110/lh,300/lw);
+    var o=document.createElement("canvas");
+    o.width=Math.round(lw*ech); o.height=Math.round(lh*ech);
+    var oc=o.getContext("2d");
+    oc.imageSmoothingQuality="high";
+    oc.drawImage(cv,x0,y0,lw,lh,0,0,o.width,o.height);
+    return o.toDataURL("image/png");
+  }catch(e){return cv.toDataURL("image/png");}
+}
+
+function remplitSignature(){
+  $("g-sig-nom").value=reglages.sigNom||"";
+  $("g-sig-qual").value=reglages.sigQual||"";
+  $("g-sig-ville").value=reglages.sigVille||"";
+  $("sig-prev").innerHTML=reglages.signature
+    ? '<div class="sig-prev"><img src="'+reglages.signature+'" alt="signature"></div>'+
+      '<p class="tot">Signature manuscrite enregistrée. « Supprimer la signature » revient à la signature du fondateur.</p>'
+    : '<div class="sig-prev">'+(SIG_MAZI?'<img class="sigm" src="'+SIG_MAZI+'" alt="signature">':monogrammeMA(58))+'</div>'+
+      '<p class="tot">Signature du fondateur, apposée automatiquement sur chaque reçu.</p>';
+}
+
+function cachetSVG(p){
+  var nom=(reglages.nom||"MAZI ZENTRUM").toUpperCase();
+  var ville=(reglages.sigVille||"").toUpperCase();
+  var id="c"+String(p.recu_no).replace(/[^0-9A-Za-z]/g,"");
+  var enc=nom.length>20?8:9.6;
+  return '<svg class="cachet" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">'+
+    '<defs><path id="arc'+id+'" d="M 17,60 A 43,43 0 0 1 103,60" fill="none"/>'+
+    '<path id="arb'+id+'" d="M 19,60 A 41,41 0 0 0 101,60" fill="none"/></defs>'+
+    '<g fill="none" stroke="#14367a">'+
+    '<circle cx="60" cy="60" r="56" stroke-width="2.6"/>'+
+    '<circle cx="60" cy="60" r="49" stroke-width=".9"/></g>'+
+    '<text font-family="IBM Plex Sans, sans-serif" font-size="'+enc+'" font-weight="700" '+
+      'fill="#14367a" letter-spacing="1"><textPath href="#arc'+id+'" startOffset="50%" '+
+      'text-anchor="middle">'+esc(nom.slice(0,24))+'</textPath></text>'+
+    (ville?'<text font-family="IBM Plex Sans, sans-serif" font-size="7.6" font-weight="600" '+
+      'fill="#14367a" letter-spacing="1.6"><textPath href="#arb'+id+'" startOffset="50%" '+
+      'text-anchor="middle">'+esc(ville.slice(0,16))+'</textPath></text>':'')+
+    '<g text-anchor="middle" font-family="IBM Plex Sans, sans-serif" fill="#14367a">'+
+    '<text x="60" y="55" font-size="15.5" font-weight="700" letter-spacing="2.2">PAYÉ</text>'+
+    '<text x="60" y="65.5" font-size="7.6" font-family="IBM Plex Mono, monospace">'+
+      esc(p.recu_no)+'</text>'+
+    '<text x="60" y="74" font-size="7.6" font-family="IBM Plex Mono, monospace">'+
+      esc(jjmmaa(p.debut))+'</text></g>'+
+    '<line x1="32" y1="43" x2="88" y2="43" stroke="#14367a" stroke-width=".9"/>'+
+    '<line x1="32" y1="78" x2="88" y2="78" stroke="#14367a" stroke-width=".9"/></svg>';
+}
+
+/* Signature par défaut : monogramme M.A tracé au trait, dessiné pour le centre.
+   Elle est remplacée dès qu'une signature manuscrite est enregistrée. */
+/* Signature manuscrite du fondateur, apposée par défaut sur chaque reçu. */
+var SIG_MAZI="";   /* version publique : la signature vient du serveur */
+function monogrammeMA(h){
+  h=h||54;
+  return '<svg class="mono-sig" viewBox="0 0 264 112" height="'+h+'" '+
+    'xmlns="http://www.w3.org/2000/svg" aria-label="signature M.A">'+
+    '<g fill="none" stroke="#14367a" stroke-linecap="round" stroke-linejoin="round">'+
+    '<path d="M 10,84 C 8,60 14,34 25,22 C 33,13 40,18 41,34 C 42,50 43,64 44,78 '+
+      'C 47,52 55,24 68,20 C 79,17 80,42 80,60 C 80,70 80,76 82,82" stroke-width="3.6"/>'+
+    '<circle cx="95" cy="80" r="3.1" fill="#14367a" stroke="none"/>'+
+    '<path d="M 106,84 C 116,56 130,24 141,20 C 149,17 153,38 158,58 '+
+      'C 161,70 163,78 166,84" stroke-width="3.6"/>'+
+    '<path d="M 117,62 C 130,55 146,55 158,61" stroke-width="2.6"/>'+
+    '<path d="M 166,84 C 186,78 202,64 214,46 C 220,37 215,29 208,33 '+
+      'C 200,38 206,52 224,54 C 234,55 243,50 249,42" stroke-width="2.4"/>'+
+    '<path d="M 8,97 C 62,110 152,106 234,84" stroke-width="1.8" opacity=".8"/>'+
+    '</g></svg>';
+}
+
+function blocSignature(p){
+  var nom=reglages.sigNom||"";
+  var qual=reglages.sigQual||"Le responsable du centre";
+  var img=reglages.signature
+    ? '<img class="img" src="'+reglages.signature+'" alt="signature">'
+    : (SIG_MAZI ? '<img class="img sigm" src="'+SIG_MAZI+'" alt="signature">' : monogrammeMA(52));
+  return '<div class="sgn">'+cachetSVG(p)+
+    '<div class="bloc">'+img+
+    '<div class="l">'+esc(qual)+(nom?'<br>'+esc(nom):'')+'</div></div></div>';
+}
+
+/* ==========================================  ANNULATION / EFFACEMENT ==== */
+async function annuleRecu(no){
+  if(!estAdmin()){avis("Seul l'administrateur peut annuler un reçu.");return;}
+  var p=CACHE.filter(function(x){return String(x.recu_no)===String(no);})[0];
+  if(!p)return;
+  var motif=await demande("Annuler le reçu "+no, p.nom+"\nMotif de l'annulation (il reste au registre) :");
+  if(motif===null)return;
+  if(!motif.trim()){avis("Un motif est nécessaire.");return;}
+  p.annule={le:iso(new Date()),motif:motif.trim()};
+  await Store.maj(p);
+  pousseVersSalle(p);            /* la salle refusera ce code dès maintenant */
+  await recharge(); rendRegistre();
+}
+async function retablitRecu(no){
+  if(!estAdmin())return;
+  var p=CACHE.filter(function(x){return String(x.recu_no)===String(no);})[0];
+  if(!p)return;
+  delete p.annule;
+  await Store.maj(p);
+  pousseVersSalle(p);
+  await recharge(); rendRegistre();
+}
+function estInterne(ref){return /^ESP-/.test(normRef(ref));}
+async function saisieDepot(no){
+  if(!estAdmin()){avis("Seul l'administrateur peut saisir une référence de dépôt.");return;}
+  var p=CACHE.filter(function(x){return String(x.recu_no)===String(no);})[0];
+  if(!p)return;
+  var r=await demande("Dépôt du reçu "+no, p.nom+" ("+fcfa(p.montant)+" FCFA en espèces)\n"+
+    "Référence du dépôt sur le compte marchand :");
+  if(r===null)return;
+  r=normRef(r);
+  if(!r){avis("Référence vide : rien n'a été modifié.");return;}
+  var d=refDeja(r,no);
+  if(d){avis("La référence "+r+" figure déjà sur le reçu "+d.recu_no+" ("+d.nom+").");return;}
+  p.reference=r;
+  await Store.maj(p);
+  await recharge(); rendRegistre();
+}
+async function effaceRecu(no){
+  if(!estAdmin()){avis("Seul l'administrateur peut effacer une ligne.");return;}
+  var p=CACHE.filter(function(x){return String(x.recu_no)===String(no);})[0];
+  if(!p)return;
+  if(!(await confirme("Effacer définitivement "+no+" — "+p.nom+" ?\nLa ligne disparaît du registre. Le numéro et le motif restent notés pour expliquer le trou dans la numérotation.","Effacer")))return;
+  noteEfface({recu_no:p.recu_no,nom:p.nom,montant:p.montant,
+    motif:(p.annule&&p.annule.motif)||"non précisé",le:iso(new Date())});
+  await Store.supprime(p.recu_no);
+  await recharge(); rendRegistre();
+}
+
+var CACHE=[];
+async function recharge(){
+  CACHE=await Store.tout();
+  CACHE.sort(function(a,b){return String(a.recu_no).localeCompare(String(b.recu_no));});
+  majKpis();
+}
+
+/* ---------------------------------------------------------- indicateurs */
+function estActif(p,dateIso){
+  if(p.annule)return false;
+  return p.debut<=dateIso && dateIso<=p.fin;
+}
+function vifs(){return CACHE.filter(function(p){return !p.annule;});}
+function majKpis(){
+  var auj=iso(new Date());
+  var actifs=CACHE.filter(function(p){return estActif(p,auj);});
+  var moisCourant=auj.slice(0,7);
+  var total=vifs().filter(function(p){return String(p.debut).slice(0,7)===moisCourant;})
+                 .reduce(function(s,p){return s+(Number(p.montant)||0);},0);
+  var bientot=actifs.filter(function(p){var j=jours(auj,p.fin);return j>=0&&j<=7;});
+  $("k-actifs").textContent=actifs.length;
+  $("k-mois").textContent=fcfa(total);
+  $("k-fin").textContent=bientot.length;
+  $("hdr-nom").textContent=reglages.nom||"Mazi Zentrum";
+}
+
+/* ---------------------------------------------------------- onglets */
+var PANNEAUX=["nouveau","registre","compo","verif","controle","reglages"];
+function ouvre(nom){
+  PANNEAUX.forEach(function(p){$("p-"+p).hidden=(p!==nom);});
+  Array.prototype.forEach.call(document.querySelectorAll(".tab"),function(t){
+    t.setAttribute("aria-selected",String(t.dataset.p===nom));
+  });
+  if(nom==="registre")rendRegistre();
+  if(nom==="compo")rendCompo();
+  if(nom==="controle"){rendControle();rendBilan();}
+}
+Array.prototype.forEach.call(document.querySelectorAll(".tab"),function(t){
+  t.addEventListener("click",function(){ouvre(t.dataset.p);});
+});
+
+/* ---------------------------------------------------------- NOUVEAU */
+(function initFormules(){
+  var s=$("n-formule");
+  var grp={};
+  Object.keys(FORMULES).forEach(function(k){
+    var g=FORMULES[k][2]||"Autres";
+    if(!grp[g]){grp[g]=document.createElement("optgroup");grp[g].label=g;s.appendChild(grp[g]);}
+    var o=document.createElement("option");
+    o.value=k; o.textContent=FORMULES[k][0]+"  —  "+fcfa(FORMULES[k][1])+" FCFA";
+    grp[g].appendChild(o);
+  });
+})();
+$("n-formule").addEventListener("change",function(){
+  $("n-montant").value=FORMULES[this.value][1];
+});
+$("n-date").addEventListener("change",majPeriode);
+$("n-mode").addEventListener("change",function(){
+  $("n-ref-note").textContent = this.value==="especes"
+    ? "Espèces : déposer sur le compte marchand le jour même, puis saisir la référence du dépôt."
+    : "Sans référence, le paiement n'est pas vérifiable.";
+});
+function majPeriode(){
+  var d=$("n-date").value;
+  if(!d){$("n-periode").textContent="—";return;}
+  var f=finAbo(d);
+  var n=0, cur=pd(d), stop=pd(f);
+  while(cur<=stop){if(cur.getDay()===6)n++;cur.setDate(cur.getDate()+1);}
+  $("n-periode").textContent="du "+jjmmaa(d)+" au "+jjmmaa(f)+" inclus — "+n+" samedis";
+}
+function razForm(){
+  $("n-nom").value="";$("n-tel").value="";$("n-ref").value="";
+  $("n-formule").value="B1-COMPLET";$("n-montant").value=FORMULES["B1-COMPLET"][1];
+  $("n-mode").value="momo";$("n-date").value=iso(new Date());
+  $("n-msg").innerHTML="";majPeriode();
+}
+$("n-raz").addEventListener("click",razForm);
+
+function numeroSuivant(){
+  var an=new Date().getFullYear();
+  var max=0;
+  CACHE.forEach(function(p){
+    var s=String(p.recu_no||"");
+    var pre=an+"-"+(reglages.serie||"");
+    if(s.indexOf(pre)===0){var v=parseInt(s.slice(pre.length),10);if(v>max)max=v;}
+  });
+  return an+"-"+(reglages.serie||"")+String(max+1).padStart(5,"0");
+}
+
+$("n-ok").addEventListener("click",async function(){
+  var nom=$("n-nom").value.trim();
+  var montant=parseInt($("n-montant").value,10);
+  var debut=$("n-date").value;
+  var box=$("n-msg");
+  if(!nom){box.innerHTML='<div class="msg bad">Le nom du candidat est obligatoire.</div>';return;}
+  if(!(montant>0)){box.innerHTML='<div class="msg bad">Saisissez un montant.</div>';return;}
+  if(!debut){box.innerHTML='<div class="msg bad">Saisissez la date de paiement.</div>';return;}
+  var acc=peutEnregistrer();
+  if(!acc.ok){box.innerHTML='<div class="msg bad"><strong>'+esc(acc.titre)+'</strong>'+esc(acc.txt)+'</div>';return;}
+  var mode=$("n-mode").value;
+  var numero=numeroSuivant();
+  var ref=normRef($("n-ref").value);
+  if(!ref){
+    if(mode==="especes"){
+      ref="ESP-"+numero;
+    }else{
+      box.innerHTML='<div class="msg bad"><strong>Référence de transaction obligatoire</strong>'+
+        'Recopiez la référence du message Mobile Money. Sans elle, le paiement ne peut pas être rapproché du relevé.</div>';
+      $("n-ref").focus(); return;
+    }
+  }
+  var dbl=refDeja(ref);
+  if(dbl){
+    box.innerHTML='<div class="msg bad"><strong>Référence déjà enregistrée</strong>'+
+      'La référence '+esc(ref)+' figure déjà sur le reçu '+esc(dbl.recu_no)+' ('+esc(dbl.nom)+
+      ', '+fcfa(dbl.montant)+' FCFA du '+jjmmaa(dbl.debut)+'). Une transaction ne peut pas payer deux abonnements : '+
+      'vérifiez le message du client avant de recommencer.</div>';
+    $("n-ref").focus(); return;
+  }
+  if(!reglages.cle){
+    box.innerHTML='<div class="msg warn"><strong>Clé de contrôle non définie</strong>'+
+      'Le reçu sera édité sans code de sécurité. Définissez la clé dans Réglages avant le premier vrai paiement.</div>';
+  }
+  var fin=finAbo(debut);
+  var rec={
+    recu_no:numero, nom:nom, telephone:$("n-tel").value.trim(),
+    formule:$("n-formule").value, montant:montant, mode:mode,
+    reference:ref, debut:debut, fin:fin,
+    encaisse_par:$("n-par").value.trim(), cree:new Date().toISOString()
+  };
+  assureCle();
+  var cc=await codeDistinct(rec.recu_no,rec.nom,rec.montant,rec.debut,rec.fin);
+  rec.code=cc.code; rec.codev=cc.codev;
+  var ok=await Store.ajoute(rec);
+  await recharge();
+  if(!ok){
+    box.innerHTML='<div class="msg bad"><strong>Enregistrement impossible</strong>'+
+      'Le navigateur refuse d\'écrire. Notez le reçu sur le carnet papier et prévenez le responsable.</div>';
+  }else if(reglages.cle){
+    box.innerHTML='<div class="msg ok"><strong>Reçu '+esc(rec.recu_no)+' enregistré</strong>'+
+      esc(rec.nom)+' — valable jusqu\'au '+jjmmaa(fin)+'.</div>';
+  }
+  pousseVersSalle(rec);
+  afficheRecu(rec);
+  $("n-nom").value="";$("n-tel").value="";$("n-ref").value="";$("n-sms").value="";
+  majChampsMode(); majNoteRef();
+});
+
+function afficheRecu(p){
+  var lib=(FORMULES[p.formule]||[p.formule])[0];
+  /* En espèces, la référence est interne au centre : elle n'a aucun sens
+     pour le candidat et ne figure pas sur son reçu. */
+  var refTxt = (p.mode==="especes"||estInterne(p.reference)) ? ""
+    : (p.reference ? " — réf. "+esc(p.reference)
+                   : ' — <span style="color:#a92222">référence manquante</span>');
+  $("recu").innerHTML=
+    '<div class="rh"><div><div class="n">'+esc(reglages.nom)+'</div>'+
+      '<div class="s">'+esc(reglages.sous)+'</div>'+
+      (reglages.sigVille?'<div class="s">'+esc(reglages.sigVille)+'</div>':'')+'</div>'+
+      '<div class="c">Tél. '+esc(reglages.tel)+'<br>'+esc(reglages.mail)+
+      '<br>Paiement : '+esc(reglages.momo)+'</div></div>'+
+    '<div class="rt">REÇU DE PAIEMENT</div>'+
+    '<div class="rn">N° <b>'+esc(p.recu_no)+'</b> · '+jjmmaa(p.debut)+'</div>'+
+    '<dl><dt>Reçu de</dt><dd><b>'+esc(p.nom)+'</b>'+
+      (p.telephone?' <span style="color:#666">· '+esc(p.telephone)+'</span>':'')+'</dd>'+
+    '<dt>Objet</dt><dd>'+esc(lib)+'</dd>'+
+    '<dt>Mode de paiement</dt><dd>'+esc(MODES[p.mode]||p.mode)+refTxt+'</dd>'+
+    '<dt>Encaissé par</dt><dd>'+esc(p.encaisse_par||"—")+'</dd></dl>'+
+    '<div class="amt"><div class="v">'+fcfa(p.montant)+' FCFA</div>'+
+      '<div class="w">soit '+esc(enLettres(p.montant))+' francs CFA</div></div>'+
+    '<div class="per">Abonnement valable du <b>'+jjmmaa(p.debut)+
+      '</b> au <b>'+jjmmaa(p.fin)+'</b> inclus</div>'+
+    '<div class="rf"><div class="cod"><div class="l">Code de contrôle</div>'+
+      '<div class="v">'+esc(codeLisible(p.code))+'</div></div>'+
+      blocSignature(p)+'</div>'+
+    '<div class="warn">Signature et cachet numériques apposés par le registre du centre — le cachet porte le numéro et la date de ce reçu, il ne vaut pour aucun autre. '+
+    'Reçu établi en un seul exemplaire original. Toute reproduction est sans valeur. '+
+      'Ce reçu n\'est valable que s\'il figure au registre du centre : le code ci-dessus est calculé à partir du nom, '+
+      'du montant et des dates — toute modification le rend invalide. Vérification au '+esc(reglages.tel)+'.</div>';
+  $("recu-box").classList.add("on");
+  $("recu-box").scrollIntoView({behavior:"smooth",block:"start"});
+}
+$("r-print").addEventListener("click",function(){imprime("recu","recu_"+((($("recu").textContent||"").match(/\d{4}-\d{5}/)||["MZ"])[0]));});
+$("r-close").addEventListener("click",function(){$("recu-box").classList.remove("on");});
+
+/* ---------------------------------------------------------- REGISTRE */
+var triCol="recu_no", triSens=1;
+function rendRegistre(){
+  var q=$("g-q").value.trim().toLowerCase();
+  var filtre=$("g-filtre").value;
+  var auj=iso(new Date());
+  var lignes=CACHE.filter(function(p){
+    if(q){
+      var t=(p.nom+" "+p.recu_no+" "+(p.reference||"")+" "+(p.telephone||"")).toLowerCase();
+      if(t.indexOf(q)<0)return false;
+    }
+    var actif=estActif(p,auj);
+    if(filtre==="actifs"&&!actif)return false;
+    if(filtre==="expires"&&actif)return false;
+    return true;
+  });
+  lignes.sort(function(a,b){
+    var x=a[triCol],y=b[triCol];
+    if(triCol==="montant"){return (Number(x)-Number(y))*triSens;}
+    return String(x||"").localeCompare(String(y||""),"fr")*triSens;
+  });
+  if(!CACHE.length){
+    $("g-body").innerHTML='<div class="empty"><h3>Le registre est vide</h3>'+
+      '<p>Enregistrez un premier paiement, ou chargez des exemples depuis les Réglages pour voir comment le registre se présente.</p></div>';
+    $("g-tot").textContent="";return;
+  }
+  var cols=[["recu_no","N° reçu"],["nom","Nom"],["formule","Formule"],["montant","Montant"],
+            ["debut","Début"],["fin","Fin"],["etat","État"],["reference","Référence"]];
+  var admin=estAdmin();
+  var h=cols.map(function(c){
+    var fl=(c[0]===triCol)?(triSens>0?" ▲":" ▼"):"";
+    return c[0]==="etat"?'<th>'+c[1]+'</th>'
+      :'<th class="sortable" data-c="'+c[0]+'">'+c[1]+fl+'</th>';
+  }).join("")+(admin?'<th class="noprint">Actions</th>':"");
+  var body=lignes.map(function(p){
+    var actif=estActif(p,auj), j=jours(auj,p.fin);
+    var pill = p.annule ? '<span class="pill off">annulé</span>'
+      : (!actif ? '<span class="pill off">expiré</span>'
+      : (j<=7 ? '<span class="pill end">fin dans '+j+' j</span>'
+              : '<span class="pill ok">actif</span>'));
+    var act=admin
+      ? '<td class="noprint" style="white-space:nowrap">'+
+        (p.annule
+          ? '<button class="btn ghost small" data-act="ret" data-no="'+esc(p.recu_no)+'">Rétablir</button> '+
+            '<button class="btn ghost small" data-act="eff" data-no="'+esc(p.recu_no)+'">Effacer</button>'
+          : (estInterne(p.reference)
+              ? '<button class="btn ghost small" data-act="dep" data-no="'+esc(p.recu_no)+'">Dépôt</button> ' : '')+
+            '<button class="btn ghost small" data-act="ann" data-no="'+esc(p.recu_no)+'">Annuler</button>')+
+        '</td>' : "";
+    return '<tr'+(p.annule?' class="annule"':'')+'><td class="mono">'+esc(p.recu_no)+'</td><td>'+esc(p.nom)+
+      (p.annule?'<br><span class="note" style="font-size:11px;color:var(--bad)">annulé le '+
+        jjmmaa(p.annule.le)+' — '+esc(p.annule.motif)+'</span>':'')+'</td>'+
+      '<td style="font-size:12.5px;color:var(--muted)">'+esc(p.formule)+'</td>'+
+      '<td class="num">'+fcfa(p.montant)+'</td>'+
+      '<td class="mono" style="font-size:12.5px">'+jjmmaa(p.debut)+'</td>'+
+      '<td class="mono" style="font-size:12.5px">'+jjmmaa(p.fin)+'</td>'+
+      '<td>'+pill+'</td>'+
+      '<td class="mono" style="font-size:11.5px;color:var(--muted)">'+
+        (p.reference
+          ? (estInterne(p.reference)
+              ? '<span style="color:var(--warn)">'+esc(p.reference)+' · dépôt à saisir</span>'
+              : esc(p.reference))
+          : '<span style="color:var(--bad)">absente</span>')+'</td>'+act+'</tr>';
+  }).join("");
+  $("g-body").innerHTML='<div class="tw"><table><thead><tr>'+h+'</tr></thead><tbody>'+body+'</tbody></table></div>';
+  Array.prototype.forEach.call($("g-body").querySelectorAll("button[data-act]"),function(b){
+    b.addEventListener("click",function(){
+      var no=b.dataset.no, a=b.dataset.act;
+      if(a==="ann")annuleRecu(no); else if(a==="ret")retablitRecu(no);
+      else if(a==="dep")saisieDepot(no); else effaceRecu(no);
+    });
+  });
+  Array.prototype.forEach.call($("g-body").querySelectorAll("th.sortable"),function(th){
+    th.addEventListener("click",function(){
+      var c=th.dataset.c;
+      if(c===triCol)triSens=-triSens; else {triCol=c;triSens=1;}
+      rendRegistre();
+    });
+  });
+  var tot=lignes.filter(function(p){return !p.annule;})
+                .reduce(function(s,p){return s+(Number(p.montant)||0);},0);
+  $("g-tot").innerHTML=lignes.length+" ligne(s) affichée(s) sur "+CACHE.length+
+    " — total <b>"+fcfa(tot)+"</b> FCFA";
+}
+$("g-q").addEventListener("input",rendRegistre);
+$("g-filtre").addEventListener("change",rendRegistre);
+$("g-print").addEventListener("click",function(){imprime("p-registre","registre_"+iso(new Date()));});
+
+/* ---------------------------------------------------------- COMPOSITION */
+function rendCompo(){
+  var d=$("c-date").value||prochainSamedi();
+  $("c-date").value=d;
+  var actifs=CACHE.filter(function(p){return estActif(p,d);});
+  actifs.sort(function(a,b){return String(a.nom).localeCompare(String(b.nom),"fr");});
+  $("c-entete").innerHTML='<h2 style="font-size:15px">Liste de composition — '+
+    esc(longDate(d))+'</h2><p style="font-size:12px;color:#555;margin:3px 0 0">'+
+    esc(reglages.nom)+' — '+actifs.length+' candidat(s) autorisé(s)</p>';
+  if(!actifs.length){
+    $("c-body").innerHTML='<div class="empty"><h3>Personne n\'est autorisé ce jour-là</h3>'+
+      '<p>Aucun abonnement actif au '+jjmmaa(d)+'. Vérifiez la date ou enregistrez les paiements.</p></div>';
+    return;
+  }
+  var body=actifs.map(function(p,i){
+    var j=jours(d,p.fin);
+    var mention=(j>=0&&j<7)?'<span class="pill end">dernier samedi</span>':'';
+    return '<tr><td class="mono" style="color:var(--muted)">'+(i+1)+'</td>'+
+      '<td><b>'+esc(p.nom)+'</b></td>'+
+      '<td style="font-size:12.5px;color:var(--muted)">'+esc(p.formule)+'</td>'+
+      '<td class="mono" style="font-size:12.5px">'+jjmmaa(p.fin)+' '+mention+'</td>'+
+      '<td class="mono" style="font-size:12px;color:var(--muted)">'+esc(p.recu_no)+'</td>'+
+      '<td><span class="sig"></span></td></tr>';
+  }).join("");
+  $("c-body").innerHTML='<div class="tw"><table><thead><tr><th>#</th><th>Nom</th>'+
+    '<th>Formule</th><th>Fin d\'abonnement</th><th>Reçu</th><th>Émargement</th>'+
+    '</tr></thead><tbody>'+body+'</tbody></table></div>'+
+    '<p class="tot">'+actifs.length+' candidat(s). '+
+    'À l\'entrée, cette liste fait foi — pas le reçu présenté par le candidat.</p>';
+}
+$("c-date").addEventListener("change",rendCompo);
+$("c-sam").addEventListener("click",function(){$("c-date").value=prochainSamedi();rendCompo();});
+$("c-print").addEventListener("click",function(){imprime("p-compo","liste_composition_"+$("c-date").value);});
+
+/* ---------------------------------------------------------- VERIFIER */
+$("v-ok").addEventListener("click",async function(){
+  var no=$("v-no").value.trim();
+  var code=$("v-code").value.trim().toUpperCase().replace(/[\s-]/g,"");
+  var box=$("v-res");
+  if(!no){box.innerHTML='<div class="msg bad">Saisissez le numéro du reçu.</div>';return;}
+  var p=CACHE.filter(function(x){return String(x.recu_no)===no;})[0];
+  if(!p){
+    box.innerHTML='<div class="msg bad"><strong>Reçu inconnu</strong>'+
+      'Le numéro '+esc(no)+' ne figure pas au registre. Un reçu absent du registre est sans valeur, '+
+      'quel que soit son aspect. Faites entrer le candidat pour cette séance et vérifiez lundi avec le relevé Mobile Money.</div>';
+    return;
+  }
+  if(p.annule){
+    box.innerHTML='<div class="msg bad"><strong>Reçu annulé</strong>'+
+      'Le reçu '+esc(no)+' ('+esc(p.nom)+') a été annulé le '+jjmmaa(p.annule.le)+
+      ' — motif : '+esc(p.annule.motif)+'. Il n\'ouvre plus aucun droit.</div>';
+    return;
+  }
+  var attendu=await codeControle(p.recu_no,p.nom,p.montant,p.debut,p.fin,p.codev||0);
+  if(!reglages.cle){
+    box.innerHTML='<div class="msg warn"><strong>Clé de contrôle non définie</strong>'+
+      'Le code ne peut pas être vérifié sur cet appareil. Le reçu existe bien au registre : '+
+      esc(p.nom)+', '+fcfa(p.montant)+' FCFA, jusqu\'au '+jjmmaa(p.fin)+'.</div>';
+    return;
+  }
+  if(code!==attendu||code!==String(p.code)){
+    box.innerHTML='<div class="msg bad"><strong>Code invalide</strong>'+
+      'Le document présenté a été modifié ou n\'est pas l\'original. Au registre, le reçu '+
+      esc(no)+' est au nom de '+esc(p.nom)+'.</div>';
+    return;
+  }
+  var auj=iso(new Date());
+  var etat=estActif(p,auj)
+    ? '<span class="pill ok">en cours</span>'
+    : '<span class="pill off">expiré</span>';
+  box.innerHTML='<div class="msg ok"><strong>Reçu valide — '+esc(p.nom)+'</strong>'+
+    esc((FORMULES[p.formule]||[p.formule])[0])+' · '+fcfa(p.montant)+' FCFA<br>'+
+    'Du '+jjmmaa(p.debut)+' au '+jjmmaa(p.fin)+' '+etat+'<br>'+
+    'Encaissé par '+esc(p.encaisse_par||"—")+' · réf. '+esc(p.reference||"—")+'</div>';
+});
+
+/* ---------------------------------------------------------- CONTROLE */
+$("x-run").addEventListener("click",async function(){await rendControle();});
+async function rendControle(){
+  var pbs=[];
+  var auj=iso(new Date());
+  var nums=CACHE.map(function(p){return String(p.recu_no);});
+  var vus={};
+  nums.forEach(function(n){
+    vus[n]=(vus[n]||0)+1;
+  });
+  Object.keys(vus).forEach(function(n){
+    if(vus[n]>1)pbs.push("Numéro de reçu en double : "+n+" ("+vus[n]+" fois)");
+  });
+  var parSerie={};
+  CACHE.forEach(function(p){
+    var m=/^(\d{4}-[A-Z]*)(\d+)$/.exec(String(p.recu_no));
+    if(m){(parSerie[m[1]]=parSerie[m[1]]||[]).push(parseInt(m[2],10));}
+  });
+  var effaces=litEffaces(), effNos={};
+  effaces.forEach(function(e){effNos[String(e.recu_no)]=e;});
+  Object.keys(parSerie).forEach(function(pre){
+    var l=parSerie[pre], max=Math.max.apply(null,l), manq=[];
+    for(var i=1;i<=max;i++){
+      var no=pre+String(i).padStart(5,"0");
+      if(l.indexOf(i)<0 && !effNos[no])manq.push(no);
+    }
+    if(manq.length)pbs.push("Numéros manquants dans la série "+pre+" : "+manq.slice(0,20).join(", ")+
+      (manq.length>20?" …":""));
+  });
+  effaces.forEach(function(e){
+    pbs.push("Numéro "+e.recu_no+" effacé le "+jjmmaa(e.le)+" ("+e.nom+", "+fcfa(e.montant)+
+      " FCFA) — motif : "+e.motif);
+  });
+  CACHE.forEach(function(p){
+    if(p.annule)pbs.push("Reçu "+p.recu_no+" ("+p.nom+") annulé le "+jjmmaa(p.annule.le)+
+      " — motif : "+p.annule.motif);
+  });
+  var refs={};
+  CACHE.forEach(function(p){
+    var r=normRef(p.reference);
+    if(r&&!estInterne(r))refs[r]=(refs[r]||0)+1;
+  });
+  Object.keys(refs).forEach(function(r){
+    if(refs[r]>1)pbs.push("Même référence de transaction sur plusieurs reçus : "+r);
+  });
+  var cds={};
+  CACHE.forEach(function(p){if(p.code&&String(p.code).indexOf("-")<0)cds[p.code]=(cds[p.code]||0)+1;});
+  Object.keys(cds).forEach(function(c){
+    if(cds[c]>1)pbs.push("Deux reçus portent le même code de contrôle ("+c+
+      ") — reprenez le second depuis le formulaire.");
+  });
+  CACHE.forEach(function(p){
+    if(!p.reference||estInterne(p.reference)){
+      var age=jours(p.debut,auj);
+      if(age>1)pbs.push(p.recu_no+" ("+p.nom+") : "+fcfa(p.montant)+
+        (estInterne(p.reference)?" FCFA en espèces non déposés depuis ":" FCFA sans référence depuis ")+
+        age+" jours");
+    }
+    if(p.debut>auj)pbs.push(p.recu_no+" : date de paiement dans le futur");
+  });
+  if(reglages.cle){
+    for(var i=0;i<CACHE.length;i++){
+      var p=CACHE[i];
+      var att=await codeControle(p.recu_no,p.nom,p.montant,p.debut,p.fin,p.codev||0);
+      if(String(p.code)!==att&&String(p.code).indexOf("-")<0){
+        pbs.push("Code incohérent sur "+p.recu_no+" ("+p.nom+") — ligne modifiée après coup ?");
+      }
+    }
+  }
+  var tot=vifs().reduce(function(s,p){return s+(Number(p.montant)||0);},0);
+  var html;
+  if(!CACHE.length){
+    html='<div class="empty"><h3>Rien à contrôler</h3><p>Le registre est vide.</p></div>';
+  }else if(pbs.length){
+    html='<div class="msg warn"><strong>'+pbs.length+' anomalie(s) à élucider</strong><ul>'+
+      pbs.map(function(x){return "<li>"+esc(x)+"</li>";}).join("")+'</ul></div>';
+  }else{
+    html='<div class="msg ok"><strong>Aucune anomalie</strong>'+
+      'Numérotation continue, aucune référence en double, aucune annulation, tous les encaissements tracés.</div>';
+  }
+  html+='<p class="tot">'+vifs().length+' reçus valides au registre — total déclaré <b>'+fcfa(tot)+
+    ' FCFA</b>. Ce total doit correspondre au relevé du compte marchand.</p>';
+  $("x-res").innerHTML=html;
+}
+function rendBilan(){
+  if(!CACHE.length){$("x-bilan").innerHTML='<p class="tot">Aucun paiement enregistré.</p>';return;}
+  var parMois={};
+  vifs().forEach(function(p){
+    var m=String(p.debut).slice(0,7);
+    if(!parMois[m])parMois[m]={n:0,s:0,sansRef:0};
+    parMois[m].n++; parMois[m].s+=Number(p.montant)||0;
+    if(!p.reference||estInterne(p.reference))parMois[m].sansRef++;
+  });
+  var mois=Object.keys(parMois).sort().reverse();
+  var body=mois.map(function(m){
+    var d=parMois[m], p=m.split("-");
+    return '<tr><td>'+MOIS[+p[1]-1]+' '+p[0]+'</td>'+
+      '<td class="num">'+d.n+'</td>'+
+      '<td class="num">'+fcfa(d.s)+'</td>'+
+      '<td>'+(d.sansRef?'<span class="pill end">'+d.sansRef+' à tracer</span>':
+        '<span class="pill ok">tout tracé</span>')+'</td></tr>';
+  }).join("");
+  $("x-bilan").innerHTML='<div class="tw"><table><thead><tr><th>Mois</th><th>Paiements</th>'+
+    '<th>Recettes (FCFA)</th><th>Traçabilité</th></tr></thead><tbody>'+body+'</tbody></table></div>';
+}
+
+/* ------------------------------------------------------ export / import */
+var COLS_CSV=["recu_no","nom","telephone","formule","montant","mode","reference",
+              "debut","fin","code","codev","encaisse_par","cree","annule_le","annule_motif"];
+
+function csvEchappe(v){
+  v=String(v==null?"":v);
+  return (v.indexOf(";")>=0||v.indexOf('"')>=0||v.indexOf("\n")>=0||v.indexOf("\r")>=0)
+    ? '"'+v.replace(/"/g,'""')+'"' : v;
+}
+
+async function exporteCSV(){
+  if(!CACHE.length){avis("Le registre est vide, il n'y a rien à exporter.");return false;}
+  var lignes=[COLS_CSV.join(";")];
+  CACHE.forEach(function(p){
+    lignes.push(COLS_CSV.map(function(c){
+      if(c==="annule_le")return csvEchappe(p.annule?p.annule.le:"");
+      if(c==="annule_motif")return csvEchappe(p.annule?p.annule.motif:"");
+      return csvEchappe(p[c]);
+    }).join(";"));
+  });
+  var csv="﻿"+lignes.join("\r\n");
+  var nom="registre_"+iso(new Date())+".csv";
+  /* 1. capacité de téléchargement de l'hôte, si elle existe */
+  if(EN_LIGNE){ return await enregistre(nom, csv, "text/csv"); }
+  /* 2. téléchargement navigateur classique — fonctionne en fichier local */
+  try{
+    var blob=new Blob([csv],{type:"text/csv;charset=utf-8"});
+    var url=URL.createObjectURL(blob);
+    var a=document.createElement("a");
+    a.href=url; a.download=nom; a.style.display="none";
+    document.body.appendChild(a); a.click();
+    setTimeout(function(){document.body.removeChild(a);URL.revokeObjectURL(url);},1500);
+    return true;
+  }catch(e){}
+  /* 3. dernier recours : affichage pour copier-coller */
+  var w=window.open("","_blank");
+  if(w){w.document.write("<pre>"+esc(csv)+"</pre>");w.document.title=nom;}
+  else{console.log(csv);avis("Le navigateur bloque le téléchargement. Le contenu est dans la console.");}
+  return true;
+}
+$("x-csv").addEventListener("click",exporteCSV);
+$("s-export").addEventListener("click",function(){
+  exporteCSV().then(function(ok){
+    if(ok)$("s-data-msg").innerHTML='<div class="msg ok">Registre exporté ('+CACHE.length+' reçus).</div>';
+  });
+});
+
+/* ---- liste d'admission pour la salle de composition -------------------
+   Format TSV : collé dans Google Sheets, il se répartit tout seul en colonnes.
+   On n'exporte que ce dont la salle a besoin : numéro, nom, fin d'abonnement,
+   code de contrôle, annulation. Ni montant, ni mode de paiement, ni référence. */
+var COLS_ADM=["recu_no","nom","fin","code","annule_le","formule"];
+function listeAdmission(){
+  var l=[COLS_ADM.join("\t")];
+  CACHE.forEach(function(p){
+    if(p.efface) return;
+    l.push([p.recu_no, p.nom, p.fin, p.code||"", (p.annule?p.annule.le:""), p.formule||""]
+           .map(function(v){ return String(v==null?"":v).replace(/[\t\r\n]/g," "); }).join("\t"));
+  });
+  return l.join("\n");
+}
+/* ---- dépôt automatique vers la salle de composition --------------------
+   Chaque reçu part dès qu'il est établi. S'il n'y a pas de réseau, il reste
+   dans une file d'attente et repart au prochain envoi réussi ; rien n'est
+   jamais perdu, et le bouton « Envoyer tous les reçus » rattrape tout.     */
+function recuPourSalle(p){
+  /* la formule dit ce que le candidat a payé : niveau et modules qu'il pourra composer */
+  return {recu_no:p.recu_no, nom:p.nom, fin:p.fin, code:p.code||"",
+          annule_le:(p.annule?p.annule.le:""), formule:p.formule||""};
+}
+function fileAttente(v){
+  if(v===undefined){ try{ return JSON.parse(localStorage.getItem("mz_file_salle")||"[]"); }catch(e){ return []; } }
+  try{ localStorage.setItem("mz_file_salle",JSON.stringify(v)); }catch(e){}
+}
+function envoieSalle(recus, fini){
+  fini=fini||function(){};
+  if(!reglages.salleUrl || !reglages.salleMdp){ fini(false,"non configuré"); return; }
+  if(!recus.length){ fini(true,"rien à envoyer"); return; }
+  fetch(reglages.salleUrl,{
+    method:"POST", mode:"cors", redirect:"follow",
+    headers:{"Content-Type":"text/plain;charset=utf-8"},
+    body:JSON.stringify({action:"liste", mdp:reglages.salleMdp, recus:recus})
+  }).then(function(r){ return r.text(); }).then(function(t){
+    if(t.indexOf("OK")===0) fini(true, t.split("|")[1]||"");
+    else fini(false, t);
+  }).catch(function(){ fini(false,"réseau"); });
+}
+/* appelé après chaque création, annulation ou restauration */
+function pousseVersSalle(p){
+  if(Store.api) return;                 /* registre en ligne : le serveur prévient la salle lui-même */
+  if(!reglages.salleUrl || !reglages.salleMdp) return;
+  var file=fileAttente().filter(function(x){ return x.recu_no!==p.recu_no; });
+  file.push(recuPourSalle(p)); fileAttente(file);
+  envoieSalle(file, function(ok){ if(ok) fileAttente([]); });
+}
+$("s-salle-save").addEventListener("click",function(){
+  if(!estAdmin()){$("s-admission-etat").textContent="Action réservée à l'administrateur.";return;}
+  reglages.salleUrl=$("s-salle-url").value.trim();
+  reglages.salleMdp=$("s-salle-mdp").value.trim();
+  sauveReglages();
+  $("s-admission-etat").textContent="Test en cours …";
+  envoieSalle(CACHE.slice(0,1).map(recuPourSalle), function(ok,info){
+    $("s-admission-etat").textContent = ok
+      ? "Liaison établie ("+info+"). Les prochains reçus partiront tout seuls."
+      : "La salle n'a pas répondu : "+info+". Vérifiez l'adresse et le mot de passe.";
+  });
+});
+$("s-salle-tout").addEventListener("click",function(){
+  if(!estAdmin()){$("s-admission-etat").textContent="Action réservée à l'administrateur.";return;}
+  var tous=CACHE.map(recuPourSalle);
+  $("s-admission-etat").textContent="Envoi de "+tous.length+" reçus …";
+  envoieSalle(tous, function(ok,info){
+    if(ok) fileAttente([]);
+    $("s-admission-etat").textContent = ok ? ("Envoyé : "+info+".")
+                                           : ("Échec : "+info+". Les reçus restent en attente.");
+  });
+});
+
+$("s-admission").addEventListener("click",function(){
+  var etat=$("s-admission-etat");
+  if(!CACHE.length){ etat.textContent="Le registre est vide."; return; }
+  var txt=listeAdmission(), n=txt.split("\n").length-1;
+  function fini(ok){
+    etat.textContent = ok ? (n+" reçus copiés — collez dans la case A1 de l'onglet « Zugelassen ».")
+                          : "Copie impossible : la liste s'ouvre dans une fenêtre, sélectionnez-la à la main.";
+    if(!ok){ var w=window.open("","_blank");
+      if(w){ w.document.write("<pre>"+esc(txt)+"</pre>"); w.document.title="Liste d'admission"; } }
+  }
+  if(navigator.clipboard && navigator.clipboard.writeText){
+    navigator.clipboard.writeText(txt).then(function(){fini(true);},function(){fini(false);});
+  } else {
+    var ta=document.createElement("textarea"); ta.value=txt;
+    ta.style.position="fixed"; ta.style.opacity="0"; document.body.appendChild(ta);
+    ta.select(); var ok=false; try{ ok=document.execCommand("copy"); }catch(e){}
+    document.body.removeChild(ta); fini(ok);
+  }
+});
+
+/* découpe une ligne CSV en respectant les guillemets */
+function csvLigne(l,sep){
+  var out=[],cur="",q=false;
+  for(var i=0;i<l.length;i++){
+    var c=l[i];
+    if(q){
+      if(c==='"'){ if(l[i+1]==='"'){cur+='"';i++;} else {q=false;} }
+      else cur+=c;
+    }else{
+      if(c==='"')q=true;
+      else if(c===sep){out.push(cur);cur="";}
+      else cur+=c;
+    }
+  }
+  out.push(cur);
+  return out;
+}
+
+function parseCSV(txt){
+  txt=txt.replace(/^﻿/,"").replace(/\r\n/g,"\n").replace(/\r/g,"\n");
+  var lignes=txt.split("\n").filter(function(l){return l.trim()!=="";});
+  if(!lignes.length)return {entetes:[],lignes:[]};
+  var sep=(lignes[0].split(";").length>=lignes[0].split(",").length)?";":",";
+  var entetes=csvLigne(lignes[0],sep).map(function(h){return h.trim().toLowerCase();});
+  var out=[];
+  for(var i=1;i<lignes.length;i++){
+    var champs=csvLigne(lignes[i],sep);
+    var o={};
+    for(var j=0;j<entetes.length;j++){o[entetes[j]]=(champs[j]||"").trim();}
+    out.push(o);
+  }
+  return {entetes:entetes,lignes:out};
+}
+
+$("s-import-btn").addEventListener("click",function(){$("s-import").click();});
+$("s-import").addEventListener("change",function(ev){
+  var f=ev.target.files&&ev.target.files[0];
+  if(!f)return;
+  var fr=new FileReader();
+  fr.onerror=function(){
+    $("s-data-msg").innerHTML='<div class="msg bad">Impossible de lire ce fichier.</div>';
+  };
+  fr.onload=async function(){
+    $("s-import").value="";
+    if(!estAdmin()){$("s-data-msg").innerHTML='<div class="msg bad">Seul l\'administrateur peut importer un registre.</div>';return;}
+    var p=parseCSV(String(fr.result||""));
+    if(p.entetes.indexOf("recu_no")<0||p.entetes.indexOf("nom")<0){
+      $("s-data-msg").innerHTML='<div class="msg bad"><strong>Fichier non reconnu</strong>'+
+        'La première ligne doit contenir au minimum les colonnes <code>recu_no</code> et <code>nom</code>. '+
+        'Utilisez un fichier produit par le bouton « Exporter le registre ».</div>';
+      return;
+    }
+    var connus={};
+    CACHE.forEach(function(r){connus[String(r.recu_no)]=true;});
+    var ajoutes=0,ignores=0,invalides=0,vus={};
+    for(var i=0;i<p.lignes.length;i++){
+      var l=p.lignes[i], no=String(l.recu_no||"").trim();
+      if(!no||!l.nom||!l.debut||!l.fin){invalides++;continue;}
+      if(connus[no]||vus[no]){ignores++;continue;}
+      vus[no]=true;
+      var rec={
+        recu_no:no, nom:l.nom, telephone:l.telephone||"", formule:l.formule||"",
+        montant:parseInt(String(l.montant||"0").replace(/[^0-9]/g,""),10)||0,
+        mode:l.mode||"", reference:l.reference||"",
+        debut:l.debut, fin:l.fin, code:l.code||"", codev:parseInt(l.codev||"0",10)||0,
+        encaisse_par:l.encaisse_par||"", cree:l.cree||new Date().toISOString()
+      };
+      if(l.annule_le)rec.annule={le:l.annule_le,motif:l.annule_motif||"non précisé"};
+      await Store.ajoute(rec);
+      ajoutes++;
+    }
+    await recharge();
+    var det=[];
+    if(ignores)det.push(ignores+" déjà présent(s), laissé(s) intact(s)");
+    if(invalides)det.push(invalides+" ligne(s) incomplète(s), écartée(s)");
+    $("s-data-msg").innerHTML='<div class="msg '+(ajoutes?"ok":"warn")+'">'+
+      '<strong>'+(ajoutes?ajoutes+" reçu(s) importé(s)":"Aucun nouveau reçu")+'</strong>'+
+      (det.length?det.join(" · ")+". ":"")+
+      'Passez au Contrôle pour vérifier que la série de numéros reste continue après consolidation.</div>';
+  };
+  fr.readAsText(f,"utf-8");
+});
+
+/* ---------------------------------------------------------- REGLAGES */
+function remplitReglages(){
+  if($("s-salle-url")) $("s-salle-url").value=reglages.salleUrl||"";
+  if($("s-salle-mdp")) $("s-salle-mdp").value=reglages.salleMdp||"";
+  $("s-nom").value=reglages.nom; $("s-sous").value=reglages.sous;
+  $("s-tel").value=reglages.tel;
+  $("s-mail").value=reglages.mail; $("s-momo").value=reglages.momo;
+  $("s-serie").value=reglages.serie||"";
+  $("s-cle-etat").textContent=reglages.cle
+    ? "Une clé est enregistrée sur cet appareil."
+    : "Aucune clé : les reçus seront édités sans code de sécurité.";
+  remplitSignature();
+  if(!$("j-exp").value){
+    var d=new Date(); d.setMonth(d.getMonth()+1);
+    $("j-exp").value=iso(d);
+  }
+  majAcces();
+}
+$("s-ok").addEventListener("click",function(){
+  if(!estAdmin()){$("s-msg").innerHTML='<div class="msg bad">Action réservée à l\'administrateur.</div>';return;}
+  reglages.nom=$("s-nom").value.trim()||"Mazi Zentrum";
+  reglages.sous=$("s-sous").value.trim();
+  reglages.tel=$("s-tel").value.trim();
+  reglages.mail=$("s-mail").value.trim(); reglages.momo=$("s-momo").value.trim();
+  reglages.serie=$("s-serie").value.trim().toUpperCase().replace(/[^A-Z]/g,"");
+  var ok=sauveReglages();
+  $("s-msg").innerHTML=ok?'<div class="msg ok">Réglages enregistrés.</div>'
+    :'<div class="msg bad">Ce navigateur refuse d\'enregistrer les réglages.</div>';
+  majKpis();
+});
+$("s-cle-ok").addEventListener("click",async function(){
+  if(!estAdmin()){$("s-msg").innerHTML='<div class="msg bad">Action réservée à l\'administrateur.</div>';return;}
+  var v=$("s-cle").value;
+  if(!v){$("s-msg").innerHTML='<div class="msg bad">Saisissez une clé.</div>';return;}
+  if(reglages.cle&&reglages.cle!==v){
+    if(!(await confirme("Une clé existe déjà. La remplacer invalidera le code de tous les reçus déjà émis. Continuer ?","Remplacer la clé")))return;
+  }
+  reglages.cle=v; sauveReglages(); $("s-cle").value="";
+  remplitReglages();
+  $("s-msg").innerHTML='<div class="msg ok">Clé enregistrée.</div>';
+});
+$("s-exemples").addEventListener("click",async function(){
+  if(!estAdmin()){$("s-data-msg").innerHTML='<div class="msg bad">Action réservée à l\'administrateur.</div>';return;}
+  var base=new Date(); base.setDate(base.getDate()-10);
+  var ex=[
+    ["EXEMPLE — Ngono Marie Claire","677112233","B1-COMPLET",20000,"momo","MP260916.1432.A47281",0],
+    ["EXEMPLE — Tchoua Bertrand","699445566","LANCEMENT-B1",10000,"momo","MP260916.0915.B11902",3],
+    ["EXEMPLE — Fouda Estelle","655778899","B2-COMPLET",25000,"momo","MP260916.1432.A47281",6],
+    ["EXEMPLE — Mbarga Junior","691223344","B1-LH",10000,"especes","",1]
+  ];
+  for(var i=0;i<ex.length;i++){
+    var e=ex[i], d=new Date(base); d.setDate(d.getDate()+e[6]);
+    var debut=iso(d), fin=finAbo(debut);
+    var rec={recu_no:numeroSuivant(),nom:e[0],telephone:e[1],formule:e[2],montant:e[3],
+      mode:e[4],reference:e[5],debut:debut,fin:fin,encaisse_par:"Exemple",
+      cree:new Date().toISOString()};
+    var cx=await codeDistinct(rec.recu_no,rec.nom,rec.montant,rec.debut,rec.fin);
+    rec.code=cx.code; rec.codev=cx.codev;
+    await Store.ajoute(rec);
+    CACHE.push(rec);
+  }
+  await recharge();
+  $("s-data-msg").innerHTML='<div class="msg ok"><strong>Quatre exemples chargés</strong>'+
+    'Ils sont préfixés « EXEMPLE » et contiennent volontairement deux anomalies : '+
+    'une référence de transaction en double et un encaissement en espèces non déposé. '+
+    'Lancez le contrôle pour les voir, puis videz le registre avant le premier vrai paiement.</div>';
+});
+$("s-vider").addEventListener("click",async function(){
+  if(!estAdmin()){$("s-data-msg").innerHTML='<div class="msg bad">Action réservée à l\'administrateur.</div>';return;}
+  if(!(await confirme("Vider entièrement le registre ? Cette action est définitive.","Vider")))return;
+  await Store.vide(); await recharge();
+  $("s-data-msg").innerHTML='<div class="msg ok">Registre vidé.</div>';
+});
+
+/* ---------------------------------------------------------- démarrage */
+chargeReglages();
+remplitReglages();
+razForm();
+$("c-date").value=prochainSamedi();
+CACHE=Store.local();
+majKpis();
+majAcces();
+majChampsMode();
+majNoteRef();
+ouvre("nouveau");
+
+Store.init().then(function(){ assureCle(); return recharge();}).then(function(){
+  var actif=document.querySelector('.tab[aria-selected="true"]');
+  if(actif)ouvre(actif.dataset.p);
+});
+})();
+</script>
+
+</body>
+</html>
