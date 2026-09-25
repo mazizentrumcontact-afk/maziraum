@@ -250,12 +250,15 @@ tr.annule td:nth-child(2){text-decoration:line-through}
 #dlg .box p{margin:0;white-space:pre-line;color:var(--muted);font-size:14px;line-height:1.5}
 #dlg .box input{width:100%;box-sizing:border-box}
 #dlg .row{display:flex;gap:8px;justify-content:flex-end;flex-wrap:wrap}
+.avec-oeil{display:flex;gap:8px;align-items:center;width:100%}
+.avec-oeil input{flex:1;min-width:0}
+.avec-oeil .btn{flex:none}
 @media print{.printonly{display:block;margin-bottom:10px}}
 </style>
 
 <div id="dlg" hidden role="dialog" aria-modal="true" aria-labelledby="dlg-t"><div class="box">
   <h3 id="dlg-t"></h3><p id="dlg-p"></p>
-  <input id="dlg-i" autocomplete="off" hidden>
+  <div class="avec-oeil"><input id="dlg-i" autocomplete="off" hidden><button type="button" class="btn ghost small" id="dlg-oeil" hidden>Afficher</button></div>
   <div class="row"><button class="btn ghost small" id="dlg-no">Annuler</button><button class="btn small" id="dlg-ok">OK</button></div>
 </div></div>
 <header class="top">
@@ -725,6 +728,7 @@ function dialogue(titre, texte, opts){
     var d=$("dlg"), inp=$("dlg-i"), no=$("dlg-no"), ok=$("dlg-ok");
     $("dlg-t").textContent=titre; $("dlg-p").textContent=texte||"";
     inp.hidden=!opts.champ; inp.value=opts.valeur||""; inp.type=opts.secret?"password":"text";
+    var bo=$("dlg-oeil"); bo.hidden=!opts.secret; bo.textContent="Afficher";
     no.hidden=!!opts.seulOk; ok.textContent=opts.ok||"OK";
     d.hidden=false; (opts.champ?inp:ok).focus();
     function clos(v){ d.hidden=true; ok.onclick=no.onclick=inp.onkeydown=null; fini(v); }
@@ -732,6 +736,17 @@ function dialogue(titre, texte, opts){
     no.onclick=function(){ clos(opts.champ?null:false); };
     inp.onkeydown=function(e){ if(e.key==="Enter")ok.onclick(); if(e.key==="Escape")no.onclick(); };
   });
+}
+function oeil(inp){
+  if(!inp || inp.dataset.oeil) return; inp.dataset.oeil="1";
+  var b=document.createElement("button"); b.type="button"; b.className="btn ghost small oeil";
+  b.textContent="Afficher"; b.setAttribute("aria-label","Afficher ou masquer ce qui est tapé");
+  b.addEventListener("click",function(){
+    var cache=inp.type==="password"; inp.type=cache?"text":"password";
+    b.textContent=cache?"Masquer":"Afficher"; inp.focus();
+  });
+  var w=document.createElement("div"); w.className="avec-oeil";
+  inp.parentNode.insertBefore(w,inp); w.appendChild(inp); w.appendChild(b);
 }
 function avis(texte){ return dialogue("Information", texte, {seulOk:true}); }
 function confirme(texte, ok){ return dialogue("Confirmation", texte, {ok:ok||"Confirmer"}); }
@@ -1947,8 +1962,24 @@ $("s-salle-save").addEventListener("click",function(){
       : "La salle n'a pas répondu : "+info+". Vérifiez l'adresse et le mot de passe.";
   });
 });
-$("s-salle-tout").addEventListener("click",function(){
+$("s-salle-tout").addEventListener("click",async function(){
   if(!estAdmin()){$("s-admission-etat").textContent="Action réservée à l'administrateur.";return;}
+  var etat=$("s-admission-etat");
+  if(Store.api){                       /* registre sur votre site : le serveur transmet chaque reçu */
+    var n=0, echec=0;
+    for(var i=0;i<CACHE.length;i++){
+      etat.textContent="Envoi à la salle : "+(i+1)+" / "+CACHE.length+" …";
+      try{ await Store.db.doc("paiements/"+CACHE[i].recu_no).set(CACHE[i]); n++; }catch(e){ echec++; }
+    }
+    etat.textContent = echec ? (n+" reçu(s) envoyé(s), "+echec+" en échec : vérifiez la connexion et recommencez.")
+                             : ("Les "+n+" reçus sont dans la salle de composition.");
+    return;
+  }
+  if(EN_LIGNE){                        /* version Claude : le navigateur y bloque tout échange avec Google */
+    etat.textContent="Cette version du registre (dans Claude) ne peut pas joindre la salle. "+
+      "Utilisez le registre sur votre site : mazizentrumcontact-afk.github.io/maziraum/registre.html";
+    return;
+  }
   var tous=CACHE.map(recuPourSalle);
   $("s-admission-etat").textContent="Envoi de "+tous.length+" reçus …";
   envoieSalle(tous, function(ok,info){
@@ -2070,8 +2101,9 @@ function remplitReglages(){
   $("s-mail").value=reglages.mail; $("s-momo").value=reglages.momo;
   $("s-serie").value=reglages.serie||"";
   $("s-cle-etat").textContent=reglages.cle
-    ? "Une clé est enregistrée sur cet appareil."
-    : "Aucune clé : les reçus seront édités sans code de sécurité.";
+    ? "Une clé est en place : chaque reçu reçoit automatiquement son code unique."
+    : "La clé sera créée automatiquement au premier reçu.";
+  $("s-cle").value=reglages.cle||"";
   remplitSignature();
   if(!$("j-exp").value){
     var d=new Date(); d.setMonth(d.getMonth()+1);
@@ -2095,10 +2127,11 @@ $("s-cle-ok").addEventListener("click",async function(){
   if(!estAdmin()){$("s-msg").innerHTML='<div class="msg bad">Action réservée à l\'administrateur.</div>';return;}
   var v=$("s-cle").value;
   if(!v){$("s-msg").innerHTML='<div class="msg bad">Saisissez une clé.</div>';return;}
+  if(v===reglages.cle){$("s-msg").innerHTML='<div class="msg ok">C\'est déjà la clé en place : rien n\'a changé.</div>';return;}
   if(reglages.cle&&reglages.cle!==v){
     if(!(await confirme("Une clé existe déjà. La remplacer invalidera le code de tous les reçus déjà émis. Continuer ?","Remplacer la clé")))return;
   }
-  reglages.cle=v; sauveReglages(); $("s-cle").value="";
+  reglages.cle=v; sauveReglages();
   remplitReglages();
   $("s-msg").innerHTML='<div class="msg ok">Clé enregistrée.</div>';
 });
@@ -2138,6 +2171,12 @@ $("s-vider").addEventListener("click",async function(){
 /* ---------------------------------------------------------- démarrage */
 chargeReglages();
 remplitReglages();
+$("dlg-oeil").addEventListener("click",function(){
+  var i=$("dlg-i"), cache=i.type==="password"; i.type=cache?"text":"password";
+  this.textContent=cache?"Masquer":"Afficher"; i.focus();
+});
+Array.prototype.forEach.call(document.querySelectorAll('input[type="password"]'),oeil);
+oeil($("s-salle-mdp")); $("s-salle-mdp").type="password";
 razForm();
 $("c-date").value=prochainSamedi();
 CACHE=Store.local();
