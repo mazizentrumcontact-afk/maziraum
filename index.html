@@ -202,6 +202,8 @@ textarea{min-height:230px;resize:vertical;line-height:1.6;font-size:15.5px}
 .foot .fort{font-size:13px;color:var(--muted)}
 .foot .btn{margin-left:auto}
 @media print{body{background:#fff}.top,.foot{display:none}}
+.brief{background:var(--surface,#fff);border:1px solid var(--line);border-left:4px solid var(--accent,#0d6e66);
+  border-radius:8px;padding:16px 18px;font-family:Georgia,"Times New Roman",serif;font-size:15.5px;line-height:1.6}
 /* protection pendant la composition */
 body.pruefung #v-comp{-webkit-user-select:none;user-select:none;-webkit-touch-callout:none}
 body.pruefung #v-comp textarea{-webkit-user-select:text;user-select:text}
@@ -320,6 +322,7 @@ body.pruefung #v-comp textarea{-webkit-user-select:text;user-select:text}
 <div class="foot" id="foot" hidden>
   <div class="foot-in">
     <span class="fort" id="foot-fort">—</span>
+    <button class="btn ghost" id="foot-back">Zur Übersicht</button>
     <button class="btn" id="foot-ok">Modul abgeben</button>
   </div>
 </div>
@@ -2708,14 +2711,15 @@ window.MZ_EPREUVEN["telcb101"] = {
      {
       "nr": 1,
       "titel": "Schriftlicher Ausdruck — Brief",
-      "min": 150,
-      "kontext": "Sie haben vor drei Wochen in einem Möbelgeschäft einen Schreibtisch bestellt und vollständig bezahlt. Geliefert werden sollte er innerhalb von zehn Tagen. Bis heute ist nichts angekommen, und auf Ihre beiden Anrufe hat niemand reagiert. Schreiben Sie an das Geschäft. Sie sollen nun einen Brief schreiben. Sie haben dafür 30 Minuten Zeit, einschließlich Korrekturlesen. Schreiben Sie in Ihrem Brief etwas zu allen vier Punkten. Achten Sie auf Anrede, Grußformel und eine sinnvolle Reihenfolge.",
-      "vorlage": "Denken Sie an Anrede, Grußformel und eine sinnvolle Reihenfolge der vier Punkte.",
+      "min": 100,
+      "brief": "Liebe(r) …,\n\nstell dir vor: Ich habe endlich eine neue Wohnung gefunden! Sie liegt am Stadtrand von Freiburg, hat einen kleinen Balkon und ist viel ruhiger als meine alte Wohnung an der Hauptstraße. Am 14. Juni ziehe ich um, und am Samstag danach möchte ich eine Einweihungsparty machen. Ich würde mich riesig freuen, wenn du kommst!\n\nEhrlich gesagt brauche ich auch ein bisschen Hilfe. Ich habe noch keine Möbel für das zweite Zimmer, und die Küche muss ich ganz neu einrichten. Du hast doch letztes Jahr auch eine Wohnung eingerichtet. Hast du ein paar Tipps für mich?\n\nSchreib mir bald, ob du Zeit hast.\n\nViele Grüße\nJonas",
+      "kontext": "Sie haben diesen Brief bekommen. Antworten Sie Jonas. Schreiben Sie etwas zu den folgenden vier Punkten. Überlegen Sie sich eine passende Reihenfolge der Inhaltspunkte. Vergessen Sie nicht Anrede und Gruß am Schluss.",
+      "vorlage": "",
       "leitpunkte": [
-       "Grund für Ihr Schreiben",
-       "Was Sie bisher unternommen haben",
-       "Welche Folgen die Verspätung für Sie hat",
-       "Was Sie jetzt vom Geschäft erwarten"
+       "Glückwunsch zur neuen Wohnung",
+       "Warum Sie nicht zur Party kommen können",
+       "Tipps zum Einrichten",
+       "Vorschlag für ein Treffen"
       ]
      }
     ]
@@ -5084,14 +5088,15 @@ window.MZ_EPREUVEN["telcb102"] = {
      {
       "nr": 1,
       "titel": "Schriftlicher Ausdruck — Brief",
-      "min": 150,
-      "kontext": "Sie sind vor zwei Monaten in eine neue Wohnung gezogen. Seit vier Wochen ist die Heizung im Wohnzimmer kalt. Sie haben die Hausverwaltung zweimal angerufen, es ist aber nichts passiert. Schreiben Sie an die Hausverwaltung. Sie sollen nun einen Brief schreiben. Sie haben dafür 30 Minuten Zeit, einschließlich Korrekturlesen. Schreiben Sie in Ihrem Brief etwas zu allen vier Punkten. Achten Sie auf Anrede, Grußformel und eine sinnvolle Reihenfolge.",
-      "vorlage": "Denken Sie an Anrede, Grußformel und eine sinnvolle Reihenfolge der vier Punkte.",
+      "min": 100,
+      "brief": "Liebe(r) …,\n\nwie geht es dir? Bei uns ist im Moment viel los. Meine Schwester heiratet im August, und stell dir vor: Ihr Mann kommt aus deinem Land! Die Hochzeit feiern wir hier in Kassel, aber viele Gäste aus seiner Familie reisen extra an.\n\nIch möchte die Gäste gern ein bisschen in ihrer Sprache begrüßen und auch etwas über die Traditionen wissen. Wie feiert man bei euch eine Hochzeit? Was schenkt man dem Brautpaar? Und gibt es Dinge, die man auf keinen Fall machen sollte?\n\nIch hoffe, du kannst mir helfen. Ich weiß, du hast viel zu tun, aber vielleicht findest du ein paar Minuten für mich.\n\nHerzliche Grüße\nSabine",
+      "kontext": "Sie haben diesen Brief bekommen. Antworten Sie Sabine. Schreiben Sie etwas zu den folgenden vier Punkten. Überlegen Sie sich eine passende Reihenfolge der Inhaltspunkte. Vergessen Sie nicht Anrede und Gruß am Schluss.",
+      "vorlage": "",
       "leitpunkte": [
-       "Grund für Ihr Schreiben",
-       "Was Sie bisher unternommen haben",
-       "Welche Folgen das Problem für Sie hat",
-       "Was Sie jetzt von der Hausverwaltung erwarten"
+       "Reaktion auf die Hochzeit",
+       "Wie man in Ihrem Land Hochzeit feiert",
+       "Ein passendes Geschenk",
+       "Ein paar Worte zur Begrüßung der Gäste"
       ]
      }
     ]
@@ -7460,14 +7465,15 @@ window.MZ_EPREUVEN["telcb103"] = {
      {
       "nr": 1,
       "titel": "Schriftlicher Ausdruck — Brief",
-      "min": 150,
-      "kontext": "Sie haben vor zwei Monaten bei einem Sportzentrum einen Kurs „Rücken und Haltung“ für zehn Termine gebucht und im Voraus bezahlt. Von den bisherigen sechs Terminen sind drei ausgefallen, zweimal ohne Ankündigung. Schreiben Sie an die Leitung des Sportzentrums. Sie sollen nun einen Brief schreiben. Sie haben dafür 30 Minuten Zeit, einschließlich Korrekturlesen. Schreiben Sie in Ihrem Brief etwas zu allen vier Punkten. Achten Sie auf Anrede, Grußformel und eine sinnvolle Reihenfolge.",
-      "vorlage": "Denken Sie an Anrede, Grußformel und eine sinnvolle Reihenfolge der vier Punkte.",
+      "min": 100,
+      "brief": "Liebe(r) …,\n\nich habe tolle Neuigkeiten: Meine Firma schickt mich für sechs Monate in deine Stadt! Ab Oktober soll ich dort in unserer neuen Filiale arbeiten. Ich freue mich sehr, aber ich bin auch ein bisschen nervös, denn ich kenne dort niemanden außer dir.\n\nKannst du mir ein paar Tipps geben? Ich suche eine kleine Wohnung, nicht zu teuer und nicht zu weit vom Zentrum. Außerdem habe ich keine Ahnung, wie man sich in der Stadt am besten bewegt. Und was macht man bei euch am Wochenende?\n\nIch würde mich freuen, wenn wir uns dann oft sehen.\n\nLiebe Grüße\nTobias",
+      "kontext": "Sie haben diesen Brief bekommen. Antworten Sie Tobias. Schreiben Sie etwas zu den folgenden vier Punkten. Überlegen Sie sich eine passende Reihenfolge der Inhaltspunkte. Vergessen Sie nicht Anrede und Gruß am Schluss.",
+      "vorlage": "",
       "leitpunkte": [
-       "Grund für Ihr Schreiben",
-       "Wie der Kurs bisher abgelaufen ist",
-       "Welche Folgen das für Sie hat",
-       "Was Sie jetzt vom Sportzentrum erwarten"
+       "Reaktion auf die Neuigkeit",
+       "Tipps zur Wohnungssuche",
+       "Verkehrsmittel in Ihrer Stadt",
+       "Gemeinsame Pläne für das Wochenende"
       ]
      }
     ]
@@ -9836,14 +9842,15 @@ window.MZ_EPREUVEN["telcb104"] = {
      {
       "nr": 1,
       "titel": "Schriftlicher Ausdruck — Brief",
-      "min": 150,
-      "kontext": "Sie haben sich bei einem Bildungszentrum für einen Abendkurs „Buchführung“ angemeldet und die Gebühr im Voraus bezahlt. Der Kurs sollte dienstags von 18 bis 21 Uhr stattfinden. Jetzt haben Sie erfahren, dass er auf den Vormittag verlegt wurde. Sie arbeiten tagsüber und können deshalb nicht teilnehmen. Schreiben Sie an das Bildungszentrum. Sie sollen nun einen Brief schreiben. Sie haben dafür 30 Minuten Zeit, einschließlich Korrekturlesen. Schreiben Sie in Ihrem Brief etwas zu allen vier Punkten. Achten Sie auf Anrede, Grußformel und eine sinnvolle Reihenfolge.",
-      "vorlage": "Denken Sie an Anrede, Grußformel und eine sinnvolle Reihenfolge der vier Punkte.",
+      "min": 100,
+      "brief": "Liebe(r) …,\n\ndu hast lange nichts von dir hören lassen. Ist alles in Ordnung?\n\nIch schreibe dir, weil wir in unserem Stadtteilzentrum im November einen internationalen Kochabend organisieren. Jeder bringt ein Gericht aus seiner Heimat mit und erzählt ein bisschen darüber. Ich habe sofort an dich gedacht! Du kochst doch so gern.\n\nDer Abend findet am Freitag, den 21. November, ab 18 Uhr statt. Wir brauchen auch noch Leute, die beim Aufbau helfen oder Musik mitbringen. Hättest du Lust mitzumachen?\n\nIch freue mich auf deine Antwort.\n\nViele liebe Grüße\nAnna",
+      "kontext": "Sie haben diesen Brief bekommen. Antworten Sie Anna. Schreiben Sie etwas zu den folgenden vier Punkten. Überlegen Sie sich eine passende Reihenfolge der Inhaltspunkte. Vergessen Sie nicht Anrede und Gruß am Schluss.",
+      "vorlage": "",
       "leitpunkte": [
-       "Grund für Ihr Schreiben",
-       "Wie Sie von der Änderung erfahren haben",
-       "Warum der neue Termin für Sie nicht möglich ist",
-       "Was Sie jetzt vom Bildungszentrum erwarten"
+       "Warum Sie sich so lange nicht gemeldet haben",
+       "Welches Gericht Sie mitbringen",
+       "Was man über dieses Gericht wissen sollte",
+       "Wie Sie sonst noch helfen können"
       ]
      }
     ]
@@ -12212,14 +12219,15 @@ window.MZ_EPREUVEN["telcb105"] = {
      {
       "nr": 1,
       "titel": "Schriftlicher Ausdruck — Brief",
-      "min": 150,
-      "kontext": "Sie haben bei einer Autovermietung für eine Urlaubswoche einen Kombi reserviert und den vollen Preis im Voraus bezahlt. Bei der Abholung war das gebuchte Auto nicht da; Sie bekamen einen viel kleineren Wagen, mussten aber denselben Preis zahlen. Außerdem war der Tank fast leer. Schreiben Sie an die Autovermietung. Sie sollen nun einen Brief schreiben. Sie haben dafür 30 Minuten Zeit, einschließlich Korrekturlesen. Schreiben Sie in Ihrem Brief etwas zu allen vier Punkten. Achten Sie auf Anrede, Grußformel und eine sinnvolle Reihenfolge.",
-      "vorlage": "Denken Sie an Anrede, Grußformel und eine sinnvolle Reihenfolge der vier Punkte.",
+      "min": 100,
+      "brief": "Liebe(r) …,\n\nleider habe ich keine gute Nachricht. Letzte Woche bin ich beim Fußballspielen so unglücklich gefallen, dass ich mir das Bein gebrochen habe. Jetzt muss ich sechs Wochen einen Gips tragen und darf nicht viel laufen.\n\nDas Schlimmste ist: Unsere Wanderung in den Alpen im nächsten Monat kann ich vergessen. Es tut mir wirklich leid, denn wir haben uns beide so darauf gefreut und die Hütte ist schon bezahlt.\n\nHast du eine Idee, was wir jetzt machen können? Vielleicht kannst du ja auch mit jemand anderem fahren. Und wenn du Zeit hast, würde ich mich über Besuch freuen. Zu Hause ist es ziemlich langweilig.\n\nViele Grüße\nMarkus",
+      "kontext": "Sie haben diesen Brief bekommen. Antworten Sie Markus. Schreiben Sie etwas zu den folgenden vier Punkten. Überlegen Sie sich eine passende Reihenfolge der Inhaltspunkte. Vergessen Sie nicht Anrede und Gruß am Schluss.",
+      "vorlage": "",
       "leitpunkte": [
-       "Grund für Ihr Schreiben",
-       "Was bei der Abholung genau passiert ist",
-       "Welche Folgen das für Ihren Urlaub hatte",
-       "Was Sie jetzt von der Firma erwarten"
+       "Reaktion auf den Unfall",
+       "Vorschlag für die geplante Wanderung",
+       "Ein Besuch bei Markus",
+       "Wie Sie ihm helfen können"
       ]
      }
     ]
@@ -14588,14 +14596,15 @@ window.MZ_EPREUVEN["telcb106"] = {
      {
       "nr": 1,
       "titel": "Schriftlicher Ausdruck — Brief",
-      "min": 150,
-      "kontext": "Sie haben vor zwei Monaten bei einem Anbieter einen Internetanschluss für zu Hause bestellt und bezahlen seitdem jeden Monat. Der Anschluss funktioniert aber immer wieder gar nicht, oft mehrere Tage lang. Auf Ihre Anrufe und E-Mails reagiert der Anbieter kaum. Schreiben Sie an den Kundenservice. Sie sollen nun einen Brief schreiben. Sie haben dafür 30 Minuten Zeit, einschließlich Korrekturlesen. Schreiben Sie in Ihrem Brief etwas zu allen vier Punkten. Achten Sie auf Anrede, Grußformel und eine sinnvolle Reihenfolge.",
-      "vorlage": "Denken Sie an Anrede, Grußformel und eine sinnvolle Reihenfolge der vier Punkte.",
+      "min": 100,
+      "brief": "Liebe(r) …,\n\nendlich habe ich mein Abitur! Jetzt möchte ich vor dem Studium ein Jahr ins Ausland gehen, und ich überlege, ob ich einen Freiwilligendienst in deinem Land machen soll. Man arbeitet dort zum Beispiel in einer Schule oder in einem Krankenhaus.\n\nMeine Eltern sind aber nicht so begeistert. Sie haben Angst, dass ich mich dort nicht zurechtfinde, weil ich die Sprache nicht spreche. Du kennst dein Land ja am besten. Was meinst du? Ist das eine gute Idee?\n\nIch würde mich sehr über deine Meinung freuen. Vielleicht kannst du mir auch sagen, was ich unbedingt mitnehmen sollte.\n\nAlles Liebe\nLena",
+      "kontext": "Sie haben diesen Brief bekommen. Antworten Sie Lena. Schreiben Sie etwas zu den folgenden vier Punkten. Überlegen Sie sich eine passende Reihenfolge der Inhaltspunkte. Vergessen Sie nicht Anrede und Gruß am Schluss.",
+      "vorlage": "",
       "leitpunkte": [
-       "Grund für Ihr Schreiben",
-       "Was Sie bisher unternommen haben",
-       "Welche Folgen die Störungen für Sie haben",
-       "Was Sie jetzt vom Anbieter erwarten"
+       "Glückwunsch zum Abitur",
+       "Ihre Meinung zu Lenas Plan",
+       "Wie Lena die Sprache lernen kann",
+       "Was sie unbedingt mitnehmen sollte"
       ]
      }
     ]
@@ -29227,10 +29236,23 @@ function zustand(m){
   if(s.abgegeben) return "fertig";
   return "laeuft";
 }
+/* Une seule durée pour toute l'épreuve écrite (modules payés additionnés) :
+   le candidat la répartit comme il veut entre Lesen, Hören et Schreiben.
+   L'horloge part à l'ouverture du premier module.                          */
+function gesamtMinuten(){
+  return EP.module.filter(bezahlt).reduce(function(a,m){ return a+m.minuten; },0);
+}
+function restGlobal(){
+  var tot=gesamtMinuten()*60;
+  return SESSION.gStart ? tot-(jetzt()-SESSION.gStart)/1000 : tot;
+}
 function restzeit(m){
   var s=SESSION.module[m.id];
-  if(!s||!s.start) return m.minuten*60;
-  return m.minuten*60 - (jetzt()-s.start)/1000;
+  var r=restGlobal();
+  /* Hören : l'épreuve s'arrête avec l'enregistrement (déroulé officiel),
+     plus une courte minute pour relire ses réponses. */
+  if(s && s.endeFrueh) r=Math.min(r,(s.endeFrueh-jetzt())/1000);
+  return r;
 }
 
 function zeigeModule(){
@@ -29241,6 +29263,14 @@ function zeigeModule(){
      : SESSION.geprueft==="OFFLINE" ? " (ohne Netz geprüft)" : " (nicht geprüft)")+
     (SESSION.ende ? " · Zugang bis "+new Date(SESSION.ende).toLocaleTimeString("de-DE",{hour:"2-digit",minute:"2-digit"})+" Uhr" : "");
   var box=$("m-liste"); box.innerHTML="";
+  var gm=gesamtMinuten();
+  var kopf=document.createElement("div"); kopf.className="mod"; kopf.style.borderStyle="dashed";
+  kopf.innerHTML='<div><div class="nm">Schriftliche Prüfung — '+gm+' Minuten insgesamt</div>'+
+    '<div class="du">Sie teilen die Zeit frei zwischen den Teilen ein. Das Hörverstehen läuft ohne Pause, '+
+    'sobald Sie es starten.</div></div>'+
+    '<div class="sp"><span class="pill run" style="font-size:15px">'+
+    (SESSION.gStart?'Restzeit <b id="m-zeit">'+mmss(restGlobal())+'</b>':'Die Uhr startet mit dem ersten Teil')+'</span></div>';
+  box.appendChild(kopf);
   EP.module.forEach(function(m){
     var z=zustand(m), rest=restzeit(m);
     if(z==="offen" && fensterZu()){
@@ -29257,19 +29287,33 @@ function zeigeModule(){
     }
     if(z==="laeuft" && rest<=0){ abgeben(m,true,true); z="fertig"; }
     var pill = z==="fertig" ? '<span class="pill fin">abgegeben</span>'
-             : z==="laeuft" ? '<span class="pill run">läuft — '+mmss(rest)+'</span>'
+             : z==="laeuft" ? '<span class="pill run">begonnen</span>'
              : '<span class="pill att">noch nicht begonnen</span>';
     var btn = z==="fertig" ? ''
             : '<button class="btn small" data-m="'+m.id+'">'+(z==="laeuft"?"Fortsetzen":"Beginnen")+'</button>';
     var d=document.createElement("div"); d.className="mod";
-    d.innerHTML='<div><div class="nm">'+esc(m.name)+'</div><div class="du">'+m.minuten+' Minuten'+
-      (m.audio?' · mit Audio':'')+'</div></div><div class="sp">'+pill+btn+'</div>';
+    d.innerHTML='<div><div class="nm">'+esc(m.name)+'</div><div class="du">Richtzeit '+m.minuten+' Minuten'+
+      (m.audio?' · mit Audio, einmal hören':'')+'</div></div><div class="sp">'+pill+btn+'</div>';
     box.appendChild(d);
   });
   Array.prototype.forEach.call(box.querySelectorAll("button[data-m]"),function(b){
     b.addEventListener("click",function(){ oeffne(b.dataset.m); });
   });
   var fertig=EP.module.filter(function(m){return zustand(m)==="fertig";}).length;
+  var offenMods=EP.module.filter(function(m){ return zustand(m)==="laeuft"; });
+  if(offenMods.length){
+    var ab=document.createElement("div"); ab.className="row-btn"; ab.style.justifyContent="flex-end";
+    ab.innerHTML='<button class="btn" id="m-alles">Gesamte Prüfung abgeben</button>';
+    box.appendChild(ab);
+    $("m-alles").addEventListener("click",function(){
+      if(!confirm("Die gesamte schriftliche Prüfung jetzt abgeben?\n\nDanach können Sie nichts mehr ändern.")) return;
+      offenMods.forEach(function(m){ abgeben(m,false,true); });
+      MODUL=null; ansicht("v-fin");
+      $("f-titel").textContent="Prüfung abgegeben";
+      $("f-msg").innerHTML='<div class="msg ok"><strong>Vielen Dank</strong>Ihre Arbeit wird an das Zentrum übermittelt.</div>';
+    });
+  }
+  if(SESSION.gStart && restGlobal()>0) starteUhr();
   // mode essai : aucune adresse de réception configurée
   if(!CONFIG.RECEPTION){
     var t=document.createElement("div");
@@ -29316,6 +29360,7 @@ function ansicht(id){
 /* Fenêtre de composition fixée par le serveur à la première entrée :
    durée des modules payés + marge. Passé l'heure, plus rien ne s'ouvre. */
 function fensterZu(){
+  if(SESSION && SESSION.gStart && EP && restGlobal()<=0) return true;   // temps de l'épreuve écoulé
   return !!(SESSION && SESSION.ende && Date.now() > new Date(SESSION.ende).getTime());
 }
 function bezahlt(m){
@@ -29328,13 +29373,16 @@ function oeffne(mid){
   if(!bezahlt(MODUL) && !SESSION.module[mid]){ MODUL=null; zeigeModule(); return; }
   if(fensterZu() && !SESSION.module[mid]){ MODUL=null; zeigeModule(); return; }
   var s = SESSION.module[mid];
-  if(!s){ s = SESSION.module[mid] = {start:jetzt(), antworten:{}, texte:{}, weg:0}; speichern(); }
+  if(!SESSION.gStart){ SESSION.gStart=jetzt(); }
+  if(!s){ s = SESSION.module[mid] = {start:jetzt(), antworten:{}, texte:{}, weg:0}; }
+  speichern();
   if(s.abgegeben){ zeigeModule(); return; }
   vollbild();
   ansicht("v-comp");
   $("c-kopf").innerHTML='<div class="card"><h2>'+esc(MODUL.name)+' — '+esc(EP.titel)+'</h2>'+
-    '<p class="hint" style="margin:0">Ihre Antworten werden laufend gespeichert. '+
-    'Wenn die Uhr abläuft, wird das Modul automatisch abgegeben.</p></div>';
+    '<p class="hint" style="margin:0">Ihre Antworten werden laufend gespeichert. Sie können jederzeit zur Übersicht '+
+    'zurückkehren und in einem anderen Teil weiterarbeiten. Die Uhr gilt für die ganze schriftliche Prüfung.</p></div>';
+  $("foot-back").hidden=false;
   if(MODUL.id==="schreiben") baueSchreiben(); else baueFragen();
   starteUhr();
   if(MODUL.audio) starteAudio();
@@ -29446,10 +29494,13 @@ function baueSchreiben(){
   var h="";
   MODUL.schreiben.aufgaben.forEach(function(a){
     /* La consigne et les points restent à gauche, la feuille d'écriture à droite */
+    /* format telc B1 : la lettre reçue à gauche, puis la consigne et les 4 points */
+    var brief = a.brief ? '<div class="brief">'+esc(a.brief).replace(/\n/g,"<br>")+'</div>' : '';
     h+='<div class="teil"><div class="tt"><b>'+esc(a.titel)+'</b><span>mindestens '+a.min+' Wörter</span></div>'+
-       '<div class="anw">'+esc(a.kontext)+'</div></div>'+
-       '<div class="duo"><div class="lesespalte">'+
-         '<div class="lese">'+esc(a.vorlage).replace(/\n/g,"<br>")+'</div>'+
+       (a.brief ? '' : '<div class="anw">'+esc(a.kontext)+'</div>')+'</div>'+
+       '<div class="duo"><div class="lesespalte">'+ brief +
+         (a.vorlage ? '<div class="lese">'+esc(a.vorlage).replace(/\n/g,"<br>")+'</div>' : '')+
+         (a.brief ? '<p class="anw" style="margin:14px 0 8px"><b>'+esc(a.kontext)+'</b></p>' : '')+
          '<div class="card" style="margin:0"><h2>Schreiben Sie zu allen vier Punkten</h2><ul>'+
          a.leitpunkte.map(function(p){return "<li>"+esc(p)+"</li>";}).join("")+'</ul></div>'+
        '</div><div class="fragespalte">'+
@@ -29476,8 +29527,12 @@ function baueSchreiben(){
 function aktualisiereFortschritt(){
   var s=SESSION.module[MODUL.id];
   if(MODUL.id==="schreiben"){
-    var n=MODUL.schreiben.aufgaben.map(function(a){ return woerter(s.texte["a"+a.nr]||""); });
-    $("foot-fort").textContent="Aufgabe 1: "+n[0]+" Wörter · Aufgabe 2: "+(n[1]||0)+" Wörter";
+    var auf=MODUL.schreiben.aufgaben;
+    if(auf.length===1){
+      $("foot-fort").textContent=woerter(s.texte["a"+auf[0].nr]||"")+" Wörter";
+    }else{
+      $("foot-fort").textContent=auf.map(function(a){ return "Aufgabe "+a.nr+": "+woerter(s.texte["a"+a.nr]||"")+" Wörter"; }).join(" · ");
+    }
   }else{
     var total=0; MODUL.teile.forEach(function(t){ total+=t.items.length; });
     var b=Object.keys(s.antworten).length;
@@ -29486,16 +29541,32 @@ function aktualisiereFortschritt(){
 }
 
 /* ───────────────────────────────────────────────────────────── chrono */
+var NACHLAUF_HOEREN=60;   // secondes après la fin de l'enregistrement
 function starteUhr(){
   if(TICK) clearInterval(TICK);
+  if(!SESSION || !SESSION.gStart) return;
   var tick=function(){
-    var r=restzeit(MODUL);
-    var el=$("chrono-t");
-    el.textContent=mmss(r);
-    el.className="t mono"+(r<=60?" bad":(r<=300?" warn":""));
-    if(r<=0){ clearInterval(TICK); abgeben(MODUL,true,false); }
+    var g=restGlobal();
+    if(g<=0){ clearInterval(TICK); TICK=null; alleAbgeben(); return; }
+    if(MODUL && !$("v-comp").hidden){
+      var r=restzeit(MODUL), el=$("chrono-t");
+      el.textContent=mmss(r);
+      el.className="t mono"+(r<=60?" bad":(r<=300?" warn":""));
+      if(r<=0){ abgeben(MODUL,true,false); }       // fin du Hören (enregistrement terminé)
+    } else if(!$("v-mods").hidden){
+      var z=$("m-zeit"); if(z) z.textContent=mmss(g);
+    }
   };
   tick(); TICK=setInterval(tick,1000);
+}
+/* Temps écoulé : tout ce qui est commencé et pas encore rendu part d'office. */
+function alleAbgeben(){
+  EP.module.forEach(function(m){ if(zustand(m)==="laeuft") abgeben(m,true,true); });
+  MODUL=null; stoppeAudio();
+  ansicht("v-fin");
+  $("f-titel").textContent="Die Prüfungszeit ist abgelaufen";
+  $("f-msg").innerHTML='<div class="msg ok"><strong>Ihre Arbeit wurde abgegeben</strong>'+
+    'Alle begonnenen Teile wurden automatisch an das Zentrum übermittelt.</div>';
 }
 
 /* ───────────────────────────────────────────────────────────── audio */
@@ -29503,78 +29574,87 @@ function starteAudio(){
   var s=SESSION.module[MODUL.id];
   var box=document.createElement("div");
   box.className="audiobox";
-  box.innerHTML='<div class="st"><span id="a-st">Audio wird geladen …</span></div>'+
+  box.innerHTML='<div class="st"><span id="a-st"></span></div>'+
     '<div class="ba"><i id="a-ba"></i></div>'+
-    '<p>Der Text wird nur einmal abgespielt. Zurückspulen ist nicht möglich.</p>';
+    '<p>Der Text wird nur einmal abgespielt. Anhalten und Zurückspulen sind nicht möglich. '+
+    'Sobald Sie starten, bleiben Sie im Hörverstehen, bis die Aufnahme zu Ende ist.</p>';
   $("c-kopf").appendChild(box);
   AUDIO=document.createElement("audio");
-  AUDIO.src=MODUL.audio; AUDIO.preload="auto"; AUDIO.setAttribute("playsinline","");
+  /* les enregistrements sont posés à côté de la page ; secours : dossier audio/ */
+  var datei=String(MODUL.audio).replace(/^audio\//,"");
+  var quellen=[datei,"audio/"+datei], qi=0;
+  AUDIO.src=quellen[0]; AUDIO.preload="auto"; AUDIO.setAttribute("playsinline","");
   AUDIO.style.display="none";
-  /* l'audio peut être dans le dossier audio/ ou directement à côté de la page */
-  var zweiterVersuch=false;
-  AUDIO.addEventListener("error",function(){
-    if(zweiterVersuch || !AUDIO) return; zweiterVersuch=true;
-    var alt=String(MODUL.audio).indexOf("audio/")===0 ? MODUL.audio.slice(6) : "audio/"+MODUL.audio;
-    AUDIO.src=alt; AUDIO.load();
-  });
   box.appendChild(AUDIO);
-  var startAb = s.audioAb || 0;
-  var gesetzt=false;
-  function bereit(){
-    if(!AUDIO || AUDIO.readyState<1) return;
-    if(!gesetzt){
-      gesetzt=true;
-      if(startAb>0 && startAb<AUDIO.duration-2){ try{ AUDIO.currentTime=startAb; }catch(e){} }
-    }
-    AUDIO.play().then(function(){ $("a-st").textContent="Audio läuft"; })
-      .catch(function(){
-        $("a-st").innerHTML='<button class="btn small" id="a-go">Audio starten</button>';
-        var g=$("a-go"); if(g) g.addEventListener("click",function(){
-          AUDIO.play(); $("a-st").textContent="Audio läuft"; });
-      });
+  var startAb=s.audioAb||0, gesetzt=false, laeuft=false;
+
+  function knopf(text){
+    $("a-st").innerHTML='<button class="btn" id="a-go">▶ '+text+'</button>';
+    $("a-go").addEventListener("click",los);
   }
-  AUDIO.addEventListener("loadedmetadata",bereit);
-  AUDIO.addEventListener("canplay",bereit);
-  if(AUDIO.readyState>=1) bereit();
+  /* Le départ se fait toujours par un appui du candidat : c'est ce que
+     demandent les téléphones (iPhone surtout) pour lancer un son.           */
+  function los(){
+    $("a-st").textContent="Audio wird gestartet …";
+    var p=AUDIO.play();
+    if(p && p.then) p.then(gestartet).catch(function(){ knopf("Audio starten"); });
+    else gestartet();
+  }
+  function gestartet(){
+    laeuft=true; s.audioGestartet=true; speichern();
+    $("a-st").textContent="Audio läuft";
+    var fb=$("foot-back"); if(fb) fb.hidden=true;      // on reste dans le Hören jusqu'à la fin
+  }
+  function positionieren(){
+    if(gesetzt || !AUDIO || AUDIO.readyState<1) return;
+    gesetzt=true;
+    if(startAb>0 && startAb<AUDIO.duration-2){ try{ AUDIO.currentTime=startAb; }catch(e){} }
+  }
+  AUDIO.addEventListener("loadedmetadata",positionieren);
+  AUDIO.addEventListener("canplay",positionieren);
+  AUDIO.addEventListener("progress",function(){
+    if(laeuft || !AUDIO || !AUDIO.duration || !AUDIO.buffered.length) return;
+    var pc=Math.min(100,Math.round(100*AUDIO.buffered.end(AUDIO.buffered.length-1)/AUDIO.duration));
+    var n=$("a-lade"); if(n) n.textContent=" (geladen: "+pc+" %)";
+  });
+  AUDIO.addEventListener("error",function(){
+    if(!AUDIO) return;
+    if(qi<quellen.length-1){ qi++; AUDIO.src=quellen[qi]; AUDIO.load(); return; }
+    $("a-st").innerHTML='Die Audiodatei konnte nicht geladen werden. Prüfen Sie Ihre Internetverbindung. '+
+      '<button class="btn small" id="a-neu">Erneut versuchen</button>';
+    $("a-neu").addEventListener("click",function(){ qi=0; AUDIO.src=quellen[0]; AUDIO.load(); knopf(startAb>0?"Weiter hören":"Hörverstehen starten"); });
+  });
+  if(startAb>0 || s.audioGestartet){ knopf("Weiter hören"); var fb0=$("foot-back"); if(fb0) fb0.hidden=true; }
+  else { knopf("Hörverstehen starten"); }
+  $("a-st").insertAdjacentHTML("beforeend",'<span id="a-lade" style="font-size:12px;opacity:.7"></span>');
+
   var letzte=startAb, korrigiert=false, gemerkt=-1;
   function zurueckSperren(){
-    // le retour en arrière est interdit, comme dans la vraie salle d'examen
     if(!korrigiert && AUDIO && AUDIO.currentTime < letzte-1.5){
       korrigiert=true;
       try{ AUDIO.currentTime=letzte; }catch(e){}
       setTimeout(function(){ korrigiert=false; },250);
-      if(AUDIO.paused){ AUDIO.play().catch(function(){}); }
+      if(AUDIO.paused && laeuft){ AUDIO.play().catch(function(){}); }
     }
   }
   AUDIO.addEventListener("seeking",zurueckSperren);
   AUDIO.addEventListener("seeked",zurueckSperren);
   AUDIO.addEventListener("pause",function(){
-    if(AUDIO && !AUDIO.ended && !AUDIO.paused===false){ AUDIO.play().catch(function(){}); }
+    if(AUDIO && laeuft && !AUDIO.ended){ AUDIO.play().catch(function(){ knopf("Weiter hören"); }); }
   });
   AUDIO.addEventListener("timeupdate",function(){
     zurueckSperren();
     letzte=Math.max(letzte,AUDIO.currentTime);
     s.audioAb=letzte;
-    // on note la position toutes les cinq secondes : si l'appareil s'éteint,
-    // l'audio reprend là où il s'était arrêté et non au début
     var sek=Math.floor(letzte);
     if(sek!==gemerkt && sek%5===0){ gemerkt=sek; speichern(); }
     $("a-ba").style.width=(100*AUDIO.currentTime/(AUDIO.duration||1))+"%";
   });
-  AUDIO.addEventListener("ended",function(){ $("a-st").textContent="Audio beendet"; });
-  AUDIO.addEventListener("error",function(){
-    // l'audio n'est pas au bout de son adresse : on propose de le choisir sur l'appareil
-    $("a-st").innerHTML='Audiodatei nicht gefunden. '+
-      '<label class="btn small" style="display:inline-block">Audio auswählen'+
-      '<input type="file" id="a-datei" accept="audio/*" hidden></label>';
-    var inp=$("a-datei");
-    if(inp) inp.addEventListener("change",function(){
-      var f=inp.files && inp.files[0];
-      if(!f) return;
-      AUDIO.src=URL.createObjectURL(f);
-      AUDIO.load();
-      $("a-st").textContent="Audio läuft";
-    });
+  AUDIO.addEventListener("ended",function(){
+    laeuft=false;
+    var sm=SESSION.module[MODUL.id];
+    if(sm && !sm.endeFrueh){ sm.endeFrueh=jetzt()+NACHLAUF_HOEREN*1000; speichern(); }
+    $("a-st").textContent="Das Hörverstehen ist zu Ende. Das Modul wird in einer Minute automatisch abgegeben.";
   });
 }
 function stoppeAudio(){ if(AUDIO){ try{AUDIO.pause(); AUDIO.removeAttribute("src"); AUDIO.load(); }catch(e){} AUDIO=null; } }
@@ -29687,7 +29767,9 @@ function protokoll(m){
   function court(x,n){ x=String(x==null?"":x).replace(/\s+/g," ").trim(); return x.length>n? x.slice(0,n-1)+"…" : x; }
   if(m.schreiben){
     return {typ:"schreiben", aufgaben:m.schreiben.aufgaben.map(function(a){
-      return {nr:a.nr, titel:a.titel, min:a.min, kontext:a.kontext, vorlage:a.vorlage||"", leitpunkte:a.leitpunkte||[]};
+      return {nr:a.nr, titel:a.titel, min:a.min,
+              kontext:(a.brief ? "Brief: « "+a.brief.replace(/\s*\n\s*/g," / ")+" » — " : "")+a.kontext,
+              vorlage:a.vorlage||"", leitpunkte:a.leitpunkte||[]};
     })};
   }
   var items=[];
@@ -29723,13 +29805,21 @@ function abgeben(m,automatisch,stumm){
     protokoll:protokoll(m)
   };
   var archiv=LS.get("mz_kopien",[]); archiv.push(kopie); LS.set("mz_kopien",archiv);
-  if(stumm){ return; }
+  if(stumm){ sendeStill(kopie,0); return; }
   ansicht("v-fin");
   $("f-titel").textContent=m.name+" — abgegeben";
   $("f-msg").innerHTML='<div class="msg">Ihre Kopie wird übermittelt …</div>';
   sende(kopie,0);
 }
 
+function sendeStill(kopie,versuch){
+  if(!CONFIG.RECEPTION) return;
+  fetch(CONFIG.RECEPTION,{method:"POST",mode:"cors",redirect:"follow",
+    headers:{"Content-Type":"text/plain;charset=utf-8"},body:JSON.stringify(kopie)})
+  .then(function(r){ return r.text(); })
+  .then(function(t){ if(!(t && /^OK$/.test(t.trim()))) throw 0; })
+  .catch(function(){ if(versuch<4) setTimeout(function(){ sendeStill(kopie,versuch+1); }, 4000); });
+}
 function sende(kopie,versuch){
   if(!CONFIG.RECEPTION){
     $("f-msg").innerHTML='<div class="msg warn"><strong>Kopie auf diesem Gerät gespeichert</strong>'+
@@ -29743,7 +29833,7 @@ function sende(kopie,versuch){
     headers:{"Content-Type":"text/plain;charset=utf-8"},
     body:JSON.stringify(kopie)
   }).then(function(r){ return r.text(); }).then(function(t){
-    if(t && t.indexOf("OK")>=0){
+    if(t && /^OK$/.test(t.trim())){
       $("f-msg").innerHTML='<div class="msg ok"><strong>Kopie beim Zentrum eingegangen</strong>'+
         'Sie können das nächste Modul wählen oder den Raum verlassen.</div>';
     } else { throw new Error("unerwartete Antwort"); }
@@ -29770,6 +29860,7 @@ function dateiSpeichern(kopie){
 }
 
 $("f-zurueck").addEventListener("click",function(){ MODUL=null; zeigeModule(); });
+$("foot-back").addEventListener("click",function(){ stoppeAudio(); MODUL=null; speichern(); zeigeModule(); });
 
 /* Liste de secours : on la rafraîchit à chaque ouverture de la page, tant que
    le réseau est là. Le candidat n'attend pas : cela se fait en arrière-plan. */
