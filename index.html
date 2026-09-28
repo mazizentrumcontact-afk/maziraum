@@ -180,6 +180,91 @@ main{max-width:880px;margin:0 auto;padding:20px 16px 90px}
   padding:10px 13px;margin-bottom:12px;font-size:14px}
 .bsp b{color:var(--accent-ink)}
 
+/* ---------- zuordnen : glisser la carte dans le cadre ---------- */
+.zhilfe{font-size:13px;color:var(--muted);margin:0 0 10px}
+.pool{display:flex;flex-direction:column;gap:7px;margin-bottom:14px}
+@media (min-width:900px){ .duo.zu .pool{position:sticky;top:76px;max-height:calc(100vh - 150px);overflow:auto;padding-right:4px} }
+.chip{position:relative;display:flex;gap:10px;align-items:flex-start;padding:10px 38px 10px 12px;
+  border:1px solid var(--line-strong);border-radius:9px;background:var(--surface);cursor:grab;font-size:15px;
+  touch-action:manipulation;transition:border-color .12s,background .12s,opacity .12s}
+.chip:hover{border-color:var(--accent)}
+.chip>b{flex:none;display:inline-grid;place-items:center;min-width:26px;height:26px;border-radius:6px;
+  background:var(--accent);color:#fff;font-size:14px}
+.chip .ct{min-width:0}
+.chip.gross{margin-bottom:9px;background:var(--surface-2)}
+.chip.gross strong{display:block}
+.chip.gross .cb{display:block;margin-top:4px;font-size:14.5px}
+.chip.pick{outline:3px solid var(--accent);outline-offset:1px;background:var(--accent-soft)}
+.chip.zieht{opacity:.45}
+.chip.benutzt{opacity:.5}
+.chip.benutzt>b{background:var(--faint)}
+.streich{position:absolute;top:7px;right:7px;width:26px;height:26px;border-radius:6px;border:1px solid var(--line);
+  background:var(--surface);color:var(--muted);font-size:13px;line-height:1;cursor:pointer;padding:0}
+.streich:hover{border-color:var(--bad);color:var(--bad)}
+.weg{border-color:var(--bad)!important;background:var(--bad-soft)!important}
+.weg .ct,.weg>span:not(.k){text-decoration:line-through;text-decoration-color:var(--bad);color:var(--bad)}
+.weg>b,.weg .k{background:var(--bad)!important;color:#fff}
+.weg .streich{background:var(--bad);color:#fff;border-color:var(--bad)}
+.opt{position:relative}
+.opt .streich{position:static;margin-left:auto;flex:none;width:24px;height:24px}
+.opt.weg .k{background:none!important;color:var(--bad)}
+.dropzeile{margin-top:10px}
+.drop{position:relative;display:flex;align-items:center;min-height:46px;padding:8px 36px 8px 12px;
+  border:2px dashed var(--line-strong);border-radius:9px;color:var(--faint);font-style:italic;font-size:14px;
+  background:var(--surface);cursor:pointer}
+.drop.bereit{border-color:var(--accent);background:var(--accent-soft)}
+.drop.ueber{border-style:solid;border-color:var(--accent);background:var(--accent-soft)}
+.drop.wink{animation:pulse .7s}
+.drop.voll{border-style:solid;border-color:var(--accent);color:var(--ink);font-style:normal;background:var(--accent-soft)}
+.drop.voll .dv b{display:inline-grid;place-items:center;min-width:24px;height:24px;border-radius:6px;
+  background:var(--accent);color:#fff;margin-right:6px;font-size:13px}
+.drop .dx{display:none;position:absolute;right:6px;top:50%;transform:translateY(-50%);width:24px;height:24px;
+  border:0;border-radius:6px;background:transparent;color:var(--muted);font-size:18px;cursor:pointer}
+.drop.voll .dx{display:block}
+.drop.inl{display:inline-flex;vertical-align:baseline;min-height:0;min-width:96px;padding:1px 26px 1px 4px;
+  margin:0 2px;border-radius:6px;font-size:15px;line-height:1.5}
+.drop.inl>i{font-style:normal;font-weight:700;font-size:12px;color:var(--accent-ink);background:var(--surface-2);
+  border-radius:4px;padding:0 5px;margin-right:4px;font-family:"IBM Plex Mono",monospace}
+.drop.inl.voll .dv b{min-width:0;height:auto;padding:0 5px;font-size:12px}
+.drop.inl .dx{width:20px;height:20px;font-size:15px;right:2px}
+.q.zq .fr{margin-bottom:8px}
+.luecke{cursor:pointer}
+.luecke i{font-style:normal}
+.luecke.voll{background:var(--accent);color:#fff}
+.luecke.voll i{opacity:.8;margin-right:5px}
+.geist{position:fixed;z-index:99;pointer-events:none;max-width:320px;padding:8px 12px;border-radius:8px;
+  background:var(--accent);color:#fff;font-size:14px;box-shadow:0 6px 18px rgba(0,0,0,.25)}
+.geist b{margin-right:4px}
+#waehler{position:fixed;inset:0;z-index:90;background:rgba(10,20,28,.45);display:flex;align-items:flex-end;justify-content:center}
+#waehler .wbox{background:var(--surface);width:100%;max-width:560px;max-height:78vh;display:flex;flex-direction:column;
+  border-radius:14px 14px 0 0;box-shadow:0 -8px 30px rgba(0,0,0,.25)}
+@media (min-width:700px){ #waehler{align-items:center} #waehler .wbox{border-radius:14px} }
+#waehler .wkopf{display:flex;justify-content:space-between;align-items:center;padding:12px 16px;border-bottom:1px solid var(--line)}
+#waehler .wzu{border:0;background:transparent;font-size:24px;color:var(--muted);cursor:pointer}
+#waehler .wliste{overflow:auto;padding:10px 12px 16px;display:grid;gap:7px}
+.wopt{display:flex;gap:10px;align-items:flex-start;text-align:left;padding:10px 12px;border:1px solid var(--line-strong);
+  border-radius:9px;background:var(--surface-2);font:inherit;font-size:15px;color:var(--ink);cursor:pointer}
+.wopt b{flex:none;display:inline-grid;place-items:center;min-width:26px;height:26px;border-radius:6px;background:var(--accent);color:#fff}
+.wopt.benutzt{opacity:.55}
+.wopt.weg span{text-decoration:line-through;color:var(--bad)}
+.wopt.weg b{background:var(--bad)}
+
+/* ---------- e-mail (Schreiben B1) ---------- */
+.situation{font-style:italic;margin:0 0 10px}
+.mail{border:1px solid var(--line);border-radius:var(--r);background:var(--surface);overflow:hidden;margin-bottom:12px}
+.mail .kopfz{background:var(--surface-2);border-bottom:1px solid var(--line);padding:9px 14px;font-size:13.5px;line-height:1.6}
+.mail .kopfz b{display:inline-block;width:62px;color:var(--muted);font-weight:600}
+.mail .koerper{padding:14px 16px;font-size:15.5px;line-height:1.6}
+.antwortkopf{display:grid;grid-template-columns:62px 1fr;gap:6px 8px;align-items:center;margin-bottom:10px;font-size:14px}
+.antwortkopf label{color:var(--muted);font-weight:600}
+.antwortkopf input{width:100%;background:var(--surface-2);border:1px solid var(--line-strong);border-radius:8px;
+  padding:8px 10px;font:inherit;color:var(--ink)}
+.antwortkopf .an{padding:8px 10px;color:var(--muted)}
+.tasten{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:8px}
+.tasten button{min-width:40px;height:38px;border-radius:8px;border:1px solid var(--accent);background:var(--accent);
+  color:#fff;font-size:17px;font-weight:600;cursor:pointer}
+.tasten button:active{transform:translateY(1px)}
+
 /* ---------- audio ---------- */
 .audiobox{background:var(--accent-soft);border:1px solid var(--accent);border-radius:var(--r);
   padding:16px;margin-bottom:16px;position:sticky;top:57px;z-index:20}
@@ -206,7 +291,7 @@ textarea{min-height:230px;resize:vertical;line-height:1.6;font-size:15.5px}
   border-radius:8px;padding:16px 18px;font-family:Georgia,"Times New Roman",serif;font-size:15.5px;line-height:1.6}
 /* protection pendant la composition */
 body.pruefung #v-comp{-webkit-user-select:none;user-select:none;-webkit-touch-callout:none}
-body.pruefung #v-comp textarea{-webkit-user-select:text;user-select:text}
+body.pruefung #v-comp textarea,body.pruefung #v-comp input{-webkit-user-select:text;user-select:text}
 #wz{position:fixed;inset:-50%;z-index:40;pointer-events:none;display:flex;flex-wrap:wrap;
   align-content:flex-start;gap:70px 90px;transform:rotate(-24deg);opacity:.085;font:600 15px/1 system-ui,sans-serif;
   color:#000;overflow:hidden}
@@ -798,8 +883,8 @@ window.MZ_EPREUVEN["telcb101"] = {
        "items": [
         {
          "l": "a",
-         "t": "Offene Fahrradwerkstatt Mühlental",
-         "b": "Jeden Mittwoch 16–20 Uhr. Werkzeug, Ersatzteile und Beratung stehen bereit — reparieren müssen Sie selbst, wir helfen dabei. Beitrag nach Selbsteinschätzung, ab 2 €."
+         "t": "Aushilfe für Marktstand gesucht",
+         "b": "Samstags 7–14 Uhr, Aufbau und Verkauf von Obst und Gemüse. Kein Führerschein nötig, Deutschkenntnisse ab B1. 14 € die Stunde."
         },
         {
          "l": "b",
@@ -808,33 +893,33 @@ window.MZ_EPREUVEN["telcb101"] = {
         },
         {
          "l": "c",
-         "t": "Begleitdienst „Zeit für Sie“",
-         "b": "Ehrenamtliche begleiten ältere Menschen zum Einkauf, zum Arzt oder zum Spaziergang. Feste Termine, einmal wöchentlich. Kostenlos, Anmeldung über das Seniorenbüro."
+         "t": "Offene Fahrradwerkstatt Mühlental",
+         "b": "Jeden Mittwoch 16–20 Uhr. Werkzeug, Ersatzteile und Beratung stehen bereit — reparieren müssen Sie selbst, wir helfen dabei. Beitrag nach Selbsteinschätzung, ab 2 €."
         },
         {
          "l": "d",
-         "t": "Umzugshilfe Kraus — Möbel & Transport",
-         "b": "Wir übernehmen Ihren kompletten Umzug mit Team und Fahrzeug. Ab 480 € pauschal. Termine mindestens vier Wochen im Voraus."
+         "t": "Transporter zur Selbstabholung",
+         "b": "Kleinbus und Kastenwagen tageweise ab 39 €, auch am Wochenende. Führerschein Klasse B genügt, Abholung samstags ab 7 Uhr möglich."
         },
         {
          "l": "e",
-         "t": "Deutsch am Abend — online",
-         "b": "Konversationskurs B1/B2, dienstags und donnerstags 19.30–21 Uhr, über Video. Höchstens acht Teilnehmende, Einstieg jederzeit möglich. 35 € im Monat."
+         "t": "Tabellenkalkulation am Feierabend — online",
+         "b": "Einsteigerkurs: Tabellen, Formeln und Diagramme für den Berufsalltag. Dienstags und donnerstags 19.30–21 Uhr über Video, höchstens zehn Teilnehmende, Einstieg jederzeit möglich. 35 € im Monat."
         },
         {
          "l": "f",
-         "t": "Schlüsseldienst Bergmann",
-         "b": "Türöffnung rund um die Uhr, auch an Sonn- und Feiertagen. In der Regel innerhalb von 45 Minuten vor Ort. Festpreis vorab am Telefon."
+         "t": "Fahrschule Kompakt",
+         "b": "Führerschein in vier Wochen: Intensivkurs mit täglichem Unterricht, Prüfungstermin garantiert. Ratenzahlung möglich."
         },
         {
          "l": "g",
-         "t": "Computerspende Aufwind e. V.",
-         "b": "Wir nehmen funktionierende Laptops und Rechner an, löschen alle Daten und geben die Geräte an Schülerinnen und Schüler weiter. Abgabe dienstags und freitags 10–15 Uhr."
+         "t": "Lagerbox Westkreuz — Platz auf Zeit",
+         "b": "Trockene Lagerräume von 2 bis 20 m² für Möbel und Kartons, ab einem Monat Mietdauer. Zufahrt für Pkw und Transporter bis direkt ans Rolltor, Zugang täglich 6–22 Uhr. Ab 29 € im Monat."
         },
         {
          "l": "h",
-         "t": "Aushilfe für Marktstand gesucht",
-         "b": "Samstags 7–14 Uhr, Aufbau und Verkauf von Obst und Gemüse. Kein Führerschein nötig, Deutschkenntnisse ab B1. 14 € die Stunde."
+         "t": "Flohmarkt im Hof",
+         "b": "Jeden ersten Sonntag im Monat, 8–14 Uhr. Standgebühr 10 €, eigener Tisch erforderlich. Verkauf von Kleidung, Büchern und Spielzeug — keine Elektrogeräte."
         },
         {
          "l": "i",
@@ -843,18 +928,18 @@ window.MZ_EPREUVEN["telcb101"] = {
         },
         {
          "l": "j",
-         "t": "Fahrschule Kompakt",
-         "b": "Führerschein in vier Wochen: Intensivkurs mit täglichem Unterricht, Prüfungstermin garantiert. Ratenzahlung möglich."
+         "t": "Schlüsseldienst Bergmann",
+         "b": "Türöffnung rund um die Uhr, auch an Sonn- und Feiertagen. In der Regel innerhalb von 45 Minuten vor Ort. Festpreis vorab am Telefon."
         },
         {
          "l": "k",
-         "t": "Flohmarkt im Hof",
-         "b": "Jeden ersten Sonntag im Monat, 8–14 Uhr. Standgebühr 10 €, eigener Tisch erforderlich. Verkauf von Kleidung, Büchern und Spielzeug — keine Elektrogeräte."
+         "t": "Begleitdienst „Zeit für Sie“",
+         "b": "Ehrenamtliche begleiten ältere Menschen zum Einkauf, zum Arzt oder zum Spaziergang. Feste Termine, einmal wöchentlich. Kostenlos, Anmeldung über das Seniorenbüro."
         },
         {
          "l": "l",
-         "t": "Transporter zur Selbstabholung",
-         "b": "Kleinbus und Kastenwagen tageweise ab 39 €, auch am Wochenende. Führerschein Klasse B genügt, Abholung samstags ab 7 Uhr möglich."
+         "t": "Computerspende Aufwind e. V.",
+         "b": "Wir nehmen funktionierende Laptops und Rechner an, löschen alle Daten und geben die Geräte an Schülerinnen und Schüler weiter. Abgabe dienstags und freitags 10–15 Uhr."
         }
        ]
       }
@@ -1094,7 +1179,7 @@ window.MZ_EPREUVEN["telcb101"] = {
       },
       {
        "n": 15,
-       "frage": "Sie möchten abends Deutsch üben, können aber erst nach 19 Uhr und nur online.",
+       "frage": "Sie sollen im Büro bald mit Tabellen am Computer arbeiten. Zum Lernen haben Sie erst nach 19 Uhr Zeit, und zwar nur online.",
        "opt": [
         {
          "k": "a",
@@ -1653,59 +1738,59 @@ window.MZ_EPREUVEN["telcb101"] = {
        "items": [
         {
          "l": "a",
-         "t": "Türen"
-        },
-        {
-         "l": "b",
-         "t": "kennenlernen"
-        },
-        {
-         "l": "c",
-         "t": "Führung"
-        },
-        {
-         "l": "d",
-         "t": "Ecke"
-        },
-        {
-         "l": "e",
-         "t": "kostenlos"
-        },
-        {
-         "l": "f",
-         "t": "mitmachen"
-        },
-        {
-         "l": "g",
          "t": "begrenzt"
         },
         {
-         "l": "h",
-         "t": "günstigen"
+         "l": "b",
+         "t": "mitmachen"
         },
         {
-         "l": "i",
-         "t": "zugute"
-        },
-        {
-         "l": "j",
-         "t": "vorbeikommen"
-        },
-        {
-         "l": "k",
+         "l": "c",
          "t": "Rechnung"
         },
         {
+         "l": "d",
+         "t": "Türen"
+        },
+        {
+         "l": "e",
+         "t": "günstigen"
+        },
+        {
+         "l": "f",
+         "t": "Führung"
+        },
+        {
+         "l": "g",
+         "t": "vorbeikommen"
+        },
+        {
+         "l": "h",
+         "t": "kostenlos"
+        },
+        {
+         "l": "i",
+         "t": "Anmeldung"
+        },
+        {
+         "l": "j",
+         "t": "Ecke"
+        },
+        {
+         "l": "k",
+         "t": "kennenlernen"
+        },
+        {
          "l": "l",
-         "t": "abholen"
+         "t": "zugute"
         },
         {
          "l": "m",
-         "t": "teuer"
+         "t": "abholen"
         },
         {
          "l": "n",
-         "t": "Anmeldung"
+         "t": "teuer"
         },
         {
          "l": "o",
@@ -2644,7 +2729,7 @@ window.MZ_EPREUVEN["telcb101"] = {
       },
       {
        "n": 57,
-       "frage": "Die Räder müssen spätestens am Dienstagabend aus dem Keller.",
+       "frage": "Herr Okafor kann seine Kleidung auch am Samstagvormittag abholen.",
        "opt": [
         {
          "k": "Richtig",
@@ -2672,7 +2757,7 @@ window.MZ_EPREUVEN["telcb101"] = {
       },
       {
        "n": 59,
-       "frage": "Das Gepäck soll am Tag der Abfahrt mitgebracht werden.",
+       "frage": "Vor der Blutspende soll man nichts essen.",
        "opt": [
         {
          "k": "Richtig",
@@ -2713,14 +2798,18 @@ window.MZ_EPREUVEN["telcb101"] = {
       "titel": "Schriftlicher Ausdruck — Brief",
       "min": 100,
       "brief": "Liebe(r) …,\n\nstell dir vor: Ich habe endlich eine neue Wohnung gefunden! Sie liegt am Stadtrand von Freiburg, hat einen kleinen Balkon und ist viel ruhiger als meine alte Wohnung an der Hauptstraße. Am 14. Juni ziehe ich um, und am Samstag danach möchte ich eine Einweihungsparty machen. Ich würde mich riesig freuen, wenn du kommst!\n\nEhrlich gesagt brauche ich auch ein bisschen Hilfe. Ich habe noch keine Möbel für das zweite Zimmer, und die Küche muss ich ganz neu einrichten. Du hast doch letztes Jahr auch eine Wohnung eingerichtet. Hast du ein paar Tipps für mich?\n\nSchreib mir bald, ob du Zeit hast.\n\nViele Grüße\nJonas",
-      "kontext": "Sie haben diesen Brief bekommen. Antworten Sie Jonas. Schreiben Sie etwas zu den folgenden vier Punkten. Überlegen Sie sich eine passende Reihenfolge der Inhaltspunkte. Vergessen Sie nicht Anrede und Gruß am Schluss.",
+      "kontext": "Antworten Sie Jonas. Schreiben Sie in Ihrer E-Mail etwas zu allen vier Punkten unten. Überlegen Sie sich vorher eine passende Reihenfolge der Punkte, eine passende Einleitung und einen passenden Schluss. Vergessen Sie auch nicht den Betreff.",
       "vorlage": "",
       "leitpunkte": [
        "Glückwunsch zur neuen Wohnung",
        "Warum Sie nicht zur Party kommen können",
        "Tipps zum Einrichten",
        "Vorschlag für ein Treffen"
-      ]
+      ],
+      "situation": "Ihr Freund Jonas aus Freiburg hat eine neue Wohnung gefunden. Er hat Ihnen diese E-Mail geschickt:",
+      "von": "jonas.kerber@webpost.de",
+      "betreff": "Neue Wohnung und Party!",
+      "format": "email"
      }
     ]
    }
@@ -3175,63 +3264,63 @@ window.MZ_EPREUVEN["telcb102"] = {
        "items": [
         {
          "l": "a",
-         "t": "Umzugshelfer Nordstadt",
-         "b": "Zwei kräftige Studenten tragen Ihre Möbel — Treppe, Transporter, alles kein Problem. 18 € pro Person und Stunde, Werkzeug bringen wir mit. Packen und Einpacken übernehmen wir nicht."
-        },
-        {
-         "l": "b",
-         "t": "Küchenstudio Hellwig — Neuplanung",
-         "b": "Wir planen Ihre Traumküche kostenlos am Bildschirm, liefern und montieren in vier Wochen. Alte Küche entsorgen wir gegen Aufpreis. Finanzierung ohne Zinsen möglich."
-        },
-        {
-         "l": "c",
-         "t": "Mieterberatung im Bürgerhaus",
-         "b": "Jeden Dienstag 15–18 Uhr prüfen wir Mietverträge, Betriebs- und Nebenkostenabrechnungen. Erstberatung 10 €, Mitglieder zahlen nichts. Bitte Unterlagen und Ausweis mitbringen."
-        },
-        {
-         "l": "d",
-         "t": "Zimmer im Studienhaus Ulmenweg",
-         "b": "Möbliert, 14 m², Dusche und Küche auf der Etage. Vermietung semesterweise, mindestens ein Semester. 320 € warm, WLAN inklusive. Nur an Studierende."
-        },
-        {
-         "l": "e",
-         "t": "Werkzeugbibliothek Kirchfeld",
-         "b": "Bohrmaschine, Leiter, Malerrollen, Eimer und vieles mehr — ausleihen ab einem Tag, drei Tage kosten 6 €. Abholung freitags ab 15 Uhr, Rückgabe montags. Mitgliedschaft nicht nötig."
-        },
-        {
-         "l": "f",
-         "t": "Nachbarschaftshilfe „Kurzer Weg“",
-         "b": "Wir bringen Post, Zeitung und kleine Einkäufe in die Wohnung, wenn jemand vorübergehend nicht aus dem Haus kann. Bis zu sechs Wochen, kostenlos. Meldung über das Büro im Erdgeschoss."
-        },
-        {
-         "l": "g",
-         "t": "Hundebetreuung Vier Pfoten",
-         "b": "Tagesbetreuung in kleiner Gruppe mit großem Garten, 7–19 Uhr, 25 € pro Tag. Auch einzelne Tage möglich. Impfpass und ein kurzes Kennenlernen vorher sind Bedingung."
-        },
-        {
-         "l": "h",
          "t": "Verschenkbörse Ostviertel",
          "b": "Möbel und Hausrat, die noch gut sind, finden bei uns neue Besitzer. Sie stellen ein Foto ein, der Abholer meldet sich direkt bei Ihnen. Kostenlos, Transport organisieren die Beteiligten selbst."
         },
         {
-         "l": "i",
+         "l": "b",
          "t": "Festausstattung Grunau",
          "b": "Biertische, Bänke, Pavillons und Lichterketten für Hof- und Straßenfeste. Wochenendpreis ab 45 €, Lieferung im Stadtgebiet gratis. Reservierung spätestens zehn Tage vorher."
         },
         {
-         "l": "j",
-         "t": "Wohnung im Hochparterre frei",
-         "b": "2 Zimmer, 54 m², Balkon, ruhige Lage. Sechs Stufen bis zur Haustür, kein Aufzug. 640 € kalt, ab 1. September. Haustiere nach Absprache."
+         "l": "c",
+         "t": "Umzugshelfer Nordstadt",
+         "b": "Zwei kräftige Studenten tragen Ihre Möbel — Treppe, Transporter, alles kein Problem. 18 € pro Person und Stunde, Werkzeug bringen wir mit. Packen und Einpacken übernehmen wir nicht."
         },
         {
-         "l": "k",
+         "l": "d",
+         "t": "Hundebetreuung Vier Pfoten",
+         "b": "Tagesbetreuung in kleiner Gruppe mit großem Garten, 7–19 Uhr, 25 € pro Tag. Auch einzelne Tage möglich. Impfpass und ein kurzes Kennenlernen vorher sind Bedingung."
+        },
+        {
+         "l": "e",
+         "t": "Küchenstudio Hellwig — Neuplanung",
+         "b": "Wir planen Ihre Traumküche kostenlos am Bildschirm, liefern und montieren in vier Wochen. Alte Küche entsorgen wir gegen Aufpreis. Finanzierung ohne Zinsen möglich."
+        },
+        {
+         "l": "f",
+         "t": "Werkzeugbibliothek Kirchfeld",
+         "b": "Bohrmaschine, Leiter, Malerrollen, Eimer und vieles mehr — ausleihen ab einem Tag, drei Tage kosten 6 €. Abholung freitags ab 15 Uhr, Rückgabe montags. Mitgliedschaft nicht nötig."
+        },
+        {
+         "l": "g",
+         "t": "Mieterberatung im Bürgerhaus",
+         "b": "Jeden Dienstag 15–18 Uhr prüfen wir Mietverträge, Betriebs- und Nebenkostenabrechnungen. Erstberatung 10 €, Mitglieder zahlen nichts. Bitte Unterlagen und Ausweis mitbringen."
+        },
+        {
+         "l": "h",
          "t": "Malerbetrieb Sikora",
          "b": "Wir streichen Ihre Wohnung vor der Übergabe fachgerecht — Zimmerpreis ab 190 €, Termin innerhalb von zehn Tagen. Material und Abdeckfolie sind im Preis enthalten."
         },
         {
-         "l": "l",
+         "l": "i",
          "t": "Küchenmöbel abzugeben",
          "b": "Vollständige Einbauküche, sieben Jahre alt, Herd und Spüle funktionieren einwandfrei. 250 € Festpreis. Abbau und Abtransport durch den Käufer, Abholung bis Ende des Monats."
+        },
+        {
+         "l": "j",
+         "t": "Zimmer im Studienhaus Ulmenweg",
+         "b": "Möbliert, 14 m², Dusche und Küche auf der Etage. Vermietung semesterweise, mindestens ein Semester. 320 € warm, WLAN inklusive. Nur an Studierende."
+        },
+        {
+         "l": "k",
+         "t": "Wohnung im Hochparterre frei",
+         "b": "2 Zimmer, 54 m², Balkon, ruhige Lage. Sechs Stufen bis zur Haustür, kein Aufzug. 640 € kalt, ab 1. September. Haustiere nach Absprache."
+        },
+        {
+         "l": "l",
+         "t": "Nachbarschaftshilfe „Kurzer Weg“",
+         "b": "Wir bringen Post, Zeitung und kleine Einkäufe in die Wohnung, wenn jemand vorübergehend nicht aus dem Haus kann. Bis zu sechs Wochen, kostenlos. Meldung über das Büro im Erdgeschoss."
         }
        ]
       }
@@ -4825,7 +4914,7 @@ window.MZ_EPREUVEN["telcb102"] = {
       },
       {
        "n": 44,
-       "frage": "Das alte Sofa wird ohne zusätzliche Kosten abgeholt.",
+       "frage": "Die alte Waschmaschine wird kostenlos mitgenommen.",
        "opt": [
         {
          "k": "Richtig",
@@ -5049,7 +5138,7 @@ window.MZ_EPREUVEN["telcb102"] = {
       },
       {
        "n": 59,
-       "frage": "Ab Mittwoch werden die Kinder im neuen Gebäude betreut.",
+       "frage": "Kleine Elektrogeräte kann man am Samstag ohne Kosten abgeben.",
        "opt": [
         {
          "k": "Richtig",
@@ -5063,7 +5152,7 @@ window.MZ_EPREUVEN["telcb102"] = {
       },
       {
        "n": 60,
-       "frage": "Man kann auch ohne Termin ins Bürgerbüro kommen.",
+       "frage": "Eine Halteverbotszone kann man noch eine Woche vor dem Umzug beantragen.",
        "opt": [
         {
          "k": "Richtig",
@@ -5090,14 +5179,18 @@ window.MZ_EPREUVEN["telcb102"] = {
       "titel": "Schriftlicher Ausdruck — Brief",
       "min": 100,
       "brief": "Liebe(r) …,\n\nwie geht es dir? Bei uns ist im Moment viel los. Meine Schwester heiratet im August, und stell dir vor: Ihr Mann kommt aus deinem Land! Die Hochzeit feiern wir hier in Kassel, aber viele Gäste aus seiner Familie reisen extra an.\n\nIch möchte die Gäste gern ein bisschen in ihrer Sprache begrüßen und auch etwas über die Traditionen wissen. Wie feiert man bei euch eine Hochzeit? Was schenkt man dem Brautpaar? Und gibt es Dinge, die man auf keinen Fall machen sollte?\n\nIch hoffe, du kannst mir helfen. Ich weiß, du hast viel zu tun, aber vielleicht findest du ein paar Minuten für mich.\n\nHerzliche Grüße\nSabine",
-      "kontext": "Sie haben diesen Brief bekommen. Antworten Sie Sabine. Schreiben Sie etwas zu den folgenden vier Punkten. Überlegen Sie sich eine passende Reihenfolge der Inhaltspunkte. Vergessen Sie nicht Anrede und Gruß am Schluss.",
+      "kontext": "Antworten Sie Sabine. Schreiben Sie in Ihrer E-Mail etwas zu allen vier Punkten unten. Überlegen Sie sich vorher eine passende Reihenfolge der Punkte, eine passende Einleitung und einen passenden Schluss. Vergessen Sie auch nicht den Betreff.",
       "vorlage": "",
       "leitpunkte": [
        "Reaktion auf die Hochzeit",
        "Wie man in Ihrem Land Hochzeit feiert",
        "Ein passendes Geschenk",
        "Ein paar Worte zur Begrüßung der Gäste"
-      ]
+      ],
+      "situation": "Ihre Freundin Sabine aus Kassel hat Ihnen diese E-Mail geschickt:",
+      "von": "sabine.m@mailfix.de",
+      "betreff": "Hochzeit meiner Schwester — ich brauche deine Hilfe",
+      "format": "email"
      }
     ]
    }
@@ -5128,15 +5221,15 @@ window.MZ_EPREUVEN["telcb103"] = {
        "items": [
         {
          "l": "a",
-         "t": "Wandern in den Bergen für Geübte"
+         "t": "Warum Jugendliche immer später einschlafen"
         },
         {
          "l": "b",
-         "t": "Zehn Minuten Bewegung zwischendurch"
+         "t": "Abends lernen, besser zu schlafen"
         },
         {
          "l": "c",
-         "t": "Warum Jugendliche immer später einschlafen"
+         "t": "Die Schüler reden beim Speiseplan mit"
         },
         {
          "l": "d",
@@ -5144,27 +5237,27 @@ window.MZ_EPREUVEN["telcb103"] = {
         },
         {
          "l": "e",
-         "t": "Ein Fitnessraum im Keller der Firma"
+         "t": "Zehn Minuten Bewegung zwischendurch"
         },
         {
          "l": "f",
-         "t": "Abends lernen, besser zu schlafen"
+         "t": "Ein Fitnessraum im Keller der Firma"
         },
         {
          "l": "g",
-         "t": "Kochen als Schulfach"
-        },
-        {
-         "l": "h",
-         "t": "Die Schüler reden beim Speiseplan mit"
-        },
-        {
-         "l": "i",
          "t": "Ein neues Schwimmbad für den Stadtteil"
         },
         {
-         "l": "j",
+         "l": "h",
          "t": "Sonntags steht die Halle allen offen"
+        },
+        {
+         "l": "i",
+         "t": "Kochen als Schulfach"
+        },
+        {
+         "l": "j",
+         "t": "Wandern in den Bergen für Geübte"
         }
        ]
       },
@@ -5552,58 +5645,58 @@ window.MZ_EPREUVEN["telcb103"] = {
        "items": [
         {
          "l": "a",
-         "t": "Bewegungsnachmittag für Familien",
-         "b": "Jeden Mittwoch 15–17 Uhr in der Turnhalle Eschenweg. Spiele, Klettern und Ballsport für Kinder ab 5 Jahren zusammen mit einem Elternteil. Ohne Anmeldung, Teilnahme kostenfrei."
-        },
-        {
-         "l": "b",
          "t": "Sportpark Rund um die Uhr",
          "b": "Geräte und Kursraum an sieben Tagen 24 Stunden geöffnet. Zutritt mit Chipkarte, nachts ohne Personal. Monatlich 29 €, jederzeit kündbar. Besonders geeignet für Schichtarbeitende."
         },
         {
-         "l": "c",
+         "l": "b",
          "t": "Vegetarisch kochen — Abendkurs",
          "b": "Sechs Termine, dienstags 18.30–21 Uhr. Wir kochen Gemüse, Hülsenfrüchte und Getreide, ganz ohne Fleisch und Fisch. Zutaten im Preis enthalten, höchstens zehn Personen."
         },
         {
-         "l": "d",
-         "t": "Mahlzeitendienst Hand in Hand",
-         "b": "Wir bringen Ihnen mittags ein warmes Essen nach Hause, auf Wunsch an sieben Tagen in der Woche. Auch schonende Kost. Ab 6,20 € pro Portion, Bestellung eine Woche im Voraus."
-        },
-        {
-         "l": "e",
-         "t": "Gemüsekiste vom Hof Lindental",
-         "b": "Jeden Donnerstag eine Kiste mit dem, was gerade reif ist, direkt vom Feld an Ihre Haustür. Kleine Kiste 14 €, große 22 €. Monatlich kündbar, Lieferung im ganzen Stadtgebiet."
-        },
-        {
-         "l": "f",
-         "t": "Rückenkurs vor der Arbeit",
-         "b": "Montag und Donnerstag 7.00–7.45 Uhr im Gesundheitszentrum Ahornhof. Übungen für Menschen, die viel am Schreibtisch sitzen. Duschen vorhanden, zehn Termine für 65 €."
-        },
-        {
-         "l": "g",
+         "l": "c",
          "t": "Freibad Weidengrund — Abendkarte",
          "b": "Im Juli und August täglich bis 21 Uhr geöffnet. Ab 17 Uhr zahlen Erwachsene nur 2,50 €. Liegewiese, 50-Meter-Becken und ein Kiosk mit warmen Getränken."
         },
         {
-         "l": "h",
+         "l": "d",
+         "t": "Grillkurs am Fluss",
+         "b": "Ein Samstagnachmittag rund um Fleisch und Fisch vom Grill: Einkauf, Vorbereitung, Temperaturen. 79 € inklusive Getränken. Mindestens acht Teilnehmende, sonst fällt der Termin aus."
+        },
+        {
+         "l": "e",
+         "t": "Bewegungsnachmittag für Familien",
+         "b": "Jeden Mittwoch 15–17 Uhr in der Turnhalle Eschenweg. Spiele, Klettern und Ballsport für Kinder ab 5 Jahren zusammen mit einem Elternteil. Ohne Anmeldung, Teilnahme kostenfrei."
+        },
+        {
+         "l": "f",
+         "t": "Gemüsekiste vom Hof Lindental",
+         "b": "Jeden Donnerstag eine Kiste mit dem, was gerade reif ist, direkt vom Feld an Ihre Haustür. Kleine Kiste 14 €, große 22 €. Monatlich kündbar, Lieferung im ganzen Stadtgebiet."
+        },
+        {
+         "l": "g",
          "t": "Lauftreff für Anfängerinnen und Anfänger",
          "b": "Sonntags 9 Uhr am Parkplatz Mühlensee. Wir beginnen mit Gehen und Laufen im Wechsel; Vorkenntnisse sind ausdrücklich nicht nötig. Kostenlos, Trainerin vor Ort."
         },
         {
-         "l": "i",
-         "t": "Mittagsbistro Grünkern",
-         "b": "Zwei Gerichte täglich, eines davon vegetarisch, dazu Salat und Suppe. Mitten im Bürogebiet Nordring, 11.30–14.30 Uhr. Mittagsteller 8,90 €, zum Mitnehmen einen Euro weniger."
-        },
-        {
-         "l": "j",
+         "l": "h",
          "t": "Radausfahrt für Genießer",
          "b": "Jeden zweiten Sonntag 40 gemütliche Kilometer durchs Umland, mit Pause im Gasthaus. Für alle, die sicher Rad fahren können. Keine Anleitung, keine Technikübungen — wir fahren einfach los."
         },
         {
+         "l": "i",
+         "t": "Mahlzeitendienst Hand in Hand",
+         "b": "Wir bringen Ihnen mittags ein warmes Essen nach Hause, auf Wunsch an sieben Tagen in der Woche. Auch schonende Kost. Ab 6,20 € pro Portion, Bestellung eine Woche im Voraus."
+        },
+        {
+         "l": "j",
+         "t": "Rückenkurs vor der Arbeit",
+         "b": "Montag und Donnerstag 7.00–7.45 Uhr im Gesundheitszentrum Ahornhof. Übungen für Menschen, die viel am Schreibtisch sitzen. Duschen vorhanden, zehn Termine für 65 €."
+        },
+        {
          "l": "k",
-         "t": "Grillkurs am Fluss",
-         "b": "Ein Samstagnachmittag rund um Fleisch und Fisch vom Grill: Einkauf, Vorbereitung, Temperaturen. 79 € inklusive Getränken. Mindestens acht Teilnehmende, sonst fällt der Termin aus."
+         "t": "Mittagsbistro Grünkern",
+         "b": "Zwei Gerichte täglich, eines davon vegetarisch, dazu Salat und Suppe. Mitten im Bürogebiet Nordring, 11.30–14.30 Uhr. Mittagsteller 8,90 €, zum Mitnehmen einen Euro weniger."
         },
         {
          "l": "l",
@@ -6407,23 +6500,23 @@ window.MZ_EPREUVEN["telcb103"] = {
        "items": [
         {
          "l": "a",
-         "t": "statt"
-        },
-        {
-         "l": "b",
-         "t": "ausprobieren"
-        },
-        {
-         "l": "c",
-         "t": "beschränkt"
-        },
-        {
-         "l": "d",
          "t": "Anmeldung"
         },
         {
+         "l": "b",
+         "t": "abholen"
+        },
+        {
+         "l": "c",
+         "t": "zugute"
+        },
+        {
+         "l": "d",
+         "t": "verbieten"
+        },
+        {
          "l": "e",
-         "t": "Umgebung"
+         "t": "freuen"
         },
         {
          "l": "f",
@@ -6431,39 +6524,39 @@ window.MZ_EPREUVEN["telcb103"] = {
         },
         {
          "l": "g",
-         "t": "frei"
-        },
-        {
-         "l": "h",
-         "t": "zugute"
-        },
-        {
-         "l": "i",
-         "t": "achten"
-        },
-        {
-         "l": "j",
-         "t": "freuen"
-        },
-        {
-         "l": "k",
          "t": "Rechnung"
         },
         {
+         "l": "h",
+         "t": "ausprobieren"
+        },
+        {
+         "l": "i",
+         "t": "beschränkt"
+        },
+        {
+         "l": "j",
+         "t": "Mangel"
+        },
+        {
+         "l": "k",
+         "t": "achten"
+        },
+        {
          "l": "l",
-         "t": "abholen"
+         "t": "Umgebung"
         },
         {
          "l": "m",
-         "t": "teuer"
+         "t": "frei"
         },
         {
          "l": "n",
-         "t": "verbieten"
+         "t": "teuer"
         },
         {
          "l": "o",
-         "t": "Mangel"
+         "t": "statt"
         }
        ]
       },
@@ -7216,7 +7309,7 @@ window.MZ_EPREUVEN["telcb103"] = {
       },
       {
        "n": 45,
-       "frage": "Am Nachmittag wird es wärmer als am Morgen.",
+       "frage": "Der Termin findet einen Tag später statt.",
        "opt": [
         {
          "k": "Richtig",
@@ -7467,14 +7560,18 @@ window.MZ_EPREUVEN["telcb103"] = {
       "titel": "Schriftlicher Ausdruck — Brief",
       "min": 100,
       "brief": "Liebe(r) …,\n\nich habe tolle Neuigkeiten: Meine Firma schickt mich für sechs Monate in deine Stadt! Ab Oktober soll ich dort in unserer neuen Filiale arbeiten. Ich freue mich sehr, aber ich bin auch ein bisschen nervös, denn ich kenne dort niemanden außer dir.\n\nKannst du mir ein paar Tipps geben? Ich suche eine kleine Wohnung, nicht zu teuer und nicht zu weit vom Zentrum. Außerdem habe ich keine Ahnung, wie man sich in der Stadt am besten bewegt. Und was macht man bei euch am Wochenende?\n\nIch würde mich freuen, wenn wir uns dann oft sehen.\n\nLiebe Grüße\nTobias",
-      "kontext": "Sie haben diesen Brief bekommen. Antworten Sie Tobias. Schreiben Sie etwas zu den folgenden vier Punkten. Überlegen Sie sich eine passende Reihenfolge der Inhaltspunkte. Vergessen Sie nicht Anrede und Gruß am Schluss.",
+      "kontext": "Antworten Sie Tobias. Schreiben Sie in Ihrer E-Mail etwas zu allen vier Punkten unten. Überlegen Sie sich vorher eine passende Reihenfolge der Punkte, eine passende Einleitung und einen passenden Schluss. Vergessen Sie auch nicht den Betreff.",
       "vorlage": "",
       "leitpunkte": [
        "Reaktion auf die Neuigkeit",
        "Tipps zur Wohnungssuche",
        "Verkehrsmittel in Ihrer Stadt",
        "Gemeinsame Pläne für das Wochenende"
-      ]
+      ],
+      "situation": "Ihr Freund Tobias arbeitet bald für ein halbes Jahr in Ihrer Stadt. Er hat Ihnen diese E-Mail geschickt:",
+      "von": "tobias.wendt@postbox.de",
+      "betreff": "Ich komme in deine Stadt!",
+      "format": "email"
      }
     ]
    }
@@ -7505,43 +7602,43 @@ window.MZ_EPREUVEN["telcb104"] = {
        "items": [
         {
          "l": "a",
-         "t": "Ein Diplom, das endlich zählt"
-        },
-        {
-         "l": "b",
-         "t": "Wenn die Hochschule der falsche Ort war"
-        },
-        {
-         "l": "c",
          "t": "Lernen, wenn andere Feierabend haben"
         },
         {
-         "l": "d",
-         "t": "Warum Betriebe keine Lehrlinge mehr finden"
-        },
-        {
-         "l": "e",
-         "t": "Vier Stunden im Monat für die Weiterbildung"
-        },
-        {
-         "l": "f",
-         "t": "Eine Werkstatt bildet wieder selbst aus"
-        },
-        {
-         "l": "g",
-         "t": "Sprachkurse werden deutlich teurer"
-        },
-        {
-         "l": "h",
+         "l": "b",
          "t": "Das Abitur soll abgeschafft werden"
         },
         {
-         "l": "i",
+         "l": "c",
+         "t": "Vier Stunden im Monat für die Weiterbildung"
+        },
+        {
+         "l": "d",
+         "t": "Wenn die Firma den Abschluss bezahlt"
+        },
+        {
+         "l": "e",
          "t": "Praktikum statt Sommerferien"
         },
         {
+         "l": "f",
+         "t": "Ein Diplom, das endlich zählt"
+        },
+        {
+         "l": "g",
+         "t": "Warum Betriebe keine Lehrlinge mehr finden"
+        },
+        {
+         "l": "h",
+         "t": "Wenn die Hochschule der falsche Ort war"
+        },
+        {
+         "l": "i",
+         "t": "Sprachkurse werden deutlich teurer"
+        },
+        {
          "l": "j",
-         "t": "Wenn die Firma den Abschluss bezahlt"
+         "t": "Eine Werkstatt bildet wieder selbst aus"
         }
        ]
       },
@@ -9551,7 +9648,7 @@ window.MZ_EPREUVEN["telcb104"] = {
       },
       {
        "n": 42,
-       "frage": "Der Kurs beginnt heute später als sonst.",
+       "frage": "Die Prüflinge müssen ihren Ausweis mitbringen.",
        "opt": [
         {
          "k": "Richtig",
@@ -9593,7 +9690,7 @@ window.MZ_EPREUVEN["telcb104"] = {
       },
       {
        "n": 45,
-       "frage": "Am Sonntag wird es wärmer als am Samstag.",
+       "frage": "Die Jugendlichen müssen für das Material etwas bezahlen.",
        "opt": [
         {
          "k": "Richtig",
@@ -9789,7 +9886,7 @@ window.MZ_EPREUVEN["telcb104"] = {
       },
       {
        "n": 58,
-       "frage": "Für die Lernberatung braucht man keinen Bibliotheksausweis.",
+       "frage": "Man kann den Antrag abgeben, bevor alle Unterlagen vollständig sind.",
        "opt": [
         {
          "k": "Richtig",
@@ -9844,14 +9941,18 @@ window.MZ_EPREUVEN["telcb104"] = {
       "titel": "Schriftlicher Ausdruck — Brief",
       "min": 100,
       "brief": "Liebe(r) …,\n\ndu hast lange nichts von dir hören lassen. Ist alles in Ordnung?\n\nIch schreibe dir, weil wir in unserem Stadtteilzentrum im November einen internationalen Kochabend organisieren. Jeder bringt ein Gericht aus seiner Heimat mit und erzählt ein bisschen darüber. Ich habe sofort an dich gedacht! Du kochst doch so gern.\n\nDer Abend findet am Freitag, den 21. November, ab 18 Uhr statt. Wir brauchen auch noch Leute, die beim Aufbau helfen oder Musik mitbringen. Hättest du Lust mitzumachen?\n\nIch freue mich auf deine Antwort.\n\nViele liebe Grüße\nAnna",
-      "kontext": "Sie haben diesen Brief bekommen. Antworten Sie Anna. Schreiben Sie etwas zu den folgenden vier Punkten. Überlegen Sie sich eine passende Reihenfolge der Inhaltspunkte. Vergessen Sie nicht Anrede und Gruß am Schluss.",
+      "kontext": "Antworten Sie Anna. Schreiben Sie in Ihrer E-Mail etwas zu allen vier Punkten unten. Überlegen Sie sich vorher eine passende Reihenfolge der Punkte, eine passende Einleitung und einen passenden Schluss. Vergessen Sie auch nicht den Betreff.",
       "vorlage": "",
       "leitpunkte": [
        "Warum Sie sich so lange nicht gemeldet haben",
        "Welches Gericht Sie mitbringen",
        "Was man über dieses Gericht wissen sollte",
        "Wie Sie sonst noch helfen können"
-      ]
+      ],
+      "situation": "Sie haben Ihrer Bekannten Anna lange nicht geschrieben. Jetzt hat sie Ihnen diese E-Mail geschickt:",
+      "von": "anna.hollmann@netzpost.de",
+      "betreff": "Kochabend im Stadtteilzentrum",
+      "format": "email"
      }
     ]
    }
@@ -9882,43 +9983,43 @@ window.MZ_EPREUVEN["telcb105"] = {
        "items": [
         {
          "l": "a",
-         "t": "Mit dem Nachtzug quer durch Europa"
-        },
-        {
-         "l": "b",
          "t": "Wenn das Dorf sich ein Auto teilt"
         },
         {
-         "l": "c",
-         "t": "Zu Fuß zur Schule — und alle machen mit"
-        },
-        {
-         "l": "d",
-         "t": "Ein Parkhaus nur für Fahrräder"
-        },
-        {
-         "l": "e",
+         "l": "b",
          "t": "Warum Fliegen wieder teurer wird"
         },
         {
-         "l": "f",
-         "t": "Sicher mit dem Rad zur Schule"
-        },
-        {
-         "l": "g",
+         "l": "c",
          "t": "Urlaub ohne Eile"
         },
         {
-         "l": "h",
-         "t": "Der Bus, der nur auf Bestellung kommt"
+         "l": "d",
+         "t": "Zu Fuß zur Schule — und alle machen mit"
         },
         {
-         "l": "i",
+         "l": "e",
+         "t": "Sicher mit dem Rad zur Schule"
+        },
+        {
+         "l": "f",
+         "t": "Tanken war gestern"
+        },
+        {
+         "l": "g",
+         "t": "Ein Parkhaus nur für Fahrräder"
+        },
+        {
+         "l": "h",
          "t": "Wenn die Touristen ausbleiben"
         },
         {
+         "l": "i",
+         "t": "Der Bus, der nur auf Bestellung kommt"
+        },
+        {
          "l": "j",
-         "t": "Tanken war gestern"
+         "t": "Mit dem Nachtzug quer durch Europa"
         }
        ]
       },
@@ -10306,23 +10407,23 @@ window.MZ_EPREUVEN["telcb105"] = {
        "items": [
         {
          "l": "a",
-         "t": "Radtouren-Club „Auf zwei Rädern“",
-         "b": "Jeden Samstag und Sonntag geführte Touren zwischen 30 und 60 Kilometern durch die Umgebung. Erfahrene Begleitung, gemütliches Tempo, Einkehr unterwegs. Neue Mitfahrende sind jederzeit willkommen."
+         "t": "Autovermietung Blitz",
+         "b": "Kleinwagen bis Kombi, tage- und wochenweise. Kindersitze und Dachträger gegen kleine Gebühr, Zusatzfahrer kostenlos. Abholung und Rückgabe auch außerhalb der Öffnungszeiten möglich."
         },
         {
          "l": "b",
-         "t": "RegioTicket — Bus und Bahn",
-         "b": "Eine Monatskarte für den gesamten Verkehrsverbund: alle Busse, Straßenbahnen und Regionalzüge. 59 € im Monat, für Pendler auch als Jahresabo mit Rabatt. Übertragbar am Wochenende."
+         "t": "Reifenservice Kurvenstern",
+         "b": "Wechsel von Sommer- auf Winterreifen in 20 Minuten, ohne Termin — bringen Sie Ihr Auto einfach vorbei. Einlagerung Ihrer Reifen ab 25 € pro Saison. Samstags bis 14 Uhr geöffnet. Hol- und Bringservice bieten wir leider nicht an."
         },
         {
          "l": "c",
-         "t": "Airport-Parken Osterberg",
-         "b": "Bewachter Parkplatz direkt am Flughafen, Tag und Nacht videoüberwacht. Ab 6 € pro Tag, günstiger im Wochenpaket. Kostenloser Shuttle zum Terminal alle 15 Minuten."
+         "t": "Gepäckservice Bahnhof-Express",
+         "b": "Wir holen Ihr Gepäck am Bahnhof ab und liefern es noch am selben Tag an Ihr Hotel — oder umgekehrt. In der ganzen Innenstadt, ab 9 € pro Stück. Bestellung bequem per App."
         },
         {
          "l": "d",
-         "t": "Mitfahrzentrale Fahrtwind",
-         "b": "Finden Sie online eine Fahrt in Ihre Richtung. Fahrerinnen und Fahrer bieten freie Plätze an, Sie teilen sich die Spritkosten. Strecken in ganz Süddeutschland, auch kurzfristig am selben Tag."
+         "t": "Airport-Parken Osterberg",
+         "b": "Bewachter Parkplatz direkt am Flughafen, Tag und Nacht videoüberwacht. Ab 6 € pro Tag, günstiger im Wochenpaket. Kostenloser Shuttle zum Terminal alle 15 Minuten."
         },
         {
          "l": "e",
@@ -10331,38 +10432,38 @@ window.MZ_EPREUVEN["telcb105"] = {
         },
         {
          "l": "f",
-         "t": "Rad-Station am Hauptbahnhof",
-         "b": "Abschließbare Einzelboxen und ein bewachtes Parkhaus für Ihr Fahrrad, rund um die Uhr zugänglich. Dauermiete ab 12 € im Monat, mit eigener Zugangskarte. Luftpumpe kostenlos."
-        },
-        {
-         "l": "g",
-         "t": "Seerundfahrten Fichtensee",
-         "b": "Erleben Sie den See vom Wasser aus. Große Ausflugsschiffe, täglich mehrere Abfahrten, Rundfahrten von einer bis drei Stunden. Kinder bis 6 Jahre fahren kostenlos, Snacks an Bord."
-        },
-        {
-         "l": "h",
-         "t": "Autovermietung Blitz",
-         "b": "Kleinwagen bis Kombi, tage- und wochenweise. Kindersitze und Dachträger gegen kleine Gebühr, Zusatzfahrer kostenlos. Abholung und Rückgabe auch außerhalb der Öffnungszeiten möglich."
-        },
-        {
-         "l": "i",
-         "t": "Gepäckservice Bahnhof-Express",
-         "b": "Wir holen Ihr Gepäck am Bahnhof ab und liefern es noch am selben Tag an Ihr Hotel — oder umgekehrt. In der ganzen Innenstadt, ab 9 € pro Stück. Bestellung bequem per App."
-        },
-        {
-         "l": "j",
-         "t": "Fahrschule Tempo",
-         "b": "Führerschein Klasse B im Intensivkurs, täglicher Unterricht, Prüfungstermin garantiert. Auch Auffrischungsstunden nach langer Pause. Ratenzahlung möglich, faire Preise."
-        },
-        {
-         "l": "k",
          "t": "Busreisen Sonnenland",
          "b": "Mehrtägige Pauschalreisen mit dem Reisebus zu den schönsten Zielen in Europa. Hotel, Frühstück und Ausflüge inklusive. Zustieg an vielen Orten in der Region. Prospekt anfordern!"
         },
         {
-         "l": "l",
+         "l": "g",
+         "t": "RegioTicket — Bus und Bahn",
+         "b": "Eine Monatskarte für den gesamten Verkehrsverbund: alle Busse, Straßenbahnen und Regionalzüge. 59 € im Monat, für Pendler auch als Jahresabo mit Rabatt. Übertragbar am Wochenende."
+        },
+        {
+         "l": "h",
+         "t": "Seerundfahrten Fichtensee",
+         "b": "Erleben Sie den See vom Wasser aus. Große Ausflugsschiffe, täglich mehrere Abfahrten, Rundfahrten von einer bis drei Stunden. Kinder bis 6 Jahre fahren kostenlos, Snacks an Bord."
+        },
+        {
+         "l": "i",
+         "t": "Radtouren-Club „Auf zwei Rädern“",
+         "b": "Jeden Samstag und Sonntag geführte Touren zwischen 30 und 60 Kilometern durch die Umgebung. Erfahrene Begleitung, gemütliches Tempo, Einkehr unterwegs. Neue Mitfahrende sind jederzeit willkommen."
+        },
+        {
+         "l": "j",
+         "t": "Rad-Station am Hauptbahnhof",
+         "b": "Abschließbare Einzelboxen und ein bewachtes Parkhaus für Ihr Fahrrad, rund um die Uhr zugänglich. Dauermiete ab 12 € im Monat, mit eigener Zugangskarte. Luftpumpe kostenlos."
+        },
+        {
+         "l": "k",
          "t": "Taxi & Flughafentransfer Weber",
          "b": "Bequem zum Flughafen und zurück, zum Festpreis, auch nachts und am Wochenende. Bis zu vier Personen mit Gepäck. Bitte am Vortag telefonisch reservieren."
+        },
+        {
+         "l": "l",
+         "t": "Mitfahrzentrale Fahrtwind",
+         "b": "Finden Sie online eine Fahrt in Ihre Richtung. Fahrerinnen und Fahrer bieten freie Plätze an, Sie teilen sich die Spritkosten. Strecken in ganz Süddeutschland, auch kurzfristig am selben Tag."
         }
        ]
       }
@@ -10892,7 +10993,7 @@ window.MZ_EPREUVEN["telcb105"] = {
       },
       {
        "n": 20,
-       "frage": "Sie haben einen ausländischen Führerschein und möchten ihn in Deutschland umschreiben lassen.",
+       "frage": "Sie möchten vor dem Winter die Reifen wechseln lassen, haben aber keine Zeit, Ihr Auto selbst in die Werkstatt zu bringen.",
        "opt": [
         {
          "k": "a",
@@ -11161,63 +11262,63 @@ window.MZ_EPREUVEN["telcb105"] = {
        "items": [
         {
          "l": "a",
-         "t": "Anmeldung"
-        },
-        {
-         "l": "b",
-         "t": "tritt"
-        },
-        {
-         "l": "c",
-         "t": "holt"
-        },
-        {
-         "l": "d",
-         "t": "begrenzt"
-        },
-        {
-         "l": "e",
          "t": "zugute"
         },
         {
-         "l": "f",
+         "l": "b",
+         "t": "begrenzt"
+        },
+        {
+         "l": "c",
          "t": "Nutzung"
         },
         {
-         "l": "g",
-         "t": "abschließen"
-        },
-        {
-         "l": "h",
-         "t": "stehen"
-        },
-        {
-         "l": "i",
-         "t": "zurücklegen"
-        },
-        {
-         "l": "j",
+         "l": "d",
          "t": "Herunterladen"
         },
         {
-         "l": "k",
-         "t": "Abfahrt"
+         "l": "e",
+         "t": "zurücklegen"
         },
         {
-         "l": "l",
-         "t": "verlängern"
+         "l": "f",
+         "t": "Strecke"
         },
         {
-         "l": "m",
-         "t": "bringt"
+         "l": "g",
+         "t": "holt"
         },
         {
-         "l": "n",
+         "l": "h",
          "t": "umsonst"
         },
         {
+         "l": "i",
+         "t": "Abfahrt"
+        },
+        {
+         "l": "j",
+         "t": "stehen"
+        },
+        {
+         "l": "k",
+         "t": "tritt"
+        },
+        {
+         "l": "l",
+         "t": "abschließen"
+        },
+        {
+         "l": "m",
+         "t": "Anmeldung"
+        },
+        {
+         "l": "n",
+         "t": "bringt"
+        },
+        {
          "l": "o",
-         "t": "Strecke"
+         "t": "verlängern"
         }
        ]
       },
@@ -12152,7 +12253,7 @@ window.MZ_EPREUVEN["telcb105"] = {
       },
       {
        "n": 57,
-       "frage": "Am Donnerstag muss das Auto aus der Tiefgarage.",
+       "frage": "Wer spät ankommt, holt den Schlüssel aus einem Kasten am Eingang.",
        "opt": [
         {
          "k": "Richtig",
@@ -12166,7 +12267,7 @@ window.MZ_EPREUVEN["telcb105"] = {
       },
       {
        "n": 58,
-       "frage": "Die Klasse trifft sich am Freitag vor der Schule.",
+       "frage": "Auf dem Campingplatz muss es erst ab dreiundzwanzig Uhr ruhig sein.",
        "opt": [
         {
          "k": "Richtig",
@@ -12180,7 +12281,7 @@ window.MZ_EPREUVEN["telcb105"] = {
       },
       {
        "n": 59,
-       "frage": "Vorbestellte Bücher bringt der Bücherbus mit.",
+       "frage": "Kinder unter zwölf Jahren nehmen kostenlos an der Führung teil.",
        "opt": [
         {
          "k": "Richtig",
@@ -12221,14 +12322,18 @@ window.MZ_EPREUVEN["telcb105"] = {
       "titel": "Schriftlicher Ausdruck — Brief",
       "min": 100,
       "brief": "Liebe(r) …,\n\nleider habe ich keine gute Nachricht. Letzte Woche bin ich beim Fußballspielen so unglücklich gefallen, dass ich mir das Bein gebrochen habe. Jetzt muss ich sechs Wochen einen Gips tragen und darf nicht viel laufen.\n\nDas Schlimmste ist: Unsere Wanderung in den Alpen im nächsten Monat kann ich vergessen. Es tut mir wirklich leid, denn wir haben uns beide so darauf gefreut und die Hütte ist schon bezahlt.\n\nHast du eine Idee, was wir jetzt machen können? Vielleicht kannst du ja auch mit jemand anderem fahren. Und wenn du Zeit hast, würde ich mich über Besuch freuen. Zu Hause ist es ziemlich langweilig.\n\nViele Grüße\nMarkus",
-      "kontext": "Sie haben diesen Brief bekommen. Antworten Sie Markus. Schreiben Sie etwas zu den folgenden vier Punkten. Überlegen Sie sich eine passende Reihenfolge der Inhaltspunkte. Vergessen Sie nicht Anrede und Gruß am Schluss.",
+      "kontext": "Antworten Sie Markus. Schreiben Sie in Ihrer E-Mail etwas zu allen vier Punkten unten. Überlegen Sie sich vorher eine passende Reihenfolge der Punkte, eine passende Einleitung und einen passenden Schluss. Vergessen Sie auch nicht den Betreff.",
       "vorlage": "",
       "leitpunkte": [
        "Reaktion auf den Unfall",
        "Vorschlag für die geplante Wanderung",
        "Ein Besuch bei Markus",
        "Wie Sie ihm helfen können"
-      ]
+      ],
+      "situation": "Sie wollten mit Ihrem Freund Markus im nächsten Monat in den Alpen wandern. Er hat Ihnen diese E-Mail geschickt:",
+      "von": "markus.b@webpost.de",
+      "betreff": "Schlechte Nachrichten …",
+      "format": "email"
      }
     ]
    }
@@ -12259,7 +12364,7 @@ window.MZ_EPREUVEN["telcb106"] = {
        "items": [
         {
          "l": "a",
-         "t": "Wenn die Zeitung aus dem Briefkasten verschwindet"
+         "t": "Ein Kurs, der die eigenen Daten schützt"
         },
         {
          "l": "b",
@@ -12271,31 +12376,31 @@ window.MZ_EPREUVEN["telcb106"] = {
         },
         {
          "l": "d",
-         "t": "Warum Kinder wieder mehr fernsehen"
+         "t": "Wenn die Zeitung aus dem Briefkasten verschwindet"
         },
         {
          "l": "e",
-         "t": "Ein Kurs, der die eigenen Daten schützt"
-        },
-        {
-         "l": "f",
-         "t": "Einkaufen ganz ohne Bargeld"
-        },
-        {
-         "l": "g",
-         "t": "Ein Lokal, in dem das Handy Pause macht"
-        },
-        {
-         "l": "h",
-         "t": "Wenn das Internet plötzlich ausfällt"
-        },
-        {
-         "l": "i",
          "t": "Jugendliche berichten über ihre Stadt"
         },
         {
-         "l": "j",
+         "l": "f",
          "t": "Fotografieren lernen am Wochenende"
+        },
+        {
+         "l": "g",
+         "t": "Warum Kinder wieder mehr fernsehen"
+        },
+        {
+         "l": "h",
+         "t": "Ein Lokal, in dem das Handy Pause macht"
+        },
+        {
+         "l": "i",
+         "t": "Einkaufen ganz ohne Bargeld"
+        },
+        {
+         "l": "j",
+         "t": "Wenn das Internet plötzlich ausfällt"
         }
        ]
       },
@@ -12683,18 +12788,18 @@ window.MZ_EPREUVEN["telcb106"] = {
        "items": [
         {
          "l": "a",
-         "t": "Computerkurs für Einsteiger",
-         "b": "Volkshochschule Marbeck: Grundlagen für alle, die ganz neu anfangen. Samstags von 10 bis 13 Uhr, sechs Termine. Kleine Gruppen, ein eigener Laptop ist nicht nötig. Anmeldung bis Freitag."
+         "t": "Fotostudio Porträt",
+         "b": "Professionelle Porträtfotos für Bewerbung oder Familie. Termine werktags und samstags. Die Bilder erhalten Sie digital und gedruckt. Studio im Zentrum von Marbeck."
         },
         {
          "l": "b",
-         "t": "Digitalhilfe zu Hause",
-         "b": "Ehrenamtliche kommen zu Ihnen nach Hause und erklären Handy, Tablet oder Computer in Ruhe. Besonders für ältere Menschen gedacht. Termin nach Vereinbarung, kostenlos."
+         "t": "Handy-Reparatur Blitz",
+         "b": "Kaputtes Display, leerer Akku? Wir reparieren Smartphones aller Marken meist noch am selben Tag. Laptops und Tablets nehmen wir allerdings nicht an. Auch ohne Termin."
         },
         {
          "l": "c",
-         "t": "Althandy hilft e. V.",
-         "b": "Wir sammeln alte, aber funktionierende Smartphones, löschen alle Daten und geben die Geräte an Menschen weiter, die sich kein neues leisten können. Abgabe im Bürgerbüro."
+         "t": "Webseiten neu gestaltet",
+         "b": "Sie haben eine alte Internetseite, die kaum noch jemand besucht? Wir gestalten sie modern und übersichtlich neu. Erstberatung gratis, faire Preise für kleine Betriebe."
         },
         {
          "l": "d",
@@ -12703,43 +12808,43 @@ window.MZ_EPREUVEN["telcb106"] = {
         },
         {
          "l": "e",
-         "t": "Tonstudio Klangwerk",
-         "b": "Schallgeschützter Raum mit Mikrofonen und Technik für Podcast oder Musik. Stundenweise ab 12 €, kurze Einführung inklusive. Buchung übers Internet, auch abends möglich."
+         "t": "Gebrauchte Technik — Ankauf",
+         "b": "Wir kaufen Ihr altes Smartphone, Tablet oder Notebook und zahlen sofort bar. Kostenlose Schätzung im Laden. Die Geräte müssen nicht einmal mehr funktionieren."
         },
         {
          "l": "f",
-         "t": "Webseiten neu gestaltet",
-         "b": "Sie haben eine alte Internetseite, die kaum noch jemand besucht? Wir gestalten sie modern und übersichtlich neu. Erstberatung gratis, faire Preise für kleine Betriebe."
-        },
-        {
-         "l": "g",
-         "t": "Fotos am Computer bearbeiten",
-         "b": "Kurs für alle, die ihre Bilder verbessern möchten: heller machen, zuschneiden, ordnen. Dienstags 18–20 Uhr, vier Wochen. Eigene Fotos gern mitbringen."
-        },
-        {
-         "l": "h",
-         "t": "Elternabend: Kinder und Bildschirmzeit",
-         "b": "Wie viel Zeit im Netz ist gesund? Eine Fachfrau gibt Tipps und beantwortet Ihre Fragen. Donnerstag, 19 Uhr, Aula der Grundschule. Eintritt frei, ohne Anmeldung."
-        },
-        {
-         "l": "i",
          "t": "Schnelles Internet für zu Hause",
          "b": "Ihr Anschluss ist zu langsam? Wir beraten Sie, welcher Tarif und welche Technik zu Ihrer Wohnung passen, und melden Sie beim Anbieter an. Die Beratung ist kostenlos."
         },
         {
+         "l": "g",
+         "t": "Tonstudio Klangwerk",
+         "b": "Schallgeschützter Raum mit Mikrofonen und Technik für Podcast oder Musik. Stundenweise ab 12 €, kurze Einführung inklusive. Buchung übers Internet, auch abends möglich."
+        },
+        {
+         "l": "h",
+         "t": "Computerkurs für Einsteiger",
+         "b": "Volkshochschule Marbeck: Grundlagen für alle, die ganz neu anfangen. Samstags von 10 bis 13 Uhr, sechs Termine. Kleine Gruppen, ein eigener Laptop ist nicht nötig. Anmeldung bis Freitag."
+        },
+        {
+         "l": "i",
+         "t": "Fotos am Computer bearbeiten",
+         "b": "Kurs für alle, die ihre Bilder verbessern möchten: heller machen, zuschneiden, ordnen. Dienstags 18–20 Uhr, vier Wochen. Eigene Fotos gern mitbringen."
+        },
+        {
          "l": "j",
-         "t": "Handy-Reparatur Blitz",
-         "b": "Kaputtes Display, leerer Akku? Wir reparieren Smartphones aller Marken meist noch am selben Tag. Laptops und Tablets nehmen wir allerdings nicht an. Auch ohne Termin."
+         "t": "Digitalhilfe zu Hause",
+         "b": "Ehrenamtliche kommen zu Ihnen nach Hause und erklären Handy, Tablet oder Computer in Ruhe. Besonders für ältere Menschen gedacht. Termin nach Vereinbarung, kostenlos."
         },
         {
          "l": "k",
-         "t": "Fotostudio Porträt",
-         "b": "Professionelle Porträtfotos für Bewerbung oder Familie. Termine werktags und samstags. Die Bilder erhalten Sie digital und gedruckt. Studio im Zentrum von Marbeck."
+         "t": "Elternabend: Kinder und Bildschirmzeit",
+         "b": "Wie viel Zeit im Netz ist gesund? Eine Fachfrau gibt Tipps und beantwortet Ihre Fragen. Donnerstag, 19 Uhr, Aula der Grundschule. Eintritt frei, ohne Anmeldung."
         },
         {
          "l": "l",
-         "t": "Gebrauchte Technik — Ankauf",
-         "b": "Wir kaufen Ihr altes Smartphone, Tablet oder Notebook und zahlen sofort bar. Kostenlose Schätzung im Laden. Die Geräte müssen nicht einmal mehr funktionieren."
+         "t": "Althandy hilft e. V.",
+         "b": "Wir sammeln alte, aber funktionierende Smartphones, löschen alle Daten und geben die Geräte an Menschen weiter, die sich kein neues leisten können. Abgabe im Bürgerbüro."
         }
        ]
       }
@@ -13538,19 +13643,19 @@ window.MZ_EPREUVEN["telcb106"] = {
        "items": [
         {
          "l": "a",
-         "t": "Unterstützung"
-        },
-        {
-         "l": "b",
          "t": "hochlädt"
         },
         {
+         "l": "b",
+         "t": "anzumelden"
+        },
+        {
          "l": "c",
-         "t": "mit"
+         "t": "teuer"
         },
         {
          "l": "d",
-         "t": "kostenlos"
+         "t": "hinweisen"
         },
         {
          "l": "e",
@@ -13558,31 +13663,31 @@ window.MZ_EPREUVEN["telcb106"] = {
         },
         {
          "l": "f",
-         "t": "anzumelden"
+         "t": "kostenlos"
         },
         {
          "l": "g",
-         "t": "hinweisen"
+         "t": "erklären"
         },
         {
          "l": "h",
-         "t": "schützen"
-        },
-        {
-         "l": "i",
          "t": "vorbeischauen"
         },
         {
+         "l": "i",
+         "t": "herunterlädt"
+        },
+        {
          "l": "j",
-         "t": "zugutekommen"
+         "t": "verlieren"
         },
         {
          "l": "k",
-         "t": "teuer"
+         "t": "schützen"
         },
         {
          "l": "l",
-         "t": "herunterlädt"
+         "t": "zugutekommen"
         },
         {
          "l": "m",
@@ -13590,11 +13695,11 @@ window.MZ_EPREUVEN["telcb106"] = {
         },
         {
          "l": "n",
-         "t": "verlieren"
+         "t": "mit"
         },
         {
          "l": "o",
-         "t": "erklären"
+         "t": "Unterstützung"
         }
        ]
       },
@@ -14529,7 +14634,7 @@ window.MZ_EPREUVEN["telcb106"] = {
       },
       {
        "n": 57,
-       "frage": "Am Montagvormittag kommt ein Techniker ins Haus.",
+       "frage": "Die verschobene Sendung kann man schon vorher im Internet sehen.",
        "opt": [
         {
          "k": "Richtig",
@@ -14543,7 +14648,7 @@ window.MZ_EPREUVEN["telcb106"] = {
       },
       {
        "n": 58,
-       "frage": "Kranke Kinder muss man weiterhin telefonisch im Sekretariat melden.",
+       "frage": "Auch nach dem 1. Oktober kann man den Sender mit einem UKW-Radio hören.",
        "opt": [
         {
          "k": "Richtig",
@@ -14557,7 +14662,7 @@ window.MZ_EPREUVEN["telcb106"] = {
       },
       {
        "n": 59,
-       "frage": "Die ausgeliehenen E-Books muss man nicht zurückbringen.",
+       "frage": "Am Samstag können alle Abonnenten die Zeitung gratis online lesen.",
        "opt": [
         {
          "k": "Richtig",
@@ -14571,7 +14676,7 @@ window.MZ_EPREUVEN["telcb106"] = {
       },
       {
        "n": 60,
-       "frage": "Ohne Termin ist das Amt nur an einem Tag in der Woche geöffnet.",
+       "frage": "Man soll den Link in der verdächtigen SMS nicht öffnen.",
        "opt": [
         {
          "k": "Richtig",
@@ -14598,14 +14703,18 @@ window.MZ_EPREUVEN["telcb106"] = {
       "titel": "Schriftlicher Ausdruck — Brief",
       "min": 100,
       "brief": "Liebe(r) …,\n\nendlich habe ich mein Abitur! Jetzt möchte ich vor dem Studium ein Jahr ins Ausland gehen, und ich überlege, ob ich einen Freiwilligendienst in deinem Land machen soll. Man arbeitet dort zum Beispiel in einer Schule oder in einem Krankenhaus.\n\nMeine Eltern sind aber nicht so begeistert. Sie haben Angst, dass ich mich dort nicht zurechtfinde, weil ich die Sprache nicht spreche. Du kennst dein Land ja am besten. Was meinst du? Ist das eine gute Idee?\n\nIch würde mich sehr über deine Meinung freuen. Vielleicht kannst du mir auch sagen, was ich unbedingt mitnehmen sollte.\n\nAlles Liebe\nLena",
-      "kontext": "Sie haben diesen Brief bekommen. Antworten Sie Lena. Schreiben Sie etwas zu den folgenden vier Punkten. Überlegen Sie sich eine passende Reihenfolge der Inhaltspunkte. Vergessen Sie nicht Anrede und Gruß am Schluss.",
+      "kontext": "Antworten Sie Lena. Schreiben Sie in Ihrer E-Mail etwas zu allen vier Punkten unten. Überlegen Sie sich vorher eine passende Reihenfolge der Punkte, eine passende Einleitung und einen passenden Schluss. Vergessen Sie auch nicht den Betreff.",
       "vorlage": "",
       "leitpunkte": [
        "Glückwunsch zum Abitur",
        "Ihre Meinung zu Lenas Plan",
        "Wie Lena die Sprache lernen kann",
        "Was sie unbedingt mitnehmen sollte"
-      ]
+      ],
+      "situation": "Ihre Freundin Lena hat gerade ihr Abitur gemacht. Sie hat Ihnen diese E-Mail geschickt:",
+      "von": "lena.s@mailfix.de",
+      "betreff": "Ein Jahr in deinem Land?",
+      "format": "email"
      }
     ]
    }
@@ -16906,7 +17015,7 @@ window.MZ_EPREUVEN["telcb107"] = {
       },
       {
        "n": 57,
-       "frage": "Papiertüten für den Biomüll bekommt man beim Hausmeister, ohne dafür zu bezahlen.",
+       "frage": "Für die Führung mit dem Ranger muss man sich nicht vorher anmelden.",
        "opt": [
         {
          "k": "Richtig",
@@ -16920,7 +17029,7 @@ window.MZ_EPREUVEN["telcb107"] = {
       },
       {
        "n": 58,
-       "frage": "Am Umwelttag bekommen die Kinder in der Mensa ein Mittagessen.",
+       "frage": "Für den Heizungscheck muss man in die Beratungsstelle kommen.",
        "opt": [
         {
          "k": "Richtig",
@@ -16934,7 +17043,7 @@ window.MZ_EPREUVEN["telcb107"] = {
       },
       {
        "n": 59,
-       "frage": "Für die Samen muss man eine kleine Gebühr bezahlen.",
+       "frage": "Ab November sind nachts im ganzen Ort alle Straßenlampen aus.",
        "opt": [
         {
          "k": "Richtig",
@@ -16975,14 +17084,18 @@ window.MZ_EPREUVEN["telcb107"] = {
       "titel": "Schriftlicher Ausdruck — Brief",
       "min": 100,
       "brief": "Liebe(r) …,\n\nstell dir vor: Seit April haben Ben und ich einen kleinen Garten in der Kleingartenanlage „Am Bergwiesenbach“! Er ist nur zehn Minuten mit dem Rad von unserer Wohnung entfernt. Es gibt eine alte Holzhütte, zwei Apfelbäume und leider auch sehr viel Unkraut.\n\nInzwischen wachsen bei uns Salat, Zucchini und Kartoffeln, und zum ersten Mal haben wir selbst etwas geerntet. Das möchten wir feiern: Am Samstag, dem 12. Juli, machen wir ab 15 Uhr ein kleines Gartenfest. Wir würden uns sehr freuen, wenn du auch kommst!\n\nAußerdem habe ich eine Frage an dich. Nächstes Jahr möchte ich gern etwas pflanzen, das man hier kaum kennt, zum Beispiel Gemüse oder Kräuter aus deinem Land. Was wächst bei euch gut, und was könnte auch hier funktionieren? Hast du vielleicht selbst schon einmal in einem Garten gearbeitet?\n\nSchreib mir bald!\n\nLiebe Grüße\nAnke",
-      "kontext": "Sie haben diesen Brief bekommen. Antworten Sie Anke. Schreiben Sie etwas zu den folgenden vier Punkten. Überlegen Sie sich eine passende Reihenfolge der Inhaltspunkte. Vergessen Sie nicht Anrede und Gruß am Schluss.",
+      "kontext": "Antworten Sie Anke. Schreiben Sie in Ihrer E-Mail etwas zu allen vier Punkten unten. Überlegen Sie sich vorher eine passende Reihenfolge der Punkte, eine passende Einleitung und einen passenden Schluss. Vergessen Sie auch nicht den Betreff.",
       "vorlage": "",
       "leitpunkte": [
        "Reaktion auf Ankes Garten",
        "Ob Sie zum Gartenfest kommen können",
        "Gemüse oder Kräuter aus Ihrem Land",
        "Ihre eigenen Erfahrungen mit Gartenarbeit"
-      ]
+      ],
+      "situation": "Ihre Freundin Anke hat seit dem Frühling einen Garten. Sie hat Ihnen diese E-Mail geschickt:",
+      "von": "anke.gruen@postbox.de",
+      "betreff": "Einladung zu unserem Gartenfest",
+      "format": "email"
      }
     ]
    }
@@ -17447,8 +17560,8 @@ window.MZ_EPREUVEN["telcb108"] = {
         },
         {
          "l": "c",
-         "t": "Übersetzungsbüro Derya Pereira",
-         "b": "Beglaubigte Übersetzungen von Zeugnissen, Urkunden und Verträgen aus dem Portugiesischen, Spanischen und Türkischen. Von Behörden und Arbeitgebern anerkannt. In der Regel fertig in fünf Werktagen."
+         "t": "Blind schreiben mit zehn Fingern",
+         "b": "In sechs Abenden lernen Sie, alle Finger zu benutzen und zu tippen, ohne auf die Tasten zu sehen. Jede Teilnehmerin und jeder Teilnehmer bekommt einen eigenen Laptop. Dienstags 18–20 Uhr, Volkshochschule Pelzach, 85 €."
         },
         {
          "l": "d",
@@ -17477,8 +17590,8 @@ window.MZ_EPREUVEN["telcb108"] = {
         },
         {
          "l": "i",
-         "t": "Fotostudio Carstens",
-         "b": "Professionelle Bewerbungsfotos in 20 Minuten, mit Beratung zu Kleidung und Hintergrund. Sie wählen die Bilder direkt am Bildschirm aus und bekommen sie sofort digital. Ohne Termin, auch samstags."
+         "t": "Lernstudio Brückner sucht Nachhilfelehrkräfte",
+         "b": "Für Schülerinnen und Schüler der Klassen 5 bis 10 suchen wir Verstärkung in Mathe und Englisch. Unterricht nur montags bis freitags zwischen 14 und 18 Uhr, 16 € pro Stunde. Ideal für Studierende."
         },
         {
          "l": "j",
@@ -17791,7 +17904,7 @@ window.MZ_EPREUVEN["telcb108"] = {
       },
       {
        "n": 16,
-       "frage": "Ihre Arbeitszeugnisse sind auf Portugiesisch. Für eine Bewerbung brauchen Sie sie auf Deutsch.",
+       "frage": "In Ihrer neuen Stelle schreiben Sie viel am Computer. Sie möchten lernen, schneller zu tippen, ohne auf die Tastatur zu schauen.",
        "opt": [
         {
          "k": "a",
@@ -19283,7 +19396,7 @@ window.MZ_EPREUVEN["telcb108"] = {
       },
       {
        "n": 57,
-       "frage": "Am Samstag kann man das Gebäude den ganzen Tag nicht betreten.",
+       "frage": "Für die Grippeimpfung muss man vorher einen Termin vereinbaren.",
        "opt": [
         {
          "k": "Richtig",
@@ -19297,7 +19410,7 @@ window.MZ_EPREUVEN["telcb108"] = {
       },
       {
        "n": 58,
-       "frage": "Die Gespräche mit den Lehrkräften sind auch telefonisch möglich.",
+       "frage": "Der Vortrag zum Vorstellungsgespräch fängt später an als geplant.",
        "opt": [
         {
          "k": "Richtig",
@@ -19311,7 +19424,7 @@ window.MZ_EPREUVEN["telcb108"] = {
       },
       {
        "n": 59,
-       "frage": "Die Bücherei ist künftig an einem Abend in der Woche länger geöffnet.",
+       "frage": "Für den Betriebsausflug kann man sich im Intranet anmelden.",
        "opt": [
         {
          "k": "Richtig",
@@ -19352,14 +19465,18 @@ window.MZ_EPREUVEN["telcb108"] = {
       "titel": "Schriftlicher Ausdruck — Brief",
       "min": 100,
       "brief": "Liebe(r) …,\n\nstell dir vor: Ich habe die Stelle in der Stadtbibliothek Pöhlingen bekommen! Das Vorstellungsgespräch war am Montag, und schon am Mittwoch haben sie mich angerufen. Am 3. November ist mein erster Arbeitstag.\n\nIch freue mich riesig, aber ich bin auch ziemlich nervös. In meiner alten Firma habe ich acht Jahre gearbeitet und kannte dort jeden. Jetzt ist alles neu: das Team, die Chefin, die Arbeitszeiten. Du hast doch letztes Jahr auch die Stelle gewechselt. Wie war das für dich am Anfang? Und was sollte ich in den ersten Wochen auf keinen Fall machen?\n\nAußerdem möchte ich das feiern! Am Samstag, dem 25. Oktober, koche ich ab 19 Uhr für ein paar Freunde bei mir zu Hause. Kommst du? Du kannst gern jemanden mitbringen.\n\nSchreib mir bald!\n\nLiebe Grüße\nDana",
-      "kontext": "Sie haben diesen Brief bekommen. Antworten Sie Dana. Schreiben Sie etwas zu den folgenden vier Punkten. Überlegen Sie sich eine passende Reihenfolge der Inhaltspunkte. Vergessen Sie nicht Anrede und Gruß am Schluss.",
+      "kontext": "Antworten Sie Dana. Schreiben Sie in Ihrer E-Mail etwas zu allen vier Punkten unten. Überlegen Sie sich vorher eine passende Reihenfolge der Punkte, eine passende Einleitung und einen passenden Schluss. Vergessen Sie auch nicht den Betreff.",
       "vorlage": "",
       "leitpunkte": [
        "Reaktion auf Danas neue Stelle",
        "Ihre Erfahrungen mit einem neuen Arbeitsplatz",
        "Tipps für die ersten Wochen",
        "Ob Sie zum Essen kommen können"
-      ]
+      ],
+      "situation": "Ihre Freundin Dana hat sich um eine neue Stelle beworben. Sie hat Ihnen diese E-Mail geschickt:",
+      "von": "dana.k@netzpost.de",
+      "betreff": "Ich habe die Stelle!",
+      "format": "email"
      }
     ]
    }
@@ -19834,8 +19951,8 @@ window.MZ_EPREUVEN["telcb109"] = {
         },
         {
          "l": "e",
-         "t": "Kleidertausch im Stadtteilcafé",
-         "b": "Jeden ersten Sonntag im Monat, 14–17 Uhr. Bringen Sie bis zu zehn gut erhaltene Kleidungsstücke mit und nehmen Sie andere mit nach Hause. Kein Geld, keine Punkte, einfach tauschen. Der Eintritt ist frei."
+         "t": "Schlafhaus Wendel — 100 Nächte Probeschlafen",
+         "b": "Kaufen Sie bei uns eine neue Matratze und testen Sie sie 100 Nächte lang zu Hause. Passt sie nicht zu Ihnen, holen wir sie kostenlos ab und Sie bekommen den vollen Preis zurück. Montag bis Samstag, 10–19 Uhr, Mühlgasse 9."
         },
         {
          "l": "f",
@@ -19864,8 +19981,8 @@ window.MZ_EPREUVEN["telcb109"] = {
         },
         {
          "l": "k",
-         "t": "Reparatur-Café Elmshagen",
-         "b": "Jeden letzten Samstag im Monat, 10–15 Uhr, im Gemeindehaus. Ehrenamtliche helfen Ihnen, kaputte Elektrogeräte, Fahrräder und Kleidung selbst zu reparieren. Die Hilfe ist kostenlos, über eine Spende freuen wir uns."
+         "t": "Geschenkservice im Kaufhaus Brandtner",
+         "b": "Ob Schal, Parfüm oder Spielzeug: Alles, was Sie bei uns kaufen, verpacken wir an der Service-Theke im Erdgeschoss kostenlos, auf Wunsch mit Schleife. Passende Grußkarten gibt es für 1,50 €. In der Adventszeit bitte etwas Wartezeit einplanen."
         },
         {
          "l": "l",
@@ -19936,7 +20053,7 @@ window.MZ_EPREUVEN["telcb109"] = {
       },
       {
        "n": 12,
-       "frage": "Ihr Staubsauger ist kaputt. Sie möchten ihn reparieren, dafür aber möglichst kein Geld ausgeben.",
+       "frage": "Sie möchten im Kaufhaus ein Geschenk für eine Kollegin kaufen und es gleich dort schön einpacken lassen, ohne dafür extra zu bezahlen.",
        "opt": [
         {
          "k": "a",
@@ -21464,7 +21581,7 @@ window.MZ_EPREUVEN["telcb109"] = {
       },
       {
        "n": 44,
-       "frage": "Morgen kann man mit bestimmten Buslinien kostenlos in die Innenstadt fahren.",
+       "frage": "Die Fahrt mit dem Shuttlebus ist heute kostenlos.",
        "opt": [
         {
          "k": "Richtig",
@@ -21660,7 +21777,7 @@ window.MZ_EPREUVEN["telcb109"] = {
       },
       {
        "n": 57,
-       "frage": "Für die Paketstation muss man eine Gebühr bezahlen.",
+       "frage": "Kinder können im Kinderparadies bleiben, bis die Eltern fertig eingekauft haben.",
        "opt": [
         {
          "k": "Richtig",
@@ -21674,7 +21791,7 @@ window.MZ_EPREUVEN["telcb109"] = {
       },
       {
        "n": 58,
-       "frage": "Ein Teil des Geldes aus dem Basar bekommt der Förderverein der Schule.",
+       "frage": "Im Geschäft gekaufte Ware kann man nicht automatisch zurückgeben.",
        "opt": [
         {
          "k": "Richtig",
@@ -21688,7 +21805,7 @@ window.MZ_EPREUVEN["telcb109"] = {
       },
       {
        "n": 59,
-       "frage": "Die Testergebnisse kann man auch von zu Hause im Internet lesen.",
+       "frage": "Bestellte Medikamente kann man noch am selben Tag abholen.",
        "opt": [
         {
          "k": "Richtig",
@@ -21729,14 +21846,18 @@ window.MZ_EPREUVEN["telcb109"] = {
       "titel": "Schriftlicher Ausdruck — Brief",
       "min": 100,
       "brief": "Liebe(r) …,\n\nendlich ist es so weit: Nach einem Jahr Planung eröffne ich meinen eigenen kleinen Laden! Ich verkaufe dort gebrauchte Kleidung für Frauen und Männer, alles gewaschen und in gutem Zustand. Der Laden liegt in der Färberstraße 12, direkt neben der Bäckerei, in der wir früher so oft Kaffee getrunken haben.\n\nDie Eröffnung feiere ich am Samstag, dem 18. Oktober, ab 15 Uhr mit Kuchen und Musik. Ich würde mich riesig freuen, wenn du dabei bist!\n\nIm Moment fehlt mir allerdings noch Ware, vor allem Jacken und Schuhe. Hast du vielleicht ein paar Sachen im Schrank, die du nicht mehr trägst? Und noch etwas: Für Werbung habe ich fast kein Geld mehr. Hast du eine Idee, wie ich den Laden in der Stadt bekannt machen kann?\n\nSchreib mir bald!\n\nHerzliche Grüße\nFrieda",
-      "kontext": "Sie haben diesen Brief bekommen. Antworten Sie Frieda. Schreiben Sie etwas zu den folgenden vier Punkten. Überlegen Sie sich eine passende Reihenfolge der Inhaltspunkte. Vergessen Sie nicht Anrede und Gruß am Schluss.",
+      "kontext": "Antworten Sie Frieda. Schreiben Sie in Ihrer E-Mail etwas zu allen vier Punkten unten. Überlegen Sie sich vorher eine passende Reihenfolge der Punkte, eine passende Einleitung und einen passenden Schluss. Vergessen Sie auch nicht den Betreff.",
       "vorlage": "",
       "leitpunkte": [
        "Reaktion auf Friedas Neuigkeit",
        "Ob Sie zur Eröffnung kommen können",
        "Welche Kleidung Sie Frieda geben können",
        "Ideen für günstige Werbung"
-      ]
+      ],
+      "situation": "Ihre Freundin Frieda hat lange einen eigenen Laden geplant. Sie hat Ihnen diese E-Mail geschickt:",
+      "von": "frieda.laden@webpost.de",
+      "betreff": "Eröffnung am 18. Oktober",
+      "format": "email"
      }
     ]
    }
@@ -23856,7 +23977,7 @@ window.MZ_EPREUVEN["telcb110"] = {
       },
       {
        "n": 45,
-       "frage": "Der Samstagnachmittag eignet sich gut zum Grillen.",
+       "frage": "Die zweite Packung Kaffee bekommt man heute den ganzen Tag geschenkt.",
        "opt": [
         {
          "k": "Richtig",
@@ -24038,7 +24159,7 @@ window.MZ_EPREUVEN["telcb110"] = {
       },
       {
        "n": 57,
-       "frage": "Mit einem Elektrogrill darf man auf dem Balkon weiterhin grillen.",
+       "frage": "Jugendliche ab vierzehn dürfen bei der Führung auch Bier probieren.",
        "opt": [
         {
          "k": "Richtig",
@@ -24052,7 +24173,7 @@ window.MZ_EPREUVEN["telcb110"] = {
       },
       {
        "n": 58,
-       "frage": "Das Mittagessen kostet ab nächster Woche mehr.",
+       "frage": "Die Krankenkasse bezahlt den Kochkurs vollständig.",
        "opt": [
         {
          "k": "Richtig",
@@ -24066,7 +24187,7 @@ window.MZ_EPREUVEN["telcb110"] = {
       },
       {
        "n": 59,
-       "frage": "Für den Kochkurs am Nachmittag muss man nichts bezahlen.",
+       "frage": "Leere Gläser kann man direkt am Foodtruck zurückgeben.",
        "opt": [
         {
          "k": "Richtig",
@@ -24080,7 +24201,7 @@ window.MZ_EPREUVEN["telcb110"] = {
       },
       {
        "n": 60,
-       "frage": "Vereine zahlen für ihren Stand in diesem Jahr weniger.",
+       "frage": "Eine Geburtstagstorte kann man auch wenige Tage vorher noch bestellen.",
        "opt": [
         {
          "k": "Richtig",
@@ -24107,14 +24228,18 @@ window.MZ_EPREUVEN["telcb110"] = {
       "titel": "Schriftlicher Ausdruck — Brief",
       "min": 100,
       "brief": "Liebe(r) …,\n\nstell dir vor, ich habe große Neuigkeiten! Meine Tante Hilde möchte ihr kleines Café in Rotenhain nicht mehr allein führen und hat mich gefragt, ob ich es ab November übernehmen will. Du weißt ja, dass ich schon lange davon träume. Trotzdem habe ich ein bisschen Angst, denn dafür müsste ich meine sichere Stelle im Büro aufgeben.\n\nAm Samstag, dem 14. Oktober, mache ich im Café einen Probetag. Neben den Kuchen meiner Tante möchte ich auch etwas Neues anbieten, vielleicht etwas aus anderen Ländern. Was isst man bei euch eigentlich zum Kaffee oder zum Tee?\n\nEs wäre toll, wenn du an diesem Tag kommen und mir ein bisschen helfen könntest. Um zehn Uhr geht es los.\n\nSchreib mir bald, was du denkst!\n\nViele Grüße\nGreta",
-      "kontext": "Sie haben diesen Brief bekommen. Antworten Sie Greta. Schreiben Sie etwas zu den folgenden vier Punkten. Überlegen Sie sich eine passende Reihenfolge der Inhaltspunkte. Vergessen Sie nicht Anrede und Gruß am Schluss.",
+      "kontext": "Antworten Sie Greta. Schreiben Sie in Ihrer E-Mail etwas zu allen vier Punkten unten. Überlegen Sie sich vorher eine passende Reihenfolge der Punkte, eine passende Einleitung und einen passenden Schluss. Vergessen Sie auch nicht den Betreff.",
       "vorlage": "",
       "leitpunkte": [
        "Wie Sie die Neuigkeit finden",
        "Ob Greta ihre Stelle aufgeben soll",
        "Was man in Ihrem Land zum Kaffee isst",
        "Ob Sie am Probetag kommen können"
-      ]
+      ],
+      "situation": "Ihre Freundin Greta hat Ihnen diese E-Mail geschickt:",
+      "von": "greta.r@mailfix.de",
+      "betreff": "Große Neuigkeiten aus Rotenhain",
+      "format": "email"
      }
     ]
    }
@@ -26220,7 +26345,7 @@ window.MZ_EPREUVEN["telcb111"] = {
       },
       {
        "n": 44,
-       "frage": "Am Sonntag kann man am Stadion parken, ohne zu bezahlen.",
+       "frage": "Für das Mittagessen muss man nicht extra bezahlen.",
        "opt": [
         {
          "k": "Richtig",
@@ -26234,7 +26359,7 @@ window.MZ_EPREUVEN["telcb111"] = {
       },
       {
        "n": 45,
-       "frage": "Am Samstag bleibt es den ganzen Tag trocken.",
+       "frage": "Die Drei- bis Vierjährigen turnen im Oktober an einem anderen Tag.",
        "opt": [
         {
          "k": "Richtig",
@@ -26416,7 +26541,7 @@ window.MZ_EPREUVEN["telcb111"] = {
       },
       {
        "n": 57,
-       "frage": "Den Schlüssel für den neuen Raum bekommt man, ohne etwas zu bezahlen.",
+       "frage": "Die U-Untersuchungen finden am Vormittag statt.",
        "opt": [
         {
          "k": "Richtig",
@@ -26430,7 +26555,7 @@ window.MZ_EPREUVEN["telcb111"] = {
       },
       {
        "n": 58,
-       "frage": "Die Großeltern können am Vormittag den Unterricht besuchen.",
+       "frage": "Mit dem Familienpass kommen Kinder kostenlos ins Museum.",
        "opt": [
         {
          "k": "Richtig",
@@ -26444,7 +26569,7 @@ window.MZ_EPREUVEN["telcb111"] = {
       },
       {
        "n": 59,
-       "frage": "Für die Vorlesestunde muss man nichts bezahlen.",
+       "frage": "Das Streichelgehege schließt heute früher als an anderen Tagen.",
        "opt": [
         {
          "k": "Richtig",
@@ -26484,15 +26609,19 @@ window.MZ_EPREUVEN["telcb111"] = {
       "nr": 1,
       "titel": "Schriftlicher Ausdruck — Brief",
       "min": 100,
-      "brief": "Liebe(r) …,\n\nendlich habe ich Zeit, dir zu schreiben! Am 2. September ist unsere Tochter Ida auf die Welt gekommen. Sie wog 3 200 Gramm, hat ganz dunkle Haare und schläft zum Glück schon ziemlich gut. Ilias und ich sind sehr glücklich, aber auch ein bisschen müde.\n\nJetzt habe ich eine wichtige Frage an dich: Möchtest du Idas Patin oder Pate werden? Wir haben lange überlegt und sind ganz sicher, dass du die richtige Person dafür bist. Die kleine Feier machen wir am Sonntag, dem 16. November, mit einem Mittagessen im Gasthaus „Zur Linde“ in Schwanfeld.\n\nBis dahin würden wir uns sehr über einen Besuch freuen. Du musst Ida unbedingt bald kennenlernen! Schreib mir einfach, wann es dir passt. Bei uns ist fast immer jemand zu Hause.\n\nGanz liebe Grüße\nJana",
-      "kontext": "Sie haben diesen Brief bekommen. Antworten Sie Jana. Schreiben Sie etwas zu den folgenden vier Punkten. Überlegen Sie sich eine passende Reihenfolge der Inhaltspunkte. Vergessen Sie nicht Anrede und Gruß am Schluss.",
+      "brief": "Liebe(r) …,\n\nendlich habe ich Zeit, dir zu schreiben! Am 2. September ist unsere Tochter Ida auf die Welt gekommen. Sie wog 3 200 Gramm, hat ganz dunkle Haare und schläft zum Glück schon ziemlich gut. Ilias und ich sind sehr glücklich, aber auch ein bisschen müde.\n\nJetzt habe ich eine wichtige Frage an dich: Möchtest du Idas Patin oder Pate werden? Wir haben lange überlegt und sind ganz sicher, dass du die richtige Person dafür bist. Die kleine Feier machen wir am Sonntag, dem 16. November, mit einem Mittagessen im Gasthaus „Zum Kastanienhof“ in Schwanfeld.\n\nBis dahin würden wir uns sehr über einen Besuch freuen. Du musst Ida unbedingt bald kennenlernen! Schreib mir einfach, wann es dir passt. Bei uns ist fast immer jemand zu Hause.\n\nGanz liebe Grüße\nJana",
+      "kontext": "Antworten Sie Jana. Schreiben Sie in Ihrer E-Mail etwas zu allen vier Punkten unten. Überlegen Sie sich vorher eine passende Reihenfolge der Punkte, eine passende Einleitung und einen passenden Schluss. Vergessen Sie auch nicht den Betreff.",
       "vorlage": "",
       "leitpunkte": [
        "Glückwunsch zur Geburt",
        "Ihre Antwort auf Janas Frage",
        "Wann Sie Jana und Ida besuchen können",
        "Ein Geschenk für das Baby"
-      ]
+      ],
+      "situation": "Ihre Freundin Jana hat vor Kurzem ein Baby bekommen. Sie hat Ihnen diese E-Mail geschickt:",
+      "von": "jana.und.ilias@postbox.de",
+      "betreff": "Ida ist da!",
+      "format": "email"
      }
     ]
    }
@@ -26982,8 +27111,8 @@ window.MZ_EPREUVEN["telcb112"] = {
         },
         {
          "l": "h",
-         "t": "Nähcafé Fadenlauf",
-         "b": "Bei uns können Sie Nähmaschinen stundenweise nutzen, 4 € pro Stunde. Wir helfen gern, wenn Sie Kleidung reparieren möchten. Kurse bieten wir leider nicht an. Dienstag bis Samstag, 14–20 Uhr."
+         "t": "Kanuclub Weidenufer e. V.",
+         "b": "Jeden Samstag ab 10 Uhr paddeln wir gemeinsam auf der Rems. Gäste ab 14 Jahren können an einer geführten Schnuppertour teilnehmen, Boote und Schwimmwesten stellen wir. Kanus verleihen wir leider nicht."
         },
         {
          "l": "i",
@@ -27475,7 +27604,7 @@ window.MZ_EPREUVEN["telcb112"] = {
       },
       {
        "n": 19,
-       "frage": "Sie möchten in einem Kurs lernen, wie man selbst ein Kleid näht.",
+       "frage": "Sie möchten am Samstag mit zwei Freunden ein Kanu leihen und allein auf dem Fluss fahren.",
        "opt": [
         {
          "k": "a",
@@ -28597,7 +28726,7 @@ window.MZ_EPREUVEN["telcb112"] = {
       },
       {
        "n": 44,
-       "frage": "Die Busse halten heute wie immer am Marktplatz.",
+       "frage": "Die Wasserrutsche kann man am Sonntag wieder benutzen.",
        "opt": [
         {
          "k": "Richtig",
@@ -28611,7 +28740,7 @@ window.MZ_EPREUVEN["telcb112"] = {
       },
       {
        "n": 45,
-       "frage": "Empfindliche Pflanzen sollte man in der Nacht zum Sonntag schützen.",
+       "frage": "Man kann sich am Sonntag noch am Startpunkt anmelden.",
        "opt": [
         {
          "k": "Richtig",
@@ -28793,7 +28922,7 @@ window.MZ_EPREUVEN["telcb112"] = {
       },
       {
        "n": 57,
-       "frage": "Für das Wasser im Hof müssen die Mieter nichts bezahlen.",
+       "frage": "Am Dienstag ist das Kegeln billiger als an anderen Tagen.",
        "opt": [
         {
          "k": "Richtig",
@@ -28807,7 +28936,7 @@ window.MZ_EPREUVEN["telcb112"] = {
       },
       {
        "n": 58,
-       "frage": "Die Kinder sollen anderthalb Stunden vor der Aufführung in der Schule sein.",
+       "frage": "Die Startnummern bekommt man bis dreißig Minuten vor dem Start.",
        "opt": [
         {
          "k": "Richtig",
@@ -28821,7 +28950,7 @@ window.MZ_EPREUVEN["telcb112"] = {
       },
       {
        "n": 59,
-       "frage": "Die Spiele darf man auch länger als drei Wochen behalten.",
+       "frage": "Für den Kurs muss man mindestens achtzehn Jahre alt sein.",
        "opt": [
         {
          "k": "Richtig",
@@ -28862,14 +28991,18 @@ window.MZ_EPREUVEN["telcb112"] = {
       "titel": "Schriftlicher Ausdruck — Brief",
       "min": 100,
       "brief": "Liebe(r) …,\n\nstell dir vor: Ich spiele jetzt Bass in einer Band! Sie heißt „Die lauten Nachbarn“, und wir sind zu fünft. Seit Februar proben wir jeden Mittwoch im Keller von unserem Schlagzeuger Kai.\n\nAm Freitag, dem 19. Juni, haben wir unser erstes Konzert, und zwar um 20 Uhr im Café „Kranich“ in Lindwerder. Ich bin schon jetzt total nervös! Es wäre so schön, wenn du dabei wärst. Bring gern auch deine Freunde mit, der Eintritt ist frei.\n\nUnd dann habe ich noch eine Frage an dich: Unsere Sängerin zieht im Sommer nach Hamburg. Du hast doch früher im Chor gesungen. Hättest du nicht Lust, bei uns mitzumachen? Du könntest einfach mal zu einer Probe kommen und es ausprobieren.\n\nSchreib mir bald, was du davon hältst!\n\nLiebe Grüße\nTamara",
-      "kontext": "Sie haben diesen Brief bekommen. Antworten Sie Tamara. Schreiben Sie etwas zu den folgenden vier Punkten. Überlegen Sie sich eine passende Reihenfolge der Inhaltspunkte. Vergessen Sie nicht Anrede und Gruß am Schluss.",
+      "kontext": "Antworten Sie Tamara. Schreiben Sie in Ihrer E-Mail etwas zu allen vier Punkten unten. Überlegen Sie sich vorher eine passende Reihenfolge der Punkte, eine passende Einleitung und einen passenden Schluss. Vergessen Sie auch nicht den Betreff.",
       "vorlage": "",
       "leitpunkte": [
        "Reaktion auf Tamaras Neuigkeit",
        "Ob Sie zum Konzert kommen können",
        "Ihre Meinung zu Tamaras Angebot",
        "Welche Musik Sie selbst gern hören oder machen"
-      ]
+      ],
+      "situation": "Ihre Freundin Tamara spielt seit einigen Monaten Musik. Sie hat Ihnen diese E-Mail geschickt:",
+      "von": "tamara.bass@netzpost.de",
+      "betreff": "Unser erstes Konzert",
+      "format": "email"
      }
     ]
    }
@@ -28932,7 +29065,7 @@ window.MZ_EPREUVEN["telcb113"] = {
         },
         {
          "l": "i",
-         "t": "Das Dorfkino schließt nach sechzig Jahren"
+         "t": "Letzte Vorstellung im alten Dorfkino"
         },
         {
          "l": "j",
@@ -29349,8 +29482,8 @@ window.MZ_EPREUVEN["telcb113"] = {
         },
         {
          "l": "f",
-         "t": "Gitarrenunterricht für Erwachsene",
-         "b": "Einzelunterricht bei einer erfahrenen Musiklehrerin, für Anfänger und Wiedereinsteiger. Unterricht bei Ihnen zu Hause, Montag bis Donnerstag ab 17 Uhr. Die erste Stunde ist kostenlos, eine Gitarre kann man leihen."
+         "t": "Aquarellmalen für Erwachsene",
+         "b": "Einzelunterricht bei einer erfahrenen Künstlerin, für Anfänger und Wiedereinsteiger. Unterricht in ihrem Atelier, Montag bis Donnerstag ab 17 Uhr. Die erste Stunde ist kostenlos, Pinsel und Farben werden gestellt."
         },
         {
          "l": "g",
@@ -29364,8 +29497,8 @@ window.MZ_EPREUVEN["telcb113"] = {
         },
         {
          "l": "i",
-         "t": "Partyservice Morgenstern",
-         "b": "Wir liefern Buffets für Ihre Feier: Geburtstag, Jubiläum oder Firmenfest. Warme und kalte Speisen, auf Wunsch vegetarisch. Lieferung ab 20 Personen, Geschirr und Besteck inklusive."
+         "t": "Zauberer Balduin",
+         "b": "Zauberkunst für Ihre Feier: Geburtstag, Hochzeit oder Firmenfest. Programme von 45 oder 90 Minuten, für Kinder und Erwachsene. Buchung mindestens vier Wochen vorher, Anfahrt im Umkreis von 30 km inklusive."
         },
         {
          "l": "j",
@@ -29380,7 +29513,7 @@ window.MZ_EPREUVEN["telcb113"] = {
         {
          "l": "l",
          "t": "Adventsmarkt im Kulturhof — Standplätze frei",
-         "b": "Sie machen Schmuck, Kerzen oder Strickwaren selbst? Mieten Sie am 2. oder 3. Adventswochenende einen Stand für 60 €. Tisch und Strom sind vorhanden. Bewerbung bis 15. Oktober."
+         "b": "Sie machen Schmuck, Kerzen oder Holzarbeiten selbst? Mieten Sie am 2. oder 3. Adventswochenende einen Stand für 60 €. Tisch und Strom sind vorhanden. Bewerbung bis 15. Oktober."
         }
        ]
       }
@@ -29620,7 +29753,7 @@ window.MZ_EPREUVEN["telcb113"] = {
       },
       {
        "n": 15,
-       "frage": "Sie stricken Mützen und Schals und möchten sie in der Adventszeit verkaufen.",
+       "frage": "Sie schnitzen in Ihrer Freizeit Holzsterne und Krippenfiguren und möchten sie vor Weihnachten verkaufen.",
        "opt": [
         {
          "k": "a",
@@ -29736,7 +29869,7 @@ window.MZ_EPREUVEN["telcb113"] = {
       },
       {
        "n": 17,
-       "frage": "Sie möchten allein mit einer Lehrerin Gitarre spielen lernen. Sie haben nur am Samstag Zeit.",
+       "frage": "Sie möchten allein mit einer Lehrerin Aquarellmalen lernen. Sie haben nur am Samstag Zeit.",
        "opt": [
         {
          "k": "a",
@@ -30975,7 +31108,7 @@ window.MZ_EPREUVEN["telcb113"] = {
       },
       {
        "n": 44,
-       "frage": "Die Innenstadt von Neubrück ist nur am Samstag gesperrt.",
+       "frage": "Das Ritterturnier beginnt wie im Programm um vierzehn Uhr.",
        "opt": [
         {
          "k": "Richtig",
@@ -31171,7 +31304,7 @@ window.MZ_EPREUVEN["telcb113"] = {
       },
       {
        "n": 57,
-       "frage": "Die Autos müssen erst am Samstagmorgen aus dem Hof.",
+       "frage": "Bei bewölktem Himmel fällt der Tag der offenen Sternwarte aus.",
        "opt": [
         {
          "k": "Richtig",
@@ -31185,7 +31318,7 @@ window.MZ_EPREUVEN["telcb113"] = {
       },
       {
        "n": 58,
-       "frage": "Das Schulkonzert findet am geplanten Tag statt.",
+       "frage": "Die Tiere des Zirkus kann man ohne Eintritt besuchen.",
        "opt": [
         {
          "k": "Richtig",
@@ -31199,7 +31332,7 @@ window.MZ_EPREUVEN["telcb113"] = {
       },
       {
        "n": 59,
-       "frage": "Die Leihfrist wird während der Schließzeit automatisch verlängert.",
+       "frage": "Für die Eröffnung der Ausstellung muss man nichts bezahlen.",
        "opt": [
         {
          "k": "Richtig",
@@ -31213,7 +31346,7 @@ window.MZ_EPREUVEN["telcb113"] = {
       },
       {
        "n": 60,
-       "frage": "Den Antrag für ein Osterfeuer kann man noch zwei Wochen vorher stellen.",
+       "frage": "Amateurfilme dürfen bis zu fünfzehn Minuten lang sein.",
        "opt": [
         {
          "k": "Richtig",
@@ -31240,14 +31373,18 @@ window.MZ_EPREUVEN["telcb113"] = {
       "titel": "Schriftlicher Ausdruck — Brief",
       "min": 100,
       "brief": "Liebe(r) …,\n\nendlich ist es so weit: Unsere Theatergruppe spielt zum ersten Mal ein ganzes Stück vor Publikum! Seit Januar proben wir jeden Dienstag im Gemeindehaus von Mittelbach, und ich habe sogar eine der Hauptrollen bekommen. Ich bin schon ziemlich nervös.\n\nDie Premiere ist am Samstag, dem 15. November, um 19.30 Uhr im Saal der Musikschule. Danach feiern wir mit allen Gästen im Foyer. Ich würde mich riesig freuen, wenn du dabei bist! Du kannst natürlich gern bei mir übernachten.\n\nAußerdem brauchen wir noch Hilfe: Für die Pause suchen wir Leute, die Kuchen backen oder an der Kasse stehen. Und hast du vielleicht eine Idee, wie wir mehr Werbung für das Stück machen können? Bis jetzt haben wir erst vierzig Karten verkauft.\n\nSchreib mir bald!\n\nLiebe Grüße\nNele",
-      "kontext": "Sie haben diesen Brief bekommen. Antworten Sie Nele. Schreiben Sie etwas zu den folgenden vier Punkten. Überlegen Sie sich eine passende Reihenfolge der Inhaltspunkte. Vergessen Sie nicht Anrede und Gruß am Schluss.",
+      "kontext": "Antworten Sie Nele. Schreiben Sie in Ihrer E-Mail etwas zu allen vier Punkten unten. Überlegen Sie sich vorher eine passende Reihenfolge der Punkte, eine passende Einleitung und einen passenden Schluss. Vergessen Sie auch nicht den Betreff.",
       "vorlage": "",
       "leitpunkte": [
        "Reaktion auf Neles Neuigkeit",
        "Ob Sie zur Premiere kommen können",
        "Wie Sie der Theatergruppe helfen können",
        "Ideen für mehr Werbung"
-      ]
+      ],
+      "situation": "Ihre Freundin Nele spielt in einer Theatergruppe. Sie hat Ihnen diese E-Mail geschickt:",
+      "von": "nele.buehne@webpost.de",
+      "betreff": "Premiere am 15. November",
+      "format": "email"
      }
     ]
    }
@@ -31732,13 +31869,13 @@ window.MZ_EPREUVEN["telcb114"] = {
         },
         {
          "l": "g",
-         "t": "Übersetzungsbüro Zamora",
-         "b": "Beglaubigte Übersetzungen von Zeugnissen, Urkunden und Verträgen aus dem Spanischen, Portugiesischen und Italienischen. Von allen Behörden anerkannt. Fertig in fünf Werktagen, Eilaufträge gegen Aufpreis."
+         "t": "Zulassungsdienst Zamora",
+         "b": "Neu- oder Gebrauchtwagen? Wir melden Ihr Fahrzeug für Sie bei der Zulassungsstelle an, um- oder ab. Sie bringen uns nur Fahrzeugbrief, Versicherungsnummer und Ausweis — die Kennzeichen liegen am nächsten Werktag bereit. Service ab 49 €."
         },
         {
          "l": "h",
-         "t": "Formularhilfe im Nachbarschaftstreff Weststadt",
-         "b": "Ehrenamtliche helfen beim Ausfüllen von Anträgen: Wohngeld, Kinderzuschlag, Rundfunkbeitrag und mehr. Jeden Dienstag 10–12 Uhr, kostenlos und ohne Termin. Keine Steuerberatung."
+         "t": "Rentensprechstunde im Rathaus Weststadt",
+         "b": "Ehrenamtliche Versichertenberater der Rentenversicherung klären mit Ihnen Ihr Rentenkonto und beraten Sie zum Rentenantrag. Jeden Dienstag 10–12 Uhr, kostenlos und ohne Termin. Fragen zur Steuer auf die Rente beantworten wir nicht."
         },
         {
          "l": "i",
@@ -31752,8 +31889,8 @@ window.MZ_EPREUVEN["telcb114"] = {
         },
         {
          "l": "k",
-         "t": "Repair-Café Zwingerhof",
-         "b": "Jeden letzten Samstag im Monat reparieren wir gemeinsam mit Ihnen Lampen, Radios, Kleidung und Spielzeug — alles, was man tragen kann. Werkzeug ist da, Ehrenamtliche erklären jeden Schritt. Nur eine Spende."
+         "t": "Mieterverein Zwingerhof: Kurs „Handgriffe im Haushalt“",
+         "b": "An zwei Samstagen zeigt Ihnen ein Elektromeister, wie man Deckenlampen sicher anschließt, einen tropfenden Wasserhahn abdichtet und Waschmaschinen richtig aufstellt. Werkzeug wird gestellt. Kursgebühr nur 15 €."
         },
         {
          "l": "l",
@@ -31882,7 +32019,7 @@ window.MZ_EPREUVEN["telcb114"] = {
       },
       {
        "n": 13,
-       "frage": "Ihr Abschlusszeugnis ist auf Spanisch. Das Amt verlangt eine offizielle deutsche Fassung.",
+       "frage": "Sie haben ein gebrauchtes Auto gekauft. Jemand soll es für Sie anmelden, weil Sie keine Zeit haben, selbst zur Zulassungsstelle zu gehen.",
        "opt": [
         {
          "k": "a",
@@ -31998,7 +32135,7 @@ window.MZ_EPREUVEN["telcb114"] = {
       },
       {
        "n": 15,
-       "frage": "Ihre Nachttischlampe ist kaputt. Sie haben wenig Geld und möchten bei der Reparatur selbst etwas lernen.",
+       "frage": "In Ihrer neuen Wohnung hängen noch keine Lampen. Sie möchten lernen, sie selbst anzuschließen, und dafür nicht viel Geld ausgeben.",
        "opt": [
         {
          "k": "a",
@@ -32056,7 +32193,7 @@ window.MZ_EPREUVEN["telcb114"] = {
       },
       {
        "n": 16,
-       "frage": "Sie verstehen den Antrag auf Wohngeld nicht und suchen jemanden, der Ihnen kostenlos beim Ausfüllen hilft.",
+       "frage": "Sie gehen nächstes Jahr in Rente und suchen jemanden, der Sie kostenlos zu Ihrem Rentenantrag berät.",
        "opt": [
         {
          "k": "a",
@@ -33549,7 +33686,7 @@ window.MZ_EPREUVEN["telcb114"] = {
       },
       {
        "n": 57,
-       "frage": "Wer am Donnerstag nicht zu Hause ist, kann den Schlüssel beim Hausmeister lassen.",
+       "frage": "Wer am Kontrolltermin keine Zeit hat, kann kostenlos einen anderen Termin bekommen.",
        "opt": [
         {
          "k": "Richtig",
@@ -33563,7 +33700,7 @@ window.MZ_EPREUVEN["telcb114"] = {
       },
       {
        "n": 58,
-       "frage": "Das Geld für die Klassenfahrt soll man bar in der Schule abgeben.",
+       "frage": "Für das Lagern der Reifen zahlt man fünfundzwanzig Euro.",
        "opt": [
         {
          "k": "Richtig",
@@ -33577,7 +33714,7 @@ window.MZ_EPREUVEN["telcb114"] = {
       },
       {
        "n": 59,
-       "frage": "Für Studierende kostet der Bibliotheksausweis auch in Zukunft nichts.",
+       "frage": "Wer seinen verlorenen Ausweis abholt, muss auch in Zukunft nichts bezahlen.",
        "opt": [
         {
          "k": "Richtig",
@@ -33618,14 +33755,18 @@ window.MZ_EPREUVEN["telcb114"] = {
       "titel": "Schriftlicher Ausdruck — Brief",
       "min": 100,
       "brief": "Liebe(r) …,\n\nstell dir vor: Ich habe meine Stelle im Büro gekündigt und mache mich selbstständig! Ab November habe ich eine kleine Änderungsschneiderei in Würzfeld, direkt neben der Post in der Lindenstraße 3. Dort kürze ich Hosen, ersetze Reißverschlüsse und repariere Jacken und Taschen.\n\nAm Samstag, dem 15. November, feiere ich von 11 bis 16 Uhr die Eröffnung. Es gibt Kaffee, Kuchen und kleine Snacks. Ich würde mich riesig freuen, wenn du kommst!\n\nEhrlich gesagt bin ich auch ein bisschen nervös. Die Miete ist nicht billig, und ich brauche schnell Kundinnen und Kunden. Du hast doch so gute Ideen. Wie könnte ich Werbung für meinen Laden machen? Und sag mal: Lässt man bei euch Kleidung noch reparieren, oder kauft man lieber gleich etwas Neues?\n\nSchreib mir bald!\n\nHerzliche Grüße\nVeronika",
-      "kontext": "Sie haben diesen Brief bekommen. Antworten Sie Veronika. Schreiben Sie etwas zu den folgenden vier Punkten. Überlegen Sie sich eine passende Reihenfolge der Inhaltspunkte. Vergessen Sie nicht Anrede und Gruß am Schluss.",
+      "kontext": "Antworten Sie Veronika. Schreiben Sie in Ihrer E-Mail etwas zu allen vier Punkten unten. Überlegen Sie sich vorher eine passende Reihenfolge der Punkte, eine passende Einleitung und einen passenden Schluss. Vergessen Sie auch nicht den Betreff.",
       "vorlage": "",
       "leitpunkte": [
        "Reaktion auf Veronikas Neuigkeit",
        "Ob Sie zur Eröffnung kommen können",
        "Ideen für die Werbung",
        "Reparieren oder neu kaufen in Ihrem Land"
-      ]
+      ],
+      "situation": "Ihre Freundin Veronika hat Ihnen diese E-Mail geschickt:",
+      "von": "veronika.naht@mailfix.de",
+      "betreff": "Ich mache mich selbstständig!",
+      "format": "email"
      }
     ]
    }
@@ -34135,8 +34276,8 @@ window.MZ_EPREUVEN["telcb115"] = {
         },
         {
          "l": "l",
-         "t": "Deutsch am Abend — Intensivkurs",
-         "b": "Montag bis Donnerstag, 18–21 Uhr, feste Gruppe mit höchstens 14 Personen. Niveau A1 bis B1, Beginn jeweils am Monatsanfang, mit Abschlusstest. Für Berufstätige mit regelmäßigen Arbeitszeiten besonders geeignet."
+         "t": "Integrationskurs mit Kinderbetreuung",
+         "b": "Sprachkurs und Orientierungskurs für Neuzugewanderte im Bildungszentrum Ostheim: Montag bis Freitag 8.30–12.45 Uhr in einer festen Gruppe. Während des Unterrichts betreuen wir Ihre Kinder unter drei Jahren im Haus. Andere Kurszeiten sind leider nicht möglich. Anmeldung nur mit Berechtigungsschein."
         }
        ]
       }
@@ -35926,7 +36067,7 @@ window.MZ_EPREUVEN["telcb115"] = {
       },
       {
        "n": 57,
-       "frage": "Die Informationen zur Mülltrennung gibt es auch in anderen Sprachen.",
+       "frage": "Nach dem Umzug darf man mit dem ausländischen Führerschein noch ein halbes Jahr fahren.",
        "opt": [
         {
          "k": "Richtig",
@@ -35940,7 +36081,7 @@ window.MZ_EPREUVEN["telcb115"] = {
       },
       {
        "n": 58,
-       "frage": "Die Gastschüler haben schon am ersten Tag normalen Unterricht.",
+       "frage": "Ausländische Studierende müssen eine Kopie ihres Mietvertrags schicken.",
        "opt": [
         {
          "k": "Richtig",
@@ -35954,7 +36095,7 @@ window.MZ_EPREUVEN["telcb115"] = {
       },
       {
        "n": 59,
-       "frage": "Die Kinder können ohne ihre Eltern an der Vorlesestunde teilnehmen.",
+       "frage": "Wer bei der Sendung mitmachen möchte, muss schon Erfahrung mit Radio haben.",
        "opt": [
         {
          "k": "Richtig",
@@ -35995,14 +36136,18 @@ window.MZ_EPREUVEN["telcb115"] = {
       "titel": "Schriftlicher Ausdruck — Brief",
       "min": 100,
       "brief": "Liebe(r) …,\n\nstell dir vor, wir bekommen Besuch! Ab dem 3. März wohnt für drei Monate eine Austauschschülerin aus deinem Heimatland bei uns. Sie ist sechzehn und geht mit unserem Sohn Luca in die zehnte Klasse.\n\nWir freuen uns sehr, aber ehrlich gesagt sind wir auch ein bisschen unsicher. Gibt es Dinge, die man in einer Familie bei euch ganz anders macht als in Deutschland? Ich möchte auf keinen Fall, dass es Missverständnisse gibt. Und was hilft, wenn sie Heimweh bekommt?\n\nAm Samstag, dem 7. März, machen wir ab 15 Uhr ein kleines Willkommensfest bei uns im Garten. Es wäre toll, wenn du auch kommst. Vielleicht kannst du ein paar Worte in ihrer Sprache mit ihr sprechen, damit sie sich gleich ein bisschen wie zu Hause fühlt.\n\nSchreib mir bald!\n\nLiebe Grüße\nChiara",
-      "kontext": "Sie haben diesen Brief bekommen. Antworten Sie Chiara. Schreiben Sie etwas zu den folgenden vier Punkten. Überlegen Sie sich eine passende Reihenfolge der Inhaltspunkte. Vergessen Sie nicht Anrede und Gruß am Schluss.",
+      "kontext": "Antworten Sie Chiara. Schreiben Sie in Ihrer E-Mail etwas zu allen vier Punkten unten. Überlegen Sie sich vorher eine passende Reihenfolge der Punkte, eine passende Einleitung und einen passenden Schluss. Vergessen Sie auch nicht den Betreff.",
       "vorlage": "",
       "leitpunkte": [
        "Reaktion auf Chiaras Neuigkeit",
        "Unterschiede im Familienleben in Ihrem Heimatland",
        "Tipps gegen Heimweh",
        "Ob Sie zum Willkommensfest kommen können"
-      ]
+      ],
+      "situation": "Ihre Freundin Chiara bekommt bald Besuch aus Ihrem Heimatland. Sie hat Ihnen diese E-Mail geschickt:",
+      "von": "chiara.f@postbox.de",
+      "betreff": "Besuch aus deinem Land",
+      "format": "email"
      }
     ]
    }
@@ -38303,7 +38448,7 @@ window.MZ_EPREUVEN["telcb116"] = {
       },
       {
        "n": 57,
-       "frage": "Die Mieter sollen ihre Gartenschläuche bis Donnerstag abnehmen.",
+       "frage": "Wer sein Obst pressen lassen möchte, braucht vorher einen Termin.",
        "opt": [
         {
          "k": "Richtig",
@@ -38317,7 +38462,7 @@ window.MZ_EPREUVEN["telcb116"] = {
       },
       {
        "n": 58,
-       "frage": "Der Ausflug findet auch bei Regen statt.",
+       "frage": "Den Umzug soll man sich in der Brückenstraße ansehen.",
        "opt": [
         {
          "k": "Richtig",
@@ -38331,7 +38476,7 @@ window.MZ_EPREUVEN["telcb116"] = {
       },
       {
        "n": 59,
-       "frage": "Am Samstag ist die Bibliothek im Winter länger geöffnet als sonst.",
+       "frage": "Im Mühlsee darf man zurzeit baden, aber nicht mit dem Hund.",
        "opt": [
         {
          "k": "Richtig",
@@ -38345,7 +38490,7 @@ window.MZ_EPREUVEN["telcb116"] = {
       },
       {
        "n": 60,
-       "frage": "Einen Hund kann man jetzt auch im Internet anmelden.",
+       "frage": "Wer den Holzspalter ausleiht, muss eine Kaution bezahlen.",
        "opt": [
         {
          "k": "Richtig",
@@ -38372,14 +38517,18 @@ window.MZ_EPREUVEN["telcb116"] = {
       "titel": "Schriftlicher Ausdruck — Brief",
       "min": 100,
       "brief": "Liebe(r) …,\n\nstell dir vor: Seit Juni wohne ich nicht mehr in der Stadt, sondern auf einem alten Bauernhof in Stollhofen! Das Haus ist klein und das Dach nicht ganz dicht, aber morgens höre ich nur die Vögel. Und ich bin nicht mehr allein: Aus dem Tierheim habe ich Bruno geholt, einen braunen Mischling, drei Jahre alt und sehr verspielt.\n\nAm Samstag, dem 10. Oktober, ist bei uns Almabtrieb. Dann kommen die Kühe mit Blumen geschmückt von den Bergweiden ins Dorf, und danach gibt es ein großes Fest mit Musik. Hast du Lust zu kommen? Du kannst gern das ganze Wochenende bei mir übernachten. Am Bahnhof in Sternau hole ich dich ab.\n\nUnd dann habe ich noch eine große Bitte: Vom 12. bis 15. November muss ich zu einer Fortbildung. Könntest du in dieser Zeit auf Bruno aufpassen? Du hattest doch früher auch einen Hund, oder?\n\nSchreib mir bald!\n\nViele liebe Grüße\ndeine Stina",
-      "kontext": "Sie haben diesen Brief bekommen. Antworten Sie Stina. Schreiben Sie etwas zu den folgenden vier Punkten. Überlegen Sie sich eine passende Reihenfolge der Inhaltspunkte. Vergessen Sie nicht Anrede und Gruß am Schluss.",
+      "kontext": "Antworten Sie Stina. Schreiben Sie in Ihrer E-Mail etwas zu allen vier Punkten unten. Überlegen Sie sich vorher eine passende Reihenfolge der Punkte, eine passende Einleitung und einen passenden Schluss. Vergessen Sie auch nicht den Betreff.",
       "vorlage": "",
       "leitpunkte": [
        "Reaktion auf Stinas Neuigkeiten",
        "Ob Sie zum Almabtrieb kommen können",
        "Ob Sie im November auf Bruno aufpassen können",
        "Ihre eigenen Erfahrungen mit Hunden"
-      ]
+      ],
+      "situation": "Ihre Freundin Stina ist vor Kurzem aufs Land gezogen. Sie hat Ihnen diese E-Mail geschickt:",
+      "von": "stina.hof@netzpost.de",
+      "betreff": "Grüße vom Bauernhof",
+      "format": "email"
      }
     ]
    }
@@ -38410,43 +38559,43 @@ window.MZ_EPREUVEN["telcb201"] = {
        "items": [
         {
          "l": "a",
-         "t": "Zurück an den Schreibtisch — per Anordnung"
-        },
-        {
-         "l": "b",
-         "t": "Die Spielregeln schreibt künftig das Team"
-        },
-        {
-         "l": "c",
          "t": "Der lange Weg in die erste Führungsposition"
         },
         {
-         "l": "d",
-         "t": "Weniger Sitzungen, mehr Substanz"
-        },
-        {
-         "l": "e",
+         "l": "b",
          "t": "Pendeln kostet mehr als nur Zeit"
         },
         {
-         "l": "f",
-         "t": "Wer selten zu sehen ist, wird seltener befördert"
-        },
-        {
-         "l": "g",
+         "l": "c",
          "t": "Vom Arbeitsplatz zum Begegnungsort"
         },
         {
-         "l": "h",
+         "l": "d",
+         "t": "Zurück an den Schreibtisch — per Anordnung"
+        },
+        {
+         "l": "e",
          "t": "Wenn die Technik den Takt vorgibt"
         },
         {
+         "l": "f",
+         "t": "Die Spielregeln schreibt künftig das Team"
+        },
+        {
+         "l": "g",
+         "t": "Wer selten zu sehen ist, wird seltener befördert"
+        },
+        {
+         "l": "h",
+         "t": "Kolleginnen, die man nie getroffen hat"
+        },
+        {
          "l": "i",
-         "t": "Ein Feierabend, den niemand aufschieben kann"
+         "t": "Weniger Sitzungen, mehr Substanz"
         },
         {
          "l": "j",
-         "t": "Kolleginnen, die man nie getroffen hat"
+         "t": "Ein Feierabend, den niemand aufschieben kann"
         }
        ]
       },
@@ -38834,63 +38983,63 @@ window.MZ_EPREUVEN["telcb201"] = {
        "items": [
         {
          "l": "a",
-         "t": "Coworking Speicher 7 — Festplatz",
-         "b": "Ihr eigener Schreibtisch mit abschließbarem Rollcontainer, rund um die Uhr zugänglich, inklusive Postadresse und Schließfach. 210 € monatlich zuzüglich Mehrwertsteuer, Mindestlaufzeit sechs Monate, Kündigung mit drei Monaten Frist zum Quartalsende. Für Teams ab drei Personen gewähren wir Sonderkonditionen auf Anfrage. Besichtigung nach Vereinbarung, montags bis donnerstags."
-        },
-        {
-         "l": "b",
          "t": "Führen auf Distanz — Kompakttag online",
          "b": "Videoseminar von 9 bis 17 Uhr für Führungskräfte verteilter Teams: Zielvereinbarungen treffen, Rückmeldungen ohne Flurgespräch geben, Konflikte über Bildschirme klären, Neue einarbeiten. Höchstens zwölf Teilnehmende, damit alle zu Wort kommen. 340 € einschließlich Unterlagen. Nächste Termine im März und im Mai; eine Dienstreise ist nicht erforderlich."
         },
         {
-         "l": "c",
-         "t": "Kanzlei Dorn & Weilacher — Fachanwälte für Arbeitsrecht",
-         "b": "Kündigung, Abmahnung, Teilzeitanspruch, Betriebsvereinbarungen und Fragen zur mobilen Arbeit. Erstberatung 150 € zuzüglich Mehrwertsteuer, auf Wunsch auch per Videoschaltung. Termine kurzfristig, nach Absprache ebenfalls nach Feierabend. Eine Rechtsschutzversicherung übernimmt die Kosten in der Regel erst ab dem Hauptmandat."
-        },
-        {
-         "l": "d",
-         "t": "Arbeitsrechtliche Erstberatung der Verbraucherzentrale",
-         "b": "Dreißig Minuten kostenfrei, ohne Mitgliedschaft und ohne Einkommensnachweis. Schwerpunkte: Verringerung der Arbeitszeit, Teilzeit während der Elternzeit, Rückkehr in Vollzeit, mobile Arbeit. Die Terminvergabe erfolgt ausschließlich über unser Onlineformular; telefonisch können keine Termine vergeben werden. Bitte bringen Sie Ihren Arbeitsvertrag mit."
-        },
-        {
-         "l": "e",
-         "t": "Bewerbungstraining für Berufsrückkehrende",
-         "b": "Zweitägiger Intensivkurs: aussagekräftige Unterlagen, Vorstellungsgespräch, überzeugender Umgang mit Lücken im Lebenslauf, Gehaltsverhandlung. Freitag und Samstag, jeweils 9 bis 16 Uhr, in kleinen Gruppen mit Videoaufzeichnung. 95 €, Ermäßigung auf Nachweis möglich. Eine darüber hinausgehende Begleitung bieten wir ausdrücklich nicht an."
-        },
-        {
-         "l": "f",
-         "t": "Referentenvermittlung „Arbeit & Gesundheit“",
-         "b": "Wir vermitteln Fachleute für Betriebsversammlungen, Gesundheitstage und Abendveranstaltungen in Unternehmen. Themen unter anderem: Entgrenzung der Arbeit, Erreichbarkeit nach Feierabend, Schichtarbeit, psychische Belastung. Vortragsdauer 45 bis 90 Minuten mit anschließender Aussprache. Honorar nach Vereinbarung; Anfragen bitte spätestens acht Wochen im Voraus."
-        },
-        {
-         "l": "g",
-         "t": "Coworking Speicher 7 — Flexdesk",
-         "b": "Zehnerkarte für 190 €, zwölf Monate gültig, freie Platzwahl täglich von 8 bis 20 Uhr. Keine Mindestlaufzeit und kein Abonnement — Sie kommen, wenn Sie den Platz brauchen. Besprechungsräume stundenweise zubuchbar, Drucker, Schließfächer und Küche inklusive. Ideal für Selbstständige mit wechselndem Bedarf."
-        },
-        {
-         "l": "h",
+         "l": "b",
          "t": "Infoabend: Das häusliche Arbeitszimmer in der Steuererklärung",
          "b": "Was lässt sich absetzen, was nicht? Welche Nachweise verlangt das Finanzamt bei mobiler Arbeit, und wann lohnt sich die Tagespauschale? Ein Steuerberater erläutert die aktuelle Rechtslage und beantwortet Ihre Fragen. Donnerstag, 19 bis 21 Uhr, Volkshochschule, Raum 204. 12 €, Anmeldung bis zwei Tage vorher."
         },
         {
-         "l": "i",
+         "l": "c",
+         "t": "Coworking Speicher 7 — Flexdesk",
+         "b": "Zehnerkarte für 190 €, zwölf Monate gültig, freie Platzwahl täglich von 8 bis 20 Uhr. Keine Mindestlaufzeit und kein Abonnement — Sie kommen, wenn Sie den Platz brauchen. Besprechungsräume stundenweise zubuchbar, Drucker, Schließfächer und Küche inklusive. Ideal für Selbstständige mit wechselndem Bedarf."
+        },
+        {
+         "l": "d",
+         "t": "Coworking Speicher 7 — Festplatz",
+         "b": "Ihr eigener Schreibtisch mit abschließbarem Rollcontainer, rund um die Uhr zugänglich, inklusive Postadresse und Schließfach. 210 € monatlich zuzüglich Mehrwertsteuer, Mindestlaufzeit sechs Monate, Kündigung mit drei Monaten Frist zum Quartalsende. Für Teams ab drei Personen gewähren wir Sonderkonditionen auf Anfrage. Besichtigung nach Vereinbarung, montags bis donnerstags."
+        },
+        {
+         "l": "e",
          "t": "Moderation für Teamworkshops — bei Ihnen vor Ort",
          "b": "Wir begleiten ein- bis dreitägige Veranstaltungen standortübergreifender Teams: Abläufe überarbeiten, Rollen klären, Konflikte bearbeiten, Vereinbarungen schriftlich festhalten. Anreise bundesweit, Vor- und Nachbereitung inbegriffen, Tagessatz auf Anfrage. Im ersten Halbjahr sind noch Termine frei; wir bitten um Anfrage mit zwei Terminvorschlägen."
         },
         {
-         "l": "j",
-         "t": "Ergonomie zum Ausleihen — Stuhlmiete Prosedis",
-         "b": "Bürostühle, Fußstützen und höhenverstellbare Tische vier Wochen lang zur Probe, 29 € monatlich. Entscheiden Sie sich anschließend für einen Kauf, wird die gezahlte Miete vollständig auf den Kaufpreis angerechnet. Lieferung, Einstellung vor Ort und Abholung im Stadtgebiet kostenlos. Beratung auch für Arbeitgeberzuschüsse."
+         "l": "f",
+         "t": "Kanzlei Dorn & Weilacher — Fachanwälte für Arbeitsrecht",
+         "b": "Kündigung, Abmahnung, Teilzeitanspruch, Betriebsvereinbarungen und Fragen zur mobilen Arbeit. Erstberatung 150 € zuzüglich Mehrwertsteuer, auf Wunsch auch per Videoschaltung. Termine kurzfristig, nach Absprache ebenfalls nach Feierabend. Eine Rechtsschutzversicherung übernimmt die Kosten in der Regel erst ab dem Hauptmandat."
         },
         {
-         "l": "k",
+         "l": "g",
+         "t": "Bewerbungstraining für Berufsrückkehrende",
+         "b": "Zweitägiger Intensivkurs: aussagekräftige Unterlagen, Vorstellungsgespräch, überzeugender Umgang mit Lücken im Lebenslauf, Gehaltsverhandlung. Freitag und Samstag, jeweils 9 bis 16 Uhr, in kleinen Gruppen mit Videoaufzeichnung. 95 €, Ermäßigung auf Nachweis möglich. Eine darüber hinausgehende Begleitung bieten wir ausdrücklich nicht an."
+        },
+        {
+         "l": "h",
+         "t": "Referentenvermittlung „Arbeit & Gesundheit“",
+         "b": "Wir vermitteln Fachleute für Betriebsversammlungen, Gesundheitstage und Abendveranstaltungen in Unternehmen. Themen unter anderem: Entgrenzung der Arbeit, Erreichbarkeit nach Feierabend, Schichtarbeit, psychische Belastung. Vortragsdauer 45 bis 90 Minuten mit anschließender Aussprache. Honorar nach Vereinbarung; Anfragen bitte spätestens acht Wochen im Voraus."
+        },
+        {
+         "l": "i",
          "t": "Wiedereinstieg nach der Familienzeit — Begleitprogramm",
          "b": "Sechs Monate mit monatlichen Einzelgesprächen und ergänzenden Gruppentreffen: Arbeitszeitmodelle vergleichen, das Gespräch mit dem Arbeitgeber vorbereiten, schrittweise Rückkehr planen, Betreuungsfragen klären. Für Frauen und Männer nach Eltern- oder Pflegezeit. Aus Landesmitteln gefördert und daher für Teilnehmende kostenfrei. Einstieg jederzeit."
         },
         {
-         "l": "l",
+         "l": "j",
          "t": "Zeiterfassung Klarstunde — für Betriebe bis 50 Personen",
          "b": "Erfassung per Handy, Browser oder Terminal, ausdrücklich auch außerhalb des Betriebsgeländes. Pausen, Überstunden und Urlaubskonten werden automatisch geführt, Auswertungen gibt es auf Knopfdruck, eine Schnittstelle zur Lohnbuchhaltung ist enthalten. 2,50 € pro Person und Monat, drei Monate unverbindlich testen, keine Einrichtungsgebühr."
+        },
+        {
+         "l": "k",
+         "t": "Ergonomie zum Ausleihen — Stuhlmiete Prosedis",
+         "b": "Bürostühle, Fußstützen und höhenverstellbare Tische vier Wochen lang zur Probe, 29 € monatlich. Entscheiden Sie sich anschließend für einen Kauf, wird die gezahlte Miete vollständig auf den Kaufpreis angerechnet. Lieferung, Einstellung vor Ort und Abholung im Stadtgebiet kostenlos. Beratung auch für Arbeitgeberzuschüsse."
+        },
+        {
+         "l": "l",
+         "t": "Arbeitsrechtliche Erstberatung der Verbraucherzentrale",
+         "b": "Dreißig Minuten kostenfrei, ohne Mitgliedschaft und ohne Einkommensnachweis. Schwerpunkte: Verringerung der Arbeitszeit, Teilzeit während der Elternzeit, Rückkehr in Vollzeit, mobile Arbeit. Die Terminvergabe erfolgt ausschließlich über unser Onlineformular; telefonisch können keine Termine vergeben werden. Bitte bringen Sie Ihren Arbeitsvertrag mit."
         }
        ]
       }
@@ -39689,7 +39838,7 @@ window.MZ_EPREUVEN["telcb201"] = {
        "items": [
         {
          "l": "a",
-         "t": "Verfügung"
+         "t": "ausschließlich"
         },
         {
          "l": "b",
@@ -39697,23 +39846,23 @@ window.MZ_EPREUVEN["telcb201"] = {
         },
         {
          "l": "c",
-         "t": "Bedingung"
+         "t": "entnehmen"
         },
         {
          "l": "d",
-         "t": "Anspruch"
+         "t": "Verfügung"
         },
         {
          "l": "e",
-         "t": "verbindlich"
+         "t": "gewährleistet"
         },
         {
          "l": "f",
-         "t": "zuständig"
+         "t": "Voraussetzung"
         },
         {
          "l": "g",
-         "t": "Grundsätzlich"
+         "t": "Ausnahmefällen"
         },
         {
          "l": "h",
@@ -39721,7 +39870,7 @@ window.MZ_EPREUVEN["telcb201"] = {
         },
         {
          "l": "i",
-         "t": "Voraussetzung"
+         "t": "Grundsätzlich"
         },
         {
          "l": "j",
@@ -39729,23 +39878,23 @@ window.MZ_EPREUVEN["telcb201"] = {
         },
         {
          "l": "k",
-         "t": "gewährleistet"
+         "t": "zuständig"
         },
         {
          "l": "l",
-         "t": "entnehmen"
+         "t": "verbindlich"
         },
         {
          "l": "m",
-         "t": "ausschließlich"
+         "t": "beantragen"
         },
         {
          "l": "n",
-         "t": "Ausnahmefällen"
+         "t": "Bedingung"
         },
         {
          "l": "o",
-         "t": "beantragen"
+         "t": "Anspruch"
         }
        ]
       },
@@ -41210,58 +41359,58 @@ window.MZ_EPREUVEN["telcb202"] = {
        "items": [
         {
          "l": "a",
-         "t": "Energieberatung Mittelstand — gefördert",
-         "b": "Vor-Ort-Analyse für Handwerks- und Produktionsbetriebe mit bis zu 250 Beschäftigten: Messung über zwei Wochen, Auswertung, schriftlicher Maßnahmenplan mit Amortisationsrechnung. Bis zu 80 Prozent der Beratungskosten werden aus dem Bundesprogramm übernommen; den Förderantrag stellen wir für Sie. Terminvergabe laufend, Wartezeit derzeit etwa sechs Wochen."
-        },
-        {
-         "l": "b",
-         "t": "Solarcheck der Verbraucherzentrale",
-         "b": "Unabhängige Einschätzung, ob sich eine Anlage auf Ihrem Dach rechnet: Ausrichtung, Verschattung, Statik, Wirtschaftlichkeit und die Frage nach dem Speicher. Wir verkaufen keine Anlagen und arbeiten mit keinem Anbieter zusammen. Pauschal 60 €, auf Wunsch mit schriftlichem Kurzbericht — ausdrücklich auch für Eigentümergemeinschaften und Mehrfamilienhäuser."
-        },
-        {
-         "l": "c",
-         "t": "Schulung „Weniger Reste in der Großküche“",
-         "b": "Zweitägige Inhouse-Schulung für Küchenteams ab sechs Personen: Mengenplanung nach Belegungszahlen, Lagerhaltung, Resteverwertung und die tägliche Messung der Abfallmengen. Unsere Referentinnen kommen in Ihren Betrieb und arbeiten im laufenden Betrieb mit. Geeignet für Kliniken, Kantinen und Heime. Nächste freie Termine ab November."
-        },
-        {
-         "l": "d",
-         "t": "Herbstwoche Erneuerbare — für Jugendliche",
-         "b": "Fünf Tage Einblick bei einem Windparkbetreiber: Mitfahrt zur Wartung, ein Tag in der Leitwarte, Gespräche mit Auszubildenden und der Ausbildungsleitung. Für Schülerinnen und Schüler ab 16 Jahren, kostenfrei einschließlich Verpflegung, Anmeldung bis spätestens vier Wochen vorher. Findet ausschließlich in den Herbstferien statt."
-        },
-        {
-         "l": "e",
-         "t": "IT-Rücknahme Aufwind gGmbH",
-         "b": "Wir holen ausgemusterte Rechner, Monitore und Notebooks ab zehn Geräten kostenlos bei Ihnen ab, löschen sämtliche Daten nach anerkanntem Standard und geben die Technik an Schulen und Bildungsvereine weiter. Sie erhalten ein Löschprotokoll für Ihre Unterlagen sowie eine Spendenbescheinigung. Defekte Geräte nehmen wir nicht an."
-        },
-        {
-         "l": "f",
-         "t": "Seminar „Nachhaltigkeitsaussagen richtig lesen“",
-         "b": "Halbtagesseminar von 9 bis 13 Uhr für Einkauf, Qualitätssicherung und Vertrieb: Siegel und ihre Vergabekriterien, Zertifikate, Kompensationsprojekte, typische Formulierungen und ihre rechtlichen Grenzen. Mit praktischen Übungen an echten Lieferantenunterlagen, die Sie gern selbst mitbringen. 145 € pro Person, ab acht Anmeldungen auch als Inhouse-Termin."
-        },
-        {
-         "l": "g",
          "t": "Reparaturwerkstatt Bitschraube",
          "b": "Wir reparieren Notebooks, Tablets und Smartphones aller Marken, auch außerhalb der Gewährleistung. Diagnose 25 €, die bei Beauftragung vollständig verrechnet wird; Festpreis vor Beginn der Arbeiten, auf Wunsch mit geprüften gebrauchten Ersatzteilen. Sechs Monate Gewährleistung auf unsere Arbeit, Abgabe ohne Termin während der Öffnungszeiten."
         },
         {
-         "l": "h",
-         "t": "Fördermittellotse für Vereine",
-         "b": "Sie wollen sanieren, dämmen oder die Heizung erneuern, scheitern aber an den Formularen? Wir suchen die passenden Programme von Bund, Land und Kommune, prüfen die Voraussetzungen, achten auf die Fristen und füllen die Anträge gemeinsam mit Ihnen aus. Für eingetragene Vereine kostenfrei, gefördert durch die Stiftung Bürgerengagement."
+         "l": "b",
+         "t": "Seminar „Nachhaltigkeitsaussagen richtig lesen“",
+         "b": "Halbtagesseminar von 9 bis 13 Uhr für Einkauf, Qualitätssicherung und Vertrieb: Siegel und ihre Vergabekriterien, Zertifikate, Kompensationsprojekte, typische Formulierungen und ihre rechtlichen Grenzen. Mit praktischen Übungen an echten Lieferantenunterlagen, die Sie gern selbst mitbringen. 145 € pro Person, ab acht Anmeldungen auch als Inhouse-Termin."
         },
         {
-         "l": "i",
-         "t": "Kinderkleiderkreisel Sankt Martin",
-         "b": "Jeden ersten Samstag im Monat von 9 bis 13 Uhr im Gemeindesaal neben der Kirche. Bringen Sie gut erhaltene Kleidung in den Größen 62 bis 176 mit und nehmen Sie mit, was Ihre Kinder gerade brauchen. Kein Geld, keine Verrechnung nach Stückzahl — einfach geben und nehmen. Übrig Gebliebenes geht an die Kleiderkammer."
+         "l": "c",
+         "t": "Solarcheck der Verbraucherzentrale",
+         "b": "Unabhängige Einschätzung, ob sich eine Anlage auf Ihrem Dach rechnet: Ausrichtung, Verschattung, Statik, Wirtschaftlichkeit und die Frage nach dem Speicher. Wir verkaufen keine Anlagen und arbeiten mit keinem Anbieter zusammen. Pauschal 60 €, auf Wunsch mit schriftlichem Kurzbericht — ausdrücklich auch für Eigentümergemeinschaften und Mehrfamilienhäuser."
         },
         {
-         "l": "j",
+         "l": "d",
+         "t": "IT-Rücknahme Aufwind gGmbH",
+         "b": "Wir holen ausgemusterte Rechner, Monitore und Notebooks ab zehn Geräten kostenlos bei Ihnen ab, löschen sämtliche Daten nach anerkanntem Standard und geben die Technik an Schulen und Bildungsvereine weiter. Sie erhalten ein Löschprotokoll für Ihre Unterlagen sowie eine Spendenbescheinigung. Defekte Geräte nehmen wir nicht an."
+        },
+        {
+         "l": "e",
          "t": "Offene Elektrowerkstatt Kesselhaus",
          "b": "Donnerstags von 17 bis 21 Uhr: Werkzeug, Messgeräte und erfahrene Ehrenamtliche stehen für kleine Haushaltsgeräte und Unterhaltungselektronik bereit. Repariert wird ausschließlich in eigener Hand, wir beraten und leiten an, übernehmen die Arbeit aber nicht. Spende nach Selbsteinschätzung, ab 3 €. Ersatzteile bringen Sie bitte selbst mit."
         },
         {
-         "l": "k",
+         "l": "f",
+         "t": "Energieberatung Mittelstand — gefördert",
+         "b": "Vor-Ort-Analyse für Handwerks- und Produktionsbetriebe mit bis zu 250 Beschäftigten: Messung über zwei Wochen, Auswertung, schriftlicher Maßnahmenplan mit Amortisationsrechnung. Bis zu 80 Prozent der Beratungskosten werden aus dem Bundesprogramm übernommen; den Förderantrag stellen wir für Sie. Terminvergabe laufend, Wartezeit derzeit etwa sechs Wochen."
+        },
+        {
+         "l": "g",
+         "t": "Fördermittellotse für Vereine",
+         "b": "Sie wollen sanieren, dämmen oder die Heizung erneuern, scheitern aber an den Formularen? Wir suchen die passenden Programme von Bund, Land und Kommune, prüfen die Voraussetzungen, achten auf die Fristen und füllen die Anträge gemeinsam mit Ihnen aus. Für eingetragene Vereine kostenfrei, gefördert durch die Stiftung Bürgerengagement."
+        },
+        {
+         "l": "h",
+         "t": "Schulung „Weniger Reste in der Großküche“",
+         "b": "Zweitägige Inhouse-Schulung für Küchenteams ab sechs Personen: Mengenplanung nach Belegungszahlen, Lagerhaltung, Resteverwertung und die tägliche Messung der Abfallmengen. Unsere Referentinnen kommen in Ihren Betrieb und arbeiten im laufenden Betrieb mit. Geeignet für Kliniken, Kantinen und Heime. Nächste freie Termine ab November."
+        },
+        {
+         "l": "i",
          "t": "Lastenrad-Verleih der Stadtwerke",
          "b": "Elektrisch unterstützte Lastenräder für Einkauf, Umzug oder Transport, tageweise oder für eine ganze Woche. Die ersten drei Tage im Jahr sind kostenfrei, danach zahlen Sie 8 € pro Tag. Abholung an sieben Stationen im Stadtgebiet, Führerschein nicht erforderlich, Kaution 50 € in bar oder per Karte."
+        },
+        {
+         "l": "j",
+         "t": "Kinderkleiderkreisel Sankt Martin",
+         "b": "Jeden ersten Samstag im Monat von 9 bis 13 Uhr im Gemeindesaal neben der Kirche. Bringen Sie gut erhaltene Kleidung in den Größen 62 bis 176 mit und nehmen Sie mit, was Ihre Kinder gerade brauchen. Kein Geld, keine Verrechnung nach Stückzahl — einfach geben und nehmen. Übrig Gebliebenes geht an die Kleiderkammer."
+        },
+        {
+         "l": "k",
+         "t": "Herbstwoche Erneuerbare — für Jugendliche",
+         "b": "Fünf Tage Einblick bei einem Windparkbetreiber: Mitfahrt zur Wartung, ein Tag in der Leitwarte, Gespräche mit Auszubildenden und der Ausbildungsleitung. Für Schülerinnen und Schüler ab 16 Jahren, kostenfrei einschließlich Verpflegung, Anmeldung bis spätestens vier Wochen vorher. Findet ausschließlich in den Herbstferien statt."
         },
         {
          "l": "l",
@@ -42066,7 +42215,7 @@ window.MZ_EPREUVEN["telcb202"] = {
        "items": [
         {
          "l": "a",
-         "t": "tritt"
+         "t": "bitten"
         },
         {
          "l": "b",
@@ -42074,55 +42223,55 @@ window.MZ_EPREUVEN["telcb202"] = {
         },
         {
          "l": "c",
-         "t": "Verfügung"
+         "t": "über"
         },
         {
          "l": "d",
-         "t": "prüft"
+         "t": "Verfügung"
         },
         {
          "l": "e",
-         "t": "bitten"
-        },
-        {
-         "l": "f",
-         "t": "angewiesen"
-        },
-        {
-         "l": "g",
          "t": "Anspruch"
         },
         {
-         "l": "h",
-         "t": "dient"
+         "l": "f",
+         "t": "prüft"
         },
         {
-         "l": "i",
-         "t": "in"
-        },
-        {
-         "l": "j",
+         "l": "g",
          "t": "bedanken"
         },
         {
+         "l": "h",
+         "t": "in"
+        },
+        {
+         "l": "i",
+         "t": "dient"
+        },
+        {
+         "l": "j",
+         "t": "angewiesen"
+        },
+        {
          "l": "k",
-         "t": "erlaubt"
-        },
-        {
-         "l": "l",
-         "t": "Vorschrift"
-        },
-        {
-         "l": "m",
          "t": "zwingt"
         },
         {
+         "l": "l",
+         "t": "tritt"
+        },
+        {
+         "l": "m",
+         "t": "erlaubt"
+        },
+        {
          "l": "n",
-         "t": "verzichtet"
+         "t": "Vorschrift"
         },
         {
          "l": "o",
-         "t": "über"
+         "t": "verzichtet"
         }
        ]
       },
@@ -44445,55 +44594,55 @@ window.MZ_EPREUVEN["telcb203"] = {
        "items": [
         {
          "l": "a",
-         "t": "Kraft"
-        },
-        {
-         "l": "b",
-         "t": "Anspruch"
-        },
-        {
-         "l": "c",
-         "t": "beantragen"
-        },
-        {
-         "l": "d",
-         "t": "begründen"
-        },
-        {
-         "l": "e",
-         "t": "übernommen"
-        },
-        {
-         "l": "f",
-         "t": "Verfügung"
-        },
-        {
-         "l": "g",
-         "t": "weiterzugeben"
-        },
-        {
-         "l": "h",
-         "t": "bestanden"
-        },
-        {
-         "l": "i",
-         "t": "berechnet"
-        },
-        {
-         "l": "j",
-         "t": "bearbeitet"
-        },
-        {
-         "l": "k",
          "t": "Rücksicht"
         },
         {
-         "l": "l",
+         "l": "b",
+         "t": "begründen"
+        },
+        {
+         "l": "c",
+         "t": "übernommen"
+        },
+        {
+         "l": "d",
+         "t": "Kraft"
+        },
+        {
+         "l": "e",
+         "t": "bearbeitet"
+        },
+        {
+         "l": "f",
+         "t": "bestanden"
+        },
+        {
+         "l": "g",
+         "t": "beantragen"
+        },
+        {
+         "l": "h",
+         "t": "Aussicht"
+        },
+        {
+         "l": "i",
          "t": "verzichtet"
         },
         {
+         "l": "j",
+         "t": "Anspruch"
+        },
+        {
+         "l": "k",
+         "t": "Verfügung"
+        },
+        {
+         "l": "l",
+         "t": "erhoben"
+        },
+        {
          "l": "m",
-         "t": "Aussicht"
+         "t": "weiterzugeben"
         },
         {
          "l": "n",
@@ -44501,7 +44650,7 @@ window.MZ_EPREUVEN["telcb203"] = {
         },
         {
          "l": "o",
-         "t": "erhoben"
+         "t": "berechnet"
         }
        ]
       },
@@ -45542,23 +45691,23 @@ window.MZ_EPREUVEN["telcb204"] = {
        "items": [
         {
          "l": "a",
-         "t": "Der Obstkorb, der die Unterbesetzung nicht ersetzt"
+         "t": "Krank zur Arbeit, und niemand fragt nach"
         },
         {
          "l": "b",
-         "t": "Eine Gemeinde wird selbst zur Arbeitgeberin"
+         "t": "Die Rückkehr des täglichen Schulsports"
         },
         {
          "l": "c",
-         "t": "Wenn der Dienstplan über die Erholung entscheidet"
+         "t": "Volle Studios, leere Übungsleitungen"
         },
         {
          "l": "d",
-         "t": "Das bunte Päckchen und die freiwillige Regel"
+         "t": "Wenn der Dienstplan über die Erholung entscheidet"
         },
         {
          "l": "e",
-         "t": "Volle Studios, leere Übungsleitungen"
+         "t": "Zweitmeinung per Video — und wer sie bezahlt"
         },
         {
          "l": "f",
@@ -45566,19 +45715,19 @@ window.MZ_EPREUVEN["telcb204"] = {
         },
         {
          "l": "g",
-         "t": "Die Apotheke als letzter Treffpunkt im Ort"
+         "t": "Der Obstkorb, der die Unterbesetzung nicht ersetzt"
         },
         {
          "l": "h",
-         "t": "Zweitmeinung per Video — und wer sie bezahlt"
+         "t": "Eine Gemeinde wird selbst zur Arbeitgeberin"
         },
         {
          "l": "i",
-         "t": "Die Rückkehr des täglichen Schulsports"
+         "t": "Die Apotheke als letzter Treffpunkt im Ort"
         },
         {
          "l": "j",
-         "t": "Krank zur Arbeit, und niemand fragt nach"
+         "t": "Das bunte Päckchen und die freiwillige Regel"
         }
        ]
       },
@@ -46823,63 +46972,63 @@ window.MZ_EPREUVEN["telcb204"] = {
        "items": [
         {
          "l": "a",
-         "t": "Kraft"
-        },
-        {
-         "l": "b",
-         "t": "Anspruch"
-        },
-        {
-         "l": "c",
-         "t": "Verfügung"
-        },
-        {
-         "l": "d",
-         "t": "unterliegen"
-        },
-        {
-         "l": "e",
-         "t": "ausschließlich"
-        },
-        {
-         "l": "f",
-         "t": "Voraussetzung"
-        },
-        {
-         "l": "g",
-         "t": "abgestimmt"
-        },
-        {
-         "l": "h",
-         "t": "Erhebung"
-        },
-        {
-         "l": "i",
          "t": "entnehmen"
         },
         {
-         "l": "j",
+         "l": "b",
+         "t": "ausschließlich"
+        },
+        {
+         "l": "c",
          "t": "gewährleistet"
         },
         {
-         "l": "k",
-         "t": "Rücksicht"
+         "l": "d",
+         "t": "Kraft"
         },
         {
-         "l": "l",
-         "t": "aufgehoben"
-        },
-        {
-         "l": "m",
-         "t": "Einhaltung"
-        },
-        {
-         "l": "n",
+         "l": "e",
          "t": "beantragt"
         },
         {
-         "l": "o",
+         "l": "f",
+         "t": "unterliegen"
+        },
+        {
+         "l": "g",
+         "t": "Verfügung"
+        },
+        {
+         "l": "h",
+         "t": "Voraussetzung"
+        },
+        {
+         "l": "i",
+         "t": "Rücksicht"
+        },
+        {
+         "l": "j",
+         "t": "Einhaltung"
+        },
+        {
+         "l": "k",
+         "t": "Anspruch"
+        },
+        {
+         "l": "l",
          "t": "Bedarf"
+        },
+        {
+         "l": "m",
+         "t": "abgestimmt"
+        },
+        {
+         "l": "n",
+         "t": "Erhebung"
+        },
+        {
+         "l": "o",
+         "t": "aufgehoben"
         }
        ]
       },
@@ -47925,39 +48074,39 @@ window.MZ_EPREUVEN["telcb205"] = {
         },
         {
          "l": "b",
-         "t": "Wenn die Bewertung mehr wiegt als die Ware"
-        },
-        {
-         "l": "c",
-         "t": "Ein Passwort, das niemand mehr eingibt"
-        },
-        {
-         "l": "d",
-         "t": "Die stille Rückkehr des Papiers"
-        },
-        {
-         "l": "e",
-         "t": "Bestellt, zurückgeschickt, vernichtet"
-        },
-        {
-         "l": "f",
-         "t": "Wer nichts bezahlt, bezahlt mit sich selbst"
-        },
-        {
-         "l": "g",
-         "t": "Nachrichten, die niemand gesucht hat"
-        },
-        {
-         "l": "h",
          "t": "Ein Dorf verlegt sein Kabel selbst"
         },
         {
-         "l": "i",
+         "l": "c",
          "t": "Ein Nachmittag ohne Bildschirm"
         },
         {
-         "l": "j",
+         "l": "d",
+         "t": "Wenn die Bewertung mehr wiegt als die Ware"
+        },
+        {
+         "l": "e",
+         "t": "Ein Passwort, das niemand mehr eingibt"
+        },
+        {
+         "l": "f",
+         "t": "Bestellt, zurückgeschickt, vernichtet"
+        },
+        {
+         "l": "g",
          "t": "Wenn die Maschine den Hörer abnimmt"
+        },
+        {
+         "l": "h",
+         "t": "Wer nichts bezahlt, bezahlt mit sich selbst"
+        },
+        {
+         "l": "i",
+         "t": "Nachrichten, die niemand gesucht hat"
+        },
+        {
+         "l": "j",
+         "t": "Die stille Rückkehr des Papiers"
         }
        ]
       },
@@ -48346,23 +48495,23 @@ window.MZ_EPREUVEN["telcb205"] = {
        "items": [
         {
          "l": "a",
+         "t": "Terminbuchung online — MEDIPLAN",
+         "b": "Ihre Patientinnen und Patienten buchen rund um die Uhr, Erinnerungen per Kurznachricht senden wir automatisch. Das System richtet sich an Praxen und Kliniken ab fünf Behandelnden; kleinere Einrichtungen können wir nicht aufnehmen. Einrichtung 490 €, danach 79 € monatlich."
+        },
+        {
+         "l": "b",
+         "t": "Externer Datenschutzbeauftragter für kleine Betriebe",
+         "b": "Arztpraxen, Kanzleien, Handwerk: Wir übernehmen die gesetzlich vorgeschriebene Funktion, ohne dass Sie Personal einstellen müssen. Jährliche Begehung, Verarbeitungsverzeichnis, Ansprechpartner für die Aufsichtsbehörde. Monatliche Pauschale ab 89 €, Kündigung zum Quartalsende."
+        },
+        {
+         "l": "c",
          "t": "Datenschutz-Inhouse-Schulung · KONFORM Akademie",
          "b": "Grundlagen der Datenverarbeitung für ganze Belegschaften: vier Zeitstunden, in Ihren Räumen, Gruppen bis fünfundvierzig Personen. Praxisbeispiele aus Ihrer Branche, Teilnahmebescheinigung für jede Person. Termin nach Absprache, auch samstags. Abrechnung als Tagespauschale, unabhängig von der Teilnehmerzahl."
         },
         {
-         "l": "b",
-         "t": "Digital-Lotsinnen für das Ehrenamt",
-         "b": "Kostenfreie Beratung für Vereine, Initiativen und Elterngruppen: Mitgliederverwaltung, sichere Passwörter, Umgang mit Fotos, Aufbewahrungsfristen. Wir kommen zu Ihrer Vorstandssitzung oder beraten telefonisch. Gefördert vom Land, deshalb entstehen Ihnen keine Kosten. Voranmeldung über das Formular auf unserer Seite."
-        },
-        {
-         "l": "c",
-         "t": "Aktenlos GmbH — zertifizierte Datenträgervernichtung",
-         "b": "Wir holen ausgediente Rechner, Festplatten und Kopierer bei Ihnen ab und vernichten die Datenträger nach anerkannter Norm. Sie erhalten binnen fünf Werktagen ein unterschriebenes Vernichtungsprotokoll. Abholung ab zehn Geräten kostenfrei, darunter gegen Pauschale."
-        },
-        {
          "l": "d",
-         "t": "Externer Datenschutzbeauftragter für kleine Betriebe",
-         "b": "Arztpraxen, Kanzleien, Handwerk: Wir übernehmen die gesetzlich vorgeschriebene Funktion, ohne dass Sie Personal einstellen müssen. Jährliche Begehung, Verarbeitungsverzeichnis, Ansprechpartner für die Aufsichtsbehörde. Monatliche Pauschale ab 89 €, Kündigung zum Quartalsende."
+         "t": "Programmierwerkstatt für Jugendliche",
+         "b": "Ferienkurs für Schülerinnen und Schüler von 12 bis 16 Jahren: eigene Spiele und kleine Anwendungen entwickeln, fünf Tage von 10 bis 15 Uhr inklusive Mittagessen. Leihgeräte stehen bereit. Beitrag 60 €, Ermäßigung auf Antrag."
         },
         {
          "l": "e",
@@ -48371,38 +48520,38 @@ window.MZ_EPREUVEN["telcb205"] = {
         },
         {
          "l": "f",
-         "t": "Fortbildung: Quellen prüfen, Falschmeldungen erkennen",
-         "b": "Für Lehrkräfte der Sekundarstufe II, fächerübergreifend. Zwei Nachmittage plus eine Online-Sitzung, mit erprobten Unterrichtsbausteinen und Materialien zum sofortigen Einsatz. Anmeldung über die Schulleitung, keine Teilnahmegebühr. Höchstens zwanzig Teilnehmende pro Durchgang."
-        },
-        {
-         "l": "g",
-         "t": "Verbraucherzentrale — Rechtsberatung Onlinehandel",
-         "b": "Falsche Abbuchung, keine Lieferung, verweigerte Erstattung? Wir prüfen Ihren Fall, formulieren das Schreiben an den Anbieter und begleiten Sie bei der Rückbuchung. Erstberatung 25 €, für Inhaberinnen des Landesbonuspasses kostenfrei. Termine Montag bis Donnerstag, telefonisch oder vor Ort."
-        },
-        {
-         "l": "h",
-         "t": "Wolkenkiste — Fotospeicher mit Serverstandort Deutschland",
-         "b": "Alle Daten liegen ausschließlich in Rechenzentren in Frankfurt und Magdeburg, Verschlüsselung auf Ihrem Gerät, keine Auswertung für Werbung. 200 Gigabyte für 3,50 € im Monat, Familienzugang für bis zu fünf Personen. Umzug Ihrer Bestände von anderen Anbietern inklusive."
-        },
-        {
-         "l": "i",
          "t": "Testerinnen und Tester für Bedienbarkeit gesucht",
          "b": "Sie probieren von zu Hause aus neue Programme und Webseiten aus und schildern laut, was Sie dabei denken. Technische Vorkenntnisse sind ausdrücklich nicht erwünscht. Termine überwiegend zwischen 18 und 21 Uhr, Dauer je 45 Minuten, Vergütung 40 € pro Sitzung. Nur Laptop und Mikrofon erforderlich."
         },
         {
+         "l": "g",
+         "t": "Fortbildung: Quellen prüfen, Falschmeldungen erkennen",
+         "b": "Für Lehrkräfte der Sekundarstufe II, fächerübergreifend. Zwei Nachmittage plus eine Online-Sitzung, mit erprobten Unterrichtsbausteinen und Materialien zum sofortigen Einsatz. Anmeldung über die Schulleitung, keine Teilnahmegebühr. Höchstens zwanzig Teilnehmende pro Durchgang."
+        },
+        {
+         "l": "h",
+         "t": "Verbraucherzentrale — Rechtsberatung Onlinehandel",
+         "b": "Falsche Abbuchung, keine Lieferung, verweigerte Erstattung? Wir prüfen Ihren Fall, formulieren das Schreiben an den Anbieter und begleiten Sie bei der Rückbuchung. Erstberatung 25 €, für Inhaberinnen des Landesbonuspasses kostenfrei. Termine Montag bis Donnerstag, telefonisch oder vor Ort."
+        },
+        {
+         "l": "i",
+         "t": "Praktikum Social-Media-Redaktion",
+         "b": "Sechs Monate in unserem Team: Beiträge planen, Kommentare betreuen, Reichweiten auswerten. Voraussetzung sind ein laufendes Studium und erste eigene Veröffentlichungen. Vergütung 1 100 € monatlich, Beginn jeweils im März und September."
+        },
+        {
          "l": "j",
-         "t": "Terminbuchung online — MEDIPLAN",
-         "b": "Ihre Patientinnen und Patienten buchen rund um die Uhr, Erinnerungen per Kurznachricht senden wir automatisch. Das System richtet sich an Praxen und Kliniken ab fünf Behandelnden; kleinere Einrichtungen können wir nicht aufnehmen. Einrichtung 490 €, danach 79 € monatlich."
+         "t": "Aktenlos GmbH — zertifizierte Datenträgervernichtung",
+         "b": "Wir holen ausgediente Rechner, Festplatten und Kopierer bei Ihnen ab und vernichten die Datenträger nach anerkannter Norm. Sie erhalten binnen fünf Werktagen ein unterschriebenes Vernichtungsprotokoll. Abholung ab zehn Geräten kostenfrei, darunter gegen Pauschale."
         },
         {
          "l": "k",
-         "t": "Programmierwerkstatt für Jugendliche",
-         "b": "Ferienkurs für Schülerinnen und Schüler von 12 bis 16 Jahren: eigene Spiele und kleine Anwendungen entwickeln, fünf Tage von 10 bis 15 Uhr inklusive Mittagessen. Leihgeräte stehen bereit. Beitrag 60 €, Ermäßigung auf Antrag."
+         "t": "Digital-Lotsinnen für das Ehrenamt",
+         "b": "Kostenfreie Beratung für Vereine, Initiativen und Elterngruppen: Mitgliederverwaltung, sichere Passwörter, Umgang mit Fotos, Aufbewahrungsfristen. Wir kommen zu Ihrer Vorstandssitzung oder beraten telefonisch. Gefördert vom Land, deshalb entstehen Ihnen keine Kosten. Voranmeldung über das Formular auf unserer Seite."
         },
         {
          "l": "l",
-         "t": "Praktikum Social-Media-Redaktion",
-         "b": "Sechs Monate in unserem Team: Beiträge planen, Kommentare betreuen, Reichweiten auswerten. Voraussetzung sind ein laufendes Studium und erste eigene Veröffentlichungen. Vergütung 1 100 € monatlich, Beginn jeweils im März und September."
+         "t": "Wolkenkiste — Fotospeicher mit Serverstandort Deutschland",
+         "b": "Alle Daten liegen ausschließlich in Rechenzentren in Frankfurt und Magdeburg, Verschlüsselung auf Ihrem Gerät, keine Auswertung für Werbung. 200 Gigabyte für 3,50 € im Monat, Familienzugang für bis zu fünf Personen. Umzug Ihrer Bestände von anderen Anbietern inklusive."
         }
        ]
       }
@@ -49203,39 +49352,39 @@ window.MZ_EPREUVEN["telcb205"] = {
        "items": [
         {
          "l": "a",
-         "t": "Kraft"
-        },
-        {
-         "l": "b",
-         "t": "Verfügung"
-        },
-        {
-         "l": "c",
          "t": "weitergegeben"
         },
         {
-         "l": "d",
-         "t": "melden"
+         "l": "b",
+         "t": "weiterzuleiten"
         },
         {
-         "l": "e",
-         "t": "gespeichert"
-        },
-        {
-         "l": "f",
-         "t": "protokolliert"
-        },
-        {
-         "l": "g",
-         "t": "gelegt"
-        },
-        {
-         "l": "h",
+         "l": "c",
          "t": "abzurufen"
         },
         {
+         "l": "d",
+         "t": "protokolliert"
+        },
+        {
+         "l": "e",
+         "t": "Kraft"
+        },
+        {
+         "l": "f",
+         "t": "Verfügung"
+        },
+        {
+         "l": "g",
+         "t": "genommen"
+        },
+        {
+         "l": "h",
+         "t": "verzichtet"
+        },
+        {
          "l": "i",
-         "t": "weiterzuleiten"
+         "t": "erhoben"
         },
         {
          "l": "j",
@@ -49243,19 +49392,19 @@ window.MZ_EPREUVEN["telcb205"] = {
         },
         {
          "l": "k",
-         "t": "Aussicht"
+         "t": "gelegt"
         },
         {
          "l": "l",
-         "t": "verzichtet"
+         "t": "gespeichert"
         },
         {
          "l": "m",
-         "t": "genommen"
+         "t": "melden"
         },
         {
          "l": "n",
-         "t": "erhoben"
+         "t": "Aussicht"
         },
         {
          "l": "o",
@@ -50725,48 +50874,48 @@ window.MZ_EPREUVEN["telcb206"] = {
        "items": [
         {
          "l": "a",
-         "t": "Mietrechtliche Sprechstunde im Stadtteilbüro",
-         "b": "Jeden zweiten Donnerstag, 16–19 Uhr, ohne Mitgliedschaft und ohne Voranmeldung. Eine Juristin prüft Mieterhöhungen, Nebenkosten- und Kündigungsschreiben. Pauschale 15 € pro Beratung, ermäßigt 5 €. Bringen Sie alle Unterlagen im Original mit."
-        },
-        {
-         "l": "b",
-         "t": "Förderprogramm „Grüner Hof“",
-         "b": "Die Stadt bezuschusst die Entsiegelung und Bepflanzung privater Innenhöfe mit bis zu 70 % der Kosten, höchstens 8 000 €. Antragsberechtigt sind Hausgemeinschaften ab drei Haushalten mit schriftlichem Einverständnis der Eigentümerseite. Anträge laufend, solange Mittel vorhanden sind."
-        },
-        {
-         "l": "c",
-         "t": "„Wohnen für Hilfe“ — Vermittlungsstelle",
-         "b": "Wir bringen Studierende und ältere Haushalte zusammen: pro Quadratmeter Wohnfläche eine Stunde Hilfe im Monat, dazu die anteiligen Nebenkosten — sonst keine Miete. Einkaufen, Garten, Technik; Pflegeleistungen sind ausgeschlossen. Bewerbung ganzjährig möglich."
-        },
-        {
-         "l": "d",
-         "t": "Halteverbotszone online beantragen",
-         "b": "Für Umzüge und Anlieferungen richten wir eine zeitlich befristete Sperrfläche ein. Antrag über das Serviceportal, spätestens zehn Werktage vorher. Gebühr 42 € je Tag, Aufstellung der Schilder inklusive. Eine Genehmigung erhalten Sie per E-Mail."
-        },
-        {
-         "l": "e",
-         "t": "Schiedsstelle für Nachbarschaftskonflikte",
-         "b": "Lärm, Gerüche, Treppenhaus, Grundstücksgrenzen: Ausgebildete Schlichterinnen führen Sie durch ein vertrauliches Gespräch, bevor Sie klagen. Das Verfahren ist kostenfrei und freiwillig; beide Seiten müssen zustimmen. Derzeit etwa vier Wochen Wartezeit."
-        },
-        {
-         "l": "f",
          "t": "Freiwilligenbörse Quartier Nord",
          "b": "Sie haben wenig, aber regelmäßig Zeit? Wir vermitteln Einsätze, die zu Ihrem Kalender passen — unter anderem Samstagsaktionen im Zwei-Wochen-Takt: Nachbarschaftsfrühstück, Hofpflege, Begleitdienste. Keine Vorkenntnisse, kurze Einführung vor dem ersten Einsatz."
         },
         {
+         "l": "b",
+         "t": "Umzugsservice Barth — Komplettpakete",
+         "b": "Verpacken, Tragen, Transport und Möbelmontage durch unser Team. Ab 690 € pauschal innerhalb des Stadtgebiets. Terminvereinbarung mindestens drei Wochen im Voraus; Behördengänge übernehmen wir nicht."
+        },
+        {
+         "l": "c",
+         "t": "Halteverbotszone online beantragen",
+         "b": "Für Umzüge und Anlieferungen richten wir eine zeitlich befristete Sperrfläche ein. Antrag über das Serviceportal, spätestens zehn Werktage vorher. Gebühr 42 € je Tag, Aufstellung der Schilder inklusive. Eine Genehmigung erhalten Sie per E-Mail."
+        },
+        {
+         "l": "d",
+         "t": "Mieterverein Rheinaue e. V.",
+         "b": "Umfassender Rechtsschutz in allen Wohnungsfragen, telefonische Beratung und Vertretung vor Gericht. Voraussetzung ist die Mitgliedschaft: 96 € im Jahr, Wartezeit von drei Monaten vor der ersten Inanspruchnahme."
+        },
+        {
+         "l": "e",
+         "t": "Quartiers-Carsharing Lindenfeld",
+         "b": "Vier Fahrzeuge an zwei festen Stationen im Viertel, rund um die Uhr buchbar per App oder Telefon. Keine Grundgebühr, Abrechnung nach Stunden und Kilometern. Ein eigener Stellplatz ist nicht erforderlich; Führerschein seit mindestens zwei Jahren."
+        },
+        {
+         "l": "f",
+         "t": "Schiedsstelle für Nachbarschaftskonflikte",
+         "b": "Lärm, Gerüche, Treppenhaus, Grundstücksgrenzen: Ausgebildete Schlichterinnen führen Sie durch ein vertrauliches Gespräch, bevor Sie klagen. Das Verfahren ist kostenfrei und freiwillig; beide Seiten müssen zustimmen. Derzeit etwa vier Wochen Wartezeit."
+        },
+        {
          "l": "g",
+         "t": "Förderprogramm „Grüner Hof“",
+         "b": "Die Stadt bezuschusst die Entsiegelung und Bepflanzung privater Innenhöfe mit bis zu 70 % der Kosten, höchstens 8 000 €. Antragsberechtigt sind Hausgemeinschaften ab drei Haushalten mit schriftlichem Einverständnis der Eigentümerseite. Anträge laufend, solange Mittel vorhanden sind."
+        },
+        {
+         "l": "h",
          "t": "Wohnungsamt: Wohnberechtigungsschein",
          "b": "Sie erhalten die Bescheinigung über die Einhaltung der Einkommensgrenzen im Bürgerbüro oder digital. Erforderlich sind Einkommensnachweise der letzten zwölf Monate und ein Ausweisdokument. Bearbeitungszeit in der Regel zehn Arbeitstage, Gültigkeit ein Jahr."
         },
         {
-         "l": "h",
-         "t": "Möbliertes Apartment am Südpark",
-         "b": "Zwei Zimmer, komplett eingerichtet, Küche und Bettwäsche vorhanden, Internet inklusive. Vermietung ab drei Monaten bis maximal zwölf Monate, ideal für befristete Entsendungen. 890 € warm, Kaution eine Monatsmiete."
-        },
-        {
          "l": "i",
-         "t": "Quartiers-Carsharing Lindenfeld",
-         "b": "Vier Fahrzeuge an zwei festen Stationen im Viertel, rund um die Uhr buchbar per App oder Telefon. Keine Grundgebühr, Abrechnung nach Stunden und Kilometern. Ein eigener Stellplatz ist nicht erforderlich; Führerschein seit mindestens zwei Jahren."
+         "t": "Mietrechtliche Sprechstunde im Stadtteilbüro",
+         "b": "Jeden zweiten Donnerstag, 16–19 Uhr, ohne Mitgliedschaft und ohne Voranmeldung. Eine Juristin prüft Mieterhöhungen, Nebenkosten- und Kündigungsschreiben. Pauschale 15 € pro Beratung, ermäßigt 5 €. Bringen Sie alle Unterlagen im Original mit."
         },
         {
          "l": "j",
@@ -50775,13 +50924,13 @@ window.MZ_EPREUVEN["telcb206"] = {
         },
         {
          "l": "k",
-         "t": "Mieterverein Rheinaue e. V.",
-         "b": "Umfassender Rechtsschutz in allen Wohnungsfragen, telefonische Beratung und Vertretung vor Gericht. Voraussetzung ist die Mitgliedschaft: 96 € im Jahr, Wartezeit von drei Monaten vor der ersten Inanspruchnahme."
+         "t": "„Wohnen für Hilfe“ — Vermittlungsstelle",
+         "b": "Wir bringen Studierende und ältere Haushalte zusammen: pro Quadratmeter Wohnfläche eine Stunde Hilfe im Monat, dazu die anteiligen Nebenkosten — sonst keine Miete. Einkaufen, Garten, Technik; Pflegeleistungen sind ausgeschlossen. Bewerbung ganzjährig möglich."
         },
         {
          "l": "l",
-         "t": "Umzugsservice Barth — Komplettpakete",
-         "b": "Verpacken, Tragen, Transport und Möbelmontage durch unser Team. Ab 690 € pauschal innerhalb des Stadtgebiets. Terminvereinbarung mindestens drei Wochen im Voraus; Behördengänge übernehmen wir nicht."
+         "t": "Möbliertes Apartment am Südpark",
+         "b": "Zwei Zimmer, komplett eingerichtet, Küche und Bettwäsche vorhanden, Internet inklusive. Vermietung ab drei Monaten bis maximal zwölf Monate, ideal für befristete Entsendungen. 890 € warm, Kaution eine Monatsmiete."
         }
        ]
       }
@@ -51581,15 +51730,15 @@ window.MZ_EPREUVEN["telcb206"] = {
        "items": [
         {
          "l": "a",
-         "t": "Kraft"
+         "t": "Beteiligung"
         },
         {
          "l": "b",
-         "t": "Verfügung"
+         "t": "Rücksicht"
         },
         {
          "l": "c",
-         "t": "Absprache"
+         "t": "gewährleistet"
         },
         {
          "l": "d",
@@ -51597,15 +51746,15 @@ window.MZ_EPREUVEN["telcb206"] = {
         },
         {
          "l": "e",
-         "t": "Rücksicht"
+         "t": "Anspruch"
         },
         {
          "l": "f",
-         "t": "zuständig"
+         "t": "Auskunft"
         },
         {
          "l": "g",
-         "t": "Anspruch"
+         "t": "gekündigt"
         },
         {
          "l": "h",
@@ -51613,15 +51762,15 @@ window.MZ_EPREUVEN["telcb206"] = {
         },
         {
          "l": "i",
-         "t": "Beteiligung"
+         "t": "zuständig"
         },
         {
          "l": "j",
-         "t": "gewährleistet"
+         "t": "Absprache"
         },
         {
          "l": "k",
-         "t": "Auskunft"
+         "t": "Bedarf"
         },
         {
          "l": "l",
@@ -51629,15 +51778,15 @@ window.MZ_EPREUVEN["telcb206"] = {
         },
         {
          "l": "m",
-         "t": "Bedarf"
+         "t": "Umsetzung"
         },
         {
          "l": "n",
-         "t": "gekündigt"
+         "t": "Verfügung"
         },
         {
          "l": "o",
-         "t": "Umsetzung"
+         "t": "Kraft"
         }
        ]
       },
@@ -53174,49 +53323,247 @@ function oeffne(mid){
   aktualisiereFortschritt();
 }
 
+function istZuordnung(t){
+  /* telc : Lesen 1 (titres), Lesen 3 (annonces), Sprachbausteine 2 (mots) —
+     le candidat glisse (ou touche puis pose) la bonne carte dans le cadre.   */
+  var quelle=(t.blocks||[]).some(function(b){ return b.typ==="karten"||b.typ==="anzeigen"||b.typ==="kasten"; });
+  return quelle && t.items.length && t.items.every(function(it){ return it.opt.length>3; });
+}
+function chipHtml(g,k,titel,text,gross){
+  return '<div class="chip'+(gross?' gross':'')+'" data-g="'+g+'" data-k="'+esc(k)+'" tabindex="0">'+
+    '<b>'+esc(k)+'</b><span class="ct">'+(titel?'<strong>'+esc(titel)+'</strong>':'')+
+    (text?(gross?'<span class="cb">'+esc(text)+'</span>':esc(text)):'')+'</span>'+
+    '<button type="button" class="streich" title="Als unpassend markieren" aria-label="durchstreichen">✕</button></div>';
+}
+function dropHtml(g,n,inline){
+  return '<span class="drop'+(inline?' inl':'')+'" data-g="'+g+'" data-n="'+esc(n)+'">'+
+    (inline?'<i>'+esc(n)+'</i>':'')+'<span class="dv">'+(inline?'':'Antwort hier ablegen')+'</span>'+
+    '<button type="button" class="dx" title="Antwort entfernen" aria-label="entfernen">×</button></span>';
+}
+
 function baueFragen(){
   /* Deux colonnes par Teil : le texte à lire reste à gauche pendant qu'on
      répond à droite. Sur un téléphone, tout se remet l'un sous l'autre.   */
   var h="";
-  MODUL.teile.forEach(function(t){
-    var gauche="";
-    (t.blocks||[]).forEach(function(b){ gauche+=block(b); });
-    var droite="";
-    if(t.beispiel){
-      droite+='<div class="bsp"><b>Beispiel '+esc(t.beispiel.n)+'.</b> '+esc(t.beispiel.frage)+
-              ' &nbsp;→&nbsp; <b>Lösung: '+esc(t.beispiel.loesung)+'</b></div>';
+  window.ZU_TEXT={};                                  // "g|k" → texte court de la carte
+  MODUL.teile.forEach(function(t,g){
+    var zu=istZuordnung(t), gauche="", droite="", pool="";
+    var platz={};                                     // items déjà placés dans un texte
+    if(zu){
+      (t.blocks||[]).forEach(function(b){
+        if(b.typ==="karten"||b.typ==="kasten"){
+          b.items.forEach(function(k){
+            if(k.l===b.bsp) return;
+            ZU_TEXT[g+"|"+k.l]=k.t; pool+=chipHtml(g,k.l,"",k.t,false);
+          });
+        } else if(b.typ==="anzeigen"){
+          b.items.forEach(function(a){ ZU_TEXT[g+"|"+a.l]=a.t; gauche+=chipHtml(g,a.l,a.t,a.b,true); });
+        } else if(b.typ==="personen"){
+          gauche+=b.items.map(function(p){
+            var it=t.items.filter(function(i){ return String(i.n)===String(p.l); })[0];
+            if(it) platz[it.n]=1;
+            return '<div class="pers"><div class="nm"><i>'+esc(p.l)+'</i>'+esc(p.nm)+'</div>'+esc(p.txt)+
+                   (it? '<div class="dropzeile">'+dropHtml(g,it.n,false)+'</div>' : '')+'</div>';
+          }).join("");
+        } else if(b.typ==="artikel"){
+          var ps=b.absaetze.map(function(pp){
+            return "<p>"+esc(pp).replace(/__LUECKE(\d+)__/g,function(_,n){
+              if(n==="0") return '<span class="luecke">Beispiel</span>';
+              platz[n]=1; return dropHtml(g,n,true); })+"</p>";
+          }).join("");
+          gauche+='<div class="lese"><h3>'+esc(b.titel)+'</h3>'+ps+'</div>';
+        } else gauche+=block(b);
+      });
+      var mitX=t.items.some(function(it){ return it.opt.some(function(o){ return o.k==="x"; }); });
+      if(mitX){ ZU_TEXT[g+"|x"]="keine passende Anzeige"; pool+=chipHtml(g,"x","","keine passende Anzeige",false); }
+      t.items.forEach(function(it){
+        if(platz[it.n]) return;
+        droite+='<div class="q zq" id="q'+esc(it.n)+'"><div class="fr"><span class="n">'+esc(it.n)+'</span><span>'+
+                esc(it.frage)+'</span></div>'+dropHtml(g,it.n,false)+'</div>';
+      });
+      var hilfe='<p class="zhilfe">Ziehen Sie eine Karte in den passenden Rahmen — oder tippen Sie auf einen Rahmen '+
+                'und wählen Sie die Karte aus der Liste. Mit <b>✕</b> streichen Sie eine Karte rot durch, die nicht passt.</p>';
+      if(pool) droite='<div class="pool" data-g="'+g+'">'+hilfe+pool+'</div>'+droite;
+      else droite=hilfe+droite;
+    } else {
+      (t.blocks||[]).forEach(function(b){ gauche+=block(b,g); });
+      if(t.beispiel){
+        droite+='<div class="bsp"><b>Beispiel '+esc(t.beispiel.n)+'.</b> '+esc(t.beispiel.frage)+
+                ' &nbsp;→&nbsp; <b>Lösung: '+esc(t.beispiel.loesung)+'</b></div>';
+      }
+      t.items.forEach(function(it){ droite+=frage(it); });
     }
-    t.items.forEach(function(it){ droite+=frage(it); });
-
     h+='<div class="teil"><div class="tt"><b>'+esc(t.titel)+'</b><span>'+esc(t.zeit||"")+'</span></div>'+
        '<div class="anw">'+t.anweisung+'</div></div>';
     h+= gauche
-      ? '<div class="duo"><div class="lesespalte">'+gauche+'</div>'+
+      ? '<div class="duo'+(zu?' zu':'')+'"><div class="lesespalte">'+gauche+'</div>'+
         '<div class="fragespalte">'+droite+'</div></div>'
       : '<div class="solo">'+droite+'</div>';
   });
   $("c-inhalt").innerHTML=h;
+  var s=SESSION.module[MODUL.id];
+  if(!s.strich) s.strich={};
   Array.prototype.forEach.call(document.querySelectorAll('.opt input'),function(inp){
     inp.addEventListener("change",function(){
       var n=inp.name.replace("q_","");
-      SESSION.module[MODUL.id].antworten[n]=inp.value;
+      s.antworten[n]=inp.value;
       speichern();
       var q=inp.closest(".q");
       Array.prototype.forEach.call(q.querySelectorAll(".opt"),function(o){ o.classList.remove("sel"); });
       inp.closest(".opt").classList.add("sel");
       q.classList.add("done");
+      lueckeZeigen(n);
       aktualisiereFortschritt();
     });
   });
   // rétablir les réponses déjà données
-  var a=SESSION.module[MODUL.id].antworten;
-  Object.keys(a).forEach(function(n){
-    var inp=document.querySelector('input[name="q_'+n+'"][value="'+CSS.escape(a[n])+'"]');
-    if(inp){ inp.checked=true; inp.closest(".opt").classList.add("sel"); inp.closest(".q").classList.add("done"); }
+  Object.keys(s.antworten).forEach(function(n){
+    var inp=document.querySelector('input[name="q_'+n+'"][value="'+CSS.escape(s.antworten[n])+'"]');
+    if(inp){ inp.checked=true; inp.closest(".opt").classList.add("sel"); inp.closest(".q").classList.add("done"); lueckeZeigen(n); }
+  });
+  Object.keys(s.strich).forEach(function(id){
+    var el=document.querySelector('[data-strich="'+CSS.escape(id)+'"]'); if(el) el.classList.add("weg");
+  });
+  zuordnungStart();
+}
+
+/* Sprachbausteine 1 : le mot choisi apparaît aussi dans le trou du texte */
+function lueckeZeigen(n){
+  var l=document.querySelector('.luecke[data-n="'+CSS.escape(String(n))+'"]'); if(!l) return;
+  var inp=document.querySelector('input[name="q_'+n+'"]:checked'); if(!inp) return;
+  var t=inp.closest(".opt").querySelector(".k + span");
+  l.innerHTML='<i>'+esc(n)+'</i>'+esc(t?t.textContent:inp.value);
+  l.classList.add("voll");
+}
+
+/* ─────────── glisser-déposer / toucher-poser ─────────── */
+var ZU_WAHL=null;
+function zuordnungStart(){
+  var s=SESSION.module[MODUL.id];
+  function strichId(el){
+    if(el.classList.contains("chip")) return "c"+el.dataset.g+"|"+el.dataset.k;
+    return el.dataset.strich;
+  }
+  document.querySelectorAll(".chip").forEach(function(c){
+    c.setAttribute("data-strich", strichId(c));
+    if(s.strich[strichId(c)]) c.classList.add("weg");
+  });
+  zuMalen();
+  var box=$("c-inhalt");
+  box.onclick=function(e){
+    var st=e.target.closest(".streich");
+    if(st){
+      e.preventDefault(); e.stopPropagation();
+      var el=st.closest("[data-strich]"); if(!el) return;
+      var id=el.getAttribute("data-strich");
+      if(s.strich[id]){ delete s.strich[id]; el.classList.remove("weg"); }
+      else { s.strich[id]=1; el.classList.add("weg"); }
+      speichern(); return;
+    }
+    var dx=e.target.closest(".dx");
+    if(dx){ e.preventDefault(); var d=dx.closest(".drop"); delete s.antworten[d.dataset.n]; speichern(); zuMalen(); aktualisiereFortschritt(); return; }
+    var chip=e.target.closest(".chip");
+    if(chip){ if(DRAG_WEG){ DRAG_WEG=false; return; } waehle(ZU_WAHL===chip?null:chip); return; }
+    var drop=e.target.closest(".drop");
+    if(drop){
+      if(ZU_WAHL && ZU_WAHL.dataset.g===drop.dataset.g){ lege(ZU_WAHL.dataset.k, drop); waehle(null); }
+      else if(!ZU_WAHL){ waehler(drop); }
+    }
+  };
+  /* souris : vrai glisser-déposer. Au doigt on touche puis on pose (le
+     défilement de la page reste libre).                                  */
+  box.onpointerdown=function(e){
+    if(e.pointerType==="touch" || e.button!==0) return;
+    var chip=e.target.closest(".chip"); if(!chip || e.target.closest(".streich")) return;
+    var x0=e.clientX, y0=e.clientY, geist=null;
+    function mv(ev){
+      if(!geist){
+        if(Math.abs(ev.clientX-x0)+Math.abs(ev.clientY-y0)<7) return;
+        geist=document.createElement("div"); geist.className="geist";
+        geist.innerHTML='<b>'+esc(chip.dataset.k)+'</b> '+esc(ZU_TEXT[chip.dataset.g+"|"+chip.dataset.k]||"");
+        document.body.appendChild(geist); chip.classList.add("zieht");
+      }
+      geist.style.left=(ev.clientX+12)+"px"; geist.style.top=(ev.clientY+10)+"px";
+      document.querySelectorAll(".drop.ueber").forEach(function(d){ d.classList.remove("ueber"); });
+      var d=zielUnter(ev.clientX,ev.clientY,chip.dataset.g); if(d) d.classList.add("ueber");
+    }
+    function up(ev){
+      document.removeEventListener("pointermove",mv); document.removeEventListener("pointerup",up);
+      if(!geist) return;
+      geist.remove(); chip.classList.remove("zieht"); DRAG_WEG=true;
+      document.querySelectorAll(".drop.ueber").forEach(function(d){ d.classList.remove("ueber"); });
+      var d=zielUnter(ev.clientX,ev.clientY,chip.dataset.g);
+      if(d){ lege(chip.dataset.k,d); waehle(null); }
+      setTimeout(function(){ DRAG_WEG=false; },0);
+    }
+    document.addEventListener("pointermove",mv); document.addEventListener("pointerup",up);
+  };
+}
+var DRAG_WEG=false;
+/* Toucher un cadre vide ouvre la liste des cartes : pratique au téléphone,
+   où les cartes sont loin du texte.                                       */
+function waehler(drop){
+  var g=drop.dataset.g, s=SESSION.module[MODUL.id];
+  var alt=document.getElementById("waehler"); if(alt) alt.remove();
+  var chips=[].slice.call(document.querySelectorAll('.chip[data-g="'+g+'"]'));
+  var w=document.createElement("div"); w.id="waehler";
+  w.innerHTML='<div class="wbox"><div class="wkopf"><b>Antwort für '+esc(drop.dataset.n)+'</b>'+
+    '<button type="button" class="wzu" aria-label="schließen">×</button></div><div class="wliste">'+
+    chips.map(function(c){
+      var k=c.dataset.k, t=ZU_TEXT[g+"|"+k]||"";
+      return '<button type="button" class="wopt'+(c.classList.contains("weg")?' weg':'')+
+             (c.classList.contains("benutzt")?' benutzt':'')+'" data-k="'+esc(k)+'"><b>'+esc(k)+'</b><span>'+esc(t)+'</span></button>';
+    }).join("")+'</div></div>';
+  document.body.appendChild(w);
+  w.addEventListener("click",function(e){
+    if(e.target===w || e.target.closest(".wzu")){ w.remove(); return; }
+    var o=e.target.closest(".wopt"); if(!o) return;
+    lege(o.dataset.k, drop); w.remove();
+  });
+}
+function zielUnter(x,y,g){
+  var el=document.elementFromPoint(x,y); var d=el && el.closest && el.closest(".drop");
+  return (d && d.dataset.g===g) ? d : null;
+}
+function waehle(chip){
+  document.querySelectorAll(".chip.pick").forEach(function(c){ c.classList.remove("pick"); });
+  document.querySelectorAll(".drop.bereit").forEach(function(d){ d.classList.remove("bereit"); });
+  ZU_WAHL=chip||null;
+  if(ZU_WAHL){
+    ZU_WAHL.classList.add("pick");
+    document.querySelectorAll('.drop[data-g="'+ZU_WAHL.dataset.g+'"]').forEach(function(d){ d.classList.add("bereit"); });
+  }
+}
+function lege(k,drop){
+  var s=SESSION.module[MODUL.id], g=drop.dataset.g, n=drop.dataset.n;
+  if(k!=="x"){                                        // chaque carte ne sert qu'une fois
+    document.querySelectorAll('.drop[data-g="'+g+'"]').forEach(function(d){
+      if(d!==drop && s.antworten[d.dataset.n]===k) delete s.antworten[d.dataset.n];
+    });
+  }
+  s.antworten[n]=k; speichern(); zuMalen(); aktualisiereFortschritt();
+}
+function zuMalen(){
+  var s=SESSION.module[MODUL.id], benutzt={};
+  document.querySelectorAll(".drop").forEach(function(d){
+    var k=s.antworten[d.dataset.n], v=d.querySelector(".dv"), inl=d.classList.contains("inl");
+    if(k){
+      var t=ZU_TEXT[d.dataset.g+"|"+k]||"";
+      v.innerHTML='<b>'+esc(k)+'</b> '+esc(inl? t : (t.length>70? t.slice(0,68)+"…" : t));
+      d.classList.add("voll"); benutzt[d.dataset.g+"|"+k]=1;
+      var q=d.closest(".q"); if(q) q.classList.add("done");
+    } else {
+      v.textContent= inl ? "" : "Antwort hier ablegen";
+      d.classList.remove("voll");
+      var q2=d.closest(".q"); if(q2) q2.classList.remove("done");
+    }
+  });
+  document.querySelectorAll(".chip").forEach(function(c){
+    c.classList.toggle("benutzt", c.dataset.k!=="x" && !!benutzt[c.dataset.g+"|"+c.dataset.k]);
   });
 }
 
-function block(b){
+function block(b,g){
   if(b.typ==="personen"){
     return b.items.map(function(p){
       return '<div class="pers"><div class="nm"><i>'+esc(p.l)+'</i>'+esc(p.nm)+'</div>'+esc(p.txt)+'</div>';
@@ -53225,7 +53572,8 @@ function block(b){
   if(b.typ==="artikel"){
     var ps=b.absaetze.map(function(p){
       return "<p>"+esc(p).replace(/__LUECKE(\d+)__/g,function(_,n){
-        return '<span class="luecke">'+(n==="0"?"Beispiel":n)+'</span>'; })+"</p>";
+        return n==="0" ? '<span class="luecke">Beispiel</span>'
+                       : '<span class="luecke" data-n="'+n+'" onclick="var q=document.getElementById(\'q'+n+'\');if(q)q.scrollIntoView({behavior:\'smooth\',block:\'center\'})"><i>'+n+'</i></span>'; })+"</p>";
     }).join("");
     return '<div class="lese"><h3>'+esc(b.titel)+'</h3>'+ps+
            (b.quelle?'<p class="quelle">'+esc(b.quelle)+'</p>':'')+'</div>';
@@ -53267,7 +53615,8 @@ function frage(it){
   var inline = it.opt.length>3 || it.opt.every(function(o){return o.k===o.t;});
   var opts=it.opt.map(function(o){
     var label = (o.k===o.t) ? esc(o.k) : '<span class="k">'+esc(o.k)+'</span><span>'+esc(o.t)+'</span>';
-    return '<label class="opt"><input type="radio" name="q_'+esc(it.n)+'" value="'+esc(o.k)+'">'+label+'</label>';
+    var weg = it.opt.length>2 ? '<button type="button" class="streich" title="Als unpassend markieren" aria-label="durchstreichen">✕</button>' : '';
+    return '<label class="opt" data-strich="o'+esc(it.n)+'|'+esc(o.k)+'"><input type="radio" name="q_'+esc(it.n)+'" value="'+esc(o.k)+'">'+label+weg+'</label>';
   }).join("");
   return '<div class="q" id="q'+esc(it.n)+'">'+
     (it.kopf?'<div class="kopf">'+esc(it.kopf)+'</div>':'')+
@@ -53275,12 +53624,20 @@ function frage(it){
     '<div class="opts'+(inline?' inline':'')+'">'+opts+'</div></div>';
 }
 
+var UMLAUTE=["ä","ö","ü","ß","Ä","Ö","Ü","„","“"];
 function baueSchreiben(){
   var h="";
   MODUL.schreiben.aufgaben.forEach(function(a){
-    /* La consigne et les points restent à gauche, la feuille d'écriture à droite */
-    /* format telc B1 : la lettre reçue à gauche, puis la consigne et les 4 points */
-    var brief = a.brief ? '<div class="brief">'+esc(a.brief).replace(/\n/g,"<br>")+'</div>' : '';
+    var mail = a.format==="email";
+    var brief="";
+    if(a.brief){
+      var koerper=esc(a.brief).replace(/\n/g,"<br>");
+      brief = mail
+        ? (a.situation?'<p class="situation">'+esc(a.situation)+'</p>':'')+
+          '<div class="mail"><div class="kopfz"><div><b>Von:</b>'+esc(a.von||"")+'</div>'+
+          '<div><b>Betreff:</b>'+esc(a.betreff||"")+'</div></div><div class="koerper">'+koerper+'</div></div>'
+        : '<div class="brief">'+koerper+'</div>';
+    }
     h+='<div class="teil"><div class="tt"><b>'+esc(a.titel)+'</b><span>mindestens '+a.min+' Wörter</span></div>'+
        (a.brief ? '' : '<div class="anw">'+esc(a.kontext)+'</div>')+'</div>'+
        '<div class="duo"><div class="lesespalte">'+ brief +
@@ -53290,22 +53647,46 @@ function baueSchreiben(){
          a.leitpunkte.map(function(p){return "<li>"+esc(p)+"</li>";}).join("")+'</ul></div>'+
        '</div><div class="fragespalte">'+
          '<div class="card" style="margin:0">'+
-         '<textarea id="txt'+a.nr+'" placeholder="Ihr Text …"></textarea>'+
+         (mail ? '<div class="antwortkopf"><label>An:</label><span class="an">'+esc(a.von||"")+'</span>'+
+                 '<label for="bt'+a.nr+'">Betreff:</label><input id="bt'+a.nr+'" maxlength="90" autocomplete="off" '+
+                 'spellcheck="false" placeholder="Betreff Ihrer E-Mail"></div>' : '')+
+         '<div class="tasten" data-ziel="txt'+a.nr+'">'+UMLAUTE.map(function(u){
+            return '<button type="button" tabindex="-1" data-z="'+u+'">'+u+'</button>'; }).join("")+'</div>'+
+         '<textarea id="txt'+a.nr+'" placeholder="Ihr Text …" spellcheck="false" autocorrect="off" autocapitalize="sentences"></textarea>'+
          '<div class="zaehler" id="z'+a.nr+'">0 Wörter</div></div>'+
        '</div></div>';
   });
   $("c-inhalt").innerHTML=h;
+  var s=SESSION.module[MODUL.id];
+  var zuletzt=null;                                    // dernier champ actif (Betreff ou texte)
   MODUL.schreiben.aufgaben.forEach(function(a){
-    var ta=$("txt"+a.nr), z=$("z"+a.nr);
-    ta.value = SESSION.module[MODUL.id].texte["a"+a.nr] || "";
+    var ta=$("txt"+a.nr), z=$("z"+a.nr), bt=$("bt"+a.nr);
+    ta.value = s.texte["a"+a.nr] || "";
     var maj=function(){
       var n=woerter(ta.value);
-      z.innerHTML='<b>'+n+'</b> Wörter (mindestens '+a.min+')';
+      z.innerHTML='Wörter: <b>'+n+'</b> (mindestens '+a.min+')';
       z.className = "zaehler"+(n<a.min?" kurz":"");
-      SESSION.module[MODUL.id].texte["a"+a.nr]=ta.value;
+      s.texte["a"+a.nr]=ta.value;
       speichern(); aktualisiereFortschritt();
     };
     ta.addEventListener("input",maj); maj();
+    ta.addEventListener("focus",function(){ zuletzt=ta; });
+    if(bt){
+      bt.value = s.texte["b"+a.nr] || "";
+      bt.addEventListener("input",function(){ s.texte["b"+a.nr]=bt.value; speichern(); });
+      bt.addEventListener("focus",function(){ zuletzt=bt; });
+    }
+  });
+  /* touches ä ö ü ß : insèrent le caractère là où se trouve le curseur */
+  document.querySelectorAll(".tasten button").forEach(function(knopf){
+    knopf.addEventListener("mousedown",function(e){ e.preventDefault(); });   // garde le focus
+    knopf.addEventListener("click",function(){
+      var ziel = zuletzt || $(knopf.parentNode.dataset.ziel);
+      var st=ziel.selectionStart==null?ziel.value.length:ziel.selectionStart, en=ziel.selectionEnd==null?st:ziel.selectionEnd;
+      ziel.setRangeText(knopf.dataset.z, st, en, "end");
+      ziel.focus();
+      ziel.dispatchEvent(new Event("input",{bubbles:true}));
+    });
   });
 }
 
@@ -53553,7 +53934,9 @@ function protokoll(m){
   if(m.schreiben){
     return {typ:"schreiben", aufgaben:m.schreiben.aufgaben.map(function(a){
       return {nr:a.nr, titel:a.titel, min:a.min,
-              kontext:(a.brief ? "Brief: « "+a.brief.replace(/\s*\n\s*/g," / ")+" » — " : "")+a.kontext,
+              kontext:(a.situation ? a.situation+" " : "")+
+                      (a.brief ? (a.format==="email" ? "E-Mail (Betreff: "+(a.betreff||"")+"): « " : "Brief: « ")+
+                                 a.brief.replace(/\s*\n\s*/g," / ")+" » — " : "")+a.kontext,
               vorlage:a.vorlage||"", leitpunkte:a.leitpunkte||[]};
     })};
   }
@@ -53572,6 +53955,16 @@ function protokoll(m){
   return {typ:"fragen", items:items};
 }
 
+function mitBetreff(t){
+  var o={};
+  Object.keys(t).forEach(function(k){
+    if(/^b\d+$/.test(k)) return;
+    var b=t["b"+k.slice(1)];
+    o[k] = (/^a\d+$/.test(k) && b && b.trim()) ? "Betreff: "+b.trim()+"\n\n"+t[k] : t[k];
+  });
+  return o;
+}
+
 function abgeben(m,automatisch,stumm){
   var s=SESSION.module[m.id];
   if(!s||s.abgegeben) return;
@@ -53586,7 +53979,7 @@ function abgeben(m,automatisch,stumm){
     start:iso(s.start), ende:iso(s.abgegeben),
     dauerMin:Math.round((s.abgegeben-s.start)/600)/100,
     automatisch:!!automatisch, verlassen:s.weg||0, vorfaelle:s.vorfaelle||{},
-    antworten:s.antworten||{}, texte:s.texte||{}, geraet:SESSION.geraet,
+    antworten:s.antworten||{}, texte:mitBetreff(s.texte||{}), geraet:SESSION.geraet,
     protokoll:protokoll(m)
   };
   var archiv=LS.get("mz_kopien",[]); archiv.push(kopie); LS.set("mz_kopien",archiv);
