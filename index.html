@@ -53061,6 +53061,12 @@ $("b-start").addEventListener("click", function(){
                       geprueft:ergebnis.status, geraet:navigator.userAgent.slice(0,80),
                       eroeffnet:jetzt(), module:{}};
     SESSION.nom=nom; SESSION.recu=recu; SESSION.code=code; SESSION.geprueft=ergebnis.status; SESSION.bis=ergebnis.bis||""; SESSION.erlaubt=ergebnis.erlaubt||null; if(ergebnis.ende) SESSION.ende=ergebnis.ende;
+    /* modules déjà rendus (même depuis un autre appareil) : fermés ici aussi */
+    (ergebnis.fertig||[]).forEach(function(mid){
+      var sm=SESSION.module[mid];
+      if(!sm) sm=SESSION.module[mid]={start:jetzt(), antworten:{}, texte:{}, weg:0};
+      if(!sm.abgegeben){ sm.abgegeben=jetzt(); sm.anderswo=true; }
+    });
     speichern();
     if(warn) $("s-msg").innerHTML=warn;
     ladeEpreuve(ep);
@@ -53122,7 +53128,8 @@ function pruefeQuittung(code, nom, fertig){
     clearTimeout(abbruch);
     var teile=String(t).trim().split("|");
     if(teile[0]==="OK")        fertig({status:"OK", name:teile[1]||"", recu:teile[2]||"", bis:teile[3]||"",
-                                     erlaubt:(teile[4]||"").split(",").filter(Boolean), ende:teile[5]||""});
+                                     erlaubt:(teile[4]||"").split(",").filter(Boolean), ende:teile[5]||"",
+                                     fertig:(teile[6]||"").split(",").filter(Boolean)});
     else if(teile[0]==="NEIN") fertig({status:"NEIN", grund:teile[1]||""});
     else                       pruefeOffline(code, fertig);
   }).catch(function(){ clearTimeout(abbruch); pruefeOffline(code, fertig); });
@@ -53973,6 +53980,7 @@ function abgeben(m,automatisch,stumm){
   if(TICK) clearInterval(TICK);
   stoppeAudio();
   var kopie={
+    kid:[SESSION.code||SESSION.kand, SESSION.epreuve, m.id, s.start].join("|"),
     zentrum:CONFIG.ZENTRUM, epreuve:SESSION.epreuve, epreuveTitel:EP?EP.titel:"",
     modul:m.id, modulName:m.name, nom:SESSION.nom,
     recu:SESSION.recu||"", code:SESSION.code||"", zugang:SESSION.geprueft||"",
