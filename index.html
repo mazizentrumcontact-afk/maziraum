@@ -183,7 +183,7 @@ main{max-width:880px;margin:0 auto;padding:20px 16px 90px}
 /* ---------- zuordnen : glisser la carte dans le cadre ---------- */
 .zhilfe{font-size:13px;color:var(--muted);margin:0 0 10px}
 .pool{display:flex;flex-direction:column;gap:7px;margin-bottom:14px}
-@media (min-width:900px){ .duo.zu .pool{position:sticky;top:76px;max-height:calc(100vh - 150px);overflow:auto;padding-right:4px} }
+@media (min-width:900px){ .duo.zu .pool{position:sticky;top:64px;max-height:calc(100vh - 150px);overflow:auto;padding:12px 4px 8px 0;background:var(--ground);z-index:5;box-shadow:0 8px 8px -8px rgba(0,0,0,.12)} }
 .chip{position:relative;display:flex;gap:10px;align-items:flex-start;padding:10px 38px 10px 12px;
   border:1px solid var(--line-strong);border-radius:9px;background:var(--surface);cursor:grab;font-size:15px;
   touch-action:manipulation;transition:border-color .12s,background .12s,opacity .12s}
@@ -249,6 +249,15 @@ main{max-width:880px;margin:0 auto;padding:20px 16px 90px}
 .wopt.weg span{text-decoration:line-through;color:var(--bad)}
 .wopt.weg b{background:var(--bad)}
 
+/* ---------- Schreiben B2 : deux sujets au choix ---------- */
+.wahlaufg{display:grid;gap:14px}
+@media (min-width:900px){ .wahlaufg{grid-template-columns:1fr 1fr} }
+.aufgwahl{margin:0;display:flex;flex-direction:column}
+.aufgwahl p{font-size:15px;line-height:1.55}
+.aufgwahl ul{margin:0 0 14px}
+.aufgwahl .btn{margin-top:auto;align-self:flex-start}
+.wechsel{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between;
+  background:var(--accent-soft);border:1px solid var(--accent);border-radius:var(--r);padding:10px 14px;margin:18px 0 0;font-size:14.5px}
 /* ---------- e-mail (Schreiben B1) ---------- */
 .situation{font-style:italic;margin:0 0 10px}
 .mail{border:1px solid var(--line);border-radius:var(--r);background:var(--surface);overflow:hidden;margin-bottom:12px}
@@ -2796,7 +2805,7 @@ window.MZ_EPREUVEN["telcb101"] = {
      {
       "nr": 1,
       "titel": "Schriftlicher Ausdruck — Brief",
-      "min": 100,
+      "min": 120,
       "brief": "Liebe(r) …,\n\nstell dir vor: Ich habe endlich eine neue Wohnung gefunden! Sie liegt am Stadtrand von Freiburg, hat einen kleinen Balkon und ist viel ruhiger als meine alte Wohnung an der Hauptstraße. Am 14. Juni ziehe ich um, und am Samstag danach möchte ich eine Einweihungsparty machen. Ich würde mich riesig freuen, wenn du kommst!\n\nEhrlich gesagt brauche ich auch ein bisschen Hilfe. Ich habe noch keine Möbel für das zweite Zimmer, und die Küche muss ich ganz neu einrichten. Du hast doch letztes Jahr auch eine Wohnung eingerichtet. Hast du ein paar Tipps für mich?\n\nSchreib mir bald, ob du Zeit hast.\n\nViele Grüße\nJonas",
       "kontext": "Antworten Sie Jonas. Schreiben Sie in Ihrer E-Mail etwas zu allen vier Punkten unten. Überlegen Sie sich vorher eine passende Reihenfolge der Punkte, eine passende Einleitung und einen passenden Schluss. Vergessen Sie auch nicht den Betreff.",
       "vorlage": "",
@@ -5177,7 +5186,7 @@ window.MZ_EPREUVEN["telcb102"] = {
      {
       "nr": 1,
       "titel": "Schriftlicher Ausdruck — Brief",
-      "min": 100,
+      "min": 120,
       "brief": "Liebe(r) …,\n\nwie geht es dir? Bei uns ist im Moment viel los. Meine Schwester heiratet im August, und stell dir vor: Ihr Mann kommt aus deinem Land! Die Hochzeit feiern wir hier in Kassel, aber viele Gäste aus seiner Familie reisen extra an.\n\nIch möchte die Gäste gern ein bisschen in ihrer Sprache begrüßen und auch etwas über die Traditionen wissen. Wie feiert man bei euch eine Hochzeit? Was schenkt man dem Brautpaar? Und gibt es Dinge, die man auf keinen Fall machen sollte?\n\nIch hoffe, du kannst mir helfen. Ich weiß, du hast viel zu tun, aber vielleicht findest du ein paar Minuten für mich.\n\nHerzliche Grüße\nSabine",
       "kontext": "Antworten Sie Sabine. Schreiben Sie in Ihrer E-Mail etwas zu allen vier Punkten unten. Überlegen Sie sich vorher eine passende Reihenfolge der Punkte, eine passende Einleitung und einen passenden Schluss. Vergessen Sie auch nicht den Betreff.",
       "vorlage": "",
@@ -7558,7 +7567,7 @@ window.MZ_EPREUVEN["telcb103"] = {
      {
       "nr": 1,
       "titel": "Schriftlicher Ausdruck — Brief",
-      "min": 100,
+      "min": 120,
       "brief": "Liebe(r) …,\n\nich habe tolle Neuigkeiten: Meine Firma schickt mich für sechs Monate in deine Stadt! Ab Oktober soll ich dort in unserer neuen Filiale arbeiten. Ich freue mich sehr, aber ich bin auch ein bisschen nervös, denn ich kenne dort niemanden außer dir.\n\nKannst du mir ein paar Tipps geben? Ich suche eine kleine Wohnung, nicht zu teuer und nicht zu weit vom Zentrum. Außerdem habe ich keine Ahnung, wie man sich in der Stadt am besten bewegt. Und was macht man bei euch am Wochenende?\n\nIch würde mich freuen, wenn wir uns dann oft sehen.\n\nLiebe Grüße\nTobias",
       "kontext": "Antworten Sie Tobias. Schreiben Sie in Ihrer E-Mail etwas zu allen vier Punkten unten. Überlegen Sie sich vorher eine passende Reihenfolge der Punkte, eine passende Einleitung und einen passenden Schluss. Vergessen Sie auch nicht den Betreff.",
       "vorlage": "",
@@ -9939,7 +9948,7 @@ window.MZ_EPREUVEN["telcb104"] = {
      {
       "nr": 1,
       "titel": "Schriftlicher Ausdruck — Brief",
-      "min": 100,
+      "min": 120,
       "brief": "Liebe(r) …,\n\ndu hast lange nichts von dir hören lassen. Ist alles in Ordnung?\n\nIch schreibe dir, weil wir in unserem Stadtteilzentrum im November einen internationalen Kochabend organisieren. Jeder bringt ein Gericht aus seiner Heimat mit und erzählt ein bisschen darüber. Ich habe sofort an dich gedacht! Du kochst doch so gern.\n\nDer Abend findet am Freitag, den 21. November, ab 18 Uhr statt. Wir brauchen auch noch Leute, die beim Aufbau helfen oder Musik mitbringen. Hättest du Lust mitzumachen?\n\nIch freue mich auf deine Antwort.\n\nViele liebe Grüße\nAnna",
       "kontext": "Antworten Sie Anna. Schreiben Sie in Ihrer E-Mail etwas zu allen vier Punkten unten. Überlegen Sie sich vorher eine passende Reihenfolge der Punkte, eine passende Einleitung und einen passenden Schluss. Vergessen Sie auch nicht den Betreff.",
       "vorlage": "",
@@ -12320,7 +12329,7 @@ window.MZ_EPREUVEN["telcb105"] = {
      {
       "nr": 1,
       "titel": "Schriftlicher Ausdruck — Brief",
-      "min": 100,
+      "min": 120,
       "brief": "Liebe(r) …,\n\nleider habe ich keine gute Nachricht. Letzte Woche bin ich beim Fußballspielen so unglücklich gefallen, dass ich mir das Bein gebrochen habe. Jetzt muss ich sechs Wochen einen Gips tragen und darf nicht viel laufen.\n\nDas Schlimmste ist: Unsere Wanderung in den Alpen im nächsten Monat kann ich vergessen. Es tut mir wirklich leid, denn wir haben uns beide so darauf gefreut und die Hütte ist schon bezahlt.\n\nHast du eine Idee, was wir jetzt machen können? Vielleicht kannst du ja auch mit jemand anderem fahren. Und wenn du Zeit hast, würde ich mich über Besuch freuen. Zu Hause ist es ziemlich langweilig.\n\nViele Grüße\nMarkus",
       "kontext": "Antworten Sie Markus. Schreiben Sie in Ihrer E-Mail etwas zu allen vier Punkten unten. Überlegen Sie sich vorher eine passende Reihenfolge der Punkte, eine passende Einleitung und einen passenden Schluss. Vergessen Sie auch nicht den Betreff.",
       "vorlage": "",
@@ -14702,7 +14711,7 @@ window.MZ_EPREUVEN["telcb106"] = {
      {
       "nr": 1,
       "titel": "Schriftlicher Ausdruck — Brief",
-      "min": 100,
+      "min": 120,
       "brief": "Liebe(r) …,\n\nendlich habe ich mein Abitur! Jetzt möchte ich vor dem Studium ein Jahr ins Ausland gehen, und ich überlege, ob ich einen Freiwilligendienst in deinem Land machen soll. Man arbeitet dort zum Beispiel in einer Schule oder in einem Krankenhaus.\n\nMeine Eltern sind aber nicht so begeistert. Sie haben Angst, dass ich mich dort nicht zurechtfinde, weil ich die Sprache nicht spreche. Du kennst dein Land ja am besten. Was meinst du? Ist das eine gute Idee?\n\nIch würde mich sehr über deine Meinung freuen. Vielleicht kannst du mir auch sagen, was ich unbedingt mitnehmen sollte.\n\nAlles Liebe\nLena",
       "kontext": "Antworten Sie Lena. Schreiben Sie in Ihrer E-Mail etwas zu allen vier Punkten unten. Überlegen Sie sich vorher eine passende Reihenfolge der Punkte, eine passende Einleitung und einen passenden Schluss. Vergessen Sie auch nicht den Betreff.",
       "vorlage": "",
@@ -17083,7 +17092,7 @@ window.MZ_EPREUVEN["telcb107"] = {
      {
       "nr": 1,
       "titel": "Schriftlicher Ausdruck — Brief",
-      "min": 100,
+      "min": 120,
       "brief": "Liebe(r) …,\n\nstell dir vor: Seit April haben Ben und ich einen kleinen Garten in der Kleingartenanlage „Am Bergwiesenbach“! Er ist nur zehn Minuten mit dem Rad von unserer Wohnung entfernt. Es gibt eine alte Holzhütte, zwei Apfelbäume und leider auch sehr viel Unkraut.\n\nInzwischen wachsen bei uns Salat, Zucchini und Kartoffeln, und zum ersten Mal haben wir selbst etwas geerntet. Das möchten wir feiern: Am Samstag, dem 12. Juli, machen wir ab 15 Uhr ein kleines Gartenfest. Wir würden uns sehr freuen, wenn du auch kommst!\n\nAußerdem habe ich eine Frage an dich. Nächstes Jahr möchte ich gern etwas pflanzen, das man hier kaum kennt, zum Beispiel Gemüse oder Kräuter aus deinem Land. Was wächst bei euch gut, und was könnte auch hier funktionieren? Hast du vielleicht selbst schon einmal in einem Garten gearbeitet?\n\nSchreib mir bald!\n\nLiebe Grüße\nAnke",
       "kontext": "Antworten Sie Anke. Schreiben Sie in Ihrer E-Mail etwas zu allen vier Punkten unten. Überlegen Sie sich vorher eine passende Reihenfolge der Punkte, eine passende Einleitung und einen passenden Schluss. Vergessen Sie auch nicht den Betreff.",
       "vorlage": "",
@@ -19464,7 +19473,7 @@ window.MZ_EPREUVEN["telcb108"] = {
      {
       "nr": 1,
       "titel": "Schriftlicher Ausdruck — Brief",
-      "min": 100,
+      "min": 120,
       "brief": "Liebe(r) …,\n\nstell dir vor: Ich habe die Stelle in der Stadtbibliothek Pöhlingen bekommen! Das Vorstellungsgespräch war am Montag, und schon am Mittwoch haben sie mich angerufen. Am 3. November ist mein erster Arbeitstag.\n\nIch freue mich riesig, aber ich bin auch ziemlich nervös. In meiner alten Firma habe ich acht Jahre gearbeitet und kannte dort jeden. Jetzt ist alles neu: das Team, die Chefin, die Arbeitszeiten. Du hast doch letztes Jahr auch die Stelle gewechselt. Wie war das für dich am Anfang? Und was sollte ich in den ersten Wochen auf keinen Fall machen?\n\nAußerdem möchte ich das feiern! Am Samstag, dem 25. Oktober, koche ich ab 19 Uhr für ein paar Freunde bei mir zu Hause. Kommst du? Du kannst gern jemanden mitbringen.\n\nSchreib mir bald!\n\nLiebe Grüße\nDana",
       "kontext": "Antworten Sie Dana. Schreiben Sie in Ihrer E-Mail etwas zu allen vier Punkten unten. Überlegen Sie sich vorher eine passende Reihenfolge der Punkte, eine passende Einleitung und einen passenden Schluss. Vergessen Sie auch nicht den Betreff.",
       "vorlage": "",
@@ -21845,7 +21854,7 @@ window.MZ_EPREUVEN["telcb109"] = {
      {
       "nr": 1,
       "titel": "Schriftlicher Ausdruck — Brief",
-      "min": 100,
+      "min": 120,
       "brief": "Liebe(r) …,\n\nendlich ist es so weit: Nach einem Jahr Planung eröffne ich meinen eigenen kleinen Laden! Ich verkaufe dort gebrauchte Kleidung für Frauen und Männer, alles gewaschen und in gutem Zustand. Der Laden liegt in der Färberstraße 12, direkt neben der Bäckerei, in der wir früher so oft Kaffee getrunken haben.\n\nDie Eröffnung feiere ich am Samstag, dem 18. Oktober, ab 15 Uhr mit Kuchen und Musik. Ich würde mich riesig freuen, wenn du dabei bist!\n\nIm Moment fehlt mir allerdings noch Ware, vor allem Jacken und Schuhe. Hast du vielleicht ein paar Sachen im Schrank, die du nicht mehr trägst? Und noch etwas: Für Werbung habe ich fast kein Geld mehr. Hast du eine Idee, wie ich den Laden in der Stadt bekannt machen kann?\n\nSchreib mir bald!\n\nHerzliche Grüße\nFrieda",
       "kontext": "Antworten Sie Frieda. Schreiben Sie in Ihrer E-Mail etwas zu allen vier Punkten unten. Überlegen Sie sich vorher eine passende Reihenfolge der Punkte, eine passende Einleitung und einen passenden Schluss. Vergessen Sie auch nicht den Betreff.",
       "vorlage": "",
@@ -24226,7 +24235,7 @@ window.MZ_EPREUVEN["telcb110"] = {
      {
       "nr": 1,
       "titel": "Schriftlicher Ausdruck — Brief",
-      "min": 100,
+      "min": 120,
       "brief": "Liebe(r) …,\n\nstell dir vor, ich habe große Neuigkeiten! Meine Tante Hilde möchte ihr kleines Café in Rotenhain nicht mehr allein führen und hat mich gefragt, ob ich es ab November übernehmen will. Du weißt ja, dass ich schon lange davon träume. Trotzdem habe ich ein bisschen Angst, denn dafür müsste ich meine sichere Stelle im Büro aufgeben.\n\nAm Samstag, dem 14. Oktober, mache ich im Café einen Probetag. Neben den Kuchen meiner Tante möchte ich auch etwas Neues anbieten, vielleicht etwas aus anderen Ländern. Was isst man bei euch eigentlich zum Kaffee oder zum Tee?\n\nEs wäre toll, wenn du an diesem Tag kommen und mir ein bisschen helfen könntest. Um zehn Uhr geht es los.\n\nSchreib mir bald, was du denkst!\n\nViele Grüße\nGreta",
       "kontext": "Antworten Sie Greta. Schreiben Sie in Ihrer E-Mail etwas zu allen vier Punkten unten. Überlegen Sie sich vorher eine passende Reihenfolge der Punkte, eine passende Einleitung und einen passenden Schluss. Vergessen Sie auch nicht den Betreff.",
       "vorlage": "",
@@ -26608,7 +26617,7 @@ window.MZ_EPREUVEN["telcb111"] = {
      {
       "nr": 1,
       "titel": "Schriftlicher Ausdruck — Brief",
-      "min": 100,
+      "min": 120,
       "brief": "Liebe(r) …,\n\nendlich habe ich Zeit, dir zu schreiben! Am 2. September ist unsere Tochter Ida auf die Welt gekommen. Sie wog 3 200 Gramm, hat ganz dunkle Haare und schläft zum Glück schon ziemlich gut. Ilias und ich sind sehr glücklich, aber auch ein bisschen müde.\n\nJetzt habe ich eine wichtige Frage an dich: Möchtest du Idas Patin oder Pate werden? Wir haben lange überlegt und sind ganz sicher, dass du die richtige Person dafür bist. Die kleine Feier machen wir am Sonntag, dem 16. November, mit einem Mittagessen im Gasthaus „Zum Kastanienhof“ in Schwanfeld.\n\nBis dahin würden wir uns sehr über einen Besuch freuen. Du musst Ida unbedingt bald kennenlernen! Schreib mir einfach, wann es dir passt. Bei uns ist fast immer jemand zu Hause.\n\nGanz liebe Grüße\nJana",
       "kontext": "Antworten Sie Jana. Schreiben Sie in Ihrer E-Mail etwas zu allen vier Punkten unten. Überlegen Sie sich vorher eine passende Reihenfolge der Punkte, eine passende Einleitung und einen passenden Schluss. Vergessen Sie auch nicht den Betreff.",
       "vorlage": "",
@@ -28989,7 +28998,7 @@ window.MZ_EPREUVEN["telcb112"] = {
      {
       "nr": 1,
       "titel": "Schriftlicher Ausdruck — Brief",
-      "min": 100,
+      "min": 120,
       "brief": "Liebe(r) …,\n\nstell dir vor: Ich spiele jetzt Bass in einer Band! Sie heißt „Die lauten Nachbarn“, und wir sind zu fünft. Seit Februar proben wir jeden Mittwoch im Keller von unserem Schlagzeuger Kai.\n\nAm Freitag, dem 19. Juni, haben wir unser erstes Konzert, und zwar um 20 Uhr im Café „Kranich“ in Lindwerder. Ich bin schon jetzt total nervös! Es wäre so schön, wenn du dabei wärst. Bring gern auch deine Freunde mit, der Eintritt ist frei.\n\nUnd dann habe ich noch eine Frage an dich: Unsere Sängerin zieht im Sommer nach Hamburg. Du hast doch früher im Chor gesungen. Hättest du nicht Lust, bei uns mitzumachen? Du könntest einfach mal zu einer Probe kommen und es ausprobieren.\n\nSchreib mir bald, was du davon hältst!\n\nLiebe Grüße\nTamara",
       "kontext": "Antworten Sie Tamara. Schreiben Sie in Ihrer E-Mail etwas zu allen vier Punkten unten. Überlegen Sie sich vorher eine passende Reihenfolge der Punkte, eine passende Einleitung und einen passenden Schluss. Vergessen Sie auch nicht den Betreff.",
       "vorlage": "",
@@ -31371,7 +31380,7 @@ window.MZ_EPREUVEN["telcb113"] = {
      {
       "nr": 1,
       "titel": "Schriftlicher Ausdruck — Brief",
-      "min": 100,
+      "min": 120,
       "brief": "Liebe(r) …,\n\nendlich ist es so weit: Unsere Theatergruppe spielt zum ersten Mal ein ganzes Stück vor Publikum! Seit Januar proben wir jeden Dienstag im Gemeindehaus von Mittelbach, und ich habe sogar eine der Hauptrollen bekommen. Ich bin schon ziemlich nervös.\n\nDie Premiere ist am Samstag, dem 15. November, um 19.30 Uhr im Saal der Musikschule. Danach feiern wir mit allen Gästen im Foyer. Ich würde mich riesig freuen, wenn du dabei bist! Du kannst natürlich gern bei mir übernachten.\n\nAußerdem brauchen wir noch Hilfe: Für die Pause suchen wir Leute, die Kuchen backen oder an der Kasse stehen. Und hast du vielleicht eine Idee, wie wir mehr Werbung für das Stück machen können? Bis jetzt haben wir erst vierzig Karten verkauft.\n\nSchreib mir bald!\n\nLiebe Grüße\nNele",
       "kontext": "Antworten Sie Nele. Schreiben Sie in Ihrer E-Mail etwas zu allen vier Punkten unten. Überlegen Sie sich vorher eine passende Reihenfolge der Punkte, eine passende Einleitung und einen passenden Schluss. Vergessen Sie auch nicht den Betreff.",
       "vorlage": "",
@@ -33753,7 +33762,7 @@ window.MZ_EPREUVEN["telcb114"] = {
      {
       "nr": 1,
       "titel": "Schriftlicher Ausdruck — Brief",
-      "min": 100,
+      "min": 120,
       "brief": "Liebe(r) …,\n\nstell dir vor: Ich habe meine Stelle im Büro gekündigt und mache mich selbstständig! Ab November habe ich eine kleine Änderungsschneiderei in Würzfeld, direkt neben der Post in der Lindenstraße 3. Dort kürze ich Hosen, ersetze Reißverschlüsse und repariere Jacken und Taschen.\n\nAm Samstag, dem 15. November, feiere ich von 11 bis 16 Uhr die Eröffnung. Es gibt Kaffee, Kuchen und kleine Snacks. Ich würde mich riesig freuen, wenn du kommst!\n\nEhrlich gesagt bin ich auch ein bisschen nervös. Die Miete ist nicht billig, und ich brauche schnell Kundinnen und Kunden. Du hast doch so gute Ideen. Wie könnte ich Werbung für meinen Laden machen? Und sag mal: Lässt man bei euch Kleidung noch reparieren, oder kauft man lieber gleich etwas Neues?\n\nSchreib mir bald!\n\nHerzliche Grüße\nVeronika",
       "kontext": "Antworten Sie Veronika. Schreiben Sie in Ihrer E-Mail etwas zu allen vier Punkten unten. Überlegen Sie sich vorher eine passende Reihenfolge der Punkte, eine passende Einleitung und einen passenden Schluss. Vergessen Sie auch nicht den Betreff.",
       "vorlage": "",
@@ -36134,7 +36143,7 @@ window.MZ_EPREUVEN["telcb115"] = {
      {
       "nr": 1,
       "titel": "Schriftlicher Ausdruck — Brief",
-      "min": 100,
+      "min": 120,
       "brief": "Liebe(r) …,\n\nstell dir vor, wir bekommen Besuch! Ab dem 3. März wohnt für drei Monate eine Austauschschülerin aus deinem Heimatland bei uns. Sie ist sechzehn und geht mit unserem Sohn Luca in die zehnte Klasse.\n\nWir freuen uns sehr, aber ehrlich gesagt sind wir auch ein bisschen unsicher. Gibt es Dinge, die man in einer Familie bei euch ganz anders macht als in Deutschland? Ich möchte auf keinen Fall, dass es Missverständnisse gibt. Und was hilft, wenn sie Heimweh bekommt?\n\nAm Samstag, dem 7. März, machen wir ab 15 Uhr ein kleines Willkommensfest bei uns im Garten. Es wäre toll, wenn du auch kommst. Vielleicht kannst du ein paar Worte in ihrer Sprache mit ihr sprechen, damit sie sich gleich ein bisschen wie zu Hause fühlt.\n\nSchreib mir bald!\n\nLiebe Grüße\nChiara",
       "kontext": "Antworten Sie Chiara. Schreiben Sie in Ihrer E-Mail etwas zu allen vier Punkten unten. Überlegen Sie sich vorher eine passende Reihenfolge der Punkte, eine passende Einleitung und einen passenden Schluss. Vergessen Sie auch nicht den Betreff.",
       "vorlage": "",
@@ -38515,7 +38524,7 @@ window.MZ_EPREUVEN["telcb116"] = {
      {
       "nr": 1,
       "titel": "Schriftlicher Ausdruck — Brief",
-      "min": 100,
+      "min": 120,
       "brief": "Liebe(r) …,\n\nstell dir vor: Seit Juni wohne ich nicht mehr in der Stadt, sondern auf einem alten Bauernhof in Stollhofen! Das Haus ist klein und das Dach nicht ganz dicht, aber morgens höre ich nur die Vögel. Und ich bin nicht mehr allein: Aus dem Tierheim habe ich Bruno geholt, einen braunen Mischling, drei Jahre alt und sehr verspielt.\n\nAm Samstag, dem 10. Oktober, ist bei uns Almabtrieb. Dann kommen die Kühe mit Blumen geschmückt von den Bergweiden ins Dorf, und danach gibt es ein großes Fest mit Musik. Hast du Lust zu kommen? Du kannst gern das ganze Wochenende bei mir übernachten. Am Bahnhof in Sternau hole ich dich ab.\n\nUnd dann habe ich noch eine große Bitte: Vom 12. bis 15. November muss ich zu einer Fortbildung. Könntest du in dieser Zeit auf Bruno aufpassen? Du hattest doch früher auch einen Hund, oder?\n\nSchreib mir bald!\n\nViele liebe Grüße\ndeine Stina",
       "kontext": "Antworten Sie Stina. Schreiben Sie in Ihrer E-Mail etwas zu allen vier Punkten unten. Überlegen Sie sich vorher eine passende Reihenfolge der Punkte, eine passende Einleitung und einen passenden Schluss. Vergessen Sie auch nicht den Betreff.",
       "vorlage": "",
@@ -40894,18 +40903,32 @@ window.MZ_EPREUVEN["telcb201"] = {
     "aufgaben": [
      {
       "nr": 1,
-      "titel": "Schriftlicher Ausdruck — E-Mail",
+      "titel": "Aufgabe A — Beschwerde über ein Hotel",
       "min": 150,
-      "kontext": "Sie arbeiten in der Abteilung Kundenservice eines mittelständischen Unternehmens. Die Geschäftsführung hat per Rundmail angekündigt, dass ab dem kommenden Quartal alle Beschäftigten an vier Tagen pro Woche im Büro anwesend sein müssen; mobiles Arbeiten soll nur noch freitags möglich sein. Ihr Team betreut Kundinnen und Kunden ausschließlich telefonisch und schriftlich. Schreiben Sie an Frau Dr. Reininger aus der Personalleitung. Sie sollen nun eine E-Mail schreiben. Sie haben dafür 30 Minuten Zeit, einschließlich Korrekturlesen. Schreiben Sie mindestens 150 Wörter und äußern Sie sich zu allen vier Leitpunkten. Achten Sie auf Anrede, Grußformel, eine sinnvolle Gliederung und ein angemessenes Register.",
-      "vorlage": "Denken Sie an Anrede, Grußformel und eine sinnvolle Reihenfolge der vier Punkte.",
+      "kontext": "Sie haben für ein langes Wochenende das Tagungs- und Wellnesshotel „Kranichsee“ gebucht. Auf der Internetseite wurden ein Zimmer mit Seeblick, ein beheizter Außenpool und ein ruhiges Haus „fernab vom Alltag“ versprochen. Vor Ort sah alles anders aus. Schreiben Sie an die Hotelleitung. Schreiben Sie einen Brief bzw. eine E-Mail. Sie haben dafür 30 Minuten Zeit, einschließlich Korrekturlesen. Behandeln Sie entweder a) drei der folgenden Punkte oder b) zwei der folgenden Punkte und einen weiteren Aspekt Ihrer Wahl. Schreiben Sie mindestens 150 Wörter.",
+      "vorlage": "Vergessen Sie nicht: Absender, Anschrift, Datum, Betreffzeile, Anrede und Schlussformel. Überlegen Sie sich eine sinnvolle Reihenfolge der Punkte.",
       "leitpunkte": [
-       "Nehmen Sie Bezug auf die Ankündigung und schildern Sie Ihre Reaktion darauf.",
-       "Erläutern Sie, welche konkreten Schwierigkeiten die Neuregelung für Ihr Team mit sich bringt.",
-       "Machen Sie einen begründeten Gegenvorschlag.",
-       "Bitten Sie um eine verbindliche Entscheidung und nennen Sie einen Zeitrahmen."
+       "Grund Ihres Aufenthalts und Ihre Erwartungen",
+       "Unterschiede zwischen Angebot und Wirklichkeit",
+       "Reaktion des Personals an der Rezeption",
+       "Ihre Forderung an das Hotel"
+      ]
+     },
+     {
+      "nr": 2,
+      "titel": "Aufgabe B — Anfrage zu einer Weiterbildung",
+      "min": 150,
+      "kontext": "In einer Fachzeitschrift haben Sie eine kurze Anzeige der Akademie Seeblick gelesen: „Konflikte im Team lösen – Wochenendseminar für neue Teamleitungen“. Sie haben vor Kurzem zum ersten Mal die Leitung eines kleinen Teams übernommen. Die Anzeige enthält jedoch nur wenige Angaben. Schreiben Sie an die Akademie. Schreiben Sie einen Brief bzw. eine E-Mail. Sie haben dafür 30 Minuten Zeit, einschließlich Korrekturlesen. Behandeln Sie entweder a) drei der folgenden Punkte oder b) zwei der folgenden Punkte und einen weiteren Aspekt Ihrer Wahl. Schreiben Sie mindestens 150 Wörter.",
+      "vorlage": "Vergessen Sie nicht: Absender, Anschrift, Datum, Betreffzeile, Anrede und Schlussformel. Überlegen Sie sich eine sinnvolle Reihenfolge der Punkte.",
+      "leitpunkte": [
+       "Ablauf und Inhalte des Seminars",
+       "Gruppengröße und Qualifikation der Trainer",
+       "Kosten und mögliche Übernahme durch den Arbeitgeber",
+       "Unterkunft und Anreise"
       ]
      }
-    ]
+    ],
+    "wahl": true
    }
   }
  ]
@@ -43272,18 +43295,32 @@ window.MZ_EPREUVEN["telcb202"] = {
     "aufgaben": [
      {
       "nr": 1,
-      "titel": "Schriftlicher Ausdruck — E-Mail",
+      "titel": "Aufgabe A — Beschwerde über einen Online-Einkauf",
       "min": 150,
-      "kontext": "Sie arbeiten in einem Unternehmen mit rund achtzig Beschäftigten. Die Geschäftsleitung hat per Rundmail angekündigt, dass zum nächsten Monat sämtliche Papierkörbe an den Arbeitsplätzen entfernt und durch zentrale Trennstationen auf jeder Etage ersetzt werden; zugleich soll der Druckerbetrieb auf zwei Geräte im Haus reduziert werden. Begründet wird dies mit Nachhaltigkeit und Kostensenkung. In Ihrer Abteilung sorgt die Ankündigung für Unruhe, weil sie ohne Rücksprache erfolgt ist und einzelne Arbeitsplätze auf tägliches Drucken angewiesen sind. Ihre Kolleginnen und Kollegen haben Sie gebeten, sich an Frau Kordula Steinbeck aus der Verwaltung zu wenden. Sie sollen nun eine E-Mail schreiben. Sie haben dafür 30 Minuten Zeit, einschließlich Korrekturlesen. Schreiben Sie <b>mindestens 150 Wörter</b> und äußern Sie sich zu allen vier Leitpunkten. Achten Sie auf Anrede, Grußformel, eine sinnvolle Gliederung und ein angemessenes, halbformelles Register.",
-      "vorlage": "Denken Sie an Anrede, Grußformel und eine sinnvolle Reihenfolge der vier Punkte.",
+      "kontext": "Sie haben im Online-Shop „Grünwerk“ einen Rucksack gekauft, der als „besonders langlebig und nachhaltig hergestellt“ beworben wurde. Nach drei Wochen ist ein Tragegurt abgerissen. Der Kundenservice hat den Umtausch mit dem Hinweis auf „unsachgemäßen Gebrauch“ abgelehnt. Schreiben Sie an die Geschäftsleitung des Shops. Schreiben Sie einen Brief bzw. eine E-Mail. Sie haben dafür 30 Minuten Zeit, einschließlich Korrekturlesen. Behandeln Sie entweder a) drei der folgenden Punkte oder b) zwei der folgenden Punkte und einen weiteren Aspekt Ihrer Wahl. Schreiben Sie mindestens 150 Wörter.",
+      "vorlage": "Vergessen Sie nicht: Absender, Anschrift, Datum, Betreffzeile, Anrede und Schlussformel. Überlegen Sie sich eine sinnvolle Reihenfolge der Punkte.",
       "leitpunkte": [
-       "Nehmen Sie Bezug auf die Rundmail und erklären Sie, in wessen Namen Sie schreiben.",
-       "Schildern Sie, welche konkreten Schwierigkeiten die Umstellung in Ihrer Abteilung verursachen würde.",
-       "Machen Sie einen eigenen Vorschlag, wie das Ziel trotzdem erreicht werden kann.",
-       "Bitten Sie um eine konkrete Entscheidung und nennen Sie einen Termin."
+       "Kauf und Art des Schadens",
+       "Antwort des Kundenservice",
+       "Werbung des Shops und Ihre Erwartungen",
+       "Ihre Forderung und eine Frist"
+      ]
+     },
+     {
+      "nr": 2,
+      "titel": "Aufgabe B — Anfrage zu einem Carsharing-Angebot",
+      "min": 150,
+      "kontext": "Sie haben Ihr Auto verkauft und möchten in Zukunft Carsharing nutzen. Auf einem Plakat wirbt der Anbieter „StadtMobil plus“ mit dem Satz „Ein Auto, wann immer Sie es brauchen – ab 2 Euro pro Stunde“. Bevor Sie sich anmelden, möchten Sie mehr wissen. Schreiben Sie an den Anbieter. Schreiben Sie einen Brief bzw. eine E-Mail. Sie haben dafür 30 Minuten Zeit, einschließlich Korrekturlesen. Behandeln Sie entweder a) drei der folgenden Punkte oder b) zwei der folgenden Punkte und einen weiteren Aspekt Ihrer Wahl. Schreiben Sie mindestens 150 Wörter.",
+      "vorlage": "Vergessen Sie nicht: Absender, Anschrift, Datum, Betreffzeile, Anrede und Schlussformel. Überlegen Sie sich eine sinnvolle Reihenfolge der Punkte.",
+      "leitpunkte": [
+       "Tarife und zusätzliche Kosten",
+       "Standorte der Fahrzeuge in Ihrem Viertel",
+       "Versicherung bei einem Unfall",
+       "Fahrten ins Ausland oder über mehrere Tage"
       ]
      }
-    ]
+    ],
+    "wahl": true
    }
   }
  ]
@@ -45651,18 +45688,32 @@ window.MZ_EPREUVEN["telcb203"] = {
     "aufgaben": [
      {
       "nr": 1,
-      "titel": "Schriftlicher Ausdruck — E-Mail",
+      "titel": "Aufgabe A — Beschwerde über einen Sprachkurs",
       "min": 150,
-      "kontext": "Sie arbeiten in einem mittelgroßen Unternehmen und haben sich für den berufsbegleitenden Lehrgang „Fachkraft für Qualitätssicherung“ angemeldet, den Ihr Arbeitgeber mitfinanziert. Zwei Wochen vor Kursbeginn teilt Ihnen die Bildungseinrichtung per Rundmail mit, dass der Unterricht nicht wie angekündigt dienstagabends, sondern künftig freitags ganztägig stattfindet. Für Sie ist das nicht umsetzbar, weil Sie freitags im Schichtdienst eingeteilt sind. Schreiben Sie an Frau Dr. Reinsberg, die Leiterin der Bildungseinrichtung. Sie sollen nun eine E-Mail schreiben. Sie haben dafür 30 Minuten Zeit, einschließlich Korrekturlesen. Schreiben Sie <b>mindestens 150 Wörter</b> und äußern Sie sich zu allen vier Leitpunkten. Achten Sie auf Anrede, Grußformel, eine sinnvolle Gliederung und ein angemessenes Register.",
-      "vorlage": "Denken Sie an Anrede, Grußformel und eine sinnvolle Reihenfolge der vier Punkte.",
+      "kontext": "Sie haben bei der Sprachschule „LinguaPlus“ einen zwölfwöchigen Abendkurs zur Vorbereitung auf eine Prüfung gebucht und im Voraus bezahlt. Angekündigt waren höchstens zwölf Teilnehmende und eine feste Lehrkraft. Nach der Hälfte des Kurses sind Sie sehr unzufrieden. Schreiben Sie an die Schulleitung. Schreiben Sie einen Brief bzw. eine E-Mail. Sie haben dafür 30 Minuten Zeit, einschließlich Korrekturlesen. Behandeln Sie entweder a) drei der folgenden Punkte oder b) zwei der folgenden Punkte und einen weiteren Aspekt Ihrer Wahl. Schreiben Sie mindestens 150 Wörter.",
+      "vorlage": "Vergessen Sie nicht: Absender, Anschrift, Datum, Betreffzeile, Anrede und Schlussformel. Überlegen Sie sich eine sinnvolle Reihenfolge der Punkte.",
       "leitpunkte": [
-       "Nehmen Sie Bezug auf die Mitteilung und erklären Sie, warum Sie sich melden.",
-       "Schildern Sie, welche Folgen die Terminänderung für Sie konkret hat.",
-       "Machen Sie einen Vorschlag, wie sich das Problem lösen ließe.",
-       "Bitten Sie um eine verbindliche Entscheidung und nennen Sie einen Termin."
+       "Ihr Ziel und Ihre Erwartungen an den Kurs",
+       "Gruppengröße und Wechsel der Lehrkräfte",
+       "Ausgefallene Unterrichtsstunden",
+       "Was die Schule jetzt tun sollte"
+      ]
+     },
+     {
+      "nr": 2,
+      "titel": "Aufgabe B — Anfrage zu einem Fernstudium",
+      "min": 150,
+      "kontext": "Sie arbeiten Vollzeit und möchten sich beruflich weiterentwickeln. In einer Broschüre der Fernhochschule Rheinau lesen Sie: „Bachelor Betriebswirtschaft – flexibel studieren neben dem Beruf“. Die Broschüre beantwortet aber nicht alle Ihre Fragen. Schreiben Sie an die Studienberatung. Schreiben Sie einen Brief bzw. eine E-Mail. Sie haben dafür 30 Minuten Zeit, einschließlich Korrekturlesen. Behandeln Sie entweder a) drei der folgenden Punkte oder b) zwei der folgenden Punkte und einen weiteren Aspekt Ihrer Wahl. Schreiben Sie mindestens 150 Wörter.",
+      "vorlage": "Vergessen Sie nicht: Absender, Anschrift, Datum, Betreffzeile, Anrede und Schlussformel. Überlegen Sie sich eine sinnvolle Reihenfolge der Punkte.",
+      "leitpunkte": [
+       "Zulassungsvoraussetzungen ohne Abitur",
+       "Zeitaufwand pro Woche und Präsenzphasen",
+       "Studiengebühren und Ratenzahlung",
+       "Anerkennung Ihrer bisherigen Berufserfahrung"
       ]
      }
-    ]
+    ],
+    "wahl": true
    }
   }
  ]
@@ -48030,18 +48081,32 @@ window.MZ_EPREUVEN["telcb204"] = {
     "aufgaben": [
      {
       "nr": 1,
-      "titel": "Schriftlicher Ausdruck — E-Mail",
+      "titel": "Aufgabe A — Beschwerde bei der Krankenkasse",
       "min": 150,
-      "kontext": "Sie arbeiten in der Verwaltung des Klinikums am Auenpark. Die Geschäftsführung hat per Rundmail angekündigt, dass ab dem kommenden Quartal alle Beschäftigten an einem verpflichtenden betrieblichen Gesundheitsprogramm teilnehmen sollen: Über eine Firmen-App sollen Schritte und sportliche Aktivitäten erfasst werden, wer bestimmte Ziele erreicht, erhält eine Prämie. Schreiben Sie an Frau Dr. Kienzle aus der Personalleitung. Sie sollen nun eine E-Mail schreiben. Sie haben dafür 30 Minuten Zeit, einschließlich Korrekturlesen. Schreiben Sie mindestens 150 Wörter und äußern Sie sich zu allen vier Leitpunkten. Achten Sie auf Anrede, Grußformel, eine sinnvolle Gliederung und ein angemessenes Register.",
-      "vorlage": "Denken Sie an Anrede, Grußformel und eine sinnvolle Reihenfolge der vier Punkte.",
+      "kontext": "Ihre Ärztin hat Ihnen einen zwölfwöchigen Kurs „Rückenfit im Alltag“ empfohlen. Ihre Krankenkasse hat die Kostenübernahme abgelehnt, weil der Antrag erst nach Kursbeginn eingegangen sei. Am Telefon hatte man Ihnen aber gesagt, das sei kein Problem. Sie haben die Gebühr von 180 Euro bereits bezahlt. Schreiben Sie an die Krankenkasse. Schreiben Sie einen Brief bzw. eine E-Mail. Sie haben dafür 30 Minuten Zeit, einschließlich Korrekturlesen. Behandeln Sie entweder a) drei der folgenden Punkte oder b) zwei der folgenden Punkte und einen weiteren Aspekt Ihrer Wahl. Schreiben Sie mindestens 150 Wörter.",
+      "vorlage": "Vergessen Sie nicht: Absender, Anschrift, Datum, Betreffzeile, Anrede und Schlussformel. Überlegen Sie sich eine sinnvolle Reihenfolge der Punkte.",
       "leitpunkte": [
-       "Nehmen Sie Bezug auf die Ankündigung und schildern Sie Ihre Reaktion darauf.",
-       "Erläutern Sie, welche Bedenken die verpflichtende Nutzung der App bei den Beschäftigten auslöst.",
-       "Machen Sie einen begründeten Gegenvorschlag.",
-       "Bitten Sie um eine verbindliche Entscheidung und nennen Sie einen Zeitrahmen."
+       "Ablauf der Anmeldung aus Ihrer Sicht",
+       "Auskunft am Telefon",
+       "Bedeutung des Kurses für Ihre Gesundheit",
+       "Bitte um erneute Prüfung und beigelegte Unterlagen"
+      ]
+     },
+     {
+      "nr": 2,
+      "titel": "Aufgabe B — Anfrage an ein Fitnessstudio",
+      "min": 150,
+      "kontext": "In Ihrem Stadtteil hat das Gesundheitszentrum „Vitalraum“ eröffnet. Auf dem Flyer steht nur: „Training, Kurse und Beratung unter einem Dach – jetzt Mitglied werden!“. Sie möchten nach einer längeren Pause wieder regelmäßig Sport treiben. Schreiben Sie an das Gesundheitszentrum. Schreiben Sie einen Brief bzw. eine E-Mail. Sie haben dafür 30 Minuten Zeit, einschließlich Korrekturlesen. Behandeln Sie entweder a) drei der folgenden Punkte oder b) zwei der folgenden Punkte und einen weiteren Aspekt Ihrer Wahl. Schreiben Sie mindestens 150 Wörter.",
+      "vorlage": "Vergessen Sie nicht: Absender, Anschrift, Datum, Betreffzeile, Anrede und Schlussformel. Überlegen Sie sich eine sinnvolle Reihenfolge der Punkte.",
+      "leitpunkte": [
+       "Öffnungszeiten und Kursangebot",
+       "Betreuung durch Trainer für Wiedereinsteiger",
+       "Vertragslaufzeit und Kündigung",
+       "Probetraining"
       ]
      }
-    ]
+    ],
+    "wahl": true
    }
   }
  ]
@@ -50409,18 +50474,32 @@ window.MZ_EPREUVEN["telcb205"] = {
     "aufgaben": [
      {
       "nr": 1,
-      "titel": "Schriftlicher Ausdruck — E-Mail",
+      "titel": "Aufgabe A — Beschwerde an die Stadtverwaltung",
       "min": 150,
-      "kontext": "Sie arbeiten in der Sachbearbeitung eines Versicherungsunternehmens. Die Geschäftsführung hat per Rundmail angekündigt, dass ab dem kommenden Monat alle Antwortschreiben an die Kundschaft zunächst mit einem KI-Programm erstellt und danach nur noch kurz freigegeben werden sollen. Eine Schulung ist nicht vorgesehen, und die Frage, wie die eingegebenen Kundendaten geschützt werden, ist offengeblieben. Schreiben Sie an Frau Dr. Habicht aus der Personalleitung. Sie sollen nun eine E-Mail schreiben. Sie haben dafür 30 Minuten Zeit, einschließlich Korrekturlesen. Schreiben Sie mindestens 150 Wörter und äußern Sie sich zu allen vier Leitpunkten. Achten Sie auf Anrede, Grußformel, eine sinnvolle Gliederung und ein angemessenes Register.",
-      "vorlage": "Denken Sie an Anrede, Grußformel und eine sinnvolle Reihenfolge der vier Punkte.",
+      "kontext": "Sie brauchen dringend einen neuen Reisepass, weil Sie in sechs Wochen beruflich ins Ausland reisen. Termine beim Bürgeramt kann man seit diesem Jahr nur noch online buchen. Seit zwei Wochen zeigt das Portal keine freien Termine an, und telefonisch erreicht man niemanden. Schreiben Sie an den Leiter des Bürgeramts, Herrn Dr. Brenner. Schreiben Sie einen Brief bzw. eine E-Mail. Sie haben dafür 30 Minuten Zeit, einschließlich Korrekturlesen. Behandeln Sie entweder a) drei der folgenden Punkte oder b) zwei der folgenden Punkte und einen weiteren Aspekt Ihrer Wahl. Schreiben Sie mindestens 150 Wörter.",
+      "vorlage": "Vergessen Sie nicht: Absender, Anschrift, Datum, Betreffzeile, Anrede und Schlussformel. Überlegen Sie sich eine sinnvolle Reihenfolge der Punkte.",
       "leitpunkte": [
-       "Nehmen Sie Bezug auf die Ankündigung und schildern Sie Ihre Reaktion darauf.",
-       "Erläutern Sie, welche konkreten Schwierigkeiten die Neuregelung für Ihre Abteilung mit sich bringt.",
-       "Machen Sie einen begründeten Gegenvorschlag.",
-       "Bitten Sie um eine verbindliche Entscheidung und nennen Sie einen Zeitrahmen."
+       "Ihre Situation und die Dringlichkeit",
+       "Erfahrungen mit dem Online-Portal",
+       "Folgen für Sie, wenn Sie keinen Pass bekommen",
+       "Vorschlag für eine Lösung"
+      ]
+     },
+     {
+      "nr": 2,
+      "titel": "Aufgabe B — Anfrage zu einem Ehrenamt",
+      "min": 150,
+      "kontext": "In der Stadtteilzeitung lesen Sie einen Aufruf des Vereins „Lesepaten e. V.“: „Wir suchen Menschen, die Kindern regelmäßig vorlesen und beim Lesenlernen helfen.“ Sie haben Interesse, wissen aber noch nicht, ob das zu Ihnen passt. Schreiben Sie an den Verein. Schreiben Sie einen Brief bzw. eine E-Mail. Sie haben dafür 30 Minuten Zeit, einschließlich Korrekturlesen. Behandeln Sie entweder a) drei der folgenden Punkte oder b) zwei der folgenden Punkte und einen weiteren Aspekt Ihrer Wahl. Schreiben Sie mindestens 150 Wörter.",
+      "vorlage": "Vergessen Sie nicht: Absender, Anschrift, Datum, Betreffzeile, Anrede und Schlussformel. Überlegen Sie sich eine sinnvolle Reihenfolge der Punkte.",
+      "leitpunkte": [
+       "Voraussetzungen für die Mitarbeit",
+       "Zeitlicher Aufwand und Ort",
+       "Vorbereitung oder Schulung",
+       "Versicherung und Fahrtkosten"
       ]
      }
-    ]
+    ],
+    "wahl": true
    }
   }
  ]
@@ -52788,18 +52867,32 @@ window.MZ_EPREUVEN["telcb206"] = {
     "aufgaben": [
      {
       "nr": 1,
-      "titel": "Schriftlicher Ausdruck — E-Mail",
+      "titel": "Aufgabe A — Beschwerde an die Hausverwaltung",
       "min": 150,
-      "kontext": "Sie wohnen in einer größeren Wohnanlage mit rund vierzig Parteien. Die Hausverwaltung hat per Aushang angekündigt, dass der einzige Gemeinschaftsraum im Erdgeschoss zu zwei zusätzlichen Wohnungen umgebaut werden soll. Dieser Raum wird bislang für Bewohnertreffen, Kindergeburtstage und die monatliche Reparaturwerkstatt genutzt. Schreiben Sie an Frau Kettler von der Hausverwaltung. Sie sollen nun eine E-Mail schreiben. Sie haben dafür 30 Minuten Zeit, einschließlich Korrekturlesen. Schreiben Sie mindestens 150 Wörter und äußern Sie sich zu allen vier Leitpunkten. Achten Sie auf Anrede, Grußformel, eine sinnvolle Gliederung und ein angemessenes Register.",
-      "vorlage": "Denken Sie an Anrede, Grußformel und eine sinnvolle Reihenfolge der vier Punkte.",
+      "kontext": "Seit mehr als einem Monat ist der Aufzug in Ihrem sechsstöckigen Wohnhaus immer wieder defekt. Zudem ist seit einer Woche die Heizung in Ihrer Wohnung nur lauwarm. Sie haben die Hausverwaltung „Immobilien Hartig“ schon zweimal telefonisch informiert, bisher ist nichts passiert. Schreiben Sie an die Hausverwaltung. Schreiben Sie einen Brief bzw. eine E-Mail. Sie haben dafür 30 Minuten Zeit, einschließlich Korrekturlesen. Behandeln Sie entweder a) drei der folgenden Punkte oder b) zwei der folgenden Punkte und einen weiteren Aspekt Ihrer Wahl. Schreiben Sie mindestens 150 Wörter.",
+      "vorlage": "Vergessen Sie nicht: Absender, Anschrift, Datum, Betreffzeile, Anrede und Schlussformel. Überlegen Sie sich eine sinnvolle Reihenfolge der Punkte.",
       "leitpunkte": [
-       "Nehmen Sie Bezug auf den Aushang und schildern Sie Ihre Reaktion darauf.",
-       "Erläutern Sie, welche Bedeutung der Gemeinschaftsraum für das Zusammenleben in der Anlage hat.",
-       "Machen Sie einen begründeten Gegenvorschlag.",
-       "Bitten Sie um ein Gespräch und nennen Sie einen zeitlichen Rahmen."
+       "Beschreibung der Mängel",
+       "Ihre bisherigen Anrufe und die Reaktion",
+       "Folgen für Sie und die anderen Mieter",
+       "Ihre Forderung und eine Frist"
+      ]
+     },
+     {
+      "nr": 2,
+      "titel": "Aufgabe B — Anfrage bei einer Wohnungsgenossenschaft",
+      "min": 150,
+      "kontext": "Sie wohnen mit Ihrer Familie in einer zu klein gewordenen Wohnung. Auf einer Informationsseite lesen Sie, dass die Wohnungsgenossenschaft „Lindenhof eG“ neue Mitglieder aufnimmt und Familienwohnungen vergibt. Sie möchten sich genauer informieren. Schreiben Sie an die Mitgliederbetreuung. Schreiben Sie einen Brief bzw. eine E-Mail. Sie haben dafür 30 Minuten Zeit, einschließlich Korrekturlesen. Behandeln Sie entweder a) drei der folgenden Punkte oder b) zwei der folgenden Punkte und einen weiteren Aspekt Ihrer Wahl. Schreiben Sie mindestens 150 Wörter.",
+      "vorlage": "Vergessen Sie nicht: Absender, Anschrift, Datum, Betreffzeile, Anrede und Schlussformel. Überlegen Sie sich eine sinnvolle Reihenfolge der Punkte.",
+      "leitpunkte": [
+       "Bedingungen und Kosten einer Mitgliedschaft",
+       "Wartezeit auf eine Wohnung",
+       "Größe und Ausstattung der Familienwohnungen",
+       "Beratungstermin"
       ]
      }
-    ]
+    ],
+    "wahl": true
    }
   }
  ]
@@ -53632,9 +53725,34 @@ function frage(it){
 }
 
 var UMLAUTE=["ä","ö","ü","ß","Ä","Ö","Ü","„","“"];
+/* telc B2 : deux sujets, le candidat en choisit un. */
+function aktiveAufgaben(m, s){
+  var alle=m.schreiben.aufgaben;
+  if(!m.schreiben.wahl) return alle;
+  var w=s && s.texte && s.texte.wahl;
+  return w ? alle.filter(function(a){ return String(a.nr)===String(w); }) : alle;
+}
+function baueWahl(){
+  var s=SESSION.module[MODUL.id];
+  var h='<div class="teil"><div class="tt"><b>Schriftlicher Ausdruck</b><span>Wählen Sie eine der beiden Aufgaben</span></div>'+
+        '<div class="anw">Lesen Sie beide Aufgaben und entscheiden Sie sich für <b>eine</b>. Sie schreiben nur zu dieser Aufgabe.</div></div>'+
+        '<div class="wahlaufg">';
+  MODUL.schreiben.aufgaben.forEach(function(a){
+    h+='<div class="card aufgwahl"><h2>'+esc(a.titel)+'</h2><p>'+esc(a.kontext)+'</p><ul>'+
+       a.leitpunkte.map(function(p){return "<li>"+esc(p)+"</li>";}).join("")+'</ul>'+
+       '<button class="btn" data-wahl="'+a.nr+'">'+esc(a.titel.split("—")[0].trim())+' wählen</button></div>';
+  });
+  $("c-inhalt").innerHTML=h+'</div>';
+  document.querySelectorAll("[data-wahl]").forEach(function(b){
+    b.addEventListener("click",function(){ s.texte.wahl=b.dataset.wahl; speichern(); baueSchreiben(); aktualisiereFortschritt(); });
+  });
+}
 function baueSchreiben(){
   var h="";
-  MODUL.schreiben.aufgaben.forEach(function(a){
+  var sw=SESSION.module[MODUL.id];
+  if(MODUL.schreiben.wahl && !(sw.texte && sw.texte.wahl)){ baueWahl(); return; }
+  var aufgaben=aktiveAufgaben(MODUL, sw);
+  aufgaben.forEach(function(a){
     var mail = a.format==="email";
     var brief="";
     if(a.brief){
@@ -53663,10 +53781,24 @@ function baueSchreiben(){
          '<div class="zaehler" id="z'+a.nr+'">0 Wörter</div></div>'+
        '</div></div>';
   });
+  if(MODUL.schreiben.wahl){
+    h='<div class="wechsel">Gewählt: <b>'+esc(aufgaben[0].titel)+'</b> '+
+      '<button type="button" class="btn ghost small" id="wahl-zurueck">Andere Aufgabe wählen</button></div>'+h;
+  }
   $("c-inhalt").innerHTML=h;
+  var wz=$("wahl-zurueck");
+  if(wz) wz.addEventListener("click",function(){
+    var t=(sw.texte["a"+aufgaben[0].nr]||"").trim();
+    /* pas de confirm() : la boîte de dialogue ferait croire à un changement de fenêtre */
+    if(t && !wz.dataset.sicher){
+      wz.dataset.sicher="1"; wz.textContent="Wirklich wechseln? Ihr Text wird dann nicht abgegeben";
+      wz.classList.remove("ghost"); return;
+    }
+    delete sw.texte.wahl; speichern(); baueSchreiben(); aktualisiereFortschritt();
+  });
   var s=SESSION.module[MODUL.id];
   var zuletzt=null;                                    // dernier champ actif (Betreff ou texte)
-  MODUL.schreiben.aufgaben.forEach(function(a){
+  aufgaben.forEach(function(a){
     var ta=$("txt"+a.nr), z=$("z"+a.nr), bt=$("bt"+a.nr);
     ta.value = s.texte["a"+a.nr] || "";
     var maj=function(){
@@ -53700,8 +53832,9 @@ function baueSchreiben(){
 function aktualisiereFortschritt(){
   var s=SESSION.module[MODUL.id];
   if(MODUL.id==="schreiben"){
-    var auf=MODUL.schreiben.aufgaben;
-    if(auf.length===1){
+    var auf=aktiveAufgaben(MODUL, s);
+    if(MODUL.schreiben.wahl && !(s.texte && s.texte.wahl)){ $("foot-fort").textContent="Bitte eine Aufgabe wählen"; }
+    else if(auf.length===1){
       $("foot-fort").textContent=woerter(s.texte["a"+auf[0].nr]||"")+" Wörter";
     }else{
       $("foot-fort").textContent=auf.map(function(a){ return "Aufgabe "+a.nr+": "+woerter(s.texte["a"+a.nr]||"")+" Wörter"; }).join(" · ");
@@ -53939,7 +54072,8 @@ $("foot-ok").addEventListener("click",function(){
 function protokoll(m){
   function court(x,n){ x=String(x==null?"":x).replace(/\s+/g," ").trim(); return x.length>n? x.slice(0,n-1)+"…" : x; }
   if(m.schreiben){
-    return {typ:"schreiben", aufgaben:m.schreiben.aufgaben.map(function(a){
+    var sp=SESSION.module[m.id];
+    return {typ:"schreiben", gewaehlt:(sp&&sp.texte&&sp.texte.wahl)||"", aufgaben:aktiveAufgaben(m, sp).map(function(a){
       return {nr:a.nr, titel:a.titel, min:a.min,
               kontext:(a.situation ? a.situation+" " : "")+
                       (a.brief ? (a.format==="email" ? "E-Mail (Betreff: "+(a.betreff||"")+"): « " : "Brief: « ")+
@@ -53962,6 +54096,11 @@ function protokoll(m){
   return {typ:"fragen", items:items};
 }
 
+function nurGewaehlt(m, t){
+  if(!(m.schreiben && m.schreiben.wahl && t.wahl)) return t;
+  var o={}; o["a"+t.wahl]=t["a"+t.wahl]||""; if(t["b"+t.wahl]) o["b"+t.wahl]=t["b"+t.wahl];
+  return o;
+}
 function mitBetreff(t){
   var o={};
   Object.keys(t).forEach(function(k){
@@ -53987,7 +54126,7 @@ function abgeben(m,automatisch,stumm){
     start:iso(s.start), ende:iso(s.abgegeben),
     dauerMin:Math.round((s.abgegeben-s.start)/600)/100,
     automatisch:!!automatisch, verlassen:s.weg||0, vorfaelle:s.vorfaelle||{},
-    antworten:s.antworten||{}, texte:mitBetreff(s.texte||{}), geraet:SESSION.geraet,
+    antworten:s.antworten||{}, texte:mitBetreff(nurGewaehlt(m, s.texte||{})), geraet:SESSION.geraet,
     protokoll:protokoll(m)
   };
   var archiv=LS.get("mz_kopien",[]); archiv.push(kopie); LS.set("mz_kopien",archiv);
