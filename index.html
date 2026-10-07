@@ -98530,9 +98530,13 @@ $("b-start").addEventListener("click", function(){
   pruefeQuittung(code, nom, function(ergebnis){
     $("b-start").disabled=false;
     if(ergebnis.status==="NEIN"){
+      var kandN=(code.replace(/[^0-9A-Za-z]+/g,"") || nom.toLowerCase().replace(/[^a-z0-9]+/g,"-"));
+      var nachher=nachreichen(ep, kandN);
       $("s-msg").innerHTML='<div class="msg bad"><strong>Zugang nicht möglich</strong>'+
         esc(ergebnis.grund||"Quittung oder Code stimmen nicht.")+
-        ' Wenden Sie sich bitte an die Aufsicht.</div>';
+        ' Wenden Sie sich bitte an die Aufsicht.</div>'+
+        (nachher ? '<div class="msg ok"><strong>Nicht abgegebene Teile übermittelt</strong>'+nachher+
+          ' begonnene(r) Teil(e) wurde(n) mit den auf diesem Gerät gespeicherten Antworten an das Zentrum gesendet.</div>' : '');
       return;
     }
     /* Le centre renvoie le nom et le numéro inscrits au registre : c'est la
@@ -98568,6 +98572,7 @@ $("b-start").addEventListener("click", function(){
     });
     speichern();
     if(warn) $("s-msg").innerHTML=warn;
+    if(ergebnis.status==="OFFLINE") nachpruefen(code, nom, ep, 0);
     ladeEpreuve(ep);
   });
 });
@@ -98617,21 +98622,41 @@ function pruefeOffline(code, fertig){
   });
 }
 
+/* Entrée faite avec la liste de secours : on redemande au centre toutes les
+   minutes ; dès qu'il répond, la session devient « geprüft ».             */
+function nachpruefen(code, nom, ep, n){
+  if(!CONFIG.RECEPTION || n>60) return;
+  setTimeout(function(){
+    fetch(CONFIG.RECEPTION+"?action=pruefen&code="+encodeURIComponent(code)+"&nom="+encodeURIComponent(nom)+
+          "&ep="+encodeURIComponent(ep),{method:"GET",redirect:"follow"})
+    .then(function(r){ return r.text(); }).then(function(t){
+      var teile=String(t).trim().split("|");
+      if(teile[0]==="OK" && SESSION && SESSION.code===code){
+        SESSION.geprueft="OK"; if(teile[4]) SESSION.erlaubt=teile[4].split(",").filter(Boolean);
+        if(teile[5]) SESSION.ende=teile[5]; speichern();
+      } else if(teile[0]!=="NEIN") nachpruefen(code, nom, ep, n+1);
+    }).catch(function(){ nachpruefen(code, nom, ep, n+1); });
+  }, 60000);
+}
+
 function pruefeQuittung(code, nom, fertig){
   if(!CONFIG.RECEPTION){ fertig({status:"UNGEPRUEFT"}); return; }   // mode entraînement
   var u=CONFIG.RECEPTION+"?action=pruefen&code="+encodeURIComponent(code)+"&nom="+encodeURIComponent(nom)+
         "&ep="+encodeURIComponent($("i-ep").value);
   var fertig1=fertig; fertig=function(x){ fertig1(x); fertig1=function(){}; };
-  var abbruch=setTimeout(function(){ pruefeOffline(code, fertig); }, 12000);
+  /* On attend le centre jusqu'à 45 s (le serveur peut être lent au réveil) :
+     la liste de secours ne sert qu'en cas de vraie coupure du réseau.       */
+  var langsam=setTimeout(function(){ $("s-msg").innerHTML='<div class="msg">Die Prüfung dauert etwas länger — bitte warten Sie …</div>'; }, 8000);
+  var abbruch=setTimeout(function(){ clearTimeout(langsam); pruefeOffline(code, fertig); }, 45000);
   fetch(u,{method:"GET",redirect:"follow"}).then(function(r){ return r.text(); }).then(function(t){
-    clearTimeout(abbruch);
+    clearTimeout(abbruch); clearTimeout(langsam);
     var teile=String(t).trim().split("|");
     if(teile[0]==="OK")        fertig({status:"OK", name:teile[1]||"", recu:teile[2]||"", bis:teile[3]||"",
                                      erlaubt:(teile[4]||"").split(",").filter(Boolean), ende:teile[5]||"",
                                      fertig:(teile[6]||"").split(",").filter(Boolean)});
     else if(teile[0]==="NEIN") fertig({status:"NEIN", grund:teile[1]||""});
     else                       pruefeOffline(code, fertig);
-  }).catch(function(){ clearTimeout(abbruch); pruefeOffline(code, fertig); });
+  }).catch(function(){ clearTimeout(abbruch); clearTimeout(langsam); pruefeOffline(code, fertig); });
 }
 
 /* Chargement de l'épreuve.
@@ -99260,6 +99285,7 @@ function starteUhr(){
   var tick=function(){
     var g=restGlobal();
     if(g<=0){ clearInterval(TICK); TICK=null; alleAbgeben(); return; }
+    zwischenstand(false);
     if(MODUL && !$("v-comp").hidden){
       var r=restzeit(MODUL), el=$("chrono-t");
       el.textContent=mmss(r);
@@ -99526,23 +99552,69 @@ function abgeben(m,automatisch,stumm){
   speichern();
   if(TICK) clearInterval(TICK);
   stoppeAudio();
-  var kopie={
-    kid:[SESSION.code||SESSION.kand, SESSION.epreuve, m.id, s.start].join("|"),
-    zentrum:CONFIG.ZENTRUM, epreuve:SESSION.epreuve, epreuveTitel:EP?EP.titel:"",
-    modul:m.id, modulName:m.name, nom:SESSION.nom,
-    recu:SESSION.recu||"", code:SESSION.code||"", zugang:SESSION.geprueft||"",
-    start:iso(s.start), ende:iso(s.abgegeben),
-    dauerMin:Math.round((s.abgegeben-s.start)/600)/100,
-    automatisch:!!automatisch, verlassen:s.weg||0, vorfaelle:s.vorfaelle||{},
-    antworten:s.antworten||{}, texte:mitBetreff(nurGewaehlt(m, s.texte||{})), geraet:SESSION.geraet,
-    protokoll:protokoll(m)
-  };
+  var kopie=baueKopie(m, s, automatisch);
   var archiv=LS.get("mz_kopien",[]); archiv.push(kopie); LS.set("mz_kopien",archiv);
-  if(stumm){ sendeStill(kopie,0); return; }
+  if(stumm){ sendeStill(kopie,0); zwischenstand(); return; }
   ansicht("v-fin");
   $("f-titel").textContent=m.name+" — abgegeben";
   $("f-msg").innerHTML='<div class="msg">Ihre Kopie wird übermittelt …</div>';
   sende(kopie,0);
+  zwischenstand();
+}
+
+/* Copie d'un module (rendu, ou état intermédiaire pour le serveur). */
+function baueKopie(m, s, automatisch){
+  var bis = s.abgegeben || jetzt();
+  return {
+    kid:[SESSION.code||SESSION.kand, SESSION.epreuve, m.id, s.start].join("|"),
+    zentrum:CONFIG.ZENTRUM, epreuve:SESSION.epreuve, epreuveTitel:EP?EP.titel:"",
+    modul:m.id, modulName:m.name, nom:SESSION.nom,
+    recu:SESSION.recu||"", code:SESSION.code||"", zugang:SESSION.geprueft||"",
+    start:iso(s.start), ende:iso(bis),
+    dauerMin:Math.round((bis-s.start)/600)/100,
+    automatisch:!!automatisch, verlassen:s.weg||0, vorfaelle:s.vorfaelle||{},
+    antworten:s.antworten||{}, texte:mitBetreff(nurGewaehlt(m, s.texte||{})), geraet:SESSION.geraet,
+    protokoll:protokoll(m)
+  };
+}
+
+/* Zwischenstand : chaque minute (et quand la page passe en arrière-plan), l'état
+   des modules commencés part au centre. Si le candidat ferme la page sans rendre
+   un module, le serveur le dépose lui-même à la fin du temps.               */
+var ST_LETZT=0;
+function zwischenstand(sofort){
+  try{
+    if(!CONFIG.RECEPTION || !SESSION || !SESSION.gStart || !EP) return;
+    if(!sofort && jetzt()-ST_LETZT<55000) return;
+    var kopien=[], frist=SESSION.gStart+gesamtMinuten()*60000;
+    EP.module.forEach(function(m){
+      var s=SESSION.module[m.id];
+      if(s && !s.abgegeben && bezahlt(m)) kopien.push(baueKopie(m, s, true));
+    });
+    if(!kopien.length) return;
+    ST_LETZT=jetzt();
+    fetch(CONFIG.RECEPTION,{method:"POST",mode:"cors",redirect:"follow",keepalive:!!sofort,
+      headers:{"Content-Type":"text/plain;charset=utf-8"},
+      body:JSON.stringify({action:"stand", frist:frist, kopien:kopien})}).catch(function(){});
+  }catch(e){}
+}
+document.addEventListener("visibilitychange",function(){ if(document.hidden) zwischenstand(true); });
+window.addEventListener("pagehide",function(){ zwischenstand(true); });
+
+/* Page rouverte après la fin du temps : les modules commencés et jamais rendus
+   sont déposés tout de suite (avec les réponses gardées sur l'appareil).    */
+function nachreichen(ep, kand){
+  var alt=LS.get("mz_sess_"+ep+"_"+kand,null);
+  var data=window.MZ_EPREUVEN && window.MZ_EPREUVEN[ep];
+  if(!alt || !data || !alt.module) return 0;
+  var offen=data.module.filter(function(m){ var s=alt.module[m.id]; return s && !s.abgegeben; });
+  if(!offen.length) return 0;
+  SESSION=alt; EP=data;
+  offen.forEach(function(m){
+    var s=SESSION.module[m.id]; s.vorfaelle=s.vorfaelle||{}; s.vorfaelle.nachgereicht=1;
+    abgeben(m,true,true);
+  });
+  return offen.length;
 }
 
 function sendeStill(kopie,versuch){
@@ -99567,8 +99639,11 @@ function sende(kopie,versuch){
     body:JSON.stringify(kopie)
   }).then(function(r){ return r.text(); }).then(function(t){
     if(t && /^OK$/.test(t.trim())){
+      var nochOffen=EP ? EP.module.filter(function(m){ return zustand(m)==="laeuft"; }).map(function(m){ return m.name; }) : [];
       $("f-msg").innerHTML='<div class="msg ok"><strong>Kopie beim Zentrum eingegangen</strong>'+
-        'Sie können das nächste Modul wählen oder den Raum verlassen.</div>';
+        (nochOffen.length ? 'Sie können zur Übersicht zurückkehren.' : 'Sie können das nächste Modul wählen oder den Raum verlassen.')+'</div>'+
+        (nochOffen.length ? '<div class="msg warn"><strong>Noch nicht abgegeben: '+esc(nochOffen.join(", "))+'</strong>'+
+          'Kehren Sie zur Übersicht zurück und geben Sie diesen Teil ab, bevor Sie die Seite schließen.</div>' : '');
     } else { throw new Error("unerwartete Antwort"); }
   }).catch(function(){
     if(versuch<2){ setTimeout(function(){ sende(kopie,versuch+1); }, 2500); return; }
