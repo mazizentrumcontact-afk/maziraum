@@ -98469,7 +98469,27 @@ var $ = function(id){ return document.getElementById(id); };
 function esc(s){ var d=document.createElement("div"); d.textContent=s==null?"":String(s); return d.innerHTML; }
 function mmss(s){ s=Math.max(0,Math.round(s)); var m=Math.floor(s/60);
   return String(m).padStart(2,"0")+":"+String(s%60).padStart(2,"0"); }
-function woerter(t){ return (String(t).trim().match(/[\p{L}\p{N}'’\-]+/gu)||[]).length; }
+/* Compte des mots du corps du texte : sans « Betreff », sans en-tête/Anrede (« Sehr geehrte … », « Liebe … »)
+   ni formule finale (« Mit freundlichen Grüßen », « Viele Grüße » …) et la signature qui suit. */
+function kernText(text){
+  var L=String(text||"").replace(/\r/g,"").split("\n");
+  var ANR=/^\s*(sehr geehrte|sehr verehrte|liebe|lieber|hallo|hi\b|guten tag|guten morgen|servus|moin)/i;
+  var GR=/^\s*(mit freundlichen|mit besten|freundliche grü|viele grü|liebe grü|herzliche grü|beste grü|schöne grü|ganz liebe|viele liebe|alles liebe|bis bald|bis dann|herzlich|hochachtungsvoll|lg\b|dein |deine |euer |eure )/i;
+  var b=0;
+  if(L.length && /^\s*betreff\s*:/i.test(L[0])) b=1;
+  var nichtLeer=0;
+  for(var i=b;i<L.length && nichtLeer<14;i++){
+    if(!L[i].trim()) continue; nichtLeer++;
+    if(ANR.test(L[i]) && L[i].trim().split(/\s+/).length<=8){ b=i+1; break; }
+  }
+  var e=L.length, n=0;
+  for(var j=L.length-1;j>=b && n<5;j--){
+    if(!L[j].trim()) continue; n++;
+    if(GR.test(L[j]) && L[j].trim().split(/\s+/).length<=6){ e=j; break; }
+  }
+  return L.slice(b,e).join("\n");
+}
+function woerter(t){ return (String(kernText(t)).trim().match(/[\p{L}\p{N}'’\-]+/gu)||[]).length; }
 function jetzt(){ return Date.now(); }
 function iso(t){ return new Date(t).toISOString(); }
 
@@ -99391,7 +99411,7 @@ function baueSchreiben(){
     ta.value = s.texte["a"+a.nr] || "";
     var maj=function(){
       var n=woerter(ta.value);
-      z.innerHTML='Wörter: <b>'+n+'</b> (mindestens '+a.min+')';
+      z.innerHTML='Wörter: <b>'+n+'</b> (mindestens '+a.min+' · Anrede und Grußformel zählen nicht)';
       z.className = "zaehler"+(n<a.min?" kurz":"");
       s.texte["a"+a.nr]=ta.value;
       speichern(); aktualisiereFortschritt();
